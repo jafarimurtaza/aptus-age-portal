@@ -14,13 +14,13 @@ A [Next.js](https://nextjs.org) application built with React, Tailwind CSS, and 
 Install dependencies:
 
 ```bash
-npm install
+bun install
 ```
 
 Run the development server:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
@@ -31,10 +31,10 @@ Start editing by modifying `app/page.js` — the page auto-updates as you save.
 
 | Command         | Description                       |
 | --------------- | --------------------------------- |
-| `npm run dev`   | Start the development server      |
-| `npm run build` | Build the app for production      |
-| `npm run start` | Run the production build          |
-| `npm run lint`  | Lint the codebase with ESLint     |
+| `bun run dev`   | Start the development server      |
+| `bun run build` | Build the app for production      |
+| `bun run start` | Run the production build          |
+| `bun run lint`  | Lint the codebase with ESLint     |
 
 ## Branching
 
