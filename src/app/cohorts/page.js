@@ -1,5 +1,9 @@
-import CohortsMain from "@/components/cohorts/CohortsMain";
+import Hero from "../../components/cohorts/Hero";
 
-export default function CohortsPage() {
-  return <CohortsMain />;
+export default function CohortsMain() {
+  return (
+    <main className="min-h-screen">
+      <Hero />
+    </main>
+  );
 }
