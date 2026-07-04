@@ -44,7 +44,7 @@ const stats = [
 export default function HomeIntro() {
   return (
     <section className="min-h-screen w-full bg-[#f8fafc] px-6 py-16 text-slate-950 sm:px-10 lg:px-20 lg:py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[560px] lg:grid-cols-[1fr_430px] xl:grid-cols-[0.95fr_1.05fr]">
         <div className="max-w-xl">
           <h1 className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-5 py-2.5 text-base font-bold text-emerald-700 shadow-sm shadow-emerald-100">
             Afghan Geeks Graduate Portal
@@ -75,47 +75,47 @@ export default function HomeIntro() {
           </div>
         </div>
 
-        <div className="flex min-h-[620px] items-center justify-center px-3 py-10 sm:px-8 lg:px-10">
-          <div className="graduate-card-stack relative h-[560px] w-full max-w-[560px]">
+        <div className="flex min-h-[520px] items-center justify-center px-3 py-10 sm:px-8 lg:min-h-[540px] lg:px-0 xl:px-10">
+          <div className="graduate-card-stack relative h-[500px] w-full max-w-[460px] xl:h-[560px] xl:max-w-[560px]">
             {graduates.map((graduate, index) => (
               <article
-                className="graduate-card absolute left-1/2 top-1/2 w-[min(78vw,360px)] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl shadow-slate-200/70"
+                className="graduate-card absolute left-1/2 top-1/2 w-[min(78vw,320px)] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl shadow-slate-200/70 xl:w-[360px]"
                 key={graduate.name}
                 style={{ "--card-index": index }}
               >
                 <div
-                  className={`relative flex h-72 items-end justify-center bg-gradient-to-br ${graduate.photoClass}`}
+                  className={`relative flex h-60 items-end justify-center bg-gradient-to-br xl:h-72 ${graduate.photoClass}`}
                 >
                   <div className="absolute bottom-0 left-0 h-24 w-24 -translate-x-8 translate-y-10 rotate-45 bg-white"></div>
                 </div>
 
-                <div className="relative bg-white p-7">
-                  <h3 className="text-2xl font-bold text-[#1d4ed8]">
+                <div className="relative bg-white p-6 xl:p-7">
+                  <h3 className="text-xl font-bold text-[#1d4ed8] xl:text-2xl">
                     {graduate.name}
                   </h3>
 
-                  <p className="mt-3 flex items-center gap-3 text-xl font-bold text-emerald-700">
+                  <p className="mt-3 flex items-center gap-3 text-lg font-bold text-emerald-700 xl:text-xl">
                     <span className="flex h-6 w-6 items-center justify-center rounded bg-emerald-600 text-sm text-white">
                       ✓
                     </span>
                     Verified Graduate
                   </p>
 
-                  <p className="ml-9 mt-1 text-lg text-emerald-700">
+                  <p className="ml-9 mt-1 text-base text-emerald-700 xl:text-lg">
                     in {graduate.skill}
                   </p>
 
-                  <p className="mt-5 flex items-center gap-3 text-xl text-slate-600">
+                  <p className="mt-5 flex items-center gap-3 text-lg text-slate-600 xl:text-xl">
                     <span className="flex h-6 w-6 items-center justify-center border border-slate-400 text-sm text-slate-500">
                       ✓
                     </span>
                     {graduate.title}
                   </p>
 
-                  <p className="mt-9 text-sm font-semibold uppercase text-slate-500">
+                  <p className="mt-7 text-sm font-semibold uppercase text-slate-500 xl:mt-9">
                     Previously at
                   </p>
-                  <p className="mt-2 text-4xl font-black text-slate-900">
+                  <p className="mt-2 text-3xl font-black text-slate-900 xl:text-4xl">
                     {graduate.company}
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function HomeIntro() {
         </div>
       </div>
 
-      <div className="mx-auto mt-20 grid max-w-7xl gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-2 lg:grid-cols-4">
+      <div className="relative z-0 mx-auto mt-12 grid max-w-7xl gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
         {stats.map((stat) => (
           <div
             className="rounded-lg bg-slate-50 px-6 py-8 text-center"
