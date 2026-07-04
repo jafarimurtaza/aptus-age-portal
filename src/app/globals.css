@@ -5,3 +5,112 @@
     light --default,
     night;
 }
+
+.typing-loop {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid currentColor;
+  animation: typing 5s steps(31) infinite, blink 0.8s infinite;
+}
+
+@keyframes typing {
+  0% {
+    max-width: 0;
+  }
+
+  42%,
+  68% {
+    max-width: 330px;
+  }
+
+  100% {
+    max-width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-loop {
+    max-width: 100%;
+    white-space: normal;
+    border-right: 0;
+    animation: none;
+  }
+}
+
+.graduate-card {
+  animation: graduate-card-turn 9s ease-in-out infinite;
+  animation-delay: calc(var(--card-index) * -3s);
+  transform-origin: center;
+}
+
+@keyframes graduate-card-turn {
+  0%,
+  27% {
+    opacity: 1;
+    transform: translate(-36%, -50%) scale(1);
+    z-index: 3;
+  }
+
+  33%,
+  60% {
+    opacity: 0.96;
+    transform: translate(-54%, -50%) scale(0.91);
+    z-index: 2;
+  }
+
+  66%,
+  93% {
+    opacity: 0.9;
+    transform: translate(-72%, -50%) scale(0.82);
+    z-index: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-36%, -50%) scale(1);
+    z-index: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .graduate-card {
+    animation-name: graduate-card-turn-mobile;
+  }
+}
+
+@keyframes graduate-card-turn-mobile {
+  0%,
+  27% {
+    opacity: 1;
+    transform: translate(-45%, -50%) scale(1);
+    z-index: 3;
+  }
+
+  33%,
+  60% {
+    opacity: 0.96;
+    transform: translate(-53%, -50%) scale(0.91);
+    z-index: 2;
+  }
+
+  66%,
+  93% {
+    opacity: 0.9;
+    transform: translate(-61%, -50%) scale(0.82);
+    z-index: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-45%, -50%) scale(1);
+    z-index: 3;
+  }
+}
