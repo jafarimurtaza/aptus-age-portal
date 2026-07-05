@@ -55,27 +55,27 @@
   0%,
   27% {
     opacity: 1;
-    transform: translate(-36%, -50%) scale(1);
+    transform: translate(-28%, -50%) scale(1);
     z-index: 3;
   }
 
   33%,
   60% {
     opacity: 0.96;
-    transform: translate(-54%, -50%) scale(0.91);
+    transform: translate(-58%, -50%) scale(0.91);
     z-index: 2;
   }
 
   66%,
   93% {
     opacity: 0.9;
-    transform: translate(-72%, -50%) scale(0.82);
+    transform: translate(-88%, -50%) scale(0.82);
     z-index: 1;
   }
 
   100% {
     opacity: 1;
-    transform: translate(-36%, -50%) scale(1);
+    transform: translate(-28%, -50%) scale(1);
     z-index: 3;
   }
 }

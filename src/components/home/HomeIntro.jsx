@@ -44,7 +44,7 @@ const stats = [
 export default function HomeIntro() {
   return (
     <section className="min-h-screen w-full bg-[#f8fafc] px-6 py-16 text-slate-950 sm:px-10 lg:px-20 lg:py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[560px] lg:grid-cols-[1fr_430px] xl:grid-cols-[0.95fr_1.05fr]">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 xl:min-h-[560px] xl:grid-cols-[0.95fr_1.05fr]">
         <div className="max-w-xl">
           <h1 className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-5 py-2.5 text-base font-bold text-emerald-700 shadow-sm shadow-emerald-100">
             Afghan Geeks Graduate Portal
@@ -75,7 +75,7 @@ export default function HomeIntro() {
           </div>
         </div>
 
-        <div className="flex min-h-[520px] items-center justify-center px-3 py-10 sm:px-8 lg:min-h-[540px] lg:px-0 xl:px-10">
+        <div className="flex min-h-[520px] items-center justify-center px-3 py-10 sm:px-8 xl:min-h-[540px] xl:px-10">
           <div className="graduate-card-stack relative h-[500px] w-full max-w-[460px] xl:h-[560px] xl:max-w-[560px]">
             {graduates.map((graduate, index) => (
               <article
