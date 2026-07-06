@@ -1,16 +1,62 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import ProjectCard from "./ProjectCard";
+import ProjectFilter from "./ProjectFilter";
+import ProjectSearch from "./ProjectSearch";
+
+const projects = [
+  {
+    title: "NGO Directory Platform",
+    graduate: "Zainab Mohammadi",
+    description:
+      "A platform that connects NGOs with volunteers, donors, and beneficiaries for social impact projects across local communities.",
+    views: "124",
+    tags: ["UI/UX", "React", "MongoDB"],
+  },
+  {
+    title: "Remote Workspace",
+    graduate: "Ahmad Zia",
+    description:
+      "A workspace that helps remote teams manage projects, assign tasks, plan meetings, and track daily progress in one place.",
+    views: "98",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+  },
+  {
+    title: "Clinic Queue System",
+    graduate: "Sahar Karimi",
+    description:
+      "A clinic system that organizes patient queues, appointments, staff workload, and service updates for faster healthcare support.",
+    views: "156",
+    tags: ["Python", "FastAPI", "PostgreSQL"],
+  },
+];
 
 export default function ProjectsMain() {
   const [searchText, setSearchText] = useState("");
+  const [activeTechnology, setActiveTechnology] = useState("All");
 
-  function searchProjects(event) {
-    event.preventDefault();
-  }
+  const filteredProjects = useMemo(() => {
+    const search = searchText.trim().toLowerCase();
 
-  function clearSearch() {
+    return projects.filter((project) => {
+      const matchSearch =
+        search === "" ||
+        project.title.toLowerCase().includes(search) ||
+        project.graduate.toLowerCase().includes(search) ||
+        project.description.toLowerCase().includes(search) ||
+        project.tags.some((tag) => tag.toLowerCase().includes(search));
+
+      const matchTechnology =
+        activeTechnology === "All" || project.tags.includes(activeTechnology);
+
+      return matchSearch && matchTechnology;
+    });
+  }, [activeTechnology, searchText]);
+
+  function clearAll() {
     setSearchText("");
+    setActiveTechnology("All");
   }
 
   return (
@@ -42,36 +88,16 @@ export default function ProjectsMain() {
         </div>
 
         <div className="mt-8">
-          <form
-            className="flex flex-col gap-3 rounded-none sm:flex-row sm:items-center"
-            onSubmit={searchProjects}
-          >
-            <label className="input input-bordered flex h-14 flex-1 items-center gap-3 rounded-full border-slate-400 bg-white text-slate-900">
-              <span className="relative h-5 w-5 rounded-full border-2 border-slate-700 after:absolute after:-bottom-1.5 after:-right-1 after:h-2 after:w-0.5 after:rotate-[-45deg] after:rounded-full after:bg-slate-700" />
-              <input
-                className="grow text-sm font-semibold placeholder:text-slate-700"
-                onChange={(event) => setSearchText(event.target.value)}
-                placeholder="Search projects by title, technology, or graduate..."
-                type="search"
-                value={searchText}
-              />
-            </label>
-
-            <button
-              className="btn h-14 rounded-full border-0 bg-[#0f4e12] px-8 text-lg font-black text-white shadow-md shadow-emerald-900/15 hover:bg-[#0b3d0e]"
-              type="submit"
-            >
-              Search
-            </button>
-
-            <button
-              className="btn h-14 rounded-full border border-[#188046] bg-white px-6 text-sm font-black text-[#188046] shadow-md shadow-emerald-900/10 hover:bg-emerald-50"
-              onClick={clearSearch}
-              type="button"
-            >
-              Clear All
-            </button>
-          </form>
+          <ProjectSearch
+            clearAll={clearAll}
+            searchText={searchText}
+            setSearchText={setSearchText}
+          />
+          <ProjectFilter
+            activeTechnology={activeTechnology}
+            setActiveTechnology={setActiveTechnology}
+          />
+          <ProjectCard projects={filteredProjects} />
         </div>
       </section>
     </main>
