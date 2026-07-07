@@ -73,7 +73,7 @@ export default function HeroCards() {
 
             {/* Value */}
             <h3 className="text-4xl font-black tracking-tight lg:text-5xl">
-              {stat.value}
+              {stat.value } {stat.suffix}
             </h3>
 
             {/* Label */}
