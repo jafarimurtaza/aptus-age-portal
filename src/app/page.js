@@ -1,10 +1,12 @@
 import React from "react";
+import HomeGraduates from "../components/home/HomeGraduates";
 import HomeIntro from "../components/home/HomeIntro";
 
 export default function page() {
   return (
-    <div className="w-full flex justify-center items-center min-h-screen bg-base-100">
+    <main className="w-full bg-[#f8fafc]">
       <HomeIntro />
-    </div>
+      <HomeGraduates />
+    </main>
   );
 }

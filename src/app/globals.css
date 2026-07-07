@@ -80,7 +80,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .graduate-card {
     animation-name: graduate-card-turn-mobile;
   }
