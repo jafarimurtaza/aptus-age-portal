@@ -35,6 +35,7 @@ export function useChat() {
 
   return {
     messages,
+    // current messages being typed
     draft,
     canSend,
     setDraft,
