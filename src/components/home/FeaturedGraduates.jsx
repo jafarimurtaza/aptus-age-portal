@@ -37,7 +37,7 @@ const graduates = [
     location: "Herat, Afghanistan",
     initials: "SK",
     avatar: "bg-emerald-100 text-emerald-800",
-    skills: ["Figma", "UI Design", "Research"],
+    skills: ["Figma", "UI Design", "Research", "Prototype"],
     verified: "Verified Graduate",
     bio: "Creative web developer who enjoys turning ideas into interactive websites. Experienced with responsive design, React components, and building smooth user interfaces.",
     photoPlaceholders: [
@@ -139,7 +139,7 @@ const skillStyles = [
   "border-rose-100 bg-rose-50 text-rose-700",
 ];
 
-export default function HomeGraduates() {
+export default function FeaturedGraduates() {
   return (
     <section className="w-full bg-[#f8fafc] px-4 pb-12 pt-4 text-slate-950 sm:px-8 sm:pb-16 sm:pt-6 lg:px-16 xl:px-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
