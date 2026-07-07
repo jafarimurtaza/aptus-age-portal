@@ -60,7 +60,7 @@ export default function ProjectsMain() {
   }
 
   return (
-    <main className="min-h-screen bg-[#edf8ef] text-slate-950">
+    <main className="min-h-screen bg-base-100 text-slate-950">
       <section className="mx-auto w-full max-w-7xl px-5 py-7 sm:px-8 lg:px-10">
         <div className="grid min-h-[315px] items-center gap-8 lg:grid-cols-[1fr_0.9fr]">
           <div className="max-w-2xl">
