@@ -1,52 +1,78 @@
-return (
-  <section className="py-16">
+"use client";
 
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold">
-        Graduate Stories
-      </h2>
+import useEmblaCarousel from "embla-carousel-react";
 
-      <p className="text-gray-500 mt-2">
-        In Their Own Words
-      </p>
-    </div>
+export default function GraduateSection() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+  });
 
+  return (
+    <section className="py-16">
 
-    <div className="flex items-center gap-4">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold">
+          Graduate Stories
+        </h2>
 
-      {/* Left Button */}
-      <button
-        onClick={() => emblaApi && emblaApi.scrollPrev()}
-        className="px-4 py-2 bg-gray-200 rounded-full"
-      >
-        ◀
-      </button>
-
-
-      {/* Your cards go here */}
-      <div className="overflow-hidden flex-1" ref={emblaRef}>
-        <div className="flex">
-
-          {/* KEEP YOUR CARD 1 */}
-          {/* KEEP YOUR CARD 2 */}
-          {/* KEEP YOUR CARD 3 */}
-          {/* KEEP YOUR CARD 4 */}
-          {/* KEEP YOUR CARD 5 */}
-          {/* KEEP YOUR CARD 6 */}
-
-        </div>
+        <p className="text-gray-500 mt-2">
+          In Their Own Words
+        </p>
       </div>
 
 
-      {/* Right Button */}
-      <button
-        onClick={() => emblaApi && emblaApi.scrollNext()}
-        className="px-4 py-2 bg-gray-200 rounded-full"
-      >
-        ▶
-      </button>
+      <div className="flex items-center gap-4">
 
-    </div>
+        {/* Left Button */}
+        <button
+          onClick={() => emblaApi?.scrollPrev()}
+          className="px-4 py-2 bg-gray-200 rounded-full"
+        >
+          ◀
+        </button>
 
-  </section>
-);
+
+        {/* Carousel */}
+        <div
+          className="overflow-hidden flex-1"
+          ref={emblaRef}
+        >
+          <div className="flex gap-4">
+
+            <div className="flex-none w-96 h-40 bg-gray-200 rounded-lg flex items-center justify-center">
+              Card 1
+            </div>
+
+            <div className="flex-none w-96 h-40 bg-gray-200 rounded-lg flex items-center justify-center">
+              Card 2
+            </div>
+
+            <div className="flex-none w-96 h-40 bg-gray-200 rounded-lg flex items-center justify-center">
+              Card 3
+            </div>
+
+            <div className="flex-none w-96 h-40 bg-gray-200 rounded-lg flex items-center justify-center">
+              Card 4
+            </div>
+
+            <div className="flex-none w-96 h-40 bg-gray-200 rounded-lg flex items-center justify-center">
+              Card 5
+            </div>
+
+          </div>
+        </div>
+
+
+        {/* Right Button */}
+        <button
+          onClick={() => emblaApi?.scrollNext()}
+          className="px-4 py-2 bg-gray-200 rounded-full"
+        >
+          ▶
+        </button>
+
+      </div>
+
+    </section>
+  );
+}
