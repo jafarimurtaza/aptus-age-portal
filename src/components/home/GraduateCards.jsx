@@ -9,8 +9,7 @@ export default function GraduateCards() {
                     aria-label={`View ${graduate.name} profile`}
                     className="mx-auto block w-full max-w-[430px] overflow-hidden rounded-lg border border-slate-200 bg-white text-inherit shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200 md:max-w-none"
                     href="/graduates"
-                    key={graduate.name}
-                >
+                    key={graduate.name}   >
                     <div className="grid h-24 grid-cols-3 gap-1 p-2 sm:h-28 xl:h-24">
                         {graduate.photoPlaceholders.map((placeholder, index) => (
                             <div
