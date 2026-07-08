@@ -18,18 +18,28 @@ const technologies = [
 
 export default function ProjectFilter({ activeTechnology, setActiveTechnology }) {
   return (
-    <div className="mt-7 px-4">
-      <h2 className="text-3xl font-black text-slate-950">
-        Filter by Technology
-      </h2>
+    <section className="mt-8 rounded-2xl border border-emerald-100 bg-white p-5 shadow-[0_18px_45px_rgba(15,78,18,0.08)]">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="text-2xl font-black leading-tight text-slate-950">
+            Filter by Technology
+          </h2>
+          <p className="mt-1 text-sm font-semibold text-slate-500">
+            Browse projects by stack and tools.
+          </p>
+        </div>
+        <div className="w-fit rounded-full border border-emerald-100 bg-emerald-50 px-4 py-2 text-xs font-black text-emerald-800">
+          {activeTechnology}
+        </div>
+      </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-5 flex flex-wrap gap-2">
         {technologies.map((technology) => (
           <button
-            className={`btn h-8 min-h-0 rounded-full border border-[#166534] px-4 text-xs font-black ${
+            className={`h-9 rounded-full border px-4 text-xs font-black transition-all ${
               activeTechnology === technology
-                ? "bg-[#0f4e12] text-white hover:bg-[#0b3d0e]"
-                : "bg-slate-200 text-slate-950 hover:bg-emerald-100"
+                ? "border-green-900 bg-green-900 text-white shadow-lg shadow-emerald-900/15"
+                : "border-slate-200 bg-slate-50 text-slate-700 hover:border-green-900 hover:bg-emerald-50 hover:text-green-900"
             }`}
             key={technology}
             onClick={() => setActiveTechnology(technology)}
@@ -39,6 +49,6 @@ export default function ProjectFilter({ activeTechnology, setActiveTechnology })
           </button>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
