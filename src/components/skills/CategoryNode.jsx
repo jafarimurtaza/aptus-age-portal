@@ -21,8 +21,8 @@ export default function CategoryNode({ data, selected }) {
     >
       <Handle
         type="target"
-        position={Position.Left}
-        className="!h-2 !w-2 !border-none"
+        position={Position.Top}
+        className="h-2! w-2! !border-none"
         style={{ background: data.color }}
       />
 
@@ -52,16 +52,11 @@ export default function CategoryNode({ data, selected }) {
         </span>
       </div>
 
-      {/* <Handle
-        type="target"
-        position={Position.Left}
-        className="!h-2 !w-2 !border-none"
-        style={{ background: data.color }}
-      /> */}
-       <Handle
+
+      <Handle
         type="source"
-        position={Position.Right}
-        className="!h-2 !w-2 !border-none"
+        position={Position.Bottom}
+        className="h-2! w-2! !border-none"
         style={{ background: data.color }}
       />
     </div>

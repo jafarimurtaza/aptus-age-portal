@@ -7,8 +7,8 @@ export default function SkillNode({ data }) {
     <div className="w-52  rounded-lg border bg-[#151220] px-3 py-2 shadow-md" style={{ borderColor: `${data.color}40` }}>
       <Handle
         type="target"
-        position={Position.Left}
-        className="!h-1.5 !w-1.5 !border-none"
+        position={Position.Top}
+        className="h-1.5! w-1.5! !border-none"
         style={{ background: data.color }}
       />
 

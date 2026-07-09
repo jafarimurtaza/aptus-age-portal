@@ -22,9 +22,9 @@ import ContextMenu from "./ContextMenu";
 const nodeTypes = { category: CategoryNode, skill: SkillNode };
 
 const ROOT_X = 40;
-const CATEGORY_X = 380;
+const CATEGORY_X = 300;
 const SKILL_X = 860;
-const ROW_HEIGHT = 170;
+const ROW_HEIGHT = 270;
 const SKILL_ROW_HEIGHT = 56;
 
 function buildGraph(expanded, removedSkills) {
@@ -34,7 +34,7 @@ function buildGraph(expanded, removedSkills) {
   nodes.push({
     id: "root",
     type: "arrow",
-    position: { x: ROOT_X, y: (CATEGORIES.length * ROW_HEIGHT) / 2 - 20 },
+    position: { y: ROOT_X, x: (CATEGORIES.length * ROW_HEIGHT) / 2 - 20 },
     data: { label: "Skills" },
     style: {
       background: "#1a1726",
@@ -53,7 +53,7 @@ function buildGraph(expanded, removedSkills) {
     nodes.push({
       id: cat.id,
       type: "category",
-      position: { x: CATEGORY_X, y: catY },
+      position: { y: CATEGORY_X, x: catY },
       data: {
         label: cat.label,
         description: cat.description,
@@ -74,13 +74,12 @@ function buildGraph(expanded, removedSkills) {
     });
 
     if (expanded[cat.id]) {
-      const GROUP_PADDING = 20; 
       const offsetStart = catY - ((visibleSkills.length - 1) * SKILL_ROW_HEIGHT) / 2;
       visibleSkills.forEach((skill, j) => {
         nodes.push({
           id: skill.id,
           type: "skill",
-          position: { x: SKILL_X, y: offsetStart + j * SKILL_ROW_HEIGHT },
+          position: { y: SKILL_X, x: offsetStart + j * SKILL_ROW_HEIGHT },
           data: { name: skill.name, level: skill.level, color: cat.color },
         });
         edges.push({
@@ -112,7 +111,7 @@ function Graph() {
     setEdges(builtEdges);
   }, [expanded, removedSkills, setNodes, setEdges]);
 
-  
+
   useEffect(() => {
     if (!menu) {
       setMenuItems(null);
