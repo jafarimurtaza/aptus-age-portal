@@ -1,163 +1,229 @@
-"use client";
+    "use client";
 
-import useEmblaCarousel from "embla-carousel-react";
+    import { useEffect, useState } from "react";
+    import useEmblaCarousel from "embla-carousel-react";
+    
+    export default function GraduateSection() {
+       const [emblaRef, emblaApi] = useEmblaCarousel({
+      loop: true,
+      align: "start",
+      slidesToScroll: 1,
+    });
+       useEffect(() => {
+        if (!emblaApi) return;
 
-export default function GraduateSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-  loop: true,
-  align: "start",
-  }
-  );
+        const onSelect = () => {
+          setSelectedIndex(emblaApi.selectedScrollSnap());
+        };
+
+        emblaApi.on("select", onSelect);
+        onSelect();
+
+        return () => {
+          emblaApi.off("select", onSelect);
+        };
+      }, [emblaApi]);
+
+          const [selectedIndex, setSelectedIndex] = useState(0);
+        const graduates = [
+          {
+      name: "Zainab Mohammadi",
+      cohort: "Cohort 1-2022",
+      quote:
+        "Building this portal changed how I see myself as a developer. I went from student to author.",
+      initial: "Z",
+    },
+    {
+      name: "Nadia Sultani",
+      cohort: "Cohort 2-2023",
+      quote:
+        "I never imagined I would train a machine learning model. Afghan Geeks made the impossible feel inevitable.",
+      initial: "N",
+    },
+    {
+      name: "Freshta Safi",
+      cohort: "Cohort 3-2024",
+      quote:
+        "Every line of code I write is a small act of defiance—and proof that Afghan women belong in tech.",
+      initial: "F",
+    },
+    {
+      name: "Freshta Ahmadi",
+      cohort: "Cohort 3-2024",
+      quote:
+        "Every line of code I write is a small act of defiance—and proof that Afghan women belong in tech.",
+      initial: "M",
+    },
+    {
+      name: "Shukria Rahimi",
+      cohort: "Cohort 4-2024",
+      quote:
+        "Every line of code I write is a small act of defiance—and proof that Afghan women belong in tech.",
+      initial: "S",
+    },
+    {
+      name: "Zarifa Rahmani",
+      cohort: "Cohort 4-2024",
+      quote:
+        "I never imagined I would train a machine learning model. Afghan Geeks made the impossible feel inevitable.",
+      initial: "Z",
+    },
+  ];
+
+
   return (
-    <section className="py-16 bg-white">
-      <div className="text-center mb-12">
-       <h2 className="text-4xl font-bold text-gray-800">Graduate Stories</h2>
-        <p className="text-gray-500 mt-2">In Their Own Words</p>
-         </div>
+  <section className="-mt-16 px-6 pb-20 relative z-10 bg-gradient-to-r from-white via-green-50 to-green-100">
+     <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800">
+            Graduate Stories
+          </h2>
 
-            {/* Left Button */}
-           <button onClick={() => emblaApi && emblaApi.scrollPrev()}
-            className="px-4 py-2 bg-gray-200 rounded-full">
-            ◀ </button>
+          <p className="text-gray-500 mt-2">
+            In Their Own Words
+          </p>
+        </div>
+        <div className="relative">
+          <button
+            onClick={() => emblaApi?.scrollPrev()}
+            className="
+              absolute
+              -left-5
+              top-1/2
+              -translate-y-1/2
+              z-10
+              w-12
+              h-12
+              rounded-full
+              bg-white
+              shadow-lg
+              border
+              flex
+              items-center
+              justify-center
+              text-gray-700
+              hover:bg-green-200
+              transition
+            "
+          >
+            ←
+          </button>
+          <div
+            className="overflow-hidden mx-8"
+            ref={emblaRef}
+          >
+            <div className="flex -ml-3">  {graduates.map((graduate, index) => (
+               <div
+                  key={index}
+                  className="
+                 
+                  flex-[0_0_100%]
+                  sm:flex-[0_0_50%]
+                  lg:flex-[0_0_33.333%]
+                  xl:flex-[0_0_33.333%]
+                  px-5
+                  "
+                >
 
-            {/* Cards Container */}
-          <div className="overflow-hidden" ref={emblaRef}>
-           <div className="flex">
+                  <div
+                    className="
+                      bg-white
+                      border
+                      rounded-3xl
+                      p-8
+                      shadow-sm
+                      hover:shadow-xl
+                      transition
+                      min-h-[330px]
+                      flex
+                      flex-col
+                      justify-between
+                    "
+                  >
+                    <div>
+                      <div className="text-green-400 text-5xl font-bold">
+                      “
+                       </div>
+                      <p className="italic text-gray-600 mt-4 leading-relaxed">
+                        {graduate.quote}
+                       </p>
 
-            {/* Card 1 */}
-            <div className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-4">
-             <div className="bg-white border rounded-3xl p-8 shadow-sm h-full">
-             <div className="text-4xl text-gray-600">❝</div>
-             <p className="italic text-gray-600 mt-4">
-                Building this portal changed how I see myself as a developer.
-                I went from student to author.
-                 </p>
-                 <div className="flex items-center gap-3 mt-8">
-                 <div className="w-12 h-12 rounded-full bg-gray-300"></div>
-                 <div>
-                  <h4 className="font-semibold text-gray-600">Zainab Mohammadi</h4>
-                  <p className="text-sm text-gray-500">Cohort 1-2022</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-4">
-            <div className="bg-white border rounded-3xl p-8 shadow-sm h-full">
-              <div className="text-4xl text-gray-600">❝</div>
-
-                 <p className="italic text-gray-600 mt-4">
-                  I never imagined I would train a machine learning model.
-                  Afghan Geeks made the impossible feel inevitable.
-                  </p>
-
-                  <div className="flex items-center gap-3 mt-8">
-                   <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
-                  N
+                       </div>
+                       <div className="flex items-center gap-3 mt-8">
+                       <div
+                        className="
+                          w-12
+                          h-12
+                          rounded-full
+                          bg-gray-200
+                          flex
+                          items-center
+                          justify-center
+                          font-semibold
+                        "
+                      >
+                        {graduate.initial}
+                      </div>
+                    <div>
+                 <h4 className="font-semibold text-gray-700">
+                          {graduate.name}
+                        </h4>
+                      <p className="text-sm text-gray-500">
+                          {graduate.cohort}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                  <h4 className="font-semibold text-gray-600">Nadia Sultani</h4>
-                  <p className="text-sm text-gray-500">Cohort 2-2023</p>
                 </div>
-              </div>
+       ))}
+
             </div>
           </div>
-
-          {/* Card 3 */}
-          <div className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-4">
-            <div className="bg-white border rounded-3xl p-8 shadow-sm h-full">
-              <div className="text-4xl text-gray-600">❝</div>
-
-                  <p className="italic text-gray-600 mt-4">
-                  Every line of code I write is a small act of defiance—and proof
-                  that Afghan women belong in tech.
-                  </p>
-
-                  <div className="flex items-center gap-3 mt-8">
-                  <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
-                  F
-                  </div>
-                  <div>
-                  <h4 className=" text-gray-600 font-semibold">Freshta Safi</h4>
-                  <p className="text-sm text-gray-500">Cohort 3-2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
-      
-           {/* Card 4*/}
-       <div className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-4">
-            <div className="bg-white border rounded-3xl p-8 shadow-sm h-full">
-              <div className="text-4xl text-gray-600">❝</div>
-
-                  <p className="italic text-gray-600 mt-4">
-                  Every line of code I write is a small act of defiance—and proof
-                  that Afghan women belong in tech.
-                  </p>
-
-                  <div className="flex items-center gap-3 mt-8">
-                  <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
-                  F
-                  </div>
-                  <div>
-                  <h4 className=" text-gray-600 font-semibold">Freshta Safi</h4>
-                  <p className="text-sm text-gray-500">Cohort 3-2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 5 */}
-          <div className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-4">
-            <div className="bg-white border rounded-3xl p-8 shadow-sm h-full">
-              <div className="text-4xl text-gray-600">❝</div>
-
-                  <p className="italic text-gray-600 mt-4">
-                  Every line of code I write is a small act of defiance—and proof
-                  that Afghan women belong in tech.
-                  </p>
-
-                  <div className="flex items-center gap-3 mt-8">
-                  <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
-                  F
-                  </div>
-                  <div>
-                  <h4 className=" text-gray-600 font-semibold">Freshta Safi</h4>
-                  <p className="text-sm text-gray-500">Cohort 3-2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Card 6*/}
-          <div className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-4">
-            <div className="bg-white border rounded-3xl p-8 shadow-sm h-full">
-              <div className="text-4xl text-gray-600">❝</div>
-
-                  <p className="italic text-gray-600 mt-4">
-                  Every line of code I write is a small act of defiance—and proof
-                  that Afghan women belong in tech.
-                  </p>
-
-                  <div className="flex items-center gap-3 mt-8">
-                  <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
-                  F
-                  </div>
-                  <div>
-                  <h4 className=" text-gray-600 font-semibold">Freshta Safi</h4>
-                  <p className="text-sm text-gray-500">Cohort 3-2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-      </div>  
-      
-       
-          {/* Right Button */}
-      <button onClick={() => emblaApi && emblaApi.scrollNext()}
-        className="px-4 py-2 bg-gray-200 rounded">
-        ▶</button>
-    </section>
+       <button
+  onClick={() => emblaApi?.scrollNext()}
+  className="
+    absolute
+    -right-5
+    top-1/2
+    -translate-y-1/2
+    z-10
+    w-12
+    h-12
+    rounded-full
+    bg-white
+    shadow-lg
+    border
+    flex
+    items-center
+    justify-center
+    text-gray-700
+    hover:bg-green-200
+    transition
+  "
+>
+  →
+</button>
+    <div className="flex justify-center gap-2 mt-8">
+  {graduates.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => emblaApi?.scrollTo(index)}
+      className={`
+        w-3
+        h-3
+        rounded-full
+        transition
+        ${
+          selectedIndex === index
+            ? "bg-green-600"
+            : "bg-gray-300"
+        }
+      `}
+    />
+  ))}
+</div>
+        </div>
+      </div>
+     </section>
   );
 }
