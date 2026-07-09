@@ -4,7 +4,7 @@ import { Handle, Position } from "reactflow";
 
 export default function SkillNode({ data }) {
   return (
-    <div className="w-52 rounded-lg border bg-[#151220] px-3 py-2 shadow-md" style={{ borderColor: `${data.color}40` }}>
+    <div className="w-52  rounded-lg border bg-[#151220] px-3 py-2 shadow-md" style={{ borderColor: `${data.color}40` }}>
       <Handle
         type="target"
         position={Position.Left}

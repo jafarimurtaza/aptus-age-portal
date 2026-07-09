@@ -14,6 +14,7 @@ export default function ContextMenu({ x, y, title, items, onClose }) {
       <div
         className="fixed z-50 w-52 overflow-hidden rounded-lg border border-white/10 bg-[#1a1726] shadow-2xl"
         style={{ top: y, left: x }}
+         
       >
         {title && (
           <div className="border-b border-white/5 px-3 py-2 text-[11px] uppercase tracking-wide text-slate-500">

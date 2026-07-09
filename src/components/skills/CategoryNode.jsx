@@ -52,7 +52,13 @@ export default function CategoryNode({ data, selected }) {
         </span>
       </div>
 
-      <Handle
+      {/* <Handle
+        type="target"
+        position={Position.Left}
+        className="!h-2 !w-2 !border-none"
+        style={{ background: data.color }}
+      /> */}
+       <Handle
         type="source"
         position={Position.Right}
         className="!h-2 !w-2 !border-none"

@@ -3,7 +3,7 @@ export const CATEGORIES = [
     id: "frontend",
     label: "Front-End",
     description: "Interfaces, state, and everything the user touches.",
-    color: "#22d3ee", // cyan-400
+    color: "#22d3ee",
     icon: "frontend",
     skills: [
       { id: "fe-react", name: "React", level: 90 },
@@ -17,7 +17,7 @@ export const CATEGORIES = [
     id: "backend",
     label: "Back-End",
     description: "APIs, servers, and the logic behind the scenes.",
-    color: "#34d399", // emerald-400
+    color: "#34d399",
     icon: "backend",
     skills: [
       { id: "be-node", name: "Node.js", level: 85 },
@@ -31,7 +31,7 @@ export const CATEGORIES = [
     id: "devops-tools",
     label: "DevOps & Tools",
     description: "Shipping, automating, and keeping things running.",
-    color: "#fbbf24", // amber-400
+    color: "#fbbf24",
     icon: "devops",
     skills: [
       { id: "do-docker", name: "Docker", level: 80 },
@@ -45,7 +45,7 @@ export const CATEGORIES = [
     id: "data-ml",
     label: "Data & ML",
     description: "Pipelines, models, and turning data into signal.",
-    color: "#c084fc", // purple-400
+    color: "#c084fc",
     icon: "data",
     skills: [
       { id: "dm-python", name: "Python", level: 85 },

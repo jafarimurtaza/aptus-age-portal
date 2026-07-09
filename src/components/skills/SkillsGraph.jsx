@@ -14,7 +14,7 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 
-import { CATEGORIES } from "../../app/skill-page/data/skills-data";
+import { CATEGORIES } from "../../app/skills/data/skills-data";
 import CategoryNode from "./CategoryNode";
 import SkillNode from "./SkillNode";
 import ContextMenu from "./ContextMenu";
@@ -23,7 +23,7 @@ const nodeTypes = { category: CategoryNode, skill: SkillNode };
 
 const ROOT_X = 40;
 const CATEGORY_X = 380;
-const SKILL_X = 760;
+const SKILL_X = 860;
 const ROW_HEIGHT = 170;
 const SKILL_ROW_HEIGHT = 56;
 
@@ -33,7 +33,7 @@ function buildGraph(expanded, removedSkills) {
 
   nodes.push({
     id: "root",
-    type: "default",
+    type: "arrow",
     position: { x: ROOT_X, y: (CATEGORIES.length * ROW_HEIGHT) / 2 - 20 },
     data: { label: "Skills" },
     style: {
@@ -74,6 +74,7 @@ function buildGraph(expanded, removedSkills) {
     });
 
     if (expanded[cat.id]) {
+      const GROUP_PADDING = 20; 
       const offsetStart = catY - ((visibleSkills.length - 1) * SKILL_ROW_HEIGHT) / 2;
       visibleSkills.forEach((skill, j) => {
         nodes.push({
@@ -95,6 +96,7 @@ function buildGraph(expanded, removedSkills) {
   return { nodes, edges };
 }
 
+
 function Graph() {
   const [expanded, setExpanded] = useState({});
   const [removedSkills, setRemovedSkills] = useState(new Set());
@@ -104,14 +106,13 @@ function Graph() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
-  // Rebuild the graph whenever expanded categories or removed skills change
   useEffect(() => {
     const { nodes: builtNodes, edges: builtEdges } = buildGraph(expanded, removedSkills);
     setNodes(builtNodes);
     setEdges(builtEdges);
   }, [expanded, removedSkills, setNodes, setEdges]);
 
-  // Recompute the context menu content whenever the target or state changes
+  
   useEffect(() => {
     if (!menu) {
       setMenuItems(null);
@@ -213,6 +214,7 @@ function Graph() {
         proOptions={{ hideAttribution: true }}
         minZoom={0.4}
         maxZoom={1.5}
+        nodesDraggable={false}
       >
         <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="#ffffff14" />
         <Controls className="!bg-[#1a1726] !border !border-white/10 !fill-slate-200 [&>button]:!border-white/10" />
