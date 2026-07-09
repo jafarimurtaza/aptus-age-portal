@@ -1,7 +1,7 @@
-@import "tailwindcss";
+ @import "tailwindcss";
 
-@plugin "daisyui" {
-  themes:
-    light --default,
-    night;
-}
+  @plugin "daisyui" {
+    themes:
+      light --default,
+      night;
+  }
