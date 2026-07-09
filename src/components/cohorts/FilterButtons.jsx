@@ -1,18 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import {
   yearFilters,
   categoryFilters,
 } from "../../data/filter";
 
-export default function FilterButtons() {
-  const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedCategory, setSelectedCategory] = useState("all");
-
+export default function FilterButtons({
+  selectedYear,
+  setSelectedYear,
+  selectedCategory,
+  setSelectedCategory,
+}) {
   return (
     <div className="space-y-6">
-      {/* filter for yearr*/}
+      {/* Year Filters */}
       <div className="flex flex-wrap gap-3">
         {yearFilters.map((filter) => (
           <button
@@ -22,8 +23,8 @@ export default function FilterButtons() {
               h-12 rounded-xl border px-6 text-sm font-medium transition-all duration-300
               ${
                 selectedYear === filter.value
-                  ? "bg-primary text-primary-content border-primary shadow-lg shadow-primary/20"
-                  : "bg-base-200 border-base-300 text-base-content hover:bg-base-300 hover:border-primary/40"
+                  ? "border-primary bg-primary text-primary-content shadow-lg shadow-primary/20"
+                  : "border-base-300 bg-base-200 text-base-content hover:border-primary/40 hover:bg-base-300"
               }
             `}
           >
@@ -32,7 +33,7 @@ export default function FilterButtons() {
         ))}
       </div>
 
-      {/* Filter for catagory part */}
+      {/* Category Filters */}
       <div className="flex flex-wrap gap-3">
         {categoryFilters.map((filter) => {
           const Icon = filter.icon;
@@ -42,11 +43,11 @@ export default function FilterButtons() {
               key={filter.id}
               onClick={() => setSelectedCategory(filter.value)}
               className={`
-                h-12 rounded-xl border px-5 flex items-center gap-2 text-sm font-medium transition-all duration-300
+                flex h-12 items-center gap-2 rounded-xl border px-5 text-sm font-medium transition-all duration-300
                 ${
                   selectedCategory === filter.value
-                    ? "bg-primary text-primary-content border-primary shadow-lg shadow-primary/20"
-                    : "bg-base-200 border-base-300 text-base-content hover:bg-base-300 hover:border-primary/40"
+                    ? "border-primary bg-primary text-primary-content shadow-lg shadow-primary/20"
+                    : "border-base-300 bg-base-200 text-base-content hover:border-primary/40 hover:bg-base-300"
                 }
               `}
             >
@@ -55,17 +56,6 @@ export default function FilterButtons() {
             </button>
           );
         })}
-      </div>
-
-      {/* its just for test */}
-      <div className="text-sm text-base-content/60">
-        <p>
-          <strong>Year:</strong> {selectedYear}
-        </p>
-
-        <p>
-          <strong>Category:</strong> {selectedCategory}
-        </p>
       </div>
     </div>
   );
