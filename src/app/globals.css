@@ -114,3 +114,27 @@
     z-index: 3;
   }
 }
+
+.aptus-feature-track {
+  animation: aptus-feature-slide 34s linear infinite;
+}
+
+.aptus-feature-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes aptus-feature-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - (var(--feature-gap) / 2)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aptus-feature-track {
+    animation: none;
+  }
+}

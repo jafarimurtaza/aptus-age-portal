@@ -60,7 +60,7 @@ export default function GraduateCards() {
                         </div>
 
                         <span className="btn mt-4 min-h-0 min-w-44 rounded-full border-slate-200 bg-white px-6 py-2 text-sm font-bold text-slate-900 hover:border-emerald-200 hover:bg-emerald-50 sm:min-w-52 sm:text-base">
-                            Message {graduate.name.split(" ")[0]}
+                            View Profile
                         </span>
                     </div>
                 </Link>

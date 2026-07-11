@@ -133,7 +133,7 @@ export const graduates = [
   },
 ];
 
- export const skillStyles = [
+export const skillStyles = [
   "border-sky-100 bg-sky-50 text-sky-700",
   "border-emerald-100 bg-emerald-50 text-emerald-700",
   "border-amber-100 bg-amber-50 text-amber-700",
@@ -142,7 +142,7 @@ export const graduates = [
 
 export default function FeaturedGraduates() {
   return (
-    <section className="w-full bg-error px-4 pb-12 pt-4 text-slate-950 sm:px-8 sm:pb-16 sm:pt-6 lg:px-16 xl:px-20">
+    <section className="w-full bg-white px-4 pb-12 pt-4 text-slate-950 sm:px-8 sm:pb-16 sm:pt-6 lg:px-16 xl:px-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
         <div>
           <h2 className="text-2xl font-bold leading-tight text-slate-950 sm:text-3xl lg:text-4xl">
