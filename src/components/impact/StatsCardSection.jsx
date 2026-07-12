@@ -33,28 +33,12 @@ export default function StatsCardSection() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="
-                bg-white
-                rounded-3xl
-                border
-                border-green-100
-                shadow-md
-                hover:shadow-xl
-                hover:-translate-y-2
-                transition-all
-                duration-300
-                p-8
-                text-center
-              "
-            >
+            <div key={index} className="bg-white rounded-3xl border border-green-100 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 text-center">
               <h2 className="text-5xl font-extrabold text-green-600">
-                {stat.number}
+              {stat.number}
               </h2>
-
               <p className="mt-3 text-gray-600 font-medium text-lg">
-                {stat.label}
+              {stat.label}
               </p>
             </div>
           ))}
