@@ -26,8 +26,17 @@ export default function AptusMain() {
 
           <div className="flex flex-1 flex-col gap-5">
             <HeroCard />
-            <ConversationProgress />
-            <ExploreCard />
+            <div className="flex flex-col">
+  <div className="order-2 md:order-1">
+     <ConversationProgress />
+  </div>
+
+  <div className="order-1 md:order-2">
+    <ExploreCard />
+  </div>
+</div>
+           
+           
           </div>
 
           <div className="mt-8 flex items-center gap-3 pb-1 text-[11px] leading-tight">
