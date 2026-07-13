@@ -4,129 +4,128 @@ export default function CohortCard({ cohort }) {
   const Icon = cohort.icon;
 
   return (
-    <article
-      className="group overflow-hidden rounded-3xl border border-base-300 bg-base-200 p-4 
-      shadow-sm transition-all duration-500 hover:-translate-y-1 lg:p-8"
-    >
-      <div className="flex flex-col gap-10 xl:flex-row xl:items-center xl:justify-between">
-        <div className="flex-1">
-          <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-start sm:text-left">
+    <article className="group overflow-hidden rounded-3xl border border-base-300 bg-base-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-xl">
+      <div className="p-6 sm:p-7 lg:p-8">
+        {/* Header */}
+
+        <div className="flex flex-col gap-7 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-1 gap-6">
             {/* Icon */}
-            <div className="flex h-20w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-base-300 transition-all duration-500 group-hover:rotate-6 group-hover:scale-105 sm:h-24 sm:w-24 lg:h-28 lg:w-28">
-              <Icon className=" h-9 w-9 text-primary transition-transform duration-500 group-hover:scale-110 sm:h-11 sm:w-11 lg:h-14 lg:w-14" />
+
+            <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl border border-base-300 bg-base-200 shadow-sm transition-all duration-300 group-hover:border-primary/20 group-hover:bg-primary/10">
+              <Icon className="h-12 w-12 text-primary transition-transform duration-300 group-hover:scale-110" />
             </div>
 
             {/* Content */}
+
             <div className="min-w-0 flex-1">
               {/* Status */}
-              <div className="flex justify-center sm:justify-start">
+
+              <div className="mb-4">
                 <span
-                  className={`badge uppercase ${cohort.status === "completed" ? "badge-success" : "badge-primary"}`}
+                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold ${
+                    cohort.status === "completed"
+                      ? "border-success/20 bg-success/10 text-success"
+                      : "border-primary/20 bg-primary/10 text-primary"
+                  }`}
                 >
-                  {" "}
-                  {cohort.status}
+                  <span
+                    className={`h-2 w-2 rounded-full ${
+                      cohort.status === "completed"
+                        ? "bg-success"
+                        : "bg-primary"
+                    }`}
+                  />
+
+                  {cohort.status === "completed" ? "Completed" : "Ongoing"}
                 </span>
               </div>
 
               {/* Title */}
-              <h2
-                className=" mt-4 break-words text-2xl font-bold leading-tight sm:text-3xl
-                "
-              >
+
+              <h2 className="text-3xl font-bold tracking-tight transition-colors duration-300 group-hover:text-primary">
                 {cohort.title}
               </h2>
 
               {/* Date */}
-              <div
-                className=" mt-4 flex flex-wrap items-center justify-center gap-2 text-sm text-base-content/70 sm:justify-start sm:text-base
-                "
-              >
+
+              <div className="mt-4 flex flex-wrap items-center gap-2 text-base text-base-content/60">
                 <CalendarDays size={18} />
+
                 <span>
-                  {" "}
                   {cohort.startDate} – {cohort.endDate}
                 </span>
               </div>
 
               {/* Description */}
-              <p
-                className=" mt-5 max-w-3xl text-sm leading-7 text-base-content/70 sm:text-base
-                "
-              >
+
+              <p className="mt-6 max-w-4xl leading-8 text-base text-base-content/70">
                 {cohort.description}
               </p>
-
-              {/* Skills */}
-              <div
-                className=" mt-6 flex flex-wrap justify-center gap-2 sm:justify-start
-                "
-              >
-                {cohort.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="badge badge-outline badge-primary transition-all duration-300 hover:scale-105   "
-                  >
-                    {" "}
-                    {skill}{" "}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
-        </div>
-        <div className="w-full xl:w-72">
-          <div className="grid grid-cols-2 gap-4 rounded-2xl border border-base-300 bg-base-100/60 p-4 sm:grid-cols-4xl:grid-cols-1 xl:p-5">
-            {/* Graduates */}
-            <div className="flex flex-col items-center justify-center rounded-xl p-4 transition-all duration-300 hover:bg-base-200 hover:scale-105">
-              <Users className="mb-2 h-6 w-6 text-primary" />
 
-              <h3 className="text-2xl font-bold lg:text-3xl">
-                {cohort.graduates}
-              </h3>
+          {/* Stats */}
 
-              <p className="mt-1 text-center text-xs text-base-content/60 sm:text-sm">
+          <div className="grid grid-cols-3 gap-4 lg:w-auto">
+            <div className="rounded-2xl border border-base-300 bg-base-200 px-6 py-5 text-center transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+              <Users className="mx-auto mb-3 h-6 w-6 text-primary" />
+
+              <p className="text-3xl font-bold">{cohort.graduates}</p>
+
+              <p className="mt-1 text-xs uppercase tracking-wider text-base-content/60">
                 Graduates
               </p>
             </div>
 
-            {/* Projects */}
-            <div className="flex flex-col items-center justify-center rounded-xl p-4 transition-all duration-300 hover:bg-base-200 hover:scale-105">
-              <Folder className="mb-2 h-6 w-6 text-primary" />
+            <div className="rounded-2xl border border-base-300 bg-base-200 px-6 py-5 text-center transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+              <Folder className="mx-auto mb-3 h-6 w-6 text-primary" />
 
-              <h3 className="text-2xl font-bold lg:text-3xl">
-                {cohort.projects}
-              </h3>
+              <p className="text-3xl font-bold">{cohort.projects}</p>
 
-              <p className="mt-1 text-center text-xs text-base-content/60 sm:text-sm">
+              <p className="mt-1 text-xs uppercase tracking-wider text-base-content/60">
                 Projects
               </p>
             </div>
 
-            {/* Months */}
-            <div className="flex flex-col items-center justify-center rounded-xl p-4 transition-all duration-300 hover:bg-base-200 hover:scale-105">
-              <CalendarDays className="mb-2 h-6 w-6 text-primary" />
+            <div className="rounded-2xl border border-base-300 bg-base-200 px-6 py-5 text-center transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+              <CalendarDays className="mx-auto mb-3 h-6 w-6 text-primary" />
 
-              <h3 className="text-2xl font-bold lg:text-3xl">
-                {cohort.months}
-              </h3>
+              <p className="text-3xl font-bold">{cohort.months}</p>
 
-              <p className="mt-1 text-center text-xs text-base-content/60 sm:text-sm">
+              <p className="mt-1 text-xs uppercase tracking-wider text-base-content/60">
                 Months
               </p>
             </div>
-
-            {/* Button */}
-            <div className=" col-span-2 flex items-center justify-center sm:col-span-4 xl:col-span-1">
-              <button className=" btn btn-primary group/btn w-full rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-95">
-                <span>{cohort.button}</span>
-
-                <ArrowRight
-                  size={18}
-                  className="   transition-transform duration-300 group-hover/btn:translate-x-1 "
-                />
-              </button>
-            </div>
           </div>
+        </div>
+
+        <div className="my-7 border-t border-base-300" />
+
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          {/* Skills */}
+
+          <div className="flex flex-wrap gap-3">
+            {cohort.skills.map((skill) => (
+              <span
+                key={skill}
+                className="badge badge-outline badge-primary px-4 py-3 transition-all duration-300 hover:scale-105 hover:bg-primary hover:text-primary-content"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+
+          {/* Button */}
+
+          <button className="btn btn-primary group/btn h-13 rounded-2xl px-8 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:scale-95">
+            <span>{cohort.button}</span>
+
+            <ArrowRight
+              size={19}
+              className="transition-transform duration-300 group-hover/btn:translate-x-1"
+            />
+          </button>
         </div>
       </div>
     </article>
