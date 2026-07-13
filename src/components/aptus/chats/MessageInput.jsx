@@ -28,13 +28,7 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
           >
             <Paperclip className="h-5 w-5" strokeWidth={1.9} />
           </button>
-          <button
-            type="button"
-            aria-label="Add emoji"
-            className="rounded-full p-1 transition hover:bg-[#F4F8F6] hover:text-aptus-deep dark:hover:bg-white/10 dark:hover:text-white"
-          >
-            <Smile className="h-5 w-5" strokeWidth={1.9} />
-          </button>
+         
         </div>
       </div>
 
