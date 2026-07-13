@@ -12,7 +12,11 @@ export default function AptusMain() {
         <aside className="flex w-full shrink-0 flex-col border-aptus-line bg-[#FBFDFC]/82 px-6 py-7 transition-colors duration-300 dark:border-white/10 dark:bg-[#101C17]/[0.9] lg:w-[296px] lg:border-r">
           <div className="mb-8 flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center text-aptus-green">
-              <GraduationCap strokeWidth={2.25} className="h-10 w-10" aria-hidden="true" />
+              <GraduationCap
+                strokeWidth={2.25}
+                className="h-10 w-10"
+                aria-hidden="true"
+              />
             </div>
             <div>
               <h1 className="text-[25px] font-extrabold leading-none tracking-normal text-[#14212A] dark:text-[#F5FFF9]">
@@ -27,16 +31,14 @@ export default function AptusMain() {
           <div className="flex flex-1 flex-col gap-5">
             <HeroCard />
             <div className="flex flex-col">
-  <div className="order-2 md:order-1">
-     <ConversationProgress />
-  </div>
+              <div className="order-2 md:order-1">
+                <ConversationProgress />
+              </div>
 
-  <div className="order-1 md:order-2">
-    <ExploreCard />
-  </div>
-</div>
-           
-           
+              <div className="order-1 md:order-2">
+                <ExploreCard />
+              </div>
+            </div>
           </div>
 
           <div className="mt-8 flex items-center gap-3 pb-1 text-[11px] leading-tight">
@@ -44,8 +46,12 @@ export default function AptusMain() {
               <Heart className="h-4 w-4 fill-current" aria-hidden="true" />
             </div>
             <div>
-              <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">Powered by</p>
-              <p className="mt-0.5 font-bold text-aptus-green">{APTUS_BRAND.poweredBy}</p>
+              <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
+                Powered by
+              </p>
+              <p className="mt-0.5 font-bold text-aptus-green">
+                {APTUS_BRAND.poweredBy}
+              </p>
             </div>
           </div>
         </aside>
