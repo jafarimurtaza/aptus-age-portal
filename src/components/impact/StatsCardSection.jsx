@@ -1,49 +1,31 @@
-import React from "react";
+"use client";
 
 export default function StatsCardSection() {
   const stats = [
-    {
-      number: "100+",
-      label: "Graduates",
-    },
-    {
-      number: "20+",
-      label: "Projects Shipped",
-    },
-    {
-      number: "3",
-      label: "Cohorts",
-    },
-    {
-      number: "14",
-      label: "Skills Taught",
-    },
-    {
-      number: "6",
-      label: "Currently Available",
-    },
-    {
-      number: "4",
-      label: "Employed",
-    },
+    { number: "100+", label: "Graduates" },
+    { number: "20+", label: "Projects Shipped" },
+    { number: "5", label: "Cohorts" },
+    { number: "14", label: "Skills Taught" },
+    { number: "6", label: "Currently Available" },
+    { number: "4", label: "Employed" },
   ];
 
   return (
-  <section className="-mt-16 px-6 pb-32 relative z-10 bg-gradient-to-r from-white via-green-50 to-green-100">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-3xl border border-green-100 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 text-center">
-              <h2 className="text-5xl font-extrabold text-green-600">
-              {stat.number}
-              </h2>
-              <p className="mt-3 text-gray-600 font-medium text-lg">
+      <section className="bg-green-200 py-16 px-6">
+      <div className="max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {stats.map((stat) => (<div key={stat.label}
+          className="bg-white rounded-xl border border-green-100 px-4 py-4 text-center shadow-sm cursor-pointer hover:shadow-md transition">
+          <h2 className="text-3xl font-bold text-green-600">
+            {stat.number}
+            </h2>
+            <p className="mt-1 text-sm text-gray-600">
               {stat.label}
-              </p>
+            </p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+          </div>
+          </div>
+        </section>
+      );
+    }

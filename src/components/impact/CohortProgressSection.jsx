@@ -1,72 +1,67 @@
-import React from "react";
-
+"use client";
 export default function CohortProgressSection() {
   const cohorts = [
     {
       name: "Cohort 1",
       year: "2022",
       graduates: "4 graduates",
-      progress: "40%",
     },
     {
       name: "Cohort 2",
       year: "2023",
       graduates: "4 graduates",
-      progress: "50%",
     },
     {
       name: "Cohort 3",
       year: "2024",
       graduates: "6 graduates",
-      progress: "70%",
     },
     {
       name: "Cohort 4",
       year: "2025",
       graduates: "8 graduates",
-      progress: "85%",
     },
     {
       name: "Cohort 5",
       year: "2026",
       graduates: "10 graduates",
-      progress: "100%",
-    },
-    {
-      name: "Cohort 6",
-      year: "2026",
-      graduates: "12 graduates",
-      progress: "100%",
     },
   ];
 
   return (
-    <section className="bg-gradient-to-r from-white via-green-50 to-green-100 py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-          <span className="inline-flex px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold uppercase tracking-wide">
-            Cohort Progress
-            </span>
-            <p className="mt-4 text-lg text-gray-600">
-            Graduate count by cohort
+    <section className="bg-green-200 py-16 px-6">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900">
+            Cohort Growth
+            </h2>
+            <p className="mt-2 text-gray-600">
+            Growing community of Afghan developers
             </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {cohorts.map((cohort, index) => (
-            <div key={index} className="bg-white rounded-3xl border border-green-100 p-6 shadow-md hover:shadow-xl transition-all">
-              <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-bold text-gray-900">
-                {cohort.name} ({cohort.year})
+            <div className="relative flex flex-col md:flex-row justify-between gap-10">
+
+           {/* Connecting line */}
+            <div className="hidden md:block absolute top-7 left-10 right-10 h-[2px] bg-green-400">
+            </div>
+              {cohorts.map((cohort) => (
+              <div key={cohort.name} className="relative flex flex-col items-center group">
+
+              {/* Year circle */}
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-green-700 text-white flex items-center justify-center
+                font-bold text-sm shadow-md z-10 group-hover:scale-110 transition duration-30">
+                {cohort.year}
+                </div>
+                <h3 className="mt-4 text-sm font-bold text-gray-900">
+                {cohort.name}
                 </h3>
-                <span className="text-green-600 font-semibold">
+                <p className="mt-1 text-sm text-black">
                 {cohort.graduates}
-                </span></div>
-                <div className="h-3 bg-green-100 rounded-full overflow-hidden">
-                <div className="h-full bg-green-600 rounded-full"style={{ width: cohort.progress }}></div>
-              </div></div>
-          ))}
-          </div> 
-      </div>
-    </section>
-  );
-}
+                </p>
+                </div>
+              ))}
+                </div>
+                </div>
+              </section>
+            );
+        }
