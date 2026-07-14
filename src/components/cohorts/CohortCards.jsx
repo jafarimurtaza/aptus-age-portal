@@ -36,7 +36,7 @@ export default function CohortCards({
   }
 
   return (
-    <section className="mx-auto flex max-w-7xl flex-col gap-6 py-8">
+    <section className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
 
       {filteredCohorts.map((cohort) => (
         <CohortCard
