@@ -30,7 +30,7 @@ export default function AptusMain() {
 
           <div className="flex flex-1 flex-col gap-5">
             <HeroCard />
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2">
               <div className="order-2 md:order-1">
                 <ConversationProgress />
               </div>
