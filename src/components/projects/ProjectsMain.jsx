@@ -16,7 +16,7 @@ const projects = [
     tags: ["UI/UX", "React", "MongoDB"],
     images: [
     
-     
+      
       "/images/Modern Electronics Store Website Design Inspiration.jpeg",
       "/images/Web design glassmorphism about clothes dark and blue.jpeg",
     ],
@@ -87,7 +87,7 @@ export default function ProjectsMain() {
       <section className="relative mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div className="text-center lg:text-left">
-            <div className="badge badge-success mb-5 border-0 bg-green-900 px-3 py-3 text-xs font-medium text-white sm:text-sm">
+            <div className="badge mb-5 border-0 bg-slate-950 px-3 py-3 text-xs font-medium text-white shadow-sm sm:text-sm">
               Showcasing Graduate Excellence
             </div>
 
@@ -96,7 +96,7 @@ export default function ProjectsMain() {
               <span className="text-emerald-800">Afghan Geeks</span>
             </h1>
 
-            <button className="btn mt-6 border-0 bg-green-900 px-6 text-base font-extrabold text-white hover:bg-green-950 sm:text-lg">
+            <button className="btn mt-6 border-0 bg-slate-950 px-6 text-base font-extrabold text-white hover:bg-slate-800 sm:text-lg">
               Meet Our Graduates
             </button>
           </div>

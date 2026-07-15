@@ -86,7 +86,7 @@ const projects = [
     author: "AHMAD ZIA",
     category: "Productivity Dashboard",
     heroImage: "/images/EduFlex - E-Learning Hero Section Figma Template.jpeg",
-    storyImage: "/images/business.jpg",
+    storyImage: "/images/NGO.jpeg",
     description:
       "A workspace that helps remote teams manage projects, tasks, and meetings.",
     paragraphs: [
@@ -109,7 +109,7 @@ const projects = [
       },
       {
         title: "Clinic Queue System",
-        image: "/images/medcare.jpg",
+        image: "/images/mane.jpeg",
         slug: "clinic-queue-system"
       }
     ]
@@ -119,7 +119,7 @@ const projects = [
     title: "Clinic Queue System",
     author: "SAHAR KARIMI",
     category: "Healthcare Tool",
-    heroImage: "/images/medcare.jpg",
+    heroImage: "/images/name.jpeg",
     storyImage: "/images/Digital Healthcare Website Design by TechFynite.jpeg",
     description:
       "A clinic system that organizes patient queues, appointments, and daily service flow.",

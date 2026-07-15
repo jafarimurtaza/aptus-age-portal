@@ -20,7 +20,7 @@ export default function ProjectSearch({ clearAll, searchText, setSearchText }) {
       </label>
 
       <button
-        className="btn h-12 w-full rounded-full border-0 bg-green-900 px-6 text-base font-black text-white shadow-md shadow-emerald-900/15 hover:bg-green-950 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
+        className="btn h-12 w-full rounded-full border-0 bg-slate-950 px-6 text-base font-black text-white shadow-md shadow-slate-900/15 hover:bg-slate-800 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
         type="submit"
       >
         Search

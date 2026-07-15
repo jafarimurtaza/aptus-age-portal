@@ -75,8 +75,8 @@ export default function ProjectFilter({
             <button
               className={`shrink-0 rounded-full border px-5 py-3 text-sm font-bold transition ${
                 isActive
-                  ? "border-green-900 bg-green-900 text-white"
-                  : "border-white/80 bg-white/80 text-slate-700 shadow-sm hover:border-emerald-600 hover:bg-emerald-50 hover:text-green-900"
+                  ? "border-slate-950 bg-slate-950 text-white"
+                  : "border-white/80 bg-white/80 text-slate-700 shadow-sm hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
               }`}
               key={technology}
               onClick={() => setActiveTechnology(technology)}
@@ -88,7 +88,7 @@ export default function ProjectFilter({
         })}
 
         <button
-          className="shrink-0 rounded-full border border-white/80 bg-white/80 px-5 py-3 text-sm font-bold text-slate-700 shadow-sm hover:border-emerald-600 hover:bg-emerald-50 hover:text-green-900"
+          className="shrink-0 rounded-full border border-white/80 bg-white/80 px-5 py-3 text-sm font-bold text-slate-700 shadow-sm hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
           onClick={clearAll}
           type="button"
         >

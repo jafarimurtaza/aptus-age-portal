@@ -38,7 +38,7 @@ function ProjectGalleryCard({ project }) {
             <button
               className={`h-16 overflow-hidden rounded-xl border-2 transition ${
                 activeImage === imageIndex
-                  ? "border-green-900 ring-2 ring-emerald-100"
+                  ? "border-slate-950 ring-2 ring-slate-100"
                   : "border-slate-200 hover:border-emerald-400"
               }`}
               key={image}
