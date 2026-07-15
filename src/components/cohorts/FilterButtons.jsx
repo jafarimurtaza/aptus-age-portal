@@ -20,7 +20,7 @@ export default function FilterButtons({
             key={filter.id}
             onClick={() => setSelectedYear(filter.value)}
             className={`
-              h-12 rounded-xl border px-6 text-sm font-medium transition-all duration-300
+              h-12 hover:cursor-pointer border px-6 text-sm font-medium transition-all duration-300
               ${
                 selectedYear === filter.value
                   ? "border-primary bg-primary text-primary-content shadow-lg shadow-primary/20"
@@ -43,7 +43,7 @@ export default function FilterButtons({
               key={filter.id}
               onClick={() => setSelectedCategory(filter.value)}
               className={`
-                flex h-12 items-center gap-2 rounded-xl border px-5 text-sm font-medium transition-all duration-300
+                flex h-12 items-center gap-2 hover:cursor-pointer border px-5 text-sm font-medium transition-all duration-300
                 ${
                   selectedCategory === filter.value
                     ? "border-primary bg-primary text-primary-content shadow-lg shadow-primary/20"
