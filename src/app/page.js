@@ -1,5 +1,5 @@
 import React from "react";
-import AptusFeatures from "../components/home/AptusFeatures";
+import AptusFeaturesslider from "../components/home/AptusFeaturesslider";
 import AptusSection from "../components/home/AptusSection";
 import FeaturedGraduates from "../components/home/FeaturedGraduates";
 import HomeIntro from "../components/home/HomeIntro";
@@ -10,7 +10,7 @@ export default function page() {
       <HomeIntro />
       <FeaturedGraduates />
       <AptusSection />
-      <AptusFeatures />
+      <AptusFeaturesslider />
     </main>
   );
 }

@@ -1,30 +1,61 @@
+import Image from "next/image";
 import Link from "next/link";
-import { graduates, LocationIcon, skillStyles } from "./FeaturedGraduates";
+import { graduates, LocationIcon } from "./FeaturedGraduates";
+
+const galleryImages = [
+    "/Images/2.jpg",
+    "/Images/3.png",
+    "/Images/4.png",
+    "/Images/5.png",
+    "/Images/6.png",
+    "/Images/7.jpg",
+    "/Images/8.png",
+    "/Images/9.png",
+];
+
+const profileImages = [
+    "/Images/profile1.avif",
+    "/Images/profile2.jpeg",
+    "/Images/profile3.jpeg",
+];
 
 export default function GraduateCards() {
     return (
         <div className="mx-auto mt-8 grid max-w-[1700px] gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
-            {graduates.map((graduate) => (
+            {graduates.map((graduate, graduateIndex) => (
                 <Link
                     aria-label={`View ${graduate.name} profile`}
                     className="mx-auto block w-full max-w-[430px] overflow-hidden rounded-lg border border-slate-200 bg-white text-inherit shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200 md:max-w-none"
                     href="/graduates"
                     key={graduate.name}   >
                     <div className="grid h-24 grid-cols-3 gap-1 p-2 sm:h-28 xl:h-24">
-                        {graduate.photoPlaceholders.map((placeholder, index) => (
+                        {[0, 1, 2].map((imageOffset) => (
                             <div
-                                aria-label={`Photo placeholder ${index + 1}`}
-                                className={`rounded bg-gradient-to-br ${placeholder}`}
-                                key={placeholder}
-                            ></div>
+                                className="relative overflow-hidden rounded bg-slate-100"
+                                key={`${graduate.name}-${imageOffset}`}
+                            >
+                                <Image
+                                    alt={`${graduate.name} project preview ${imageOffset + 1}`}
+                                    className="object-cover"
+                                    fill
+                                    sizes="(max-width: 768px) 33vw, 150px"
+                                    src={galleryImages[(graduateIndex * 3 + imageOffset) % galleryImages.length]}
+                                />
+                            </div>
                         ))}
                     </div>
 
-                    <div className="-mt-7 flex justify-center sm:-mt-8 xl:-mt-7">
-                        <div
-                            className={`flex h-16 w-16 items-center justify-center rounded-full border-4 border-white text-lg font-black shadow-md sm:h-[72px] sm:w-[72px] sm:text-xl ${graduate.avatar}`}
-                        >
-                            {graduate.initials}
+                    <div className="-mt-8 flex justify-center sm:-mt-9 xl:-mt-8">
+                        <div className="h-[76px] w-[76px] rounded-full border-4 border-white bg-emerald-100 p-1 shadow-md shadow-emerald-100 sm:h-20 sm:w-20">
+                            <div className="relative h-full w-full overflow-hidden rounded-full bg-emerald-50">
+                                <Image
+                                    alt={`${graduate.name} profile photo`}
+                                    className="object-cover"
+                                    fill
+                                    sizes="80px"
+                                    src={profileImages[graduateIndex % profileImages.length]}
+                                />
+                            </div>
                         </div>
                     </div>
 
@@ -47,17 +78,6 @@ export default function GraduateCards() {
                         <p className="mt-3 line-clamp-2 min-h-11 text-left text-sm leading-[22px] text-slate-500 sm:min-h-12 sm:leading-6">
                             {graduate.bio}
                         </p>
-
-                        <div className="mt-3 flex flex-wrap justify-center gap-1.5 min-[420px]:flex-nowrap">
-                            {graduate.skills.map((skill, index) => (
-                                <span
-                                    className={`whitespace-nowrap rounded-full border px-2 py-1 text-[10px] font-bold shadow-sm sm:px-2.5 sm:text-[11px] ${skillStyles[index]}`}
-                                    key={skill}
-                                >
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
 
                         <span className="btn mt-4 min-h-0 min-w-44 rounded-full border-slate-200 bg-white px-6 py-2 text-sm font-bold text-slate-900 hover:border-emerald-200 hover:bg-emerald-50 sm:min-w-52 sm:text-base">
                             View Profile

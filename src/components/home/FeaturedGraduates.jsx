@@ -24,7 +24,6 @@ export const graduates = [
     location: "Kabul, Afghanistan",
     initials: "AA",
     avatar: "bg-sky-100 text-sky-800",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind"],
     verified: "Verified Graduate",
     bio: "Frontend Developer passionate about creating clean and user-friendly web applications. Skilled in React and Next.js with a focus on building modern digital experiences",
     photoPlaceholders: [
@@ -38,7 +37,6 @@ export const graduates = [
     location: "Herat, Afghanistan",
     initials: "SK",
     avatar: "bg-emerald-100 text-emerald-800",
-    skills: ["Figma", "UI Design", "Research", "Prototype"],
     verified: "Verified Graduate",
     bio: "Creative web developer who enjoys turning ideas into interactive websites. Experienced with responsive design, React components, and building smooth user interfaces.",
     photoPlaceholders: [
@@ -52,7 +50,6 @@ export const graduates = [
     location: "Mazar, Afghanistan",
     initials: "MR",
     avatar: "bg-amber-100 text-amber-800",
-    skills: ["JavaScript", "React", "Git", "API"],
     verified: "Verified Graduate",
     bio: "Motivated software developer focused on learning new technologies and solving real-world problems through code. Passionate about frontend development and teamwork.",
     photoPlaceholders: [
@@ -66,7 +63,6 @@ export const graduates = [
     location: "Bamyan, Afghanistan",
     initials: "LO",
     avatar: "bg-violet-100 text-violet-800",
-    skills: ["Node.js", "MongoDB", "Express", "Vercel"],
     verified: "Verified Graduate",
     bio: "Detail-oriented frontend engineer dedicated to creating beautiful and accessible web solutions. Loves working with modern tools like Next.js and Tailwind CSS.",
     photoPlaceholders: [
@@ -80,7 +76,6 @@ export const graduates = [
     location: "Kandahar, Afghanistan",
     initials: "NF",
     avatar: "bg-rose-100 text-rose-800",
-    skills: ["HTML", "CSS", "React", "Firebase"],
     verified: "Verified Graduate",
     bio: "Frontend learner focused on building responsive landing pages and simple dashboards. Enjoys turning clean layouts into practical web interfaces.",
     photoPlaceholders: [
@@ -94,7 +89,6 @@ export const graduates = [
     location: "Kunduz, Afghanistan",
     initials: "FN",
     avatar: "bg-cyan-100 text-cyan-800",
-    skills: ["Vue", "JavaScript", "CSS", "GitHub"],
     verified: "Verified Graduate",
     bio: "Creative developer with strong attention to visual details and user-friendly flows. Builds interactive pages and keeps improving through real projects.",
     photoPlaceholders: [
@@ -108,7 +102,6 @@ export const graduates = [
     location: "Ghazni, Afghanistan",
     initials: "HS",
     avatar: "bg-lime-100 text-lime-800",
-    skills: ["Python", "Django", "SQL", "REST"],
     verified: "Verified Graduate",
     bio: "Backend-minded graduate who enjoys organizing data and building reliable APIs. Interested in connecting clean interfaces with strong server logic.",
     photoPlaceholders: [
@@ -122,7 +115,6 @@ export const graduates = [
     location: "Nangarhar, Afghanistan",
     initials: "RM",
     avatar: "bg-indigo-100 text-indigo-800",
-    skills: ["Next.js", "Prisma", "Postgres", "Vercel"],
     verified: "Verified Graduate",
     bio: "Full-stack graduate building practical tools with modern frameworks. Comfortable creating polished pages and connecting them to useful data.",
     photoPlaceholders: [
@@ -131,13 +123,6 @@ export const graduates = [
       "from-slate-800 to-purple-500",
     ],
   },
-];
-
-export const skillStyles = [
-  "border-sky-100 bg-sky-50 text-sky-700",
-  "border-emerald-100 bg-emerald-50 text-emerald-700",
-  "border-amber-100 bg-amber-50 text-amber-700",
-  "border-rose-100 bg-rose-50 text-rose-700",
 ];
 
 export default function FeaturedGraduates() {
