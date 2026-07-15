@@ -1,10 +1,9 @@
 export default function ProjectResults({ project }) {
   return (
     <section className="mt-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-        <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
-          <p className="text-xs uppercase tracking-widest text-indigo-500 font-semibold">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-widest text-indigo-500">
             Project Result
           </p>
 
@@ -13,8 +12,8 @@ export default function ProjectResults({ project }) {
           </p>
         </div>
 
-        <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
-          <p className="text-xs uppercase tracking-widest text-indigo-500 font-semibold">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-widest text-indigo-500">
             Next Step
           </p>
 
@@ -22,7 +21,6 @@ export default function ProjectResults({ project }) {
             {project.nextStep}
           </p>
         </div>
-
       </div>
     </section>
   );

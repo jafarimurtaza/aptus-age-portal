@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectFilter from "./ProjectFilter";
@@ -13,6 +14,12 @@ const projects = [
       "A platform that connects NGOs with volunteers, donors.",
     views: "124",
     tags: ["UI/UX", "React", "MongoDB"],
+    images: [
+    
+     
+      "/images/Modern Electronics Store Website Design Inspiration.jpeg",
+      "/images/Web design glassmorphism about clothes dark and blue.jpeg",
+    ],
   },
   {
     slug: "remote-workspace",
@@ -22,6 +29,11 @@ const projects = [
       "A workspace that helps remote teams manage projects, assign tasks.",
     views: "98",
     tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    images: [
+      "/images/EduFlex - E-Learning Hero Section Figma Template.jpeg",
+      "/images/Modern Electronics Store Website Design Inspiration.jpeg",
+      "/images/Web design glassmorphism about clothes dark and blue.jpeg",
+    ],
   },
   {
     slug: "clinic-queue-system",
@@ -31,6 +43,11 @@ const projects = [
       "A clinic system that organizes patient queues, appointments, staff workload.",
     views: "156",
     tags: ["Python", "FastAPI", "PostgreSQL"],
+    images: [
+     "/images/Web design glassmorphism about clothes dark and blue.jpeg",
+      "/images/Digital Healthcare Website Design by TechFynite.jpeg",
+      "/images/store.jpeg",
+    ],
   },
 ];
 
@@ -62,10 +79,10 @@ export default function ProjectsMain() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-emerald-100 via-sky-50 to-amber-50 text-slate-950">
-      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-emerald-300/40 blur-3xl" />
-      <div className="absolute right-0 top-40 h-80 w-80 rounded-full bg-sky-300/35 blur-3xl" />
-      <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-amber-200/50 blur-3xl" />
+    <main className="relative min-h-screen overflow-hidden bg-white from-emerald-100 via-sky-50 to-amber-50 text-slate-950">
+      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-white blur-3xl" />
+      <div className="absolute right-0 top-40 h-80 w-80 rounded-full bg-white blur-3xl" />
+      <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-white blur-3xl" />
 
       <section className="relative mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
@@ -86,8 +103,14 @@ export default function ProjectsMain() {
 
           <div className="mx-auto w-full max-w-md">
             <div className="rounded-2xl border border-emerald-100 bg-white p-3 shadow-xl shadow-emerald-900/10 sm:p-4">
-              <div className="aspect-video overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
-                <div className="h-full bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-200" />
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+                <Image
+                  alt="Online learning project preview"
+                  className="object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 430px"
+                  src="/images/EduFlex - E-Learning Hero Section Figma Template.jpeg"
+                />
               </div>
             </div>
           </div>

@@ -20,9 +20,9 @@ const projects = [
     storyImage: "/images/Florian B_ 🌌 (@florian_belz) on X.jpeg",
 
     images: [
-      "/projects/ngo-1.jpg",
-      "/projects/ngo-2.jpg",
-      "/projects/ngo-3.jpg"
+      "/images/name.jpeg",
+      "/images/NGO.jpeg",
+      "/images/download (49).jpeg"
     ],
 
     description:
@@ -36,6 +36,12 @@ const projects = [
 
       "The project focuses on clean design, simple navigation, and a better user experience."
     ],
+
+    outcome:
+      "The final result is a clear directory experience where learners practiced project structure, card design, search flow, and user-friendly content.",
+
+    nextStep:
+      "The next improvement is to add real NGO profiles, saved items, and a simple dashboard where organizations can update their own information.",
 
 
     duration: "4 weeks",
@@ -53,21 +59,93 @@ const projects = [
     relatedProjects: [
       {
         title: "MedCare App Design",
-        image: "/images/Back Print Hoodie Design Ideas That Sell.jpeg"
+        image: "/images/Back Print Hoodie Design Ideas That Sell.jpeg",
+        slug: "clinic-queue-system"
       },
     
       {
         title: "Otto Phone Design",
-        image: "/images/EduFlex - E-Learning Hero Section Figma Template.jpeg"
+        image: "/images/EduFlex - E-Learning Hero Section Figma Template.jpeg",
+        slug: "remote-workspace"
       },
       {
         title: "OnlyMe Development",
-        image: "/images/download (49).jpeg"
+        image: "/images/download (49).jpeg",
+        slug: "ngo-directory-platform"
       },
           {
-        title: "MedCare App Design",
-        image: "/images/Back Print Hoodie Design Ideas That Sell.jpeg"
+        title: "Next App Design",
+        image: "/images/Back Print Hoodie Design Ideas That Sell.jpeg",
+        slug: "remote-workspace"
       },
+    ]
+  },
+  {
+    slug: "remote-workspace",
+    title: "Remote Workspace",
+    author: "AHMAD ZIA",
+    category: "Productivity Dashboard",
+    heroImage: "/images/EduFlex - E-Learning Hero Section Figma Template.jpeg",
+    storyImage: "/images/business.jpg",
+    description:
+      "A workspace that helps remote teams manage projects, tasks, and meetings.",
+    paragraphs: [
+      "Remote Workspace is designed for teams that need one clean place to follow daily work.",
+      "The project helps users review active projects, pending tasks, meetings, and team activity.",
+      "The main learning focus was dashboard layout, responsive cards, and clear project information."
+    ],
+    outcome:
+      "The final result is a simple dashboard experience for reviewing team work and project status.",
+    nextStep:
+      "The next improvement is to connect real task data and add role-based team views.",
+    duration: "5 weeks",
+    views: 98,
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    relatedProjects: [
+      {
+        title: "NGO Directory Platform",
+        image: "/images/NGO.jpeg",
+        slug: "ngo-directory-platform"
+      },
+      {
+        title: "Clinic Queue System",
+        image: "/images/medcare.jpg",
+        slug: "clinic-queue-system"
+      }
+    ]
+  },
+  {
+    slug: "clinic-queue-system",
+    title: "Clinic Queue System",
+    author: "SAHAR KARIMI",
+    category: "Healthcare Tool",
+    heroImage: "/images/medcare.jpg",
+    storyImage: "/images/Digital Healthcare Website Design by TechFynite.jpeg",
+    description:
+      "A clinic system that organizes patient queues, appointments, and daily service flow.",
+    paragraphs: [
+      "Clinic Queue System focuses on the front desk workflow inside busy clinics.",
+      "The project helps staff understand patient order, appointment pressure, and service status.",
+      "The main learning focus was workflow design, database planning, and clear operational UI."
+    ],
+    outcome:
+      "The final result is a queue management interface that supports faster clinic coordination.",
+    nextStep:
+      "The next improvement is to add doctor room assignment and SMS notifications.",
+    duration: "6 weeks",
+    views: 156,
+    tags: ["Python", "FastAPI", "PostgreSQL"],
+    relatedProjects: [
+      {
+        title: "NGO Directory Platform",
+        image: "/images/NGO.jpeg",
+        slug: "ngo-directory-platform"
+      },
+      {
+        title: "Remote Workspace",
+        image: "/images/EduFlex - E-Learning Hero Section Figma Template.jpeg",
+        slug: "remote-workspace"
+      }
     ]
   }
 ];
@@ -90,11 +168,11 @@ export default async function ProjectDetailsPage({ params }) {
 
 
   return (
-    <main className="min-h-screen bg-[#f8fafc] py-10">
+    <main className="min-h-screen bg-white py-10">
 
-      <div className="max-w-3xl mx-auto bg-white px-8 py-6 shadow-sm rounded-xl">
+      <div className="mx-auto max-w-3xl rounded-xl bg-white px-8 py-6 shadow-sm">
 
-        <h1 className="text-lg font-semibold text-slate-700 mb-8">
+        <h1 className="mb-8 text-lg font-semibold text-slate-700">
           Project Details
         </h1>
 

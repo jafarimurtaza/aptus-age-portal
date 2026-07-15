@@ -28,7 +28,7 @@ export default function ProjectFilter({
   }
 
   return (
-    <section className="rounded-2xl border border-white/70 bg-gradient-to-br from-white/85 via-emerald-50/90 to-sky-50/90 p-4 shadow-2xl shadow-emerald-900/10 backdrop-blur sm:p-6">
+    <section className="rounded-2xl border border-white/70 bg-white/85 from-white/85 via-emerald-50/90 to-sky-50/90 p-4 shadow-2xl shadow-emerald-900/10 backdrop-blur sm:p-6">
       <form
         className="flex flex-col gap-3 lg:flex-row lg:items-center"
         onSubmit={submitSearch}
@@ -42,7 +42,7 @@ export default function ProjectFilter({
         />
 
         <select
-          className="h-12 w-full rounded-2xl border border-white/80 bg-white/85 px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-44"
+          className="h-12 w-full rounded-2xl border border-white/80 bg-white px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-44"
           onChange={(event) => setActiveTechnology(event.target.value)}
           value={activeTechnology}
         >
@@ -53,14 +53,14 @@ export default function ProjectFilter({
           ))}
         </select>
 
-        <select className="h-12 w-full rounded-2xl border border-white/80 bg-white/85 px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-36">
+        <select className="h-12 w-full rounded-2xl border border-white/80 bg-white px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-36">
           <option>All Types</option>
           <option>Frontend</option>
           <option>Backend</option>
           <option>Full Stack</option>
         </select>
 
-        <select className="h-12 w-full rounded-2xl border border-white/80 bg-white/85 px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-40">
+        <select className="h-12 w-full rounded-2xl border border-white/80 bg-white px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-40">
           <option>Featured First</option>
           <option>Newest First</option>
           <option>Most Viewed</option>
