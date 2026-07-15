@@ -11,64 +11,63 @@ const projects = [
 
     title: "NGO Directory Platform",
 
+    author: "ZAINAB MOHAMMADI",
+
     category: "Community Platform",
 
+    heroImage: "/images/NGO.jpeg",
 
-    heroImage: "/projects/ngo-cover.jpg",
+    storyImage: "/images/Florian B_ 🌌 (@florian_belz) on X.jpeg",
 
-    storyImage: "/projects/ngo-story.jpg",
-
+    images: [
+      "/projects/ngo-1.jpg",
+      "/projects/ngo-2.jpg",
+      "/projects/ngo-3.jpg"
+    ],
 
     description:
-      "A digital platform designed to connect people with trusted organizations and make community services easier to discover.",
-
-
-    relatedProjects: [
-      {
-        title: "MedCare App Design",
-        image: "/projects/medcare.jpg",
-      },
-      {
-        title: "Otto Phone Design",
-        image: "/projects/otto.jpg",
-      },
-      {
-        title: "OnlyMe Development",
-        image: "/projects/onlyme.jpg",
-      },
-      {
-        title: "ILO App Testing",
-        image: "/projects/ilo.jpg",
-      },
-      {
-        title: "UI Store",
-        image: "/projects/store.jpg",
-      },
-      {
-        title: "Business Platform",
-        image: "/projects/business.jpg",
-      }
-    ],
+      "A platform that connects NGOs with volunteers, donors, and communities.",
 
 
     paragraphs: [
-      "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "NGO Directory Platform is a digital platform designed to connect people with trusted organizations.",
 
-      "The platform helps users find organizations, understand available services, and quickly connect with the right support providers.",
+      "The platform helps users discover NGOs, understand available services, and build stronger community connections.",
 
-      "The project focuses on simple navigation, clear information structure, and an accessible user experience."
+      "The project focuses on clean design, simple navigation, and a better user experience."
     ],
 
 
     duration: "4 weeks",
 
-    views: "124",
+    views: 124,
 
 
     tags: [
+      "UI/UX",
       "React",
-      "MongoDB",
-      "UI/UX"
+      "MongoDB"
+    ],
+
+
+    relatedProjects: [
+      {
+        title: "MedCare App Design",
+        image: "/images/Back Print Hoodie Design Ideas That Sell.jpeg"
+      },
+    
+      {
+        title: "Otto Phone Design",
+        image: "/images/EduFlex - E-Learning Hero Section Figma Template.jpeg"
+      },
+      {
+        title: "OnlyMe Development",
+        image: "/images/download (49).jpeg"
+      },
+          {
+        title: "MedCare App Design",
+        image: "/images/Back Print Hoodie Design Ideas That Sell.jpeg"
+      },
     ]
   }
 ];
@@ -76,7 +75,6 @@ const projects = [
 
 
 export default async function ProjectDetailsPage({ params }) {
-
 
   const { slug } = await params;
 
@@ -91,41 +89,14 @@ export default async function ProjectDetailsPage({ params }) {
   }
 
 
-
   return (
+    <main className="min-h-screen bg-[#f8fafc] py-10">
 
-    <main
-      className="
-      min-h-screen
-      bg-[#f8fafc]
-      py-10
-      "
-    >
+      <div className="max-w-3xl mx-auto bg-white px-8 py-6 shadow-sm rounded-xl">
 
-
-      <div
-        className="
-        max-w-3xl
-        mx-auto
-        bg-white
-        px-8
-        py-6
-        shadow-sm
-        "
-      >
-
-
-        <h1
-          className="
-          text-lg
-          font-semibold
-          text-slate-700
-          mb-8
-          "
-        >
-          Projects details
+        <h1 className="text-lg font-semibold text-slate-700 mb-8">
+          Project Details
         </h1>
-
 
 
         <ProjectHeader project={project} />
@@ -142,8 +113,6 @@ export default async function ProjectDetailsPage({ params }) {
 
       </div>
 
-
     </main>
-
   );
 }
