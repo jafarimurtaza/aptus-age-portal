@@ -8,7 +8,7 @@ export default function ProjectInfo({ project }) {
           Portfolio
         </p>
 
-        <h2 className="mt-2 text-3xl font-bold text-[#29285d]">
+        <h2 className="mt-2 text-3xl font-bold text-slate-900">
           Latest Projects
         </h2>
       </div>

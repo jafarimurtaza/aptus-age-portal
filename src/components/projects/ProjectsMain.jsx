@@ -16,7 +16,6 @@ const projects = [
     tags: ["UI/UX", "React", "MongoDB"],
     images: [
     
-      
       "/images/Modern Electronics Store Website Design Inspiration.jpeg",
       "/images/Web design glassmorphism about clothes dark and blue.jpeg",
     ],
