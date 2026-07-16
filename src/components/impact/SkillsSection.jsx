@@ -60,13 +60,12 @@
     <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
       Skills Breakdown
       </h2>
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
-        {skills.map((skill)=>{const Icon = skill.icon;
+      <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6 ">
+          {skills.map((skill)=>{const Icon = skill.icon;
           return (
             <div key={skill.name}
-              className="bg-white rounded-2xl p-5 flex flex-col items-center shadow-md hover:-translate-y-1 cursor-pointer transition
-              duration-300">
-
+              className="bg-white rounded-2xl py-5 px-5 flex flex-col items-center shadow-md border border-green-500 hover:border-green-700 hover:-translate-y-1 cursor-pointer transition duration-300"
+>
 
               {/* Circle */}
               <div className="relative w-24 h-24">
