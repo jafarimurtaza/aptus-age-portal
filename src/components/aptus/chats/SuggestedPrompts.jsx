@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import PromptChip from "@/components/aptus/chats/PromptChip";
 import { suggestedPrompts } from "@/components/aptus/data/suggestedPrompts";
-
 export default function SuggestedPrompts({ onSelectPrompt }) {
   return (
     <motion.div

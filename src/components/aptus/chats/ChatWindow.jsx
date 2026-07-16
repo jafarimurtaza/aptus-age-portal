@@ -34,7 +34,11 @@ export default function ChatWindow() {
 
       <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden px-4 py-5 sm:px-8 sm:py-7 transition-colors duration-300">
         <MessageList messages={chat.messages} />
-        <EmptyState />
+        <div className="hidden md:flex">
+           <EmptyState />
+
+        </div>
+       
         <SuggestedPrompts onSelectPrompt={chat.usePrompt} />
       </div>
 
