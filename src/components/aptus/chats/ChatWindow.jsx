@@ -24,7 +24,7 @@ export default function ChatWindow() {
           </h2>
         </div>
 
-        <div className="flex items-center">
+        <div className="hidden sm:flex items-center">
           <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-[#EFFBF5] px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-[#258D58] dark:bg-[#173326] dark:text-[#75E5A2]">
             <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-aptus-green" aria-hidden="true" />
             Online
