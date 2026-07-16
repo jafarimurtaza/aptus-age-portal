@@ -26,7 +26,7 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
             aria-label="Attach file"
             className="rounded-full p-1 transition hover:bg-[#F4F8F6] hover:text-aptus-deep dark:hover:bg-white/10 dark:hover:text-white"
           >
-            <Paperclip className="h-5 w-5" strokeWidth={1.9} />
+            <Paperclip className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.9} />
           </button>
          
         </div>
