@@ -61,8 +61,7 @@ export default function GraduateSection() {
   const animatedRowTwo = [...rowTwo, ...rowTwo];
 
   return (
-      <section className="bg-green-200 py-16 px-25">
-      {/* Heading */}
+      <section className="bg-green-200 py-16 px-35">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           Graduate Stories
@@ -71,21 +70,26 @@ export default function GraduateSection() {
           In their own words
         </p>
       </div>
-
-
-      {/* First Row */}
-      <div className="overflow-hidden mb-6 px-10">
-      <div className="flex gap-6 animate-scroll-right">
+        {/*first row*/}
+        <div className="relative overflow-hidden mb-6">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent pointer-events-none"/>
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent pointer-events-none"/>
+        <div className="flex gap-6 animate-scroll-right px-10">
           {animatedRowOne.map((graduate, index) => (
             <Card key={index} graduate={graduate} />
           ))}
         </div>
       </div>
-
-
-      {/* Second Row */}
-      <div className="overflow-hidden mb-6 px-10">
-      <div className="flex gap-10 animate-scroll-left">
+      
+       {/* Second Row */}
+        <div className="relative overflow-hidden mb-6">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+        <div className="flex gap-10 animate-scroll-left px-10">
           {animatedRowTwo.map((graduate, index) => (
             <Card key={index} graduate={graduate} />
           ))}

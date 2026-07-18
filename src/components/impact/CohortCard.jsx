@@ -4,14 +4,10 @@ import {CircularProgressbar,buildStyles,} from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 export default function CohortCard({
-  name,
-  year,
-  graduates,
-  progress,
-}) {
+  name, year, graduates, progress,}) {
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
-    <div className="flex items-center gap-5">
+      <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+        <div className="flex items-center gap-5">
 
         {/* Progress Circle */}
         <div className="w-20 h-20">

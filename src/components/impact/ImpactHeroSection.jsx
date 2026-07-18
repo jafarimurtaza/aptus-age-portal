@@ -1,10 +1,10 @@
 "use client";
 export default function ImpactHeroSection() {
   return (
-    <section className="bg-green-200 py-16 px-6">
+    <section className="bg-green-200">
       <div className="max-w-5xl mx-auto text-center">
        {/* Heading */}
-        <span className="text-black font-bold text-4xl py-5 px-5">
+        <span className="text-black font-bold text-4xl mt-20 px-40 ">
         Impact
         </span>
         <h1 className="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">

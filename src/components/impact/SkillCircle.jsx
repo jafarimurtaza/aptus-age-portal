@@ -12,7 +12,6 @@ export default function SkillCircle({ name, percent }) {
             clipPath: `inset(${100 - percent}% 0 0 0)`,
           }}>
         </div>
-
         {/* Percentage */}
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-lg font-bold text-gray-800">
@@ -20,7 +19,6 @@ export default function SkillCircle({ name, percent }) {
           </span>
         </div>
         </div>
-
         <p className="mt-3 font-semibold text-gray-800 text-sm">
         {name}
         </p>

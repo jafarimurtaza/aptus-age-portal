@@ -31,13 +31,13 @@
 
     .animate-scroll-left {
       width: max-content;
-      animation: scrollLeft 10s linear infinite;
+      animation: scrollLeft 17s linear infinite;
     }
 
 
     .animate-scroll-right {
       width: max-content;
-      animation: scrollRight 10s linear infinite;
+      animation: scrollRight 17s linear infinite;
     }
 
 

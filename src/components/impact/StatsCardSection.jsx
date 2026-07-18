@@ -11,7 +11,7 @@ export default function StatsCardSection() {
   ];
 
   return (
-      <section className="bg-green-200 py-16 px-6">
+      <section className="bg-green-200 py-16 px-6 mb-0">
       <div className="max-w-5xl mx-auto">
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {stats.map((stat) => (<div key={stat.label}

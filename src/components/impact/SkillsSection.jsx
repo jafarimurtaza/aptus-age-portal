@@ -53,8 +53,6 @@
       color: "text-blue-700",
     },
   ];
-
-
   return (
     <section className="bg-green-200 py-16 px-6">
     <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
@@ -64,8 +62,7 @@
           {skills.map((skill)=>{const Icon = skill.icon;
           return (
             <div key={skill.name}
-              className="bg-white rounded-2xl py-5 px-5 flex flex-col items-center shadow-md border border-green-500 hover:border-green-700 hover:-translate-y-1 cursor-pointer transition duration-300"
->
+              className="bg-white rounded-2xl py-5 px-5 flex flex-col items-center shadow-md border border-green-500 hover:border-green-700 hover:-translate-y-1 cursor-pointer transition duration-300">
 
               {/* Circle */}
               <div className="relative w-24 h-24">
