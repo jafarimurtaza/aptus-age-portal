@@ -19,7 +19,7 @@ export default function Header() {
             Afghan Geeks
             </h1>
           </div>
-         {/* Navigation */}
+         {/* pages*/}
           <div className="hidden md:flex items-center gap-8 font-medium">
             <Link href="/" className={navLink("/")}>
             Graduates
