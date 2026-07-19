@@ -16,11 +16,16 @@ export const projects = [
     description:
       "A platform that connects NGOs with volunteers, donors, and communities.",
 
-    paragraphs: [
-      "NGO Directory Platform is a digital platform designed to connect people with trusted organizations.",
-      "The platform helps users discover NGOs, understand available services, and build stronger community connections.",
-      "The project focuses on clean design, simple navigation, and a better user experience.",
-    ],
+paragraphs: [
+  "Remote Workspace is a productivity platform developed to help distributed teams collaborate efficiently regardless of their physical location. As remote work becomes increasingly common, organizations require a centralized environment where employees can manage projects, monitor deadlines, communicate with teammates, and access shared resources without switching between multiple applications.",
+
+  "The dashboard was carefully designed to present important information in a clear and organized manner. Users can review active projects, upcoming meetings, completed tasks, and recent team activities through interactive cards and visual indicators. The responsive layout ensures that the workspace remains easy to navigate across desktop computers, tablets, and smartphones.",
+
+  "A major objective of the project was to simplify project management by providing intuitive navigation and reducing unnecessary complexity. Team members can organize tasks, assign responsibilities, track project milestones, and receive notifications about important updates. This improves productivity while helping managers maintain visibility over ongoing work.",
+
+  "Future versions of the platform will include real-time messaging, video conferencing, calendar synchronization, cloud file storage, advanced reporting dashboards, and AI-powered productivity recommendations. These additions will further enhance collaboration and support organizations with teams working across different countries and time zones."
+],
+    
 
     outcome:
       "The final result is a clear directory experience where learners practiced project structure, card design, search flow, and user-friendly content.",

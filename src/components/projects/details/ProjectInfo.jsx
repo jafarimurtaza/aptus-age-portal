@@ -2,44 +2,109 @@ import Link from "next/link";
 
 export default function ProjectInfo({ project }) {
   return (
-    <section className="mt-16 border-t border-slate-100 pt-12">
+    <section className="mt-2 border-t border-slate-200 pt-8" dir="ltr">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900">
+        <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+          Portfolio
+        </p>
+
+        <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">
           Latest Projects
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {project?.relatedProjects?.map((item, index) => (
-          <div
-            className="group flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+          <article
             key={`${item.slug}-${index}`}
+            className="
+              group overflow-hidden
+              rounded-3xl
+              border border-slate-200
+              bg-white
+              shadow-sm
+              transition-all duration-500
+              hover:-translate-y-2
+              hover:shadow-xl
+            "
           >
-            {/* تصویر کارت */}
-            <div className="h-48 w-full overflow-hidden bg-slate-50">
+            {/* Project Image */}
+            <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
               <img
-                alt={item.title}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-103"
                 src={item.image}
+                alt={item.title}
+                className="
+                  h-full w-full object-cover
+                  transition-transform duration-700
+                  group-hover:scale-105
+                "
               />
+
+              <span
+                className="
+                  absolute left-5 top-5
+                  flex h-10 w-10
+                  items-center justify-center
+                  rounded-full
+                  bg-white/90
+                  text-sm font-bold
+                  text-slate-900
+                  shadow
+                "
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
             </div>
 
-            {/* محتوای کارت */}
-            <div className="flex flex-1 flex-col justify-between p-5">
-              <h3 className="text-base font-bold text-slate-800 transition-colors group-hover:text-indigo-600">
+            {/* Content */}
+            <div className="p-6">
+              <h3
+                className="
+                  text-xl
+                  font-bold
+                  leading-tight
+                  text-slate-900
+                  transition-colors
+                  duration-300
+                  group-hover:text-indigo-600
+                "
+              >
                 {item.title}
               </h3>
-              
-              <div className="mt-4 flex justify-end border-t border-slate-50 pt-3">
+
+              <p className="mt-2 text-sm text-slate-500">
+                Project case study
+              </p>
+
+              <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  View Project
+                </span>
+
                 <Link
-                  className="text-sm font-semibold text-indigo-600 transition-colors hover:text-indigo-800"
                   href={`/projects/${item.slug}`}
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    rounded-full
+                    bg-slate-900
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    text-white
+                    transition-all
+                    duration-300
+                    hover:bg-indigo-600
+                  "
                 >
                   Read More
+                  <span>→</span>
                 </Link>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
