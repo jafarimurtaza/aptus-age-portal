@@ -9,9 +9,8 @@ export default function ProjectInfo({ project }) {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
         {project?.relatedProjects?.map((item, index) => (
-          // ترکیب اسلاگ و ایندکس (item.slug + index) تضمین می‌کند که کلیدها هرگز تکراری نخواهند شد:
           <div
             className="group flex flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
             key={`${item.slug}-${index}`}
