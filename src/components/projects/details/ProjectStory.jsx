@@ -5,7 +5,7 @@ export default function ProjectStory({ project }) {
   const storyImage = project.storyImage || project.galleryImages?.[0];
 
   return (
-    <section className="mt-8 border-t border-slate-200 pt-12" dir="ltr">
+    <section className="mt-8 border-t border-slate-200 pt-6" dir="ltr">
       <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
         {project.title}
       </h2>

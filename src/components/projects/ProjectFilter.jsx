@@ -33,89 +33,43 @@ export default function ProjectFilter({
         className="flex flex-col gap-3 lg:flex-row lg:items-center"
         onSubmit={submitSearch}
       >
-        {/* Search */}
         <input
-          className="
-            h-12 w-full rounded-2xl border border-slate-200
-            bg-white px-4 text-sm font-semibold text-slate-900
-            shadow-sm outline-none
-            placeholder:text-slate-400
-            focus:border-emerald-600
-            lg:h-14 lg:flex-1
-          "
+          className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-900 shadow-sm outline-none placeholder:text-slate-400 focus:border-emerald-600 lg:h-14 lg:flex-1"
           onChange={(event) => setSearchText(event.target.value)}
           placeholder="Search by title..."
           type="search"
           value={searchText}
         />
 
-        {/* Technology */}
         <select
-          className="
-            h-12 w-full rounded-2xl border border-slate-200
-            bg-white px-4 text-sm font-bold text-slate-900
-            shadow-sm outline-none
-            focus:border-emerald-600
-            lg:h-14 lg:w-44
-          "
+          className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-44"
           onChange={(event) => setActiveTechnology(event.target.value)}
           value={activeTechnology}
         >
           {technologies.map((technology) => (
             <option key={technology} value={technology}>
-              {technology === "All"
-                ? "All Categories"
-                : technology}
+              {technology === "All" ? "All Categories" : technology}
             </option>
           ))}
         </select>
 
-        {/* Type */}
-        <select
-          className="
-            h-12 w-full rounded-2xl border border-slate-200
-            bg-white px-4 text-sm font-bold text-slate-900
-            shadow-sm outline-none
-            focus:border-emerald-600
-            lg:h-14 lg:w-36
-          "
-        >
+        <select className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-36">
           <option>All Types</option>
           <option>Frontend</option>
           <option>Backend</option>
           <option>Full Stack</option>
         </select>
 
-        {/* Sort */}
-        <select
-          className="
-            h-12 w-full rounded-2xl border border-slate-200
-            bg-white px-4 text-sm font-bold text-slate-900
-            shadow-sm outline-none
-            focus:border-emerald-600
-            lg:h-14 lg:w-40
-          "
-        >
+        <select className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-900 shadow-sm outline-none focus:border-emerald-600 lg:h-14 lg:w-40">
           <option>Featured First</option>
           <option>Newest First</option>
           <option>Most Viewed</option>
         </select>
 
-        {/* Clear Button */}
         <button
           type="button"
           onClick={clearAll}
-          className="
-            h-12 rounded-2xl
-            bg-slate-900
-            px-6
-            text-sm
-            font-bold
-            text-white
-            transition
-            hover:bg-red-600
-            lg:h-14
-          "
+          className="h-12 rounded-2xl bg-slate-900 px-6 text-sm font-bold text-white transition hover:bg-red-600 lg:h-14"
         >
           Clear
         </button>
