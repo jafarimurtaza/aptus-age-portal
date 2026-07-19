@@ -41,7 +41,7 @@ export default function AptusMain() {
             </div>
           </div>
 
-          <div className="mt-8 flex items-center gap-3 pb-1 text-[11px] leading-tight">
+          <div className="mt-8 hidden md:flex items-center gap-3 pb-1 text-[11px] leading-tight">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-aptus-mint text-aptus-green dark:bg-[#173326]">
               <Heart className="h-4 w-4 fill-current" aria-hidden="true" />
             </div>
