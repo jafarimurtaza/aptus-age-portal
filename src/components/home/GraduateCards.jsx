@@ -22,27 +22,22 @@ const profileImages = [
 export default function GraduateCards() {
     return (
         <div className="mx-auto mt-8 grid max-w-[1700px] gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
-            {graduates.map((graduate, graduateIndex) => (
+            {graduates.slice(0, 4).map((graduate, graduateIndex) => (
                 <Link
                     aria-label={`View ${graduate.name} profile`}
                     className="mx-auto block w-full max-w-[430px] overflow-hidden rounded-lg border border-slate-200 bg-white text-inherit shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200 md:max-w-none"
                     href="/graduates"
                     key={graduate.name}   >
-                    <div className="grid h-24 grid-cols-3 gap-1 p-2 sm:h-28 xl:h-24">
-                        {[0, 1, 2].map((imageOffset) => (
-                            <div
-                                className="relative overflow-hidden rounded bg-slate-100"
-                                key={`${graduate.name}-${imageOffset}`}
-                            >
-                                <Image
-                                    alt={`${graduate.name} project preview ${imageOffset + 1}`}
-                                    className="object-cover"
-                                    fill
-                                    sizes="(max-width: 768px) 33vw, 150px"
-                                    src={galleryImages[(graduateIndex * 3 + imageOffset) % galleryImages.length]}
-                                />
-                            </div>
-                        ))}
+                    <div className="p-2">
+                        <div className="relative h-32 overflow-hidden rounded bg-slate-100 sm:h-36 xl:h-32">
+                            <Image
+                                alt={`${graduate.name} project preview`}
+                                className="object-cover"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 430px"
+                                src={galleryImages[graduateIndex % galleryImages.length]}
+                            />
+                        </div>
                     </div>
 
                     <div className="-mt-8 flex justify-center sm:-mt-9 xl:-mt-8">
