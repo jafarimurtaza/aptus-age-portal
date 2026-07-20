@@ -57,19 +57,18 @@ export default function ChatWindow() {
           <LockKeyhole className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#6F7B83] dark:text-[#98A7A0]" aria-hidden="true" />
           {CHAT_NOTICE.secure}
         </p>
-        <p className="text-center sm:text-right">{CHAT_NOTICE.disclaimer}</p>
+         <div className="flex lg:hidden items-center gap-1">
+    <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
+      Powered by
+    </p>
+    <p className="font-bold text-aptus-green">
+      {APTUS_BRAND.poweredBy}
+    </p>
+  </div>
         {/* powered */}
-        {/* <div className="mt-6 flex items-center gap-3 border-t border-gray-200 pt-5 text-[11px] leading-tight md:hidden dark:border-white/10">
-  
-    <div>
-      <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
-        Powered by
-      </p>
-      <p className="mt-0.5 font-bold text-aptus-green">
-        {APTUS_BRAND.poweredBy}
-      </p>
-    </div>
-  </div> */}
+        
+           
+
       </footer>
     </section>
   );
