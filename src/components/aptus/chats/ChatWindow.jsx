@@ -7,6 +7,7 @@ import SuggestedPrompts from "@/components/aptus/chats/SuggestedPrompts";
 import MessageInput from "@/components/aptus/chats/MessageInput";
 import { useChat } from "@/components/aptus/hooks/useChat";
 import { CHAT_NOTICE } from "@/components/aptus/utils/constants";
+import { APTUS_BRAND } from "@/components/aptus/utils/constants";
 
 export default function ChatWindow() {
   const chat = useChat();
@@ -57,6 +58,18 @@ export default function ChatWindow() {
           {CHAT_NOTICE.secure}
         </p>
         <p className="text-center sm:text-right">{CHAT_NOTICE.disclaimer}</p>
+        {/* powered */}
+        {/* <div className="mt-6 flex items-center gap-3 border-t border-gray-200 pt-5 text-[11px] leading-tight md:hidden dark:border-white/10">
+  
+    <div>
+      <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
+        Powered by
+      </p>
+      <p className="mt-0.5 font-bold text-aptus-green">
+        {APTUS_BRAND.poweredBy}
+      </p>
+    </div>
+  </div> */}
       </footer>
     </section>
   );
