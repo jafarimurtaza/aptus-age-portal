@@ -7,9 +7,9 @@ import { APTUS_BRAND } from "@/components/aptus/utils/constants";
 
 export default function AptusMain() {
   return (
-    <main className="min-h-screen w-full px-4 py-4 text-aptus-ink transition-colors duration-300 dark:text-[#EEF8F2] sm:px-5">
-      <section className="mx-auto flex min-h-[calc(100vh-32px)] max-w-310 overflow-hidden rounded-[28px] border border-white/80 bg-white/[0.82] shadow-aptus backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-[#0D1713]/[0.86] dark:shadow-[0_24px_70px_rgba(0,0,0,0.42)] max-lg:flex-col">
-        <aside className="flex w-full shrink-0 flex-col border-aptus-line bg-[#FBFDFC]/82 px-6 py-7 transition-colors duration-300 dark:border-white/10 dark:bg-[#101C17]/[0.9] lg:w-[296px] lg:border-r">
+    <main className="min-h-screen w-full text-aptus-ink transition-colors duration-300 dark:text-[#EEF8F2]">
+      <section className="flex min-h-[calc(100vh-32px)] w-full overflow-hidden border border-white/80 bg-white/[0.82] shadow-aptus backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-[#0D1713]/[0.86] dark:shadow-[0_24px_70px_rgba(0,0,0,0.42)] max-lg:flex-col">
+        <aside className="flex w-full shrink-0 flex-col border-aptus-line bg-[#FBFDFC]/82 md:px-6 px-3 py-7 transition-colors duration-300 dark:border-white/10 dark:bg-[#101C17]/[0.9] lg:w-[296px] lg:border-r">
           <div className="mb-8 flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center text-aptus-green">
               <GraduationCap

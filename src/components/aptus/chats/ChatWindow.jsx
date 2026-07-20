@@ -33,7 +33,7 @@ export default function ChatWindow() {
         </div>
       </header>
 
-      <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden px-4 py-5 sm:px-8 sm:py-7 transition-colors duration-300">
+      <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden md:px-4 px-3 py-5 sm:px-8 sm:py-7 transition-colors duration-300">
         <MessageList messages={chat.messages} />
         <div className="hidden md:flex">
            <EmptyState />
@@ -43,7 +43,7 @@ export default function ChatWindow() {
         <SuggestedPrompts onSelectPrompt={chat.usePrompt} />
       </div>
 
-      <div className="shrink-0 border-t border-aptus-line px-4 py-3.5 sm:px-7 sm:py-5 transition-colors duration-300 dark:border-white/10">
+      <div className="shrink-0 border-t border-aptus-line md:px-4 px-3 py-3.5 sm:px-7 sm:py-5 transition-colors duration-300 dark:border-white/10">
         <MessageInput
           value={chat.draft}
           canSend={chat.canSend}

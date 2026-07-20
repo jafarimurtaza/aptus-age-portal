@@ -3,7 +3,7 @@ import { cn } from "@/components/aptus/utils/helpers";
 
 export default function ConversationProgress() {
   return (
-    <article className="rounded-2xl border border-aptus-line bg-white px-5 py-5 shadow-aptus-card transition-colors duration-300 dark:border-white/10 dark:bg-[#14201B]">
+    <article className="rounded-2xl border border-aptus-line bg-white md:px-5 px-3 py-5 shadow-aptus-card transition-colors duration-300 dark:border-white/10 dark:bg-[#14201B]">
       <h2 className="text-[13px] font-extrabold text-[#1D2730] dark:text-[#F1FAF5]">Conversation Progress</h2>
 
       <ol className="mt-7 space-y-0">
