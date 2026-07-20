@@ -3,7 +3,7 @@
 import {
   yearFilters,
   categoryFilters,
-} from "../../data/filter";
+} from "./data/filter";
 
 export default function FilterButtons({
   selectedYear,
@@ -20,11 +20,11 @@ export default function FilterButtons({
             key={filter.id}
             onClick={() => setSelectedYear(filter.value)}
             className={`
-              h-12 hover:cursor-pointer border px-6 text-sm font-medium transition-all duration-300
+              h-12 rounded-none px-6 text-sm font-medium transition-all duration-300
               ${
                 selectedYear === filter.value
-                  ? "border-primary bg-primary text-primary-content shadow-lg shadow-primary/20"
-                  : "border-base-300 bg-base-200 text-base-content hover:border-primary/40 hover:bg-base-300"
+                  ? "border-NAVY bg-NAVY text-cream shadow-[0_16px_40px_rgba(27,58,107,0.12)]"
+                  : "border-sand bg-cream text-dark hover:border-gold/80 hover:bg-sand"
               }
             `}
           >
@@ -43,11 +43,11 @@ export default function FilterButtons({
               key={filter.id}
               onClick={() => setSelectedCategory(filter.value)}
               className={`
-                flex h-12 items-center gap-2 hover:cursor-pointer border px-5 text-sm font-medium transition-all duration-300
+                flex h-12 items-center gap-2 rounded-none px-5 text-sm font-medium transition-all duration-300
                 ${
                   selectedCategory === filter.value
-                    ? "border-primary bg-primary text-primary-content shadow-lg shadow-primary/20"
-                    : "border-base-300 bg-base-200 text-base-content hover:border-primary/40 hover:bg-base-300"
+                    ? "border-NAVY bg-NAVY text-cream shadow-[0_16px_40px_rgba(27,58,107,0.12)]"
+                    : "border-sand bg-cream text-dark hover:border-gold/80 hover:bg-sand"
                 }
               `}
             >

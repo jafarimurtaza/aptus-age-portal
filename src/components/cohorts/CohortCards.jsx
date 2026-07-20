@@ -1,4 +1,4 @@
-import { cohorts } from "../../data/cohorts";
+import { cohorts } from "./data/cohorts";
 import CohortCard from "./CohortCard";
 
 export default function CohortCards({
@@ -20,14 +20,13 @@ export default function CohortCards({
   if (!filteredCohorts.length) {
     return (
       <section className="py-20">
-        <div className="mx-auto max-w-xl rounded-3xl border border-base-300 bg-base-200 p-10 text-center">
-
+        <div className="mx-auto max-w-xl rounded-none border border-base-300 bg-base-200 p-10 text-center">
           <h3 className="text-3xl font-bold">
             No Cohorts Found
           </h3>
 
           <p className="mt-3 text-base-content/60">
-            We couldn't find any cohorts matching your selected filters.
+            We couldn&apos;t find any cohorts matching your selected filters.
           </p>
 
         </div>
