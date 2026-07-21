@@ -9,3 +9,53 @@
   from { opacity: 0; transform: translateX(-8px) scale(0.9); }
   to   { opacity: 1; transform: translateX(0) scale(1); }
 }
+@theme {
+  --color-gold: #C8955A;
+  --color-navy: #1B3A6B;
+  --color-dark: #0B0F19;
+  --color-cream: #FAF7F2;
+  --color-sand: #F5F0E8;
+}
+.react-flow__controls {
+  box-shadow: none;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #C8955A33;
+}
+.react-flow__controls-button {
+  background: var(--color-dark);
+  border-bottom: 1px solid #C8955A1a;
+  width: 28px;
+  height: 28px;
+}
+.react-flow__controls-button svg {
+  fill: var(--color-sand);
+}
+.react-flow__controls-button:hover {
+  background: #1B3A6B55;
+}
+.react-flow__node {
+  transition: transform 220ms ease-out;
+}
+@media (max-width: 639px) {
+  .react-flow__controls-button {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@keyframes skillIn {
+  from { opacity: 0; transform: translateX(-6px) scale(0.98); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes menuIn {
+  from { opacity: 0; transform: scale(0.96) translateY(-4px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

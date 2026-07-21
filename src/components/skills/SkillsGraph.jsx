@@ -6,6 +6,7 @@ import ReactFlow, {
   BackgroundVariant,
   useEdgesState,
   useNodesState,
+  useReactFlow,
   MarkerType,
   ReactFlowProvider,
 } from "reactflow";
@@ -18,43 +19,112 @@ import ContextMenu from "./ContextMenu";
 
 const nodeTypes = { category: CategoryNode, skill: SkillNode };
 
-const ROOT_X = 40;
-const CATEGORY_X = 300;
-const SKILL_X = 560;
-const ROW_HEIGHT = 270;
-const SKILL_ROW_HEIGHT = 220;
-const HOVER_COLLAPSE_DELAY = 260; 
+function useViewportWidth() {
+  const [width, setWidth] = useState(1380);
 
+  useEffect(() => {
+    const updateWidth = () => setWidth(window.innerWidth);
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
-function buildGraph(expanded, hoverId, removedSkills) {
+  return width;
+}
+
+function getLayout(width) {
+  if (width < 640) {
+    return {
+      mode: "stacked",
+      rootY: 16,
+      afterRootGap: 80,
+      categoryGap: 135,
+      skillGap: 50,
+      skillIndent: 18,
+      root: { width: 168, height: 58, fontSize: 17 },
+      fitViewPadding: 0.28,
+      fitViewMinZoom: 0.4,
+      fitViewMaxZoom: 1,
+      edgeType: "smoothstep",
+      skillEdgeAnimated: false,
+      hideEdges: true,
+    };
+  }
+  if (width < 1024) {
+    return {
+      mode: "stacked",
+      rootY: 24,
+      afterRootGap: 130,
+      categoryGap: 100,
+      skillGap: 80,
+      skillIndent: 32,
+      root: { width: 200, height: 70, fontSize: 20 },
+      fitViewPadding: 0.12,
+      fitViewMinZoom: 0.35,
+      fitViewMaxZoom: 1,
+      edgeType: "smoothstep",
+      skillEdgeAnimated: false,
+      hideEdges: false,
+    };
+  }
+  return {
+    mode: "spread",
+    rootDepth: 10,
+    categoryDepth: 200,
+    skillDepth: 380,
+    minColumnWidth: 270,
+    skillRowHeight: 150,
+    root: { width: 240, height: 80, fontSize: 24 },
+    fitViewPadding: 0.3,
+    fitViewMinZoom: 0.55,
+    fitViewMaxZoom: 1,
+    edgeType: "smoothstep",
+    skillEdgeAnimated: false,
+    hideEdges: false,
+  };
+}
+
+function getRootNodeBase(root) {
+  return {
+    id: "root",
+    type: "default",
+    data: { label: "Skills" },
+    className: "text-center",
+    style: {
+      background: "linear-gradient(135deg, #1B3A6B, #0B0F19)",
+      color: "#FAF7F2",
+      border: "1px solid #C8955A66",
+      borderRadius: 16,
+      fontWeight: 800,
+      fontSize: root.fontSize,
+      width: root.width,
+      height: root.height,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      boxShadow: "0 0 28px #C8955A33, 0 8px 20px -6px #00000080",
+    },
+  };
+}
+
+function buildStackedGraph(expanded, removedSkills, layout) {
+  const { rootY, afterRootGap, categoryGap, skillGap, skillIndent, root, edgeType, skillEdgeAnimated, hideEdges } = layout;
+  const rootNodeBase = getRootNodeBase(root);
   const nodes = [];
   const edges = [];
 
-  nodes.push({
-    id: "root",
-    type: "default",
-    position: { y: ROOT_X, x: (CATEGORIES.length * ROW_HEIGHT) / 2 - 20 },
-    data: { label: "Skills" },
-    style: {
-      background: "linear-gradient(135deg, #1a1726, #221d33)",
-      color: "#f1f5f9",
-      border: "1px solid #ffffff22",
-      borderRadius: 12,
-      fontWeight: 600,
-      padding: "10px 18px",
-      boxShadow: "0 0 20px #ffffff11",
-    },
-  });
+  nodes.push({ ...rootNodeBase, position: { x: 0, y: rootY } });
 
-  CATEGORIES.forEach((cat, i) => {
-    const catY = i * ROW_HEIGHT;
+  let y = rootY + afterRootGap;
+
+  CATEGORIES.forEach((cat) => {
     const visibleSkills = cat.skills.filter((s) => !removedSkills.has(s.id));
-    const isOpen = !!expanded[cat.id] || hoverId === cat.id;
+    const isOpen = !!expanded[cat.id];
 
     nodes.push({
       id: cat.id,
       type: "category",
-      position: { y: CATEGORY_X, x: catY },
+      position: { x: 0, y },
       data: {
         label: cat.label,
         description: cat.description,
@@ -62,7 +132,98 @@ function buildGraph(expanded, hoverId, removedSkills) {
         icon: cat.icon,
         skillCount: visibleSkills.length,
         expanded: isOpen,
-        hovered: hoverId === cat.id,
+        hovered: false,
+      },
+    });
+
+    if (!hideEdges) {
+      edges.push({
+        id: `root-${cat.id}`,
+        source: "root",
+        target: cat.id,
+        type: edgeType,
+        style: { stroke: cat.color, strokeWidth: 1.5, strokeDasharray: "4 4", opacity: 0.7 },
+        animated: true,
+        markerEnd: { type: MarkerType.ArrowClosed, color: cat.color, width: 14, height: 14 },
+      });
+    }
+
+    y += categoryGap;
+
+    if (isOpen) {
+      visibleSkills.forEach((skill, j) => {
+        nodes.push({
+          id: skill.id,
+          type: "skill",
+          position: { x: skillIndent, y },
+          data: { name: skill.name, level: skill.level, color: cat.color, delay: j * 40 },
+        });
+        if (!hideEdges) {
+          edges.push({
+            id: `${cat.id}-${skill.id}`,
+            source: cat.id,
+            target: skill.id,
+            type: edgeType,
+            animated: skillEdgeAnimated,
+            style: {
+              stroke: cat.color,
+              strokeWidth: 1,
+              strokeDasharray: "2 4",
+              opacity: 0.5,
+            },
+          });
+        }
+        y += skillGap;
+      });
+    }
+  });
+
+  return { nodes, edges };
+}
+
+function buildSpreadGraph(expanded, removedSkills, layout) {
+  const { rootDepth, categoryDepth, skillDepth, minColumnWidth, skillRowHeight, root, edgeType, skillEdgeAnimated } = layout;
+  const rootNodeBase = getRootNodeBase(root);
+  const nodes = [];
+  const edges = [];
+
+  const footprints = CATEGORIES.map((cat) => {
+    const visibleSkills = cat.skills.filter((s) => !removedSkills.has(s.id));
+    const isOpen = !!expanded[cat.id];
+    const spreadWidth = isOpen ? (visibleSkills.length - 1) * skillRowHeight : 0;
+    return Math.max(minColumnWidth, spreadWidth + minColumnWidth);
+  });
+
+  const positions = [];
+  let x = 0;
+  footprints.forEach((w) => {
+    positions.push(x + w / 2);
+    x += w;
+  });
+  const totalWidth = x;
+
+  nodes.push({
+    ...rootNodeBase,
+    position: { x: totalWidth / 2 - root.width / 2, y: rootDepth },
+  });
+
+  CATEGORIES.forEach((cat, i) => {
+    const catX = positions[i];
+    const visibleSkills = cat.skills.filter((s) => !removedSkills.has(s.id));
+    const isOpen = !!expanded[cat.id];
+
+    nodes.push({
+      id: cat.id,
+      type: "category",
+      position: { x: catX, y: categoryDepth },
+      data: {
+        label: cat.label,
+        description: cat.description,
+        color: cat.color,
+        icon: cat.icon,
+        skillCount: visibleSkills.length,
+        expanded: isOpen,
+        hovered: false,
       },
     });
 
@@ -70,29 +231,32 @@ function buildGraph(expanded, hoverId, removedSkills) {
       id: `root-${cat.id}`,
       source: "root",
       target: cat.id,
+      type: edgeType,
       style: { stroke: cat.color, strokeWidth: 1.5, strokeDasharray: "4 4", opacity: 0.7 },
       animated: true,
       markerEnd: { type: MarkerType.ArrowClosed, color: cat.color, width: 14, height: 14 },
     });
 
     if (isOpen) {
-      const offsetStart = catY - ((visibleSkills.length - 1) * SKILL_ROW_HEIGHT) / 2;
+      const offsetStart = catX - ((visibleSkills.length - 1) * skillRowHeight) / 2;
       visibleSkills.forEach((skill, j) => {
         nodes.push({
           id: skill.id,
           type: "skill",
-          position: { y: SKILL_X, x: offsetStart + j * SKILL_ROW_HEIGHT },
+          position: { x: offsetStart + j * skillRowHeight, y: skillDepth },
           data: { name: skill.name, level: skill.level, color: cat.color, delay: j * 40 },
         });
         edges.push({
           id: `${cat.id}-${skill.id}`,
           source: cat.id,
           target: skill.id,
+          type: edgeType,
+          animated: skillEdgeAnimated,
           style: {
             stroke: cat.color,
-            strokeWidth: 1.2,
-            strokeDasharray: "3 3",
-            opacity: hoverId === cat.id ? 0.9 : 0.5,
+            strokeWidth: 1,
+            strokeDasharray: "2 4",
+            opacity: 0.5,
           },
         });
       });
@@ -102,23 +266,78 @@ function buildGraph(expanded, hoverId, removedSkills) {
   return { nodes, edges };
 }
 
+function buildGraph(expanded, removedSkills, layout) {
+  return layout.mode === "stacked"
+    ? buildStackedGraph(expanded, removedSkills, layout)
+    : buildSpreadGraph(expanded, removedSkills, layout);
+}
+
 function Graph() {
   const [expanded, setExpanded] = useState({});
-  const [hoverId, setHoverId] = useState(null);
   const [removedSkills, setRemovedSkills] = useState(new Set());
   const [menu, setMenu] = useState(null);
   const [menuItems, setMenuItems] = useState(null);
 
-  const collapseTimer = useRef(null);
+  const fitTimer = useRef(null);
+  const { fitView } = useReactFlow();
 
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
+  const viewportWidth = useViewportWidth();
+  const layout = getLayout(viewportWidth);
+  const isStacked = layout.mode === "stacked";
+
+  const allExpanded = CATEGORIES.every((c) => expanded[c.id]);
+  const noneExpanded = CATEGORIES.every((c) => !expanded[c.id]);
+
+
   useEffect(() => {
-    const { nodes: builtNodes, edges: builtEdges } = buildGraph(expanded, hoverId, removedSkills);
+    const { nodes: builtNodes, edges: builtEdges } = buildGraph(
+      expanded,
+      removedSkills,
+      layout
+    );
     setNodes(builtNodes);
     setEdges(builtEdges);
-  }, [expanded, hoverId, removedSkills, setNodes, setEdges]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expanded, removedSkills, viewportWidth, setNodes, setEdges]);
+
+  
+  useEffect(() => {
+    if (fitTimer.current) clearTimeout(fitTimer.current);
+    fitTimer.current = setTimeout(() => {
+      fitView({
+        padding: layout.fitViewPadding,
+        minZoom: layout.fitViewMinZoom,
+        maxZoom: layout.fitViewMaxZoom,
+        duration: 300,
+      });
+    }, 30);
+    return () => {
+      if (fitTimer.current) clearTimeout(fitTimer.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expanded, removedSkills, viewportWidth, fitView]);
+
+  const expandAll = useCallback(() => {
+    setExpanded(Object.fromEntries(CATEGORIES.map((c) => [c.id, true])));
+  }, []);
+
+  const collapseAll = useCallback(() => setExpanded({}), []);
+
+  const resetRemoved = useCallback(() => setRemovedSkills(new Set()), []);
+
+  const closeMenu = useCallback(() => setMenu(null), []);
+
+  useEffect(() => {
+    if (!menu) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menu, closeMenu]);
 
   useEffect(() => {
     if (!menu) {
@@ -160,55 +379,15 @@ function Graph() {
       });
       return;
     }
-
-    setMenuItems({
-      title: "Canvas",
-      items: [
-        {
-          label: "Expand all categories",
-          onClick: () => setExpanded(Object.fromEntries(CATEGORIES.map((c) => [c.id, true]))),
-        },
-        { label: "Collapse all categories", onClick: () => setExpanded({}) },
-        { label: "Reset removed skills", onClick: () => setRemovedSkills(new Set()) },
-      ],
-    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [menu, expanded]);
 
-  const toggleCategory = useCallback((id) => {
-    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
-  }, []);
-
-  const clearCollapseTimer = useCallback(() => {
-    if (collapseTimer.current) {
-      clearTimeout(collapseTimer.current);
-      collapseTimer.current = null;
-    }
-  }, []);
-
-
-  const onNodeMouseEnter = useCallback(
-    (_, node) => {
-      clearCollapseTimer();
-      if (node.type === "category") {
-        setHoverId(node.id);
-      } else if (node.type === "skill") {
-        const parent = CATEGORIES.find((c) => c.skills.some((s) => s.id === node.id));
-        if (parent) setHoverId(parent.id);
-      }
-    },
-    [clearCollapseTimer]
-  );
-
-  const onNodeMouseLeave = useCallback(
-    (_, node) => {
-      if (node.type !== "category" && node.type !== "skill") return;
-      clearCollapseTimer();
-      collapseTimer.current = setTimeout(() => setHoverId(null), HOVER_COLLAPSE_DELAY);
-    },
-    [clearCollapseTimer]
-  );
-
+const toggleCategory = useCallback((id) => {
+  setExpanded((prev) => {
+    const isCurrentlyOpen = !!prev[id];
+    return isCurrentlyOpen ? {} : { [id]: true };
+  });
+}, []);
   const onNodeClick = useCallback(
     (_, node) => {
       if (node.type === "category") toggleCategory(node.id);
@@ -231,8 +410,6 @@ function Graph() {
     setMenu({ type: "pane", x: event.clientX, y: event.clientY });
   }, []);
 
-  const closeMenu = useCallback(() => setMenu(null), []);
-
   return (
     <div className="relative h-full w-full">
       <ReactFlow
@@ -242,20 +419,24 @@ function Graph() {
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         onNodeClick={onNodeClick}
-        onNodeMouseEnter={onNodeMouseEnter}
-        onNodeMouseLeave={onNodeMouseLeave}
         onNodeContextMenu={onNodeContextMenu}
         onPaneContextMenu={onPaneContextMenu}
         onPaneClick={closeMenu}
         onMove={closeMenu}
         fitView
-        fitViewOptions={{ padding: 0.3 }}
+        fitViewOptions={{
+          padding: layout.fitViewPadding,
+          minZoom: layout.fitViewMinZoom,
+          maxZoom: layout.fitViewMaxZoom,
+        }}
         proOptions={{ hideAttribution: true }}
-        minZoom={0.4}
+        minZoom={isStacked ? 0.25 : 0.4}
         maxZoom={1.5}
         nodesDraggable={false}
+        panOnScroll={false}
+        zoomOnPinch
       >
-        <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="#ffffff14" />
+        <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="#C8955A1f" />
       </ReactFlow>
 
       {menu && menuItems && (
