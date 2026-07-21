@@ -61,17 +61,17 @@ export default function GraduateSection() {
   const animatedRowTwo = [...rowTwo, ...rowTwo];
 
   return (
-      <section className="bg-green-200 py-16 px-35">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+    <section className="md:px-10 lg:px-30">
+       <div className="text-center mb-10">
+        <h2 className=" text-cream font-bold text-3xl px-40  pt-6">
           Graduate Stories
         </h2>
-        <p className="mt-3 text-lg text-gray-600">
+        <p className="mt-3 max-w-3xl mx-auto text-base md:text-lg text-gold leading-8">
           In their own words
         </p>
       </div>
         {/*first row*/}
-        <div className="relative overflow-hidden mb-6">
+        <div className="relative overflow-hidden mb-6 mr-20 ml-20">
         {/* Left fade */}
         <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent pointer-events-none"/>
         {/* Right fade */}
@@ -84,7 +84,7 @@ export default function GraduateSection() {
       </div>
       
        {/* Second Row */}
-        <div className="relative overflow-hidden mb-6">
+        <div className="relative overflow-hidden mb-6 mr-20 ml-20">
         {/* Left fade */}
         <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent pointer-events-none" />
         {/* Right fade */}
@@ -102,33 +102,31 @@ export default function GraduateSection() {
 function Card({ graduate }) {
   const [cohort, year] = graduate.cohort.split(" - ");
     return (
-    <div className="min-w-[260px] max-w-[260px] h-[220px] rounded-3xl bg-white p-5 border border-emerald-100 cursor-pointer 
+    <div className="min-w-[260px] max-w-[260px] h-[220px] rounded-3xl bg-sand/90 text-dark border border-white/20 rounded-2xl p-5 border border-emerald-100 cursor-pointer 
       shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
 
       {/* Quote */}
       <div>
-        <div className="text-4xl text-emerald-500 font-serif leading-none">
+        <div className="text-4xl text-gold font-serif leading-none ">
           “
         </div>
-        <p className="mt-2 text-gray-600 text-sm leading-5 line-clamp-3">
+        <p className="mt-2 text-dark text-sm leading-5 line-clamp-3">
           {graduate.quote}
         </p>
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-200 my-4"></div>
+      <div className="border-t border-gray-800"></div>
 
      {/* Graduate Info */}
       <div className="flex items-center gap-3">
-        <div className="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center 
-          justify-center text-white font-bold text-lg">
-          {graduate.name.charAt(0)}
+        <div className="w-11 h-11 rounded-full bg-gold flex items-center justify-center font-bold text-lg">
           </div>
           <div>
-          <h4 className="text-sm font-semibold text-gray-900">
+          <h4 className="text-sm font-semibold text-navy">
             {graduate.name}
           </h4>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-navy mt-1">
             {cohort} - {year}
           </p>
         </div>

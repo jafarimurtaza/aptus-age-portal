@@ -11,15 +11,15 @@ export default function StatsCardSection() {
   ];
 
   return (
-      <section className="bg-green-200 py-16 px-6 mb-0">
-      <div className="max-w-5xl mx-auto">
+      <section className=" py-10 px-50">
+      <div className="max-w-4xl mx-auto">
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {stats.map((stat) => (<div key={stat.label}
-          className="bg-white rounded-xl border border-green-100 px-4 py-4 text-center shadow-sm cursor-pointer hover:shadow-md transition">
-          <h2 className="text-3xl font-bold text-green-600">
+          className="bg-sand/90 text-dark border border-white/20 rounded-2xl p-6 text-center shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <h2 className="text-3xl font-bold text-gold">
             {stat.number}
             </h2>
-            <p className="mt-1 text-sm text-gray-600">
+            <p className="mt-1 text-sm text-dark-600">
               {stat.label}
             </p>
             </div>

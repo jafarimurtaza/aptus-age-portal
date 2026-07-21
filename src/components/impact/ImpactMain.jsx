@@ -9,7 +9,7 @@ import FooterSection from "./FooterSection"
 
 export default function ImpactMain() {
   return (
-    <div>
+    <div className="bg-gradient-to-br from-navy to-dark text-cream ">
       <HeaderSection/>
       <ImpactHeroSection />
       <StatsCardSection />

@@ -1,9 +1,13 @@
     @import "tailwindcss";
-
     
-
-
-    /* First row: Right → Left */
+      @theme {
+    --color-gold: #C8955A;
+    --color-navy: #1B3A6B;
+    --color-dark: #0B0F19;
+    --color-cream: #FAF7F2;
+    --color-sand: #F5F0E8;
+  }
+     /* First row: Right → Left */
     @keyframes scrollLeft {
       from {
         transform: translateX(0);
@@ -13,9 +17,7 @@
         transform: translateX(-50%);
       }
     }
-
-
-    /* Second row: Left → Right */
+     /* Second row: Left → Right */
     @keyframes scrollRight {
       from {
         transform: translateX(-50%);
@@ -25,24 +27,16 @@
         transform: translateX(0);
       }
     }
-
-
     /* Apply animations */
-
     .animate-scroll-left {
       width: max-content;
       animation: scrollLeft 17s linear infinite;
     }
-
-
     .animate-scroll-right {
       width: max-content;
       animation: scrollRight 17s linear infinite;
     }
-
-
-    /* Pause when mouse is over cards */
-
+   /* Pause when mouse is over cards */
     .animate-scroll-left:hover,
     .animate-scroll-right:hover {
       animation-play-state: paused;
