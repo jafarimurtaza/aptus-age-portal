@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { projects } from "@/app/projects/data";
-
 export default function ProjectInfo({ project }) {
   return (
     <section
@@ -12,10 +11,8 @@ export default function ProjectInfo({ project }) {
       "
       dir="ltr"
     >
-
       {/* Title */}
       <div className="mb-8">
-
         <h2
           className="
             text-3xl
@@ -26,13 +23,8 @@ export default function ProjectInfo({ project }) {
         >
           Latest Projects
         </h2>
-
       </div>
-
-
-
       {/* Cards */}
-
       <div
         className="
           grid
@@ -41,20 +33,12 @@ export default function ProjectInfo({ project }) {
           sm:grid-cols-2
         "
       >
-
         {project?.relatedProjects?.slice(0,4).map((item,index)=>{
-
           const relatedProject = projects.find(
             (p)=>p.slug === item.slug
           );
-
-
           if(!relatedProject) return null;
-
-
-
           return (
-
             <article
               key={`${relatedProject.slug}-${index}`}
               className="
@@ -71,10 +55,7 @@ export default function ProjectInfo({ project }) {
                 hover:shadow-xl
               "
             >
-
-
               {/* Image */}
-
               <div
                 className="
                   relative
@@ -83,7 +64,6 @@ export default function ProjectInfo({ project }) {
                   bg-slate-100
                 "
               >
-
                 <img
                   src={relatedProject.heroImage}
                   alt={relatedProject.title}
@@ -96,8 +76,6 @@ export default function ProjectInfo({ project }) {
                     group-hover:scale-105
                   "
                 />
-
-
                 <span
                   className="
                     absolute
@@ -118,19 +96,9 @@ export default function ProjectInfo({ project }) {
                 >
                   {String(index+1).padStart(2,"0")}
                 </span>
-
-
               </div>
-
-
-
-
-
               {/* Content */}
-
               <div className="p-6">
-
-
                 <h3
                   className="
                     text-xl
@@ -144,9 +112,6 @@ export default function ProjectInfo({ project }) {
                 >
                   {relatedProject.title}
                 </h3>
-
-
-
                 <p
                   className="
                     mt-2
@@ -156,10 +121,6 @@ export default function ProjectInfo({ project }) {
                 >
                   Project case study
                 </p>
-
-
-
-
                 <div
                   className="
                     mt-5
@@ -171,7 +132,6 @@ export default function ProjectInfo({ project }) {
                     pt-4
                   "
                 >
-
                   <Link
                     href={`/projects/${relatedProject.slug}`}
                     className="
@@ -194,28 +154,13 @@ export default function ProjectInfo({ project }) {
                     <span>
                       →
                     </span>
-
                   </Link>
-
-
                 </div>
-
-
               </div>
-
-
-
             </article>
-
-
           );
-
         })}
-
-
       </div>
-
-
     </section>
   );
 }
