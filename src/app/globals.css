@@ -14,7 +14,14 @@
   --shadow-aptus-card: 0 14px 35px rgba(31, 50, 44, 0.07);
   --shadow-aptus-soft: 0 6px 18px rgba(24, 64, 51, 0.08);
   --font-sans: Inter, ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
+  --color-gold: #C8955A;
+  --color-navy: #183A6B;
+  --color-dark: #0B0F19;
+  --color-cream: #FAF7F2;
+  --color-sand: #F5F0E8;
 }
+
+
 
 :root {
   --aptus-green: #39b870;

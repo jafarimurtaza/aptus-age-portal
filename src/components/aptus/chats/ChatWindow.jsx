@@ -15,7 +15,7 @@ export default function ChatWindow() {
   return (
     <section
       aria-label="Chat with Aptus"
-      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-white shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300 dark:border-white/10 dark:bg-[#101A16] sm:dark:shadow-[0_18px_42px_rgba(0,0,0,0.34)]"
+      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-navy shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300 dark:border-white/10 dark:bg-[#101A16] sm:dark:shadow-[0_18px_42px_rgba(0,0,0,0.34)]"
     >
       <header className="flex h-14 sm:h-18 shrink-0 items-center justify-between border-b border-aptus-line px-4 sm:px-8 transition-colors duration-300 dark:border-white/10">
         <div className="flex items-center gap-2.5 sm:gap-3">
@@ -27,7 +27,7 @@ export default function ChatWindow() {
 
         <div className="hidden sm:flex items-center">
           <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-[#EFFBF5] px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-[#258D58] dark:bg-[#173326] dark:text-[#75E5A2]">
-            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-aptus-green" aria-hidden="true" />
+            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-navy" aria-hidden="true" />
             Online
           </span>
         </div>
