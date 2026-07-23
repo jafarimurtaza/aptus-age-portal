@@ -85,7 +85,7 @@ input:focus-visible {
   transform: translate(-50%, -50%);
   opacity: 0.42;
   background:
-    repeating-radial-gradient(ellipse at 50% 50%, transparent 0 11px, rgba(67, 171, 128, 0.14) 12px 13px, transparent 14px 22px);
+    repeating-radial-gradient(ellipse at 50% 50%, transparent 0 11px, rgba(200, 149, 90, 0.14) 12px 13px, transparent 14px 22px);
   clip-path: polygon(0 45%, 8% 36%, 18% 54%, 29% 42%, 40% 60%, 52% 43%, 64% 55%, 76% 38%, 88% 51%, 100% 40%, 100% 62%, 88% 73%, 76% 58%, 64% 75%, 52% 60%, 40% 78%, 29% 61%, 18% 74%, 8% 56%, 0 64%);
 }
 
@@ -98,7 +98,7 @@ input:focus-visible {
   height: 250px;
   border-radius: 999px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(57, 184, 112, 0.16), rgba(57, 184, 112, 0.06) 38%, transparent 70%);
+  background: radial-gradient(circle, rgba(250, 247, 242, 0.18), rgba(200, 149, 90, 0.08) 38%, transparent 70%);
 }
 
 .aptus-dot-field span {
@@ -106,6 +106,6 @@ input:focus-visible {
   width: 4px;
   height: 4px;
   border-radius: 999px;
-  background: rgba(57, 184, 112, 0.28);
+  background: rgba(200, 149, 90, 0.28);
 }
 /* the end of aptus style */

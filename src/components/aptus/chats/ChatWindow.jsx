@@ -15,18 +15,18 @@ export default function ChatWindow() {
   return (
     <section
       aria-label="Chat with Aptus"
-      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-navy shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300 dark:border-white/10 dark:bg-[#101A16] sm:dark:shadow-[0_18px_42px_rgba(0,0,0,0.34)]"
+      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-cream shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300 dark:border-white/10 dark:bg-[#101A16] sm:dark:shadow-[0_18px_42px_rgba(0,0,0,0.34)]"
     >
       <header className="flex h-14 sm:h-18 shrink-0 items-center justify-between border-b border-aptus-line px-4 sm:px-8 transition-colors duration-300 dark:border-white/10">
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-aptus-green" strokeWidth={2.4} aria-hidden="true" />
-          <h2 className="text-[15px] sm:text-[17px] font-extrabold text-[#121C24] dark:text-[#F5FFF9]">
+          <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-navy" strokeWidth={2.4} aria-hidden="true" />
+          <h2 className="text-[15px] sm:text-[17px] font-extrabold text-dark dark:text-[#F5FFF9]">
             Chat with Aptus
           </h2>
         </div>
 
         <div className="hidden sm:flex items-center">
-          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-[#EFFBF5] px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-[#258D58] dark:bg-[#173326] dark:text-[#75E5A2]">
+          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-gold px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-dark dark:bg-[#173326] dark:text-[#75E5A2]">
             <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-navy" aria-hidden="true" />
             Online
           </span>
@@ -61,7 +61,7 @@ export default function ChatWindow() {
     <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
       Powered by
     </p>
-    <p className="font-bold text-aptus-green">
+    <p className="font-bold text-navy">
       {APTUS_BRAND.poweredBy}
     </p>
   </div>
