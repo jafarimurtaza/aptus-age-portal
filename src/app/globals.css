@@ -23,12 +23,12 @@
 
 
 
-:root {
-  --aptus-green: #39b870;
-  --aptus-deep: #145b41;
-  --aptus-ink: #17222b;
-  --aptus-muted: #78828d;
-}
+/* :root {
+  --aptus-green: #C8955A;
+  --aptus-deep: #183A6B; 
+  --aptus-ink: #0B0F19; 
+  --aptus-muted: #183A6B; 
+} */
 
 * {
   box-sizing: border-box;
