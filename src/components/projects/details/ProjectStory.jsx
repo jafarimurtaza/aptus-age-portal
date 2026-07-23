@@ -1,76 +1,78 @@
 export default function ProjectStory({ project }) {
   const paragraphs = project.paragraphs || [];
-  const initialParagraphs = paragraphs.slice(0, 2);
-  const remainingParagraphs = paragraphs.slice(2);
-  const storyImage = project.heroImage;
 
   return (
-    <section className="mt-0 pt-0" dir="ltr">
-   
+    <section className="bg-[#F8F4EE] py-20 text-black" dir="ltr">
 
-      <div className="max-w-4xl space-y-4 text-base leading-7 text-slate-600">
-        {initialParagraphs.map((text, index) => (
-          <p key={index}>
-            {text}
-          </p>
-        ))}
-      </div>
+      <div className="mx-auto max-w-6xl px-6">
 
+        {/* Image */}
 
-      {storyImage && (
-        <div className="my-6">
-          <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
+        <img
+          src={project.heroImage}
+          alt={project.title}
+          className="mb-10 w-full rounded object-cover border border-[#E7E3DD]"
+        />
+
+        {/* Title */}
+
+        <h2 className="text-5xl font-semibold text-[#17396C]">
+
+          {project.title}
+
+        </h2>
+
+        {/* <p className="mt-5 text-[#D79B49]">
+
+          by TechBox PRO
+
+        </p> */}
+
+        <p className="mt-10 text-lg leading-9 text-[#6C7280]">
+
+          {paragraphs[0]}
+
+        </p>
+
+        {/* Two Columns */}
+
+        <div className="mt-20 grid gap-16 lg:grid-cols-2">
+
+          <div>
+
+            <h3 className="mb-8 text-5xl font-semibold leading-tight text-[#17396C]">
+
+              Recruitment With AI For Startup Businesses
+
+            </h3>
+
+            <p className="text-lg leading-9 text-[#6C7280]">
+
+              {paragraphs[1]}
+
+            </p>
+
+          </div>
+
+          <div>
 
             <img
-              src={storyImage}
-              alt={project.title}
-              loading="lazy"
-              className="
-                h-[420px]
-                w-full
-                object-cover
-                transition-transform
-                duration-500
-                group-hover:scale-105
-              "
+              src={project.storyImage || project.heroImage}
+              className="w-full rounded object-cover border border-[#E7E3DD]"
+              alt=""
             />
 
           </div>
-        </div>
-      )}
-
-
-      {remainingParagraphs.length > 0 && (
-        <div className="max-w-4xl space-y-4 text-base leading-7 text-slate-600">
-
-          {remainingParagraphs.map((text, index) => {
-            const isLast =
-              index === remainingParagraphs.length - 1;
-
-            return isLast ? (
-              <p
-                key={index}
-                className="
-                  border-l-4
-                  border-pink-500
-                  bg-pink-50
-                  px-4
-                  py-3
-                  font-medium
-                  text-slate-700
-                "
-              >
-                {text}
-              </p>
-            ) : (
-              <p key={index}>
-                {text}
-              </p>
-            );
-          })}
 
         </div>
-      )}
+
+        <p className="mt-20 text-lg leading-9 text-[#6C7280]">
+
+          {paragraphs[2]}
+
+        </p>
+
+      </div>
 
     </section>
   );

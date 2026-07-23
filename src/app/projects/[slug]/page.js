@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { projects } from "../data";
-import ProjectHeader from "@/components/projects/details/ProjectHeader";
+
+import ProjectIntro from "@/components/projects/details/ProjectIntro";
 import ProjectStory from "@/components/projects/details/ProjectStory";
 import ProjectInfo from "@/components/projects/details/ProjectInfo";
 
@@ -13,26 +14,16 @@ export default async function ProjectDetailsPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-white antialiased py-8 sm:py-10">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+    <main className="bg-white">
 
-        <div className="bg-white p-0">
+      <ProjectIntro project={project} />
 
-          <div className="mb-4">
-            <ProjectHeader project={project} />
-          </div>
+      <ProjectStory project={project} />
 
-          <div className="mt-6">
-            <ProjectStory project={project} />
-          </div>
-
-        </div>
-
-        <div className="mt-4 border-t border-slate-200/60 pt-4">
-          <ProjectInfo project={project} />
-        </div>
-
+      <div className="mx-auto max-w-6xl px-6">
+        <ProjectInfo project={project} />
       </div>
+
     </main>
   );
 }

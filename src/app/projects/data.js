@@ -16,12 +16,12 @@ export const projects = [
     description:
       "A platform that connects NGOs with volunteers, donors, and communities.",
 
-    paragraphs: [
-      "NGO Directory Platform is designed to connect organizations, volunteers, donors, and communities through a simple and organized digital platform. The system helps users discover NGOs, understand their activities, and build stronger connections between people and social organizations.",
+     paragraphs: [
+      "NGO Directory Platform is a modern digital platform designed to connect non-governmental organizations, volunteers, donors, and communities in one organized environment. The platform helps users discover organizations, understand their missions, and create stronger connections with social initiatives.",
 
-      "The project allows users to search for organizations, review available information, explore community activities, and access important details from one central platform. By organizing NGO information in a clear structure, it improves accessibility and makes it easier for users to find suitable opportunities.",
+      "The system provides an easy way to explore NGO profiles, view organization details, and access important community information through a structured directory. By organizing data clearly, the platform improves accessibility and helps users find suitable organizations and opportunities faster.",
 
-      "The main learning focus of this project was creating a structured platform layout, designing reusable cards, improving search experience, organizing project data, and developing a clean user interface with modern UI/UX principles.",
+      "This project focused on creating a clean user interface, designing reusable components, improving information organization, and developing a responsive platform that provides a simple and effective experience for users."
     ],
 
     outcome:
@@ -72,12 +72,12 @@ export const projects = [
     description:
       "A workspace that helps remote teams manage projects, tasks, and meetings.",
 
-    paragraphs: [
-      "Remote Workspace is a modern collaboration platform created for teams that need a centralized and organized environment to manage their daily work. It provides a clean dashboard where users can access important information, monitor progress, and stay connected with their teammates.",
+       paragraphs: [
+      "Remote Workspace is a collaborative productivity platform created to help remote teams manage their projects, tasks, and daily activities in one centralized workspace. The platform provides a simple and organized environment where teams can communicate and track progress efficiently.",
 
-      "The project allows users to review active projects, track pending and completed tasks, manage meetings, and follow team activity from one dashboard. Bringing all information together improves communication and helps teams stay focused on their goals.",
+      "Users can manage projects, review tasks, monitor deadlines, and follow team activities through a responsive dashboard. The system reduces complexity by bringing important information together and creating a smoother workflow for distributed teams.",
 
-      "The main learning focus was building a responsive dashboard, designing reusable components, creating project cards, improving information structure, and developing a professional user experience for modern web applications.",
+      "The main focus of this project was designing a professional dashboard experience, creating reusable UI components, improving user navigation, and building a modern interface that supports productivity and teamwork."
     ],
 
     outcome:
@@ -126,13 +126,12 @@ export const projects = [
 
     description:
       "A clinic system that organizes patient queues, appointments, and daily service flow.",
-
     paragraphs: [
-      "Clinic Queue System focuses on improving front desk workflow inside busy clinics. The platform helps staff manage patient queues, appointments, and daily operations in a more organized and efficient way.",
+      "Clinic Queue System is a healthcare management solution designed to improve patient flow and simplify daily clinic operations. The platform helps medical staff organize appointments, manage waiting queues, and provide better service management.",
 
-      "The project helps staff track patient order, monitor appointment schedules, manage waiting lists, and view service status in real time. A centralized dashboard reduces confusion and improves decision-making during busy clinic hours.",
+      "The system allows staff to monitor patient status, manage appointment schedules, and track queue progress through a clear dashboard. This organized approach helps reduce waiting time, improve communication, and create a better experience for both patients and staff.",
 
-      "The main learning focus was workflow design, database planning, responsive dashboard development, and creating a clear operational interface for healthcare environments.",
+      "This project focused on workflow design, responsive dashboard development, data organization, and creating a practical healthcare interface that can support real-world clinic environments."
     ],
 
     outcome:
