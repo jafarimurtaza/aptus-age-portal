@@ -38,7 +38,7 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.96 }}
         disabled={!canSend}
-        className="cursor-pointer flex h-11 w-11 sm:h-13.5 sm:w-13.5 shrink-0 items-center justify-center rounded-full bg-gold text-white shadow-[0_12px_24px_rgba(57,184,112,0.28)] transition hover:bg-[#30AA66] disabled:cursor-not-allowed disabled:opacity-70"
+        className="cursor-pointer flex h-11 w-11 sm:h-13.5 sm:w-13.5 shrink-0 items-center justify-center rounded-full bg-gold text-navy shadow-[0_12px_24px_rgba(24,58,107,0.28)] transition hover:bg-navy hover:text-cream disabled:cursor-not-allowed disabled:opacity-70"
       >
         <Send className="h-4 w-4 sm:h-5 sm:w-5 -translate-x-px translate-y-px fill-current" strokeWidth={2.1} />
       </motion.button>
