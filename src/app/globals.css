@@ -412,31 +412,49 @@ input:focus-visible {
         transform: translateX(0);
       }
 
-      to {
-        transform: translateX(-50%);
-      }
+    --text-light: #E8EDF5;
+    --text-dark: #1B3A6B;
+    --text-gray: #5B6473;
     }
-     /* Second row: Left → Right */
-    @keyframes scrollRight {
-      from {
-        transform: translateX(-50%);
-      }
+    
+    .hero {
+    background: linear-gradient(
+      180deg,
+      #1B3A6B 0%,
+      #F4F6FA 100%
+    );
+    }
 
-      to {
-        transform: translateX(0);
-      }
+    /* Row 1 */
+    @keyframes marquee-right {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    /* Apply animations */
-    .animate-scroll-left {
+
+    .animate-marquee-left {
       width: max-content;
-      animation: scrollLeft 17s linear infinite;
+      animation: marquee-left 35s linear infinite;
     }
-    .animate-scroll-right {
+
+    /* Row 2 */
+    @keyframes marquee-left {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .animate-marquee-right {
       width: max-content;
-      animation: scrollRight 17s linear infinite;
+      animation: marquee-right 35s linear infinite;
     }
-   /* Pause when mouse is over cards */
-    .animate-scroll-left:hover,
-    .animate-scroll-right:hover {
+
+    /* Mouse Pause */
+    .animate-marquee-left:hover,
+    .animate-marquee-right:hover {
+      animation-play-state: paused;
+    }
+
+    /* Pause on mobile */
+    .animate-marquee-left:active,
+    .animate-marquee-right:active {
       animation-play-state: paused;
     }
