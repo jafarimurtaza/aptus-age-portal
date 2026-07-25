@@ -4,13 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, GraduationCap } from "lucide-react";
 
-export default function HeaderSection() {
+export default function Header() {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
     { name: "Graduates", href: "/graduates" },
     { name: "Projects", href: "/projects" },
-    { name: "Aptus", href: "/aptus-ai" },
+    { name: "Aptus", href: "/aptus" },
     { name: "Impact", href: "/impact" },
     { name: "Cohorts", href: "/cohorts" },
     { name: "Skills", href: "/skills" },

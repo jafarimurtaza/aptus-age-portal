@@ -8,7 +8,7 @@ export default function Footer() {
     const quickLinks = [
     { name: "Graduates", href: "/graduates" },
     { name: "Projects", href: "/projects" },
-    { name: "Aptus", href: "/aptus-ai" },
+    { name: "Aptus", href: "/aptus" },
     { name: "Impact", href: "/impact" },
     { name: "Cohorts", href: "/cohorts" },
     { name: "Skills", href: "/skills" },
