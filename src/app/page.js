@@ -1,10 +1,16 @@
 import React from "react";
+import AptusFeaturesslider from "../components/home/AptusFeaturesslider";
+import AptusSection from "../components/home/AptusSection";
+import FeaturedGraduates from "../components/home/FeaturedGraduates";
 import HomeIntro from "../components/home/HomeIntro";
 
 export default function page() {
   return (
-    <div className="w-full flex justify-center items-center min-h-screen bg-base-100">
+    <main className="w-full bg-[#f8fafc]">
       <HomeIntro />
-    </div>
+      <FeaturedGraduates />
+      <AptusSection />
+      <AptusFeaturesslider />
+    </main>
   );
 }
