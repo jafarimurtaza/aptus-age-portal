@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
+const NAVY = "var(--color-navy)";
+const DARK = "var(--color-dark)";
+const CREAM = "var(--color-cream)";
+
 export default function ContextMenu({ x, y, title, items, onClose }) {
   const menuRef = useRef(null);
   const itemRefs = useRef([]);
@@ -55,11 +59,14 @@ export default function ContextMenu({ x, y, title, items, onClose }) {
         role="menu"
         aria-label={title || "Context menu"}
         onKeyDown={handleKeyDown}
-        className="fixed z-50 w-48 max-w-[calc(100vw-16px)] origin-top-left animate-[menuIn_150ms_ease-out] overflow-hidden rounded-xl border border-[#C8955A]/25 bg-[#1B3A6B] shadow-2xl sm:w-52"
-        style={{ top: pos.top, left: pos.left }}
+        className="fixed z-50 w-48 max-w-[calc(100vw-16px)] origin-top-left animate-[menuIn_150ms_ease-out] overflow-hidden rounded-xl border shadow-2xl sm:w-52"
+        style={{ top: pos.top, left: pos.left, backgroundColor: CREAM, borderColor: `${NAVY}22` }}
       >
         {title && (
-          <div className="border-b border-[#F5F0E8]/10 px-3 py-2.5 text-[11px] font-medium uppercase tracking-wide text-[#F5F0E8]/60">
+          <div
+            className="border-b px-3 py-2.5 text-[11px] font-medium uppercase tracking-wide"
+            style={{ borderColor: `${NAVY}14`, color: `${DARK}88` }}
+          >
             {title}
           </div>
         )}
@@ -73,8 +80,9 @@ export default function ContextMenu({ x, y, title, items, onClose }) {
                   item.onClick();
                   onClose();
                 }}
-                className={`min-h-[44px] w-full px-3.5 py-2.5 text-left text-sm transition-colors hover:bg-[#C8955A]/15 focus-visible:bg-[#C8955A]/20 focus-visible:outline-none active:bg-[#C8955A]/25 sm:min-h-0 sm:py-2
-                  ${item.danger ? "text-rose-400 hover:text-rose-300" : "text-[#FAF7F2]"}`}
+                className={`min-h-11 w-full px-3.5 py-2.5 text-left text-sm transition-colors focus-visible:outline-none sm:min-h-0 sm:py-2
+                  ${item.danger ? "text-rose-600 hover:bg-rose-50" : "hover:bg-[#1B3A6B0d]"}`}
+                style={{ color: item.danger ? undefined : DARK }}
               >
                 {item.label}
               </button>

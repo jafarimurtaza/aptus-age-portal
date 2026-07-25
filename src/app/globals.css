@@ -1,20 +1,13 @@
 @import "tailwindcss";
 
-@plugin "daisyui" {
-  themes:
-    light --default,
-    night;
-}
-@keyframes skillIn {
-  from { opacity: 0; transform: translateX(-8px) scale(0.9); }
-  to   { opacity: 1; transform: translateX(0) scale(1); }
-}
+@plugin "daisyui";
+
 @theme {
   --color-gold: #C8955A;
+  --color-sand: #F5F0E8;
+  --color-cream: #FAF7F2;
   --color-navy: #1B3A6B;
   --color-dark: #0B0F19;
-  --color-cream: #FAF7F2;
-  --color-sand: #F5F0E8;
 }
 .react-flow__controls {
   box-shadow: none;
