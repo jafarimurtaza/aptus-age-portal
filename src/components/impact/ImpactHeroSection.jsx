@@ -1,22 +1,23 @@
-import React from "react";
-import StatsCardSection from "./StatsCardSection";
-
+"use client";
 export default function ImpactHeroSection() {
   return (
-    <section className="bg-gradient-to-r from-white via-green-50 to-green-100 py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <span className="inline-flex px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold uppercase tracking-wide">
-        Impact
-      </span>
-        <h1 className="mt-6 text-5xl md:text-7xl font-extrabold text-gray-900">
-          Measuring What Matters
+    <section className="text-cream">
+      <div className="max-w-5xl mx-auto text-center">
+       {/* Heading */}
+        <div className="pt-6">
+        <span className="text-cream font-bold text-3xl">
+          Impact
+        </span>
+        </div>
+        <h1 className="mt-3 text-2xl md:text-4xl font-bold tracking-tight text-sand leading-tight">
+          Measuring What <span className="text-gold">Matters</span>
         </h1>
-
-        <p className="mt-8 text-lg md:text-xl text-gray-600 leading-8 max-w-3xl mx-auto">
+          {/* Description */}
+          <p className="mt-3 max-w-3xl mx-auto md:text-lg text-dark-300 leading-8">
           Afghan Geeks is more than an education programme—it is a statement
           about who gets to build the future.
-        </p>
-      </div>
-    </section>
-  );
-}
+          </p>
+          </div>
+        </section>
+      );
+  }

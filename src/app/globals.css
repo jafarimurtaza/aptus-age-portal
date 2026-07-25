@@ -406,3 +406,37 @@ input:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes scrollLeft {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+     /* Second row: Left → Right */
+    @keyframes scrollRight {
+      from {
+        transform: translateX(-50%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+    /* Apply animations */
+    .animate-scroll-left {
+      width: max-content;
+      animation: scrollLeft 17s linear infinite;
+    }
+    .animate-scroll-right {
+      width: max-content;
+      animation: scrollRight 17s linear infinite;
+    }
+   /* Pause when mouse is over cards */
+    .animate-scroll-left:hover,
+    .animate-scroll-right:hover {
+      animation-play-state: paused;
+    }
