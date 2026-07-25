@@ -43,23 +43,23 @@ export default function CohortProgressSection() {
   ];
 
   return (
-    <section className="md:px-10 lg:px-30 ">
-       {/* Heading */}
-        <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-3xl font-bold text-cream px-40 pt-6">
-          Cohort Progress
-        </h2>
-        <p className="mt-3 text-gold text-lg">
-          graduate count by cohort
-        </p>
-        </div>
-
+      <section className="bg-[#FAFAFA] py-16 md:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="text-center mb-12 md:mb-16">
+      <h2 className="text-[#1B3A6B] font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight">
+      Cohort <span className="text-[#C8955A]">Progress</span>
+      </h2>
+      <p className="mt-4 text-[#0B1220]  text-lg sm:text-xl font-medium leading-8">
+      Graduate count by cohort
+      </p>
+      </div>
        {/* Cards */}
-          <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 ">
           {cohorts.map((cohort) => (
           <CohortCard key={cohort.name} name={cohort.name} year={cohort.year}
             graduates={cohort.graduates} progress={cohort.progress}/>
             ))}
+            </div>
           </div>
       </section>
   );

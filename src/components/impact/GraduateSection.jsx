@@ -61,39 +61,44 @@ export default function GraduateSection() {
   const animatedRowTwo = [...rowTwo, ...rowTwo];
 
   return (
-    <section className="md:px-10 lg:px-30">
-       <div className="text-center mb-10">
-        <h2 className=" text-cream font-bold text-3xl px-40  pt-6">
-          Graduate Stories
-        </h2>
-        <p className="mt-3 max-w-3xl mx-auto text-base md:text-lg text-gold leading-8">
-          In their own words
-        </p>
+      <section className="bg-[#1B3A6B] py-16 md:py-20 lg:py-24">
+      <div className="mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="text-center mb-12 md:mb-16">
+      <h2 className="text-white font-bold text-3xl sm:text-3xl lg:text-4xl tracking-tight">
+        Our Graduates
+      </h2>
+      <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-[#C8955A] leading-8 font-medium">
+        In their own words
+      </p>
       </div>
+
+      <div>
         {/*first row*/}
-        <div className="relative overflow-hidden mb-6 mr-20 ml-20">
+        <div className="relative overflow-hidden mb-6 mt-10">
         {/* Left fade */}
         <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent pointer-events-none"/>
         {/* Right fade */}
         <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent pointer-events-none"/>
-        <div className="flex gap-6 animate-scroll-right px-10">
+        <div className="flex gap-10 animate-marquee-left px-10">
           {animatedRowOne.map((graduate, index) => (
-            <Card key={index} graduate={graduate} />
+          <Card key={index} graduate={graduate} />
           ))}
         </div>
       </div>
       
        {/* Second Row */}
-        <div className="relative overflow-hidden mb-6 mr-20 ml-20">
+        <div className="relative overflow-hidden mb-6 mt-10">
         {/* Left fade */}
         <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent pointer-events-none" />
         {/* Right fade */}
         <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent pointer-events-none" />
-        <div className="flex gap-10 animate-scroll-left px-10">
+        <div className="flex gap-10 animate-marquee-right px-10">
           {animatedRowTwo.map((graduate, index) => (
-            <Card key={index} graduate={graduate} />
+          <Card key={index} graduate={graduate} />
           ))}
         </div>
+        </div>
+      </div>
       </div>
     </section>
   );
@@ -102,12 +107,12 @@ export default function GraduateSection() {
 function Card({ graduate }) {
   const [cohort, year] = graduate.cohort.split(" - ");
     return (
-    <div className="min-w-[260px] max-w-[260px] h-[220px] rounded-3xl bg-sand/90 text-dark border border-white/20 rounded-2xl p-5 border border-emerald-100 cursor-pointer 
+    <div className="min-w-[260px] max-w-[260px] h-[220px]  rounded-2xl bg-[#F3F4F6] p-5  cursor-pointer 
       shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
 
       {/* Quote */}
       <div>
-        <div className="text-4xl text-gold font-serif leading-none ">
+        <div className="text-4xl text-[#C8955A] font-serif leading-none ">
           “
         </div>
         <p className="mt-2 text-dark text-sm leading-5 line-clamp-3">
@@ -116,14 +121,14 @@ function Card({ graduate }) {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-800"></div>
+      <div className="border-t border-[#C8955A]"></div>
 
      {/* Graduate Info */}
       <div className="flex items-center gap-3">
-        <div className="w-11 h-11 rounded-full bg-gold flex items-center justify-center font-bold text-lg">
+        <div className="w-11 h-11 rounded-full bg-[#C8955A] flex items-center justify-center font-bold text-lg">
           </div>
           <div>
-          <h4 className="text-sm font-semibold text-navy">
+          <h4 className="text-sm font-semibold text-[#1B3A6B]">
             {graduate.name}
           </h4>
           <p className="text-xs text-navy mt-1">
