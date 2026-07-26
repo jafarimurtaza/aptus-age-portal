@@ -5,65 +5,42 @@ export default function ProjectInfo({ project }) {
   return (
     <section
       className="
-        mt-16
+     
         w-full
-        rounded-[40px]
         bg-[#F8F4EE]
-        px-8
-        py-16
+         px-2
+    py-2
       "
       dir="ltr"
     >
       {/* Heading */}
 
-      <div className="mb-12 text-center">
-        <p
-          className="
-            mb-2
-            text-xs
-            font-semibold
-            uppercase
-            tracking-[4px]
-            text-[#D79B49]
-          "
-        >
-          Related Work
-        </p>
-
+      <div className="mb-14 text-center">
         <h2
           className="
-            text-4xl
+            px-8
+    py-8
+            text-5xl
             font-extrabold
             text-[#17396C]
           "
         >
           Latest Projects
         </h2>
-
-        <p
-          className="
-            mt-4
-            text-base
-            text-[#6C7280]
-            max-w-2xl
-            mx-auto
-          "
-        >
-          Explore more related case studies and discover inspiring projects
-          created by our community.
-        </p>
       </div>
 
       {/* Cards */}
-
-      <div
-        className="
-          grid
-          grid-cols-1
-          gap-8
-          md:grid-cols-2
-        "
-      >
+<div
+  className="
+    mx-auto
+    w-[1100px]
+    max-w-full
+    grid
+    grid-cols-1
+    gap-12
+    md:grid-cols-2
+  "
+>
         {project?.relatedProjects?.slice(0, 4).map((item, index) => {
           const relatedProject = projects.find(
             (p) => p.slug === item.slug
@@ -77,71 +54,76 @@ export default function ProjectInfo({ project }) {
               className="
                 group
                 overflow-hidden
-                rounded-3xl
-                bg-white
+              
                 border
                 border-[#E7E3DD]
-                shadow-md
+                bg-white
+                shadow-lg
                 transition-all
                 duration-500
                 hover:-translate-y-2
                 hover:border-[#D79B49]
-                hover:shadow-xl
+                hover:shadow-2xl
               "
             >
               {/* Image */}
 
-              <div
-                className="
-                  relative
-                  aspect-[16/10]
-                  overflow-hidden
-                  bg-[#F5F2EC]
-                "
+              <Link
+                href={`/projects/${relatedProject.slug}`}
+                className="block"
               >
-                <img
-                  src={relatedProject.heroImage}
-                  alt={relatedProject.title}
+                <div
                   className="
-                    h-full
+                    relative
+                    h-72
                     w-full
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-105
-                  "
-                />
-
-                {/* Number */}
-
-                <span
-                  className="
-                    absolute
-                    left-5
-                    top-5
-                    flex
-                    h-11
-                    w-11
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#D79B49]
-                    text-white
-                    text-sm
-                    font-bold
-                    shadow-lg
+                    overflow-hidden
                   "
                 >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
+                  <img
+                    src={relatedProject.heroImage}
+                    alt={relatedProject.title}
+                    className="
+                      h-72
+                      w-full
+                      object-cover
+                      transition-transform
+                      duration-700
+                      group-hover:scale-105
+                    "
+                  />
+
+                  {/* Number */}
+
+                  <span
+                    className="
+                      absolute
+                      left-5
+                      top-5
+                      flex
+                      h-11
+                      w-11
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#D79B49]
+                      text-sm
+                      font-bold
+                      text-white
+                      shadow-lg
+                    "
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+              </Link>
 
               {/* Content */}
 
-              <div className="p-7">
+              <div className="p-8">
                 {/* Badge */}
 
-                <span
+                {/* <span
                   className="
                     inline-block
                     rounded-full
@@ -156,13 +138,13 @@ export default function ProjectInfo({ project }) {
                   "
                 >
                   Case Study
-                </span>
+                </span> */}
 
                 {/* Title */}
 
                 <h3
                   className="
-                    mt-4
+                    mt-5
                     text-2xl
                     font-bold
                     leading-tight

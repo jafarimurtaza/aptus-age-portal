@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProjectIntro({ project }) {
@@ -6,11 +7,29 @@ export default function ProjectIntro({ project }) {
       className="
         relative
         overflow-hidden
-        bg-[#10233F]
-        py-24
+        py-28
       "
     >
+      {/* Background Image */}
 
+      <Image
+        src="/images/project-detail.jpeg"
+        alt="Project Background"
+        fill
+        priority
+        className="
+          object-cover
+          object-center
+          scale-105
+          transition-transform
+          duration-[8000ms]
+          hover:scale-110
+        "
+      />
+
+      {/* Dark Overlay */}
+
+      <div className="absolute inset-0 bg-[#10233F]/70" />
 
       {/* Decorative Gold Glow */}
 
@@ -27,21 +46,34 @@ export default function ProjectIntro({ project }) {
         "
       />
 
+      {/* Decorative Glow Left */}
+
+      <div
+        className="
+          absolute
+          -left-24
+          bottom-0
+          h-80
+          w-80
+          rounded-full
+          bg-[#C9973E]/10
+          blur-3xl
+        "
+      />
+
+      {/* Content */}
 
       <div
         className="
           relative
+          z-10
           mx-auto
           max-w-6xl
           px-6
           text-center
         "
       >
-
-
-
         {/* Breadcrumb */}
-
 
         <div
           className="
@@ -51,71 +83,35 @@ export default function ProjectIntro({ project }) {
             justify-center
             gap-3
             text-sm
-            text-[#A8B1C2]
+            text-white/80
           "
         >
-
-
           <Link
             href="/"
-            className="
-              transition
-              hover:text-[#C9973E]
-            "
+            className="transition hover:text-[#C9973E]"
           >
             Home
           </Link>
 
-
-          <span>
-            /
-          </span>
-
+          <span>/</span>
 
           <Link
             href="/projects"
-            className="
-              transition
-              hover:text-[#C9973E]
-            "
+            className="transition hover:text-[#C9973E]"
           >
             Projects
           </Link>
 
+          <span>/</span>
 
-          <span>
-            /
-          </span>
-
-
-          <span
-            className="
-              text-[#F8F5EE]
-            "
-          >
+          <span className="text-white">
             Details
           </span>
-
-
         </div>
-
-
-
-
-
-
 
         {/* Main Title */}
 
-
-        <div
-          className="
-            relative
-            inline-block
-          "
-        >
-
-
+        <div className="relative inline-block">
           <span
             className="
               absolute
@@ -131,51 +127,33 @@ export default function ProjectIntro({ project }) {
             "
           />
 
-
-
           <h1
             className="
               text-5xl
               font-extrabold
               tracking-tight
-              text-[#F8F5EE]
+              text-white
               sm:text-6xl
+              lg:text-7xl
             "
           >
             Project Details
           </h1>
-
-
         </div>
-
-
-
-
-
-
-
 
         {/* Project Information */}
 
-
-        <div
-          className="
-            mt-12
-          "
-        >
-
-
+        <div className="mt-12">
           <h2
             className="
               text-3xl
               font-bold
-              text-[#F8F5EE]
+              text-white
+              md:text-4xl
             "
           >
             {project.title}
           </h2>
-
-
 
           <p
             className="
@@ -188,36 +166,20 @@ export default function ProjectIntro({ project }) {
           >
             {project.category}
           </p>
-
-
         </div>
 
-
-
-
-
-
-
-
         {/* Bottom Line */}
-
 
         <div
           className="
             mx-auto
             mt-12
             h-1
-            w-24
-            rounded-full
+            w-28
             bg-[#C9973E]
           "
         />
-
-
-
       </div>
-
-
     </section>
   );
 }

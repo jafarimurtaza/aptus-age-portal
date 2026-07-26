@@ -9,8 +9,8 @@ export default function ProjectCard({ projects }) {
         className="
           mt-8
           rounded-2xl
-          border
-          border-[#D6A04A]/30
+          // border
+          // border-[#D6A04A]/30
           bg-[#101827]
           p-10
           text-center
