@@ -44,25 +44,27 @@ export default function ProjectStory({ project }) {
 
         {/* Hero Image */}
 
-        <div className="mb-14 overflow-hidden border border-[#E7E3DD] shadow-lg">
-          <Image
-            src={project.heroImage}
-            alt={project.title}
-            width={1400}
-            height={700}
-            priority
-            className="
-              h-[220px]
-              w-full
-              object-cover
-              transition-transform
-              duration-700
-              hover:scale-105
-              md:h-[280px]
-              lg:h-[340px]
-            "
-          />
-        </div>
+      <div className="mb-14 overflow-hidden rounded-3xl border border-[#E7E3DD] shadow-xl">
+  <Image
+    src={project.heroImage}
+    alt={project.title}
+    width={1400}
+    height={900}
+    priority
+    className="
+      h-[260px]
+      w-full
+      object-cover
+      transition-transform
+      duration-700
+      hover:scale-105
+      sm:h-[360px]
+      md:h-[480px]
+      lg:h-[600px]
+      xl:h-[700px]
+    "
+  />
+</div>
 
         {/* First Paragraph */}
 
