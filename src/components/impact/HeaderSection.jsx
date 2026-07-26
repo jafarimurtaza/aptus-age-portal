@@ -45,8 +45,6 @@ export default function HeaderSection() {
             </li>
           ))}
         </ul>
-
-        {/* Desktop CTA */}
         <Link
           href="/apply"
           className="hidden md:block px-4 lg:px-5 py-2 rounded-lg bg-[#C8955A] text-[#1B3A6B] font-semibold hover:bg-[#d9a56b] transition"
@@ -54,13 +52,11 @@ export default function HeaderSection() {
           Get Started
         </Link>
 
-        {/* Mobile Hamburger */}
         <button className="md:hidden text-white" onClick={() => setOpen(true)}>
           <Menu size={28} />
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-56 sm:w-64 bg-[#162F59] text-white z-50 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
