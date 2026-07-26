@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/app/projects/data";
 
 export default function ProjectInfo({ project }) {
@@ -80,12 +81,12 @@ export default function ProjectInfo({ project }) {
                     overflow-hidden
                   "
                 >
-                  <img
+                  <Image
                     src={relatedProject.heroImage}
                     alt={relatedProject.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 520px"
                     className="
-                      h-72
-                      w-full
                       object-cover
                       transition-transform
                       duration-700

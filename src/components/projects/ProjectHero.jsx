@@ -1,57 +1,92 @@
 "use client";
 
-import Image from "next/image";
+import { useMemo, useState } from "react";
 
-export default function ProjectHero() {
+import ProjectHero from "./ProjectHero";
+import ProjectFilter from "./ProjectFilter";
+import ProjectCard from "./ProjectCard";
+import { projects } from "./data";
+
+export default function ProjectsMain() {
+  const [searchText, setSearchText] = useState("");
+  const [activeTechnology, setActiveTechnology] = useState("All");
+  const [activeType, setActiveType] = useState("All Types");
+  const [sortBy, setSortBy] = useState("Featured First");
+
+  const filteredProjects = useMemo(() => {
+    const search = searchText.trim().toLowerCase();
+
+    let result = projects.filter((project) => {
+      const author = (project.graduate || project.author || "").toLowerCase();
+
+      const matchSearch =
+        search === "" ||
+        project.title.toLowerCase().includes(search) ||
+        author.includes(search) ||
+        project.description.toLowerCase().includes(search) ||
+        (project.tags || []).some((tag) =>
+          tag.toLowerCase().includes(search)
+        );
+
+      const matchTechnology =
+        activeTechnology === "All" ||
+        (project.tags || []).includes(activeTechnology);
+
+      const projectType = project.type || "All Types";
+
+      const matchType =
+        activeType === "All Types" || projectType === activeType;
+
+      return matchSearch && matchTechnology && matchType;
+    });
+
+    if (sortBy === "Most Viewed") {
+      result = [...result].sort(
+        (a, b) => Number(b.views) - Number(a.views)
+      );
+    }
+
+    if (sortBy === "Newest First") {
+      result = [...result].sort(
+        (a, b) => Number(b.year || 0) - Number(a.year || 0)
+      );
+    }
+
+    return result;
+  }, [searchText, activeTechnology, activeType, sortBy]);
+
+  function clearAll() {
+    setSearchText("");
+    setActiveTechnology("All");
+    setActiveType("All Types");
+    setSortBy("Featured First");
+  }
+
   return (
-    <section className="overflow-hidden rounded-3xl bg-[#17396C] px-6 py-16 sm:px-10 lg:px-16 xl:px-20">
+    <main className="min-h-screen bg-white">
 
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    
+      <ProjectHero />
 
-        <div className="max-w-xl text-center lg:text-left">
+     
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
 
-          <div className="mb-8 inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-semibold tracking-wide text-[#D79B49] sm:text-sm">
-            Showcasing Graduate Excellence
-          </div>
+        <ProjectFilter
+          searchText={searchText}
+          setSearchText={setSearchText}
+          activeTechnology={activeTechnology}
+          setActiveTechnology={setActiveTechnology}
+          activeType={activeType}
+          setActiveType={setActiveType}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          clearAll={clearAll}
+        />
 
-          <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
-            Explore Innovative Projects Built by{" "}
-            <span className="text-[#D79B49]">
-              Afghan Geeks
-            </span>
-          </h1>
+        <ProjectCard projects={filteredProjects} />
 
-          <p className="mt-6 text-sm leading-7 text-slate-300 sm:text-base">
-            Discover creative digital solutions, modern applications,
-            and innovative projects created by talented graduates.
-          </p>
+      </section>
 
-          <button className="mt-10 rounded-xl bg-[#D79B49] px-7 py-3 text-base font-bold text-white transition duration-300 hover:bg-[#c88f3d] sm:text-lg">
-            Meet Our Graduates
-          </button>
-
-        </div>
-
-
-        <div className="relative mx-auto w-full lg:max-w-xl">
-
-          <div className="relative aspect-[11/9] overflow-hidden rounded-[35px] border-3 border-white/20">
-
-            <Image
-              src="/images/download (49).jpeg"
-              alt="Online learning project preview"
-              fill
-              priority
-              sizes="(max-width:1024px) 100vw, 600px"
-              className="object-cover transition-transform duration-700 hover:scale-105"
-            />
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
+    </main>
   );
 }

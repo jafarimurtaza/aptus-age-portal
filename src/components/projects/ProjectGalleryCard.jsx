@@ -17,15 +17,14 @@ export default function ProjectGalleryCard({ project }) {
       className="
         group
         overflow-hidden
-        rounded-3xl
         border
-        border-[#243B63]
-        bg-[#101827]
+        border-[#E7E3DD]
+        bg-white
         shadow-lg
-        shadow-black/20
         transition-all
         duration-500
         hover:-translate-y-2
+        hover:border-[#D79B49]
         hover:shadow-2xl
       "
     >
@@ -34,28 +33,30 @@ export default function ProjectGalleryCard({ project }) {
       {/* Main Image */}
 
       <Link
+        href={`/projects/${project.slug}?image=${activeImage}`}
         className="
           block
-          h-56
+          h-60
           overflow-hidden
-          sm:h-60
         "
-        href={`/projects/${project.slug}?image=${activeImage}`}
       >
 
         <ProjectImage
           project={project}
           imageIndex={activeImage}
+          rounded="rounded-none"
         />
 
       </Link>
 
 
 
+
+
       <div
         className="
-          space-y-5
-          p-5
+          space-y-6
+          p-6
         "
       >
 
@@ -63,42 +64,78 @@ export default function ProjectGalleryCard({ project }) {
 
         {/* Gallery */}
 
-        <div className="grid grid-cols-3 gap-2">
+        {
+          project.images?.length > 0 && (
 
-          {project.images?.map((image, imageIndex)=>(
-
-            <button
-              key={image}
-              type="button"
-              onClick={()=>setActiveImage(imageIndex)}
-              className={`
-                h-16
-                overflow-hidden
-                rounded-xl
-                border-2
-                transition-all
-
-                ${
-                  activeImage === imageIndex
-                  ?
-                  "border-[#D6A04A] ring-2 ring-[#D6A04A]/20"
-                  :
-                  "border-[#243B63] hover:border-[#D6A04A]"
-                }
-              `}
+            <div
+              className="
+                grid
+                grid-cols-3
+                gap-2
+              "
             >
 
-              <ProjectImage
-                project={project}
-                imageIndex={imageIndex}
-                rounded="rounded-lg"
-              />
+              {
+                project.images.map((image,index)=>(
 
-            </button>
+                  <button
 
-          ))}
+                    key={`${project.slug}-${index}`}
 
-        </div>
+                    type="button"
+
+                    onClick={() => setActiveImage(index)}
+
+                    className={
+
+                      activeImage === index
+
+                      ?
+
+                      `
+                      h-16
+                      overflow-hidden
+                      border-2
+                      border-[#D79B49]
+                      `
+
+                      :
+
+                      `
+                      h-16
+                      overflow-hidden
+                      border-2
+                      border-[#E7E3DD]
+                      hover:border-[#D79B49]
+                      `
+
+                    }
+
+                  >
+
+                    <ProjectImage
+
+                      project={project}
+
+                      imageIndex={index}
+
+                      rounded="rounded-none"
+
+                    />
+
+
+                  </button>
+
+                ))
+              }
+
+
+            </div>
+
+          )
+        }
+
+
 
 
 
@@ -111,11 +148,14 @@ export default function ProjectGalleryCard({ project }) {
             font-bold
             uppercase
             tracking-[0.2em]
-            text-[#A8B1C2]
+            text-[#6C7280]
           "
         >
-          BY {project.graduate}
+
+          BY {project.graduate || project.author}
+
         </p>
+
 
 
 
@@ -125,15 +165,21 @@ export default function ProjectGalleryCard({ project }) {
 
         <h3
           className="
-            text-xl
-            font-extrabold
-            text-[#F8F5EE]
-            transition
-            group-hover:text-[#D6A04A]
+            text-2xl
+            font-bold
+            leading-tight
+            text-[#17396C]
+            transition-colors
+            duration-300
+            group-hover:text-[#D79B49]
           "
         >
+
           {project.title}
+
         </h3>
+
+
 
 
 
@@ -146,11 +192,15 @@ export default function ProjectGalleryCard({ project }) {
             line-clamp-2
             text-sm
             leading-7
-            text-[#A8B1C2]
+            text-[#6C7280]
           "
         >
+
           {project.description}
+
         </p>
+
+
 
 
 
@@ -166,31 +216,39 @@ export default function ProjectGalleryCard({ project }) {
           "
         >
 
-          {project.tags?.map((tag)=>(
+          {
+            project.tags?.map((tag)=>(
 
-            <span
-              key={tag}
-              className="
-                rounded-full
-                border
-                border-[#243B63]
-                bg-[#080D1A]
-                px-3
-                py-1
-                text-xs
-                font-medium
-                text-[#F8F5EE]
-                transition
-                hover:border-[#D6A04A]
-                hover:text-[#D6A04A]
-              "
-            >
-              {tag}
-            </span>
+              <span
 
-          ))}
+                key={`${project.slug}-${tag}`}
+
+                className="
+                  border
+                  border-[#E7E3DD]
+                  bg-[#F8F4EE]
+                  px-3
+                  py-1
+                  text-xs
+                  font-semibold
+                  text-[#17396C]
+                "
+
+              >
+
+                {tag}
+
+              </span>
+
+
+            ))
+          }
+
 
         </div>
+
+
+
 
 
 
@@ -204,28 +262,38 @@ export default function ProjectGalleryCard({ project }) {
             items-center
             justify-between
             border-t
-            border-[#243B63]
-            pt-5
+            border-[#ECE8E1]
+            pt-6
           "
         >
 
 
           <Link
-            className="
-              rounded-xl
-              bg-[#D6A04A]
-              px-5
-              py-2.5
-              text-xs
-              font-bold
-              text-[#080D1A]
-              transition
-              hover:bg-[#e5b968]
-            "
+
             href={`/projects/${project.slug}`}
+
+            className="
+              inline-flex
+              items-center
+              rounded-full
+              bg-[#D79B49]
+              px-6
+              py-3
+              text-sm
+              font-semibold
+              text-white
+              transition-all
+              duration-300
+              hover:bg-[#17396C]
+            "
+
           >
-            Live Demo
+
+            Read More
+
           </Link>
+
+
 
 
 
@@ -233,20 +301,26 @@ export default function ProjectGalleryCard({ project }) {
             className="
               text-xs
               font-semibold
-              text-[#A8B1C2]
+              text-[#6C7280]
             "
           >
+
             {project.views} views
+
           </p>
 
 
         </div>
 
 
+
       </div>
+
 
 
     </article>
 
+
   );
+
 }

@@ -16,35 +16,49 @@ const technologies = [
   "TypeScript",
 ];
 
+const projectTypes = [
+  "All Types",
+  "Frontend",
+  "Backend",
+  "Full Stack",
+];
+
+const sortOptions = [
+  "Featured First",
+  "Newest First",
+  "Most Viewed",
+];
+
 export default function ProjectFilter({
-  activeTechnology,
   searchText,
-  setActiveTechnology,
   setSearchText,
+  activeTechnology,
+  setActiveTechnology,
+  activeType,
+  setActiveType,
+  sortBy,
+  setSortBy,
   clearAll,
 }) {
-
   function submitSearch(event) {
     event.preventDefault();
   }
 
-
   return (
     <section
       className="
-        rounded-3xl
+     
         border
-        border-[#243B63]
-        bg-[#101827]
+        border-[#E6D7C3]
+        bg-[#F8F4EE]
         p-5
         shadow-xl
-        shadow-black/20
-        backdrop-blur
+        shadow-black/10
         sm:p-6
       "
     >
-
       <form
+        onSubmit={submitSearch}
         className="
           flex
           flex-col
@@ -52,63 +66,58 @@ export default function ProjectFilter({
           lg:flex-row
           lg:items-center
         "
-        onSubmit={submitSearch}
       >
-
-
         {/* Search */}
 
         <input
+          type="search"
+          placeholder="Search by title..."
+          value={searchText}
+          onChange={(event) => setSearchText(event.target.value)}
           className="
             h-12
             w-full
             rounded-2xl
             border
-            border-[#243B63]
-            bg-[#080D1A]
+            border-[#D8C8B4]
+            bg-white
             px-4
             text-sm
             font-semibold
-            text-[#F8F5EE]
-            shadow-sm
+            text-[#17396C]
             outline-none
-            placeholder:text-[#A8B1C2]
+            placeholder:text-[#8A8176]
             focus:border-[#D6A04A]
             lg:h-14
             lg:flex-1
           "
-          onChange={(event)=>setSearchText(event.target.value)}
-          placeholder="Search by title..."
-          type="search"
-          value={searchText}
         />
-
-
 
         {/* Technology */}
 
         <select
+          value={activeTechnology}
+          onChange={(event) =>
+            setActiveTechnology(event.target.value)
+          }
           className="
             h-12
             w-full
             rounded-2xl
             border
-            border-[#243B63]
-            bg-[#080D1A]
+            border-[#D8C8B4]
+            bg-white
             px-4
             text-sm
             font-bold
-            text-[#F8F5EE]
+            text-[#17396C]
             outline-none
             focus:border-[#D6A04A]
             lg:h-14
             lg:w-44
           "
-          onChange={(event)=>setActiveTechnology(event.target.value)}
-          value={activeTechnology}
         >
-
-          {technologies.map((technology)=>(
+          {technologies.map((technology) => (
             <option
               key={technology}
               value={technology}
@@ -118,90 +127,74 @@ export default function ProjectFilter({
                 : technology}
             </option>
           ))}
-
         </select>
-
-
 
         {/* Type */}
 
         <select
+          value={activeType}
+          onChange={(event) =>
+            setActiveType(event.target.value)
+          }
           className="
             h-12
             w-full
             rounded-2xl
             border
-            border-[#243B63]
-            bg-[#080D1A]
+            border-[#D8C8B4]
+            bg-white
             px-4
             text-sm
             font-bold
-            text-[#F8F5EE]
+            text-[#17396C]
             outline-none
             focus:border-[#D6A04A]
             lg:h-14
             lg:w-36
           "
         >
-
-          <option>
-            All Types
-          </option>
-
-          <option>
-            Frontend
-          </option>
-
-          <option>
-            Backend
-          </option>
-
-          <option>
-            Full Stack
-          </option>
-
+          {projectTypes.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
         </select>
-
-
 
         {/* Sort */}
 
         <select
+          value={sortBy}
+          onChange={(event) =>
+            setSortBy(event.target.value)
+          }
           className="
             h-12
             w-full
             rounded-2xl
             border
-            border-[#243B63]
-            bg-[#080D1A]
+            border-[#D8C8B4]
+            bg-white
             px-4
             text-sm
             font-bold
-            text-[#F8F5EE]
+            text-[#17396C]
             outline-none
             focus:border-[#D6A04A]
             lg:h-14
             lg:w-40
           "
         >
-
-          <option>
-            Featured First
-          </option>
-
-          <option>
-            Newest First
-          </option>
-
-          <option>
-            Most Viewed
-          </option>
-
+          {sortOptions.map((option) => (
+            <option
+              key={option}
+              value={option}
+            >
+              {option}
+            </option>
+          ))}
         </select>
 
-
-
-        {/* Clear Button */}
+        {/* Clear */}
 
         <button
           type="button"
@@ -213,18 +206,15 @@ export default function ProjectFilter({
             px-6
             text-sm
             font-bold
-            text-[#080D1A]
+            text-white
             transition
-            hover:bg-[#e5b968]
+            hover:bg-[#C98B2F]
             lg:h-14
           "
         >
           Clear
         </button>
-
-
       </form>
-
     </section>
   );
 }
