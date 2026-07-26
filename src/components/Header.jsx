@@ -4,13 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, GraduationCap } from "lucide-react";
 
-export default function HeaderSection() {
+export default function Header() {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
     { name: "Graduates", href: "/graduates" },
     { name: "Projects", href: "/projects" },
-    { name: "Aptus", href: "/aptus-ai" },
+    { name: "Aptus", href: "/aptus" },
     { name: "Impact", href: "/impact" },
     { name: "Cohorts", href: "/cohorts" },
     { name: "Skills", href: "/skills" },
@@ -18,7 +18,7 @@ export default function HeaderSection() {
   ];
 
   return (
-    <header className="bg-[#1B3A6B] text-white sticky top-0 z-50">
+    <header className="bg-primary text-white sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
 
         {/* Logo with GraduationCap + Education */}
