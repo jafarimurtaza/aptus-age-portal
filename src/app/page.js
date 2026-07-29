@@ -6,7 +6,7 @@ import HomeIntro from "../components/home/HomeIntro";
 
 export default function page() {
   return (
-    <main className="w-full bg-[#f8fafc]">
+    <main className="w-full bg-base-100">
       <HomeIntro />
       <FeaturedGraduates />
       <AptusSection />

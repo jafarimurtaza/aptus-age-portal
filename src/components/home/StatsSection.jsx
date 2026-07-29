@@ -29,13 +29,13 @@ const statDetails = [
 
 export function StatsSection() {
   return (
-    <div className="relative z-0 mx-auto mt-8 grid max-w-7xl gap-3 sm:grid-cols-2 sm:gap-4 lg:mt-12 lg:grid-cols-4">
+    <div className="relative z-0 mx-auto mt-10 grid w-full max-w-6xl gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
       {stats.map((stat, index) => (
         <div
-          className="flex items-center gap-4 rounded-lg border border-slate-200 bg-white px-5 py-5 shadow-sm shadow-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md"
+          className="home-stat-card flex min-w-0 items-center gap-4 rounded-2xl border border-base-300 bg-base-100/95 px-5 py-5 shadow-md transition duration-200 ease-out hover:-translate-y-1 hover:shadow-lg sm:px-6"
           key={stat.label}
         >
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-base-200 text-primary">
             <svg
               aria-hidden="true"
               className="h-6 w-6"
@@ -51,10 +51,10 @@ export function StatsSection() {
           </div>
 
           <div>
-            <h2 className="text-base font-semibold text-slate-800">
+            <h2 className="text-base font-semibold leading-tight">
               {stat.label}
             </h2>
-            <p className="mt-1 text-xs font-medium text-slate-400">
+            <p className="mt-1 text-xs font-medium opacity-70">
               {stat.value} {statDetails[index].helper}
             </p>
           </div>

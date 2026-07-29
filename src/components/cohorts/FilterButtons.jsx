@@ -23,7 +23,7 @@ export default function FilterButtons({
               cursor-pointer h-12 rounded-none px-6 text-sm font-medium transition-all duration-300
               ${
                 selectedYear === filter.value
-                  ? "border-NAVY bg-NAVY text-cream shadow-[0_16px_40px_rgba(27,58,107,0.12)]"
+                  ? "border-navy bg-navy text-cream shadow-[0_16px_40px_rgba(24,58,107,0.12)]"
                   : "border-sand bg-cream text-dark hover:border-gold/80 hover:bg-sand"
               }
             `}
@@ -46,7 +46,7 @@ export default function FilterButtons({
                 cursor-pointer flex h-12 items-center gap-2 rounded-none px-5 text-sm font-medium transition-all duration-300
                 ${
                   selectedCategory === filter.value
-                    ? "border-NAVY bg-NAVY text-cream shadow-[0_16px_40px_rgba(27,58,107,0.12)]"
+                    ? "border-navy bg-navy text-cream shadow-[0_16px_40px_rgba(24,58,107,0.12)]"
                     : "border-sand bg-cream text-dark hover:border-gold/80 hover:bg-sand"
                 }
               `}
