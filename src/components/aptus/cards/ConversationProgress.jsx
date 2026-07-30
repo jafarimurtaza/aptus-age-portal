@@ -3,15 +3,15 @@ import { cn } from "@/components/aptus/utils/helpers";
 
 export default function ConversationProgress() {
   return (
-    <article className="rounded-2xl border border-aptus-line bg-white px-3 py-5 shadow-aptus-card transition-colors duration-300 md:px-5 dark:border-white/10 dark:bg-[#14201B]">
-      <h2 className="text-[13px] font-extrabold text-[#1D2730] dark:text-[#F1FAF5]">
+    <article className="rounded-2xl border border-aptus-line bg-white px-3 py-5 shadow-aptus-card transition-colors duration-300 md:px-5">
+      <h2 className="text-[13px] font-extrabold text-[#1D2730]">
         Conversation Progress
       </h2>
 
       <ol className="relative mt-7 flex flex-row justify-between gap-2 md:block md:gap-0">
         {/* Horizontal line for mobile (hidden on desktop) */}
         <span
-          className="absolute left-3 right-3 top-3 border-t border-dashed border-[#D7E2DD] dark:border-white/15 md:hidden"
+          className="absolute left-3 right-3 top-3 border-t border-dashed border-[#D7E2DD] md:hidden"
           aria-hidden="true"
         />
 
@@ -24,7 +24,7 @@ export default function ConversationProgress() {
               {/* Vertical line for desktop (hidden on mobile) */}
               {index !== conversationSteps.length - 1 && (
                 <span
-                  className="absolute left-2.75 top-7 hidden h-[calc(100%-26px)] border-l border-dashed border-[#D7E2DD] dark:border-white/15 md:block"
+                  className="absolute left-2.75 top-7 hidden h-[calc(100%-26px)] border-l border-dashed border-[#D7E2DD] md:block"
                   aria-hidden="true"
                 />
               )}
@@ -35,7 +35,7 @@ export default function ConversationProgress() {
                   "relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold",
                   step.active
                     ? "bg-navy text-white shadow-[0_7px_16px_rgba(57,184,112,0.32)]"
-                    : "bg-[#F3F5F4] text-[#4B5962] dark:bg-[#202C27] dark:text-[#B8C6BF]"
+                    : "bg-[#F3F5F4] text-[#4B5962]"
                 )}
               >
                 {step.id}
@@ -57,7 +57,7 @@ export default function ConversationProgress() {
                 <span
                   className={cn(
                     "mt-1 hidden text-[10.5px] font-medium leading-4 md:block",
-                    step.active ? "text-gold" : "text-[#73808A] dark:text-[#9BA9A2]"
+                    step.active ? "text-gold" : "text-[#73808A]"
                   )}
                 >
                   {step.description}

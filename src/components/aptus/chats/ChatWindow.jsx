@@ -17,7 +17,7 @@ export default function ChatWindow() {
   return (
     <section
       aria-label="Chat with Aptus"
-      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-cream shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300 dark:border-white/10 dark:bg-[#101A16] sm:dark:shadow-[0_18px_42px_rgba(0,0,0,0.34)]"
+      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-base-100 shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300 dark:border-white/10 sm:dark:shadow-[0_18px_42px_rgba(0,0,0,0.34)]"
     >
       <header className="flex h-14 sm:h-18 shrink-0 items-center justify-between border-b border-aptus-line px-4 sm:px-8 transition-colors duration-300 dark:border-white/10">
         <div className="flex items-center gap-2.5 sm:gap-3">
@@ -28,17 +28,14 @@ export default function ChatWindow() {
         </div>
 
         <div className="hidden sm:flex items-center">
-          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-gold px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-dark dark:bg-[#173326] dark:text-[#75E5A2]">
+          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-gold px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-dark">
             <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-navy" aria-hidden="true" />
             Online
           </span>
         </div>
       </header>
 
-      {/* 
-        Changed back to your EXACT original container. 
-        Only added "overflow-y-auto" so the whole content (messages + prompts) can scroll together.
-      */}
+    
       <div className="relative flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden md:px-4 px-3 py-5 sm:px-8 sm:py-7 transition-colors duration-300">
         <MessageList messages={chat.messages} />
         
