@@ -157,6 +157,8 @@ export default function ProjectGalleryCard({ project }) {
             transition
             hover:border-[#D79B49]
             hover:text-[#D79B49]
+            cursor-pointer
+            
           "
         >
           {tag}
