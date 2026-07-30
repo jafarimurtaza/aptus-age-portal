@@ -34,7 +34,7 @@ export default function ProjectStory({ project }) {
 
         {/* Hero Image */}
 
-        <div className="mb-12 overflow-hidden rounded-3xl border border-[#E7E3DD] shadow-xl">
+        <div className="mb-12 overflow-hidden border border-[#E7E3DD] shadow-xl">
           <Image
             src={project.heroImage}
             alt={project.title}
