@@ -29,12 +29,11 @@ export default function SkillsPreview() {
                 <h3 className="mt-3 text-sm font-semibold text-base-100">
                   {skill.name}
                 </h3>
-                <div className="mt-3 w-full h-1.5 bg-base-200 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-[#C8955A] rounded-full motion-safe:transition-all motion-safe:duration-500" style={{ width: `${skill.percent}%` }}/>
+                <div className="mt-3 w-full h-1.5 bg-base-100 rounded-full ">
+                  <div className="h-full bg-[#C8955A]" style={{ width: `${skill.percent}%` }}/>
                 </div>
-                <span className="mt-1.5 text-xs font-mono text-base-100">
-                  {skill.percent}%
+                <span className="mt-1.5 text-xs font-mono text-base-100 ">
+                  {skill.percent}<span className="ml-0.5">%</span>
                 </span>
               </Link>
             );
@@ -48,7 +47,7 @@ export default function SkillsPreview() {
         </div>
 
         <div className="text-center pt-4">
-          <Link href="/skills" className="inline-flex items-center gap-2 text-sm font-semibold text-[#C8955A] hover:text-white motion-safe:transition-colors">
+          <Link href="/skills" className="inline-flex items-center text-sm font-semibold text-[#C8955A] hover:text-white motion-safe:transition-colors">
             View All →
           </Link>
         </div>
