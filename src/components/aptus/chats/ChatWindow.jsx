@@ -6,11 +6,13 @@ import EmptyState from "@/components/aptus/chats/EmptyState";
 import SuggestedPrompts from "@/components/aptus/chats/SuggestedPrompts";
 import MessageInput from "@/components/aptus/chats/MessageInput";
 import { useChat } from "@/components/aptus/hooks/useChat";
-import { CHAT_NOTICE } from "@/components/aptus/utils/constants";
-import { APTUS_BRAND } from "@/components/aptus/utils/constants";
+import { CHAT_NOTICE, APTUS_BRAND } from "@/components/aptus/utils/constants";
 
 export default function ChatWindow() {
   const chat = useChat();
+
+  // Check if the user has sent at least one message
+  const hasUserSentMessage = chat.messages.some((msg) => msg.role === "user");
 
   return (
     <section
@@ -33,14 +35,21 @@ export default function ChatWindow() {
         </div>
       </header>
 
-      <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden md:px-4 px-3 py-5 sm:px-8 sm:py-7 transition-colors duration-300">
-        <MessageList messages={chat.messages} />
-        <div className="hidden md:flex">
-           <EmptyState />
-
+      <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden md:px-4 px-3 sm:px-8 transition-colors duration-300">
+        <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden py-5 sm:py-7">
+          <MessageList messages={chat.messages} />
+          
+          {/* Show EmptyState and SuggestedPrompts ONLY if the user hasn't sent anything yet */}
+          {!hasUserSentMessage && (
+            <>
+              <div className="hidden md:flex">
+                <EmptyState />
+              </div>
+              
+              <SuggestedPrompts onSelectPrompt={chat.usePrompt} />
+            </>
+          )}
         </div>
-       
-        <SuggestedPrompts onSelectPrompt={chat.usePrompt} />
       </div>
 
       <div className="shrink-0 border-t border-aptus-line md:px-4 px-3 py-3.5 sm:px-7 sm:py-5 transition-colors duration-300 dark:border-white/10">
@@ -57,18 +66,14 @@ export default function ChatWindow() {
           <LockKeyhole className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#6F7B83] dark:text-[#98A7A0]" aria-hidden="true" />
           {CHAT_NOTICE.secure}
         </p>
-         <div className="flex lg:hidden items-center gap-1">
-    <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
-      Powered by
-    </p>
-    <p className="font-bold text-navy">
-      {APTUS_BRAND.poweredBy}
-    </p>
-  </div>
-        {/* powered */}
-        
-           
-
+        <div className="flex lg:hidden items-center gap-1">
+          <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
+            Powered by
+          </p>
+          <p className="font-bold text-navy">
+            {APTUS_BRAND.poweredBy}
+          </p>
+        </div>
       </footer>
     </section>
   );
