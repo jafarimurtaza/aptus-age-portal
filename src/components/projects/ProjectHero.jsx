@@ -5,13 +5,14 @@ import Link from "next/link";
 
 export default function ProjectHero() {
   return (
-    <section className="relative overflow-hidden bg-[#17396C]">
+    <section className="relative overflow-hidden bg-primary">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
 
           {/* LEFT */}
 
           <div className="max-w-2xl">
+
             <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2.5">
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D6A04A]">
                 Showcasing Graduate Excellence
@@ -66,32 +67,44 @@ export default function ProjectHero() {
                   font-semibold
                   text-white
                   transition
+                  duration-300
                   hover:bg-[#C98B2F]
                 "
               >
                 Meet Our Graduates
               </Link>
             </div>
+
           </div>
 
           {/* RIGHT */}
 
           <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-[620px] overflow-hidden rounded-2xl border-4 border-white/15 shadow-2xl">
-         <Image
-  src="/images/project-detail.jpeg"
-  alt="Projects"
-  width={620}
-  height={520}
-  priority
-  className="
-    h-[320px]
-    w-full
-    object-cover
-    sm:h-[380px]
-    lg:h-[460px]
-  "
-/>
+            <div
+              className="
+                w-full
+                max-w-[620px]
+                overflow-hidden
+                rounded-2xl
+                border-4
+                border-white/15
+                shadow-2xl
+              "
+            >
+              <Image
+                src="/images/project-detail.jpeg"
+                alt="Projects"
+                width={620}
+                height={520}
+                priority
+                className="
+                  h-[320px]
+                  w-full
+                  object-cover
+                  sm:h-[380px]
+                  lg:h-[460px]
+                "
+              />
             </div>
           </div>
 
