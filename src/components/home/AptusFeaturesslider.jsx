@@ -72,8 +72,8 @@ function FeatureIcon({ children }) {
 
 export default function AptusFeaturesslider() {
   return (
-    <section className="w-full bg-white px-4 py-10 text-slate-950 sm:px-8 sm:py-12 lg:px-16 xl:px-20 xl:py-14">
-      <div className="mx-auto max-w-7xl rounded-[28px] border border-slate-200 bg-[#f8fafc] p-4 shadow-sm shadow-slate-200 sm:p-6 lg:p-8">
+    <section className="w-full bg-white py-10 text-slate-950 sm:py-12 xl:py-14">
+      <div className="w-full border-y border-orange-100 bg-[#fff7ed] px-4 py-6 shadow-sm shadow-orange-100 sm:px-8 lg:px-16 lg:py-8 xl:px-20">
         <div className="grid items-center gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
           <div>
             <p className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-700 shadow-sm shadow-emerald-100">

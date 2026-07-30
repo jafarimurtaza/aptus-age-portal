@@ -1,7 +1,7 @@
 export default function AptusSection() {
   return (
-    <section className="w-full bg-white px-4 py-8 text-slate-950 sm:px-8 sm:py-10 lg:px-16 xl:px-20 xl:py-12">
-      <div className="mx-auto grid max-w-7xl items-center gap-7 rounded-[28px] bg-[#f8fafc] px-4 py-8 sm:px-6 lg:grid-cols-[0.95fr_1fr] lg:gap-10 lg:px-8">
+    <section className="w-full bg-white py-8 text-slate-950 sm:py-10 xl:py-12">
+      <div className="grid w-full items-center gap-7 bg-[#fff7ed] px-4 py-8 shadow-sm shadow-orange-100 sm:px-8 lg:grid-cols-[0.95fr_1fr] lg:gap-10 lg:px-16 xl:px-20">
         <div className="mx-auto max-w-md text-center lg:mx-0 lg:text-left">
           <p className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-700 shadow-sm shadow-emerald-100">
             Aptus AI
@@ -21,7 +21,17 @@ export default function AptusSection() {
           </button>
         </div>
 
-        <div className="mx-auto h-[220px] w-full max-w-[520px] rounded-[24px] border border-slate-200 bg-white shadow-lg shadow-slate-200/70 sm:h-[260px] lg:h-[300px]">
+        <div className="mx-auto h-[220px] w-full max-w-[520px] overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-lg shadow-slate-200/70 sm:h-[260px] lg:h-[300px]">
+          <video
+            aria-label="Aptus AI video preview"
+            autoPlay
+            className="h-full w-full object-cover"
+            loop
+            muted
+            playsInline
+          >
+            <source src="/Images/Videos/aptus.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
