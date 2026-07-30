@@ -93,20 +93,22 @@ export default function ProjectInfo({ project }) {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3
-                    className="
-                      mt-5
-                      text-2xl
-                      font-bold
-                      leading-tight
-                      text-[#17396C]
-                      transition-colors
-                      duration-300
-                      group-hover:text-[#D79B49]
-                    "
-                  >
-                    {relatedProject.title}
-                  </h3>
+                <Link
+  href={`/projects/${relatedProject.slug}`}
+  className="
+    mt-5
+    block
+    text-2xl
+    font-bold
+    leading-tight
+    text-[#17396C]
+    transition-colors
+    duration-300
+    hover:text-[#D79B49]
+  "
+>
+  {relatedProject.title}
+</Link>
 
                   <p
                     className="

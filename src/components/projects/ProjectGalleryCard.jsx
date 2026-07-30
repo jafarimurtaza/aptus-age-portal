@@ -107,19 +107,23 @@ export default function ProjectGalleryCard({ project }) {
 
     {/* Title */}
 
-    <h3
-      className="
-        text-[28px]
-        font-bold
-        leading-tight
-        text-[#17396C]
-        transition-colors
-        duration-300
-        group-hover:text-[#D79B49]
-      "
-    >
-      {project.title}
-    </h3>
+{/* Title */}
+
+<Link
+  href={`/projects/${project.slug}`}
+  className="
+    block
+    text-[28px]
+    font-bold
+    leading-tight
+    text-[#17396C]
+    transition-colors
+    duration-300
+    hover:text-[#D79B49]
+  "
+>
+  {project.title}
+</Link>
 
     {/* Description */}
 
