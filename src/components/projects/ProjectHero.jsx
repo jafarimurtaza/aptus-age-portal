@@ -85,7 +85,7 @@ export default function ProjectHero() {
                 w-full
                 max-w-[620px]
                 overflow-hidden
-                rounded-2xl
+              
                 border-4
                 border-white/15
                 shadow-2xl
