@@ -3,13 +3,15 @@ import Link from "next/link";
 
 export default function ProjectIntro({ project }) {
   return (
-    <section
-      className="
-        relative
-        overflow-hidden
-        py-28
-      "
-    >
+   <section
+  className="
+    relative
+    overflow-hidden
+    min-h-[510px]
+    flex
+    items-center
+  "
+>
       {/* Background Image */}
 
       <Image
@@ -68,8 +70,10 @@ export default function ProjectIntro({ project }) {
           relative
           z-10
           mx-auto
-          max-w-6xl
-          px-6
+          max-w-7xl
+          px-4
+          sm:px-6
+          lg:px-8
           text-center
         "
       >
@@ -77,7 +81,7 @@ export default function ProjectIntro({ project }) {
 
         <div
           className="
-            mb-12
+            mb-10
             flex
             items-center
             justify-center
@@ -143,7 +147,7 @@ export default function ProjectIntro({ project }) {
 
         {/* Project Information */}
 
-        <div className="mt-12">
+        <div className="mt-10">
           <h2
             className="
               text-3xl
@@ -173,7 +177,7 @@ export default function ProjectIntro({ project }) {
         <div
           className="
             mx-auto
-            mt-12
+            mt-10
             h-1
             w-28
             bg-[#C9973E]

@@ -3,28 +3,22 @@ export default function ProjectSearch({
   searchText,
   setSearchText,
 }) {
-
   function searchProjects(event) {
     event.preventDefault();
   }
 
-
   return (
-
     <form
       className="
         flex
         flex-col
-        gap-3
+        gap-4
         sm:flex-row
         sm:items-center
       "
       onSubmit={searchProjects}
     >
-
-
       {/* Search Input */}
-
       <label
         className="
           flex
@@ -36,7 +30,7 @@ export default function ProjectSearch({
           border
           border-[#243B63]
           bg-[#101827]
-          px-5
+          px-4
           text-[#F8F5EE]
           shadow-lg
           shadow-black/20
@@ -44,9 +38,7 @@ export default function ProjectSearch({
           sm:flex-1
         "
       >
-
         {/* Search Icon */}
-
         <span
           className="
             relative
@@ -66,7 +58,6 @@ export default function ProjectSearch({
           "
         />
 
-
         <input
           className="
             min-w-0
@@ -78,29 +69,21 @@ export default function ProjectSearch({
             outline-none
             placeholder:text-[#A8B1C2]
           "
-          onChange={(event)=>setSearchText(event.target.value)}
+          onChange={(event) => setSearchText(event.target.value)}
           placeholder="Search projects by title, technology, or graduate..."
           type="search"
           value={searchText}
         />
-
-
       </label>
 
-
-
-
-
       {/* Search Button */}
-
       <button
         className="
           h-12
           w-full
           rounded-full
-          border-0
           bg-[#D6A04A]
-          px-8
+          px-6
           text-base
           font-black
           text-[#080D1A]
@@ -116,12 +99,7 @@ export default function ProjectSearch({
         Search
       </button>
 
-
-
-
-
       {/* Clear Button */}
-
       <button
         className="
           h-12
@@ -145,9 +123,6 @@ export default function ProjectSearch({
       >
         Clear All
       </button>
-
-
     </form>
-
   );
 }

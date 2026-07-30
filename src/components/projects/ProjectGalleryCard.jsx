@@ -51,7 +51,7 @@ export default function ProjectGalleryCard({ project }) {
     />
   </Link>
 
-  <div className="space-y-6 p-7">
+<div className="space-y-6 p-6">
 
     {/* Gallery */}
 

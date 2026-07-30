@@ -81,18 +81,14 @@ export default function ProjectsMain() {
 
   return (
     <main className="min-h-screen">
-
       <ProjectHero />
 
-      {/* Projects Section */}
-      <section className="relative overflow-hidden bg-[#F6F4EF] py-20">
-
+      <section className="relative overflow-hidden bg-[#F6F4EF] py-12">
         {/* Decorative Blur */}
         <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-[#17396C]/5 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[#D79B49]/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
           <ProjectFilter
             searchText={searchText}
             setSearchText={setSearchText}
@@ -105,16 +101,13 @@ export default function ProjectsMain() {
             clearAll={clearAll}
           />
 
-          <div className="mt-12">
+          <div className="mt-10">
             <ProjectCard
               projects={filteredProjects}
             />
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }

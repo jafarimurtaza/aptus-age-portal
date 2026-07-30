@@ -1,4 +1,5 @@
 "use client";
+
 const technologies = [
   "All",
   "Docker",
@@ -48,14 +49,12 @@ export default function ProjectFilter({
   return (
     <section
       className="
-     
         border
         border-[#E6D7C3]
         bg-[#F8F4EE]
-        p-5
+        p-6
         shadow-xl
         shadow-black/10
-        sm:p-6
       "
     >
       <form
@@ -63,13 +62,12 @@ export default function ProjectFilter({
         className="
           flex
           flex-col
-          gap-3
+          gap-4
           lg:flex-row
           lg:items-center
         "
       >
         {/* Search */}
-
         <input
           type="search"
           placeholder="Search by title..."
@@ -95,7 +93,6 @@ export default function ProjectFilter({
         />
 
         {/* Technology */}
-
         <select
           value={activeTechnology}
           onChange={(event) =>
@@ -131,7 +128,6 @@ export default function ProjectFilter({
         </select>
 
         {/* Type */}
-
         <select
           value={activeType}
           onChange={(event) =>
@@ -162,7 +158,6 @@ export default function ProjectFilter({
         </select>
 
         {/* Sort */}
-
         <select
           value={sortBy}
           onChange={(event) =>
@@ -196,7 +191,6 @@ export default function ProjectFilter({
         </select>
 
         {/* Clear */}
-
         <button
           type="button"
           onClick={clearAll}

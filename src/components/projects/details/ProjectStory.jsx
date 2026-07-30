@@ -5,20 +5,23 @@ export default function ProjectStory({ project }) {
 
   return (
     <section
-      className="bg-[#F8F4EE] py-20"
+      className="bg-[#F8F4EE] py-12"
       dir="ltr"
     >
-      <div className="mx-auto max-w-6xl px-6">
-
+      <div
+        className="
+          mx-auto
+          max-w-7xl
+          px-4
+          sm:px-6
+          lg:px-8
+        "
+      >
         {/* Project Title */}
 
-        <div className="mb-12 text-center">
-
-     
-
+        <div className="mb-10 text-center">
           <h2
             className="
-              mt-4
               text-4xl
               font-bold
               text-[#17396C]
@@ -27,44 +30,31 @@ export default function ProjectStory({ project }) {
           >
             {project.title}
           </h2>
-
-          {/* <p
-            className="
-              mt-4
-              text-base
-              uppercase
-              tracking-[0.2em]
-              text-[#6C7280]
-            "
-          >
-            {project.category}
-          </p> */}
-
         </div>
 
         {/* Hero Image */}
 
-      <div className="mb-14 overflow-hidden rounded-3xl border border-[#E7E3DD] shadow-xl">
-  <Image
-    src={project.heroImage}
-    alt={project.title}
-    width={1400}
-    height={900}
-    priority
-    className="
-      h-[260px]
-      w-full
-      object-cover
-      transition-transform
-      duration-700
-      hover:scale-105
-      sm:h-[360px]
-      md:h-[480px]
-      lg:h-[600px]
-      xl:h-[700px]
-    "
-  />
-</div>
+        <div className="mb-12 overflow-hidden rounded-3xl border border-[#E7E3DD] shadow-xl">
+          <Image
+            src={project.heroImage}
+            alt={project.title}
+            width={1400}
+            height={900}
+            priority
+            className="
+              h-[260px]
+              w-full
+              object-cover
+              transition-transform
+              duration-700
+              hover:scale-105
+              sm:h-[360px]
+              md:h-[480px]
+              lg:h-[600px]
+              xl:h-[700px]
+            "
+          />
+        </div>
 
         {/* First Paragraph */}
 
@@ -82,18 +72,16 @@ export default function ProjectStory({ project }) {
 
         <div
           className="
-            mt-20
+            mt-12
             grid
             items-center
-            gap-16
+            gap-12
             lg:grid-cols-2
           "
         >
-
           {/* Left Content */}
 
           <div>
-
             <h3
               className="
                 text-3xl
@@ -108,7 +96,7 @@ export default function ProjectStory({ project }) {
 
             <p
               className="
-                mt-8
+                mt-6
                 text-lg
                 leading-9
                 text-[#6C7280]
@@ -116,13 +104,11 @@ export default function ProjectStory({ project }) {
             >
               {paragraphs[1]}
             </p>
-
           </div>
 
           {/* Right Image */}
 
           <div className="overflow-hidden border border-[#E7E3DD] shadow-lg">
-
             <Image
               src={project.storyImage || project.heroImage}
               alt={project.title}
@@ -139,15 +125,12 @@ export default function ProjectStory({ project }) {
                 lg:h-[260px]
               "
             />
-
           </div>
-
         </div>
 
         {/* Last Paragraph */}
 
-        <div className="mt-9">
-
+        <div className="mt-8">
           <p
             className="
               text-lg
@@ -157,9 +140,7 @@ export default function ProjectStory({ project }) {
           >
             {paragraphs[2]}
           </p>
-
         </div>
-
       </div>
     </section>
   );
