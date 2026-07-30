@@ -17,7 +17,7 @@ export default function HeroCard() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="relative min-h-31 overflow-hidden rounded-2xl bg-[linear-gradient(137deg,#183A6B_0%,#0B0F19_58%,#183A6B_100%)] px-4 py-4 text-[#FAF7F2] shadow-[0_18px_34px_rgba(24,58,107,0.5)]"
+      className="hidden md:block relative min-h-31 overflow-hidden rounded-2xl bg-[linear-gradient(137deg,#183A6B_0%,#0B0F19_58%,#183A6B_100%)] px-4 py-4 text-[#FAF7F2] shadow-[0_18px_34px_rgba(24,58,107,0.5)]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_95%_12%,rgba(200,149,90,0.25),transparent_23%),radial-gradient(circle_at_10%_0%,rgba(250,247,242,0.11),transparent_34%)]" />
       <Sparkles className="absolute right-5 top-6 h-4 w-4 text-[#C8955A]" aria-hidden="true" />

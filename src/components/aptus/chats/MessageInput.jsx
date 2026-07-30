@@ -20,7 +20,7 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
           className="min-w-0 flex-1 bg-transparent text-[12.5px] font-medium text-[#1E2A32] placeholder:text-[#8A949B] focus:outline-none dark:text-[#EEF8F2] dark:placeholder:text-[#8C9A93]"
         />
 
-        <div className="ml-2 sm:ml-3 flex items-center gap-2 sm:gap-5 text-[#53636E] dark:text-[#AFC0B8]">
+        {/* <div className="ml-2 sm:ml-3 flex items-center gap-2 sm:gap-5 text-[#53636E] dark:text-[#AFC0B8]">
           <button
             type="button"
             aria-label="Attach file"
@@ -29,7 +29,7 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
             <Paperclip className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.9} />
           </button>
          
-        </div>
+        </div> */}
       </div>
 
       <motion.button
@@ -38,7 +38,7 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.96 }}
         disabled={!canSend}
-        className="cursor-pointer flex h-11 w-11 sm:h-13.5 sm:w-13.5 shrink-0 items-center justify-center rounded-full bg-gold text-navy shadow-[0_12px_24px_rgba(24,58,107,0.28)] transition hover:bg-navy hover:text-cream disabled:cursor-not-allowed disabled:opacity-70"
+        className="cursor-pointer flex h-9 w-9 sm:h-13.5 sm:w-13.5 shrink-0 items-center justify-center rounded-full bg-gold text-navy shadow-[0_12px_24px_rgba(24,58,107,0.28)] transition hover:bg-navy hover:text-cream disabled:cursor-not-allowed disabled:opacity-70"
       >
         <Send className="h-4 w-4 sm:h-5 sm:w-5 -translate-x-px translate-y-px fill-current" strokeWidth={2.1} />
       </motion.button>
