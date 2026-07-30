@@ -1,95 +1,58 @@
-  "use client";
+"use client";
 
-  import {FaReact,FaPython,FaJs,FaHtml5,FaCss3Alt,FaNodeJs,} from "react-icons/fa";
-  import {SiNextdotjs,SiPostgresql,} from "react-icons/si";
-  export default function SkillsSection() {
-  const skills = [
-    {
-      name: "HTML",
-      percent: 95,
-      icon: FaHtml5,
-      color: "text-orange-500",
-    },
-    {
-      name: "CSS",
-      percent: 90,
-      icon: FaCss3Alt,
-      color: "text-blue-500",
-    },
-    {
-      name: "JavaScript",
-      percent: 95,
-      icon: FaJs,
-      color: "text-yellow-500",
-    },
-    {
-      name: "React",
-      percent: 90,
-      icon: FaReact,
-      color: "text-cyan-500",
-    },
-    {
-      name: "Next.js",
-      percent: 85,
-      icon: SiNextdotjs,
-      color: "text-gray-900",
-    },
-    {
-      name: "Python",
-      percent: 80,
-      icon: FaPython,
-      color: "text-blue-600",
-    },
-    {
-      name: "Node.js",
-      percent: 85,
-      icon: FaNodeJs,
-      color: "text-green-600",
-    },
-    {
-      name: "PostgreSQL",
-      percent: 80,
-      icon: SiPostgresql,
-      color: "text-blue-700",
-    },
-  ];
+import Link from "next/link";
+import { FaJs, FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
+
+const skills = [
+  { name: "HTML", percent: 95, icon: FaHtml5, color: "#F97316" },
+  { name: "CSS", percent: 90, icon: FaCss3Alt, color: "#3B82F6" },
+  { name: "JavaScript", percent: 95, icon: FaJs, color: "#EAB308" },
+  { name: "Next.js", percent: 85, icon: SiNextdotjs, color: "#E5E7EB" },
+];
+
+export default function SkillsPreview() {
   return (
-      <section className="bg-[#1B3A6B] py-16 md:py-20 lg:py-24">
-      <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div className="text-center mb-12">
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-      Skills <span className="text-[#C8955A]">Breakdown</span>
-      </h2>
-      <div className="mx-auto mt-5 w-40 h-1 bg-gradient-to-r from-transparent via-[#C8955A] to-transparent"/>
-      </div>
-      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8">
-      {skills.map((skill)=>{const Icon = skill.icon;
-          return (
-            <div key={skill.name}
-                className="bg-[#F3F4F6] rounded-2xl py-5 px-5 flex flex-col items-center shadow-md hover:border-dark  hover:-translate-y-1 cursor-pointer transition duration-300">
-              {/* Circle */}
-              <div className="relative w-24 h-24">
-              <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="42" stroke="#E8E1D6" strokeWidth="5" fill="none"/>
-              <circle cx="50" cy="50" r="42"stroke="#C8955A" strokeWidth="5" fill="none" strokeLinecap="round"
-                strokeDasharray="264" strokeDashoffset={264 - (264 * skill.percent) / 100}/>
-                </svg>
-                {/* Icon */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                <Icon className={`text-5xl ${skill.color}`}/>
-                </div>
-                </div>
-                <p className="mt-4 text-lg font-bold text-[#1B3A6B]">
-                {skill.percent}%
-                </p>
-                <h3 className="mt-1 text-sm font-semibold">
-                {skill.name}
+    <section className="bg-[#0F2551] py-4 md:py-20">
+      <div className="max-w-5xl mx-auto px-6 md:px-8 lg:px-12">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-base-100 pb-6">
+            Skills <span className="text-[#C8955A]">Breakdown</span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+            return (
+              <Link key={skill.name} href="/skills" className="group bg-[#16305F] border border-white/5 rounded-xl px-4 py-5 sm:px-5 sm:py-6 flex flex-col items-center motion-safe:transition-colors motion-safe:duration-300 hover:border-[#C8955A]/40 hover:bg-[#183A6B]">
+                <Icon className="text-3xl sm:text-4xl" style={{ color: skill.color }} />
+                <h3 className="mt-3 text-sm font-semibold text-base-100">
+                  {skill.name}
                 </h3>
-              </div>
-              );
-            })}
-          </div>
-          </div>
-        </section>
-      );
-    }
+                <div className="mt-3 w-full h-1.5 bg-base-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[#C8955A] rounded-full motion-safe:transition-all motion-safe:duration-500" style={{ width: `${skill.percent}%` }}/>
+                </div>
+                <span className="mt-1.5 text-xs font-mono text-base-100">
+                  {skill.percent}%
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="flex justify-center items-center gap-2 mt-8">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C8955A]/40" />
+          <span className="h-2 w-2 rounded-full bg-[#C8955A]/70" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C8955A]/40" />
+        </div>
+
+        <div className="text-center pt-4">
+          <Link href="/skills" className="inline-flex items-center gap-2 text-sm font-semibold text-[#C8955A] hover:text-white motion-safe:transition-colors">
+            View All →
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
