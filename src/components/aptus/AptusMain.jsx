@@ -42,11 +42,11 @@ export default function AptusMain() {
           </div>
 
           <div className="mt-8 hidden lg:flex items-center gap-3 pb-1 text-[11px] leading-tight">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-aptus-mint text-gold">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-base-200 text-primary">
               <Heart className="h-4 w-4 fill-current" aria-hidden="true" />
             </div>
             <div>
-              <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
+              <p className="font-semibold text-[#77828A]">
                 Powered by
               </p>
               <p className="mt-0.5 font-bold text-gold">
