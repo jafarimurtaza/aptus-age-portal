@@ -34,8 +34,8 @@ export default function ConversationProgress() {
                 className={cn(
                   "relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold",
                   step.active
-                    ? "bg-navy text-white shadow-[0_7px_16px_rgba(57,184,112,0.32)]"
-                    : "bg-[#F3F5F4] text-[#4B5962]"
+                    ? "bg-base-300 text-base-200 shadow-[0_7px_16px_rgba(57,184,112,0.32)]"
+                    : "bg-base-200 text-[#4B5962]"
                 )}
               >
                 {step.id}
