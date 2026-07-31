@@ -105,7 +105,6 @@ export const projects = [
       {
         slug: "ngo-directory-platform",
       },
-      
     ],
   },
 

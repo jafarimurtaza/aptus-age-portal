@@ -18,18 +18,9 @@ const technologies = [
   "TypeScript",
 ];
 
-const projectTypes = [
-  "All Types",
-  "Frontend",
-  "Backend",
-  "Full Stack",
-];
+const projectTypes = ["All Types", "Frontend", "Backend", "Full Stack"];
 
-const sortOptions = [
-  "Featured First",
-  "Newest First",
-  "Most Viewed",
-];
+const sortOptions = ["Featured First", "Newest First", "Most Viewed"];
 
 export default function ProjectFilter({
   searchText,
@@ -47,22 +38,29 @@ export default function ProjectFilter({
   }
 
   return (
-    <section className=" border border-[#E6D7C3] bg-[#F8F4EE] p-6 shadow-xl shadow-black/10 " >
-      <form  onSubmit={submitSearch} className=" flex flex-col gap-4 lg:flex-row lg:items-center ">
+    <section className="border border-[#E6D7C3] bg-[#F8F4EE] p-6 shadow-xl shadow-black/10">
+      <form
+        onSubmit={submitSearch}
+        className="flex flex-col gap-4 lg:flex-row lg:items-center"
+      >
         {/* Search */}
-        <input type="search" placeholder="Search by title..." value={searchText} onChange={(event) => setSearchText(event.target.value)}
-          className=" h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-semibold text-[#17396C] outline-none placeholder:text-[#8A8176] focus:border-[#D6A04A]  lg:h-14  lg:flex-1 " />
+        <input
+          type="search"
+          placeholder="Search by title..."
+          value={searchText}
+          onChange={(event) => setSearchText(event.target.value)}
+          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-semibold text-[#17396C] outline-none placeholder:text-[#8A8176] focus:border-[#D6A04A] lg:h-14 lg:flex-1"
+        />
+
         {/* Technology */}
-        <select value={activeTechnology} onChange={(event) => setActiveTechnology(event.target.value) }
-          className=" h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white  px-4 text-sm font-bold  text-[#17396C] outline-none focus:border-[#D6A04A]  lg:h-14 lg:w-44  ">
+        <select
+          value={activeTechnology}
+          onChange={(event) => setActiveTechnology(event.target.value)}
+          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-bold text-[#17396C] outline-none focus:border-[#D6A04A] lg:h-14 lg:w-44"
+        >
           {technologies.map((technology) => (
-            <option
-              key={technology}
-              value={technology}
-            >
-              {technology === "All"
-                ? "All Categories"
-                : technology}
+            <option key={technology} value={technology}>
+              {technology === "All" ? "All Categories" : technology}
             </option>
           ))}
         </select>
@@ -70,25 +68,8 @@ export default function ProjectFilter({
         {/* Type */}
         <select
           value={activeType}
-          onChange={(event) =>
-            setActiveType(event.target.value)
-          }
-          className="
-            h-12
-            w-full
-            rounded-2xl
-            border
-            border-[#D8C8B4]
-            bg-white
-            px-4
-            text-sm
-            font-bold
-            text-[#17396C]
-            outline-none
-            focus:border-[#D6A04A]
-            lg:h-14
-            lg:w-36
-          "
+          onChange={(event) => setActiveType(event.target.value)}
+          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-bold text-[#17396C] outline-none focus:border-[#D6A04A] lg:h-14 lg:w-36"
         >
           {projectTypes.map((type) => (
             <option key={type} value={type}>
@@ -100,31 +81,11 @@ export default function ProjectFilter({
         {/* Sort */}
         <select
           value={sortBy}
-          onChange={(event) =>
-            setSortBy(event.target.value)
-          }
-          className="
-            h-12
-            w-full
-            rounded-2xl
-            border
-            border-[#D8C8B4]
-            bg-white
-            px-4
-            text-sm
-            font-bold
-            text-[#17396C]
-            outline-none
-            focus:border-[#D6A04A]
-            lg:h-14
-            lg:w-40
-          "
+          onChange={(event) => setSortBy(event.target.value)}
+          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-bold text-[#17396C] outline-none focus:border-[#D6A04A] lg:h-14 lg:w-40"
         >
           {sortOptions.map((option) => (
-            <option
-              key={option}
-              value={option}
-            >
+            <option key={option} value={option}>
               {option}
             </option>
           ))}
@@ -134,18 +95,7 @@ export default function ProjectFilter({
         <button
           type="button"
           onClick={clearAll}
-          className="
-            h-12
-            rounded-2xl
-            bg-[#D6A04A]
-            px-6
-            text-sm
-            font-bold
-            text-white
-            transition
-            hover:bg-[#C98B2F]
-            lg:h-14
-          "
+          className="h-12 rounded-2xl bg-[#D6A04A] px-6 text-sm font-bold text-white transition hover:bg-[#C98B2F] lg:h-14"
         >
           Clear
         </button>

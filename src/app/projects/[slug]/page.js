@@ -15,13 +15,11 @@ export default async function ProjectDetailsPage({ params }) {
 
   return (
     <main className="bg-white">
-
       <ProjectIntro project={project} />
 
       <ProjectStory project={project} />
 
-    <ProjectInfo project={project} />
-
+      <ProjectInfo project={project} />
     </main>
   );
 }
