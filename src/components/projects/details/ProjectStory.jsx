@@ -4,19 +4,19 @@ export default function ProjectStory({ project }) {
   const paragraphs = project.paragraphs || [];
 
   return (
-    <section className="bg-[#F8F4EE] py-12" dir="ltr">
+    <section className="bg-base-100 py-12" dir="ltr">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Project Title */}
 
         <div className="mb-10 text-center">
-          <h2 className="text-4xl font-bold text-[#17396C] md:text-5xl">
+          <h2 className="text-4xl font-bold text-base-300 md:text-5xl">
             {project.title}
           </h2>
         </div>
 
         {/* Hero Image */}
 
-        <div className="mb-12 overflow-hidden border border-[#E7E3DD] shadow-xl">
+        <div className="mb-12 overflow-hidden border border-base-200 shadow-xl">
           <Image
             src={project.heroImage}
             alt={project.title}
@@ -29,7 +29,9 @@ export default function ProjectStory({ project }) {
 
         {/* First Paragraph */}
 
-        <p className="text-lg leading-9 text-[#6C7280]">{paragraphs[0]}</p>
+        <p className="text-lg leading-9 text-base-content/60">
+          {paragraphs[0]}
+        </p>
 
         {/* Two Columns */}
 
@@ -37,18 +39,18 @@ export default function ProjectStory({ project }) {
           {/* Left Content */}
 
           <div>
-            <h3 className="text-3xl font-bold leading-tight text-[#17396C] lg:text-4xl">
+            <h3 className="text-3xl font-bold leading-tight text-base-300 lg:text-4xl">
               Recruitment With AI For Startup Businesses
             </h3>
 
-            <p className="mt-6 text-lg leading-9 text-[#6C7280]">
+            <p className="mt-6 text-lg leading-9 text-base-content/60">
               {paragraphs[1]}
             </p>
           </div>
 
           {/* Right Image */}
 
-          <div className="overflow-hidden border border-[#E7E3DD] shadow-lg">
+          <div className="overflow-hidden border border-base-200 shadow-lg">
             <Image
               src={project.storyImage || project.heroImage}
               alt={project.title}
@@ -62,7 +64,9 @@ export default function ProjectStory({ project }) {
         {/* Last Paragraph */}
 
         <div className="mt-8">
-          <p className="text-lg leading-9 text-[#6C7280]">{paragraphs[2]}</p>
+          <p className="text-lg leading-9 text-base-content/60">
+            {paragraphs[2]}
+          </p>
         </div>
       </div>
     </section>

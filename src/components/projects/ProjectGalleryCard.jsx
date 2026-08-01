@@ -9,7 +9,7 @@ export default function ProjectGalleryCard({ project }) {
   const [activeImage, setActiveImage] = useState(0);
 
   return (
-    <article className="group overflow-hidden border border-[#E7DCCB] bg-gradient-to-b from-[#FFFDF9] to-[#F7F2EA] shadow-lg shadow-[#17396C]/10 transition-all duration-500 hover:-translate-y-2 hover:border-[#D79B49] hover:bg-white hover:shadow-2xl hover:shadow-[#17396C]/15">
+    <article className="group overflow-hidden border border-base-200 bg-gradient-to-b from-base-100 to-base-200 shadow-lg shadow-base-300/10 transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:bg-base-100 hover:shadow-2xl hover:shadow-base-300/15">
       {/* Main Image */}
 
       <Link
@@ -35,8 +35,8 @@ export default function ProjectGalleryCard({ project }) {
                 onClick={() => setActiveImage(index)}
                 className={
                   activeImage === index
-                    ? "h-16 overflow-hidden rounded-xl border-2 border-[#D79B49]"
-                    : "h-16 overflow-hidden rounded-xl border-2 border-[#E6DDD0] hover:border-[#D79B49]"
+                    ? "h-16 overflow-hidden rounded-xl border-2 border-primary"
+                    : "h-16 overflow-hidden rounded-xl border-2 border-base-200 hover:border-primary"
                 }
               >
                 <ProjectImage
@@ -51,7 +51,7 @@ export default function ProjectGalleryCard({ project }) {
 
         {/* Author */}
 
-        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#8A7C6A]">
+        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-muted">
           BY {project.graduate || project.author}
         </p>
 
@@ -59,14 +59,14 @@ export default function ProjectGalleryCard({ project }) {
 
         <Link
           href={`/projects/${project.slug}`}
-          className="block text-[28px] font-bold leading-tight text-[#17396C] transition-colors duration-300 hover:text-[#D79B49]"
+          className="block text-[28px] font-bold leading-tight text-base-300 transition-colors duration-300 hover:text-primary"
         >
           {project.title}
         </Link>
 
         {/* Description */}
 
-        <p className="line-clamp-2 text-[15px] leading-7 text-[#6C7280]">
+        <p className="line-clamp-2 text-[15px] leading-7 text-base-content/60">
           {project.description}
         </p>
 
@@ -76,7 +76,7 @@ export default function ProjectGalleryCard({ project }) {
           {project.tags?.map((tag) => (
             <span
               key={`${project.slug}-${tag}`}
-              className="cursor-pointer rounded-full border border-[#E5D7C4] bg-white px-4 py-2 text-xs font-semibold text-[#17396C] transition hover:border-[#D79B49] hover:text-[#D79B49]"
+              className="cursor-pointer rounded-full border border-base-200 bg-white px-4 py-2 text-xs font-semibold text-base-300 transition hover:border-primary hover:text-primary"
             >
               {tag}
             </span>
@@ -85,15 +85,15 @@ export default function ProjectGalleryCard({ project }) {
 
         {/* Footer */}
 
-        <div className="flex items-center justify-between border-t border-[#E7DCCB] pt-6">
+        <div className="flex items-center justify-between border-t border-base-200 pt-6">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center rounded-full bg-[#D79B49] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#17396C]"
+            className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-base-300"
           >
             Read More
           </Link>
 
-          <p className="text-xs font-semibold text-[#7C7C7C]">
+          <p className="text-xs font-semibold text-muted-400">
             {project.views} views
           </p>
         </div>

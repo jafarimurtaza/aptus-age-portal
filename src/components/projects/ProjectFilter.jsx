@@ -38,7 +38,7 @@ export default function ProjectFilter({
   }
 
   return (
-    <section className="border border-[#E6D7C3] bg-[#F8F4EE] p-6 shadow-xl shadow-black/10">
+    <section className="border border-base-100 bg-base-100 p-6 shadow-xl shadow-black/10">
       <form
         onSubmit={submitSearch}
         className="flex flex-col gap-4 lg:flex-row lg:items-center"
@@ -49,14 +49,14 @@ export default function ProjectFilter({
           placeholder="Search by title..."
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
-          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-semibold text-[#17396C] outline-none placeholder:text-[#8A8176] focus:border-[#D6A04A] lg:h-14 lg:flex-1"
+          className="h-12 w-full rounded-2xl border border-base-200 bg-white px-4 text-sm font-semibold text-base-300 outline-none placeholder:text-[#8A8176] focus:border-primary lg:h-14 lg:flex-1"
         />
 
         {/* Technology */}
         <select
           value={activeTechnology}
           onChange={(event) => setActiveTechnology(event.target.value)}
-          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-bold text-[#17396C] outline-none focus:border-[#D6A04A] lg:h-14 lg:w-44"
+          className="h-12 w-full rounded-2xl border border-base-200 bg-white px-4 text-sm font-bold text-base-300 outline-none focus:border-primary lg:h-14 lg:w-44"
         >
           {technologies.map((technology) => (
             <option key={technology} value={technology}>
@@ -69,7 +69,7 @@ export default function ProjectFilter({
         <select
           value={activeType}
           onChange={(event) => setActiveType(event.target.value)}
-          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-bold text-[#17396C] outline-none focus:border-[#D6A04A] lg:h-14 lg:w-36"
+          className="h-12 w-full rounded-2xl border border-base-200 bg-white px-4 text-sm font-bold text-base-300 outline-none focus:border-primary lg:h-14 lg:w-36"
         >
           {projectTypes.map((type) => (
             <option key={type} value={type}>
@@ -82,7 +82,7 @@ export default function ProjectFilter({
         <select
           value={sortBy}
           onChange={(event) => setSortBy(event.target.value)}
-          className="h-12 w-full rounded-2xl border border-[#D8C8B4] bg-white px-4 text-sm font-bold text-[#17396C] outline-none focus:border-[#D6A04A] lg:h-14 lg:w-40"
+          className="h-12 w-full rounded-2xl border border-base-200 bg-white px-4 text-sm font-bold text-base-300 outline-none focus:border-primary lg:h-14 lg:w-40"
         >
           {sortOptions.map((option) => (
             <option key={option} value={option}>
@@ -95,7 +95,7 @@ export default function ProjectFilter({
         <button
           type="button"
           onClick={clearAll}
-          className="h-12 rounded-2xl bg-[#D6A04A] px-6 text-sm font-bold text-white transition hover:bg-[#C98B2F] lg:h-14"
+          className="h-12 rounded-2xl bg-primary px-6 text-sm font-bold text-white transition hover:bg-[#C98B2F] lg:h-14"
         >
           Clear
         </button>

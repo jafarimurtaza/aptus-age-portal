@@ -17,60 +17,39 @@ export default function ProjectsMain() {
     const search = searchText.trim().toLowerCase();
 
     let result = projects.filter((project) => {
-      const author = (
-        project.graduate ||
-        project.author ||
-        ""
-      ).toLowerCase();
+      const author = (project.graduate || project.author || "").toLowerCase();
 
       const matchSearch =
         search === "" ||
         project.title.toLowerCase().includes(search) ||
         author.includes(search) ||
         project.description.toLowerCase().includes(search) ||
-        (project.tags || []).some((tag) =>
-          tag.toLowerCase().includes(search)
-        );
+        (project.tags || []).some((tag) => tag.toLowerCase().includes(search));
 
       const matchTechnology =
         activeTechnology === "All" ||
         (project.tags || []).includes(activeTechnology);
 
-      const projectType =
-        project.type || "All Types";
+      const projectType = project.type || "All Types";
 
       const matchType =
-        activeType === "All Types" ||
-        projectType === activeType;
+        activeType === "All Types" || projectType === activeType;
 
-      return (
-        matchSearch &&
-        matchTechnology &&
-        matchType
-      );
+      return matchSearch && matchTechnology && matchType;
     });
 
     if (sortBy === "Most Viewed") {
-      result = [...result].sort(
-        (a, b) => Number(b.views) - Number(a.views)
-      );
+      result = [...result].sort((a, b) => Number(b.views) - Number(a.views));
     }
 
     if (sortBy === "Newest First") {
       result = [...result].sort(
-        (a, b) =>
-          Number(b.year || 0) -
-          Number(a.year || 0)
+        (a, b) => Number(b.year || 0) - Number(a.year || 0),
       );
     }
 
     return result;
-  }, [
-    searchText,
-    activeTechnology,
-    activeType,
-    sortBy,
-  ]);
+  }, [searchText, activeTechnology, activeType, sortBy]);
 
   function clearAll() {
     setSearchText("");
@@ -83,10 +62,10 @@ export default function ProjectsMain() {
     <main className="min-h-screen">
       <ProjectHero />
 
-      <section className="relative overflow-hidden bg-[#F6F4EF] py-12">
+      <section className="relative overflow-hidden bg-base-100 py-12">
         {/* Decorative Blur */}
-        <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-[#17396C]/5 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[#D79B49]/10 blur-3xl" />
+        <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-base-300/5 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-Primary/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ProjectFilter
@@ -102,9 +81,7 @@ export default function ProjectsMain() {
           />
 
           <div className="mt-10">
-            <ProjectCard
-              projects={filteredProjects}
-            />
+            <ProjectCard projects={filteredProjects} />
           </div>
         </div>
       </section>

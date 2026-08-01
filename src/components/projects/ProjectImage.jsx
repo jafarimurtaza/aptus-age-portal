@@ -9,7 +9,7 @@ export default function ProjectImage({
 
   return (
     <div
-      className={`group relative h-full min-h-full w-full overflow-hidden ${rounded} bg-[#101827]`}
+      className={`group relative h-full min-h-full w-full overflow-hidden ${rounded} bg-base-200`}
     >
       <Image
         src={image}
@@ -19,7 +19,7 @@ export default function ProjectImage({
         className="object-cover transition-transform duration-700 group-hover:scale-110"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#080D1A]/40 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral/40 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
     </div>
   );
 }

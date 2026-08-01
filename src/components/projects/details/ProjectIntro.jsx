@@ -16,15 +16,15 @@ export default function ProjectIntro({ project }) {
 
       {/* Dark Overlay */}
 
-      <div className="absolute inset-0 bg-[#10233F]/70" />
+      <div className="absolute inset-0 bg-base-300/70" />
 
       {/* Decorative Gold Glow */}
 
-      <div className="absolute -right-20 top-10 h-72 w-72 rounded-full bg-[#C9973E]/10 blur-3xl" />
+      <div className="absolute -right-20 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
 
       {/* Decorative Glow Left */}
 
-      <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-[#C9973E]/10 blur-3xl" />
+      <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
 
       {/* Content */}
 
@@ -32,13 +32,13 @@ export default function ProjectIntro({ project }) {
         {/* Breadcrumb */}
 
         <div className="mb-10 flex items-center justify-center gap-3 text-sm text-white/80">
-          <Link href="/" className="transition hover:text-[#C9973E]">
+          <Link href="/" className="transition hover:text-primary">
             Home
           </Link>
 
           <span>/</span>
 
-          <Link href="/projects" className="transition hover:text-[#C9973E]">
+          <Link href="/projects" className="transition hover:text-primary">
             Projects
           </Link>
 
@@ -50,7 +50,7 @@ export default function ProjectIntro({ project }) {
         {/* Main Title */}
 
         <div className="relative inline-block">
-          <span className="absolute -right-8 top-1/2 -z-10 h-28 w-28 -translate-y-1/2 rounded-full bg-[#C9973E]/20 blur-xl" />
+          <span className="absolute -right-8 top-1/2 -z-10 h-28 w-28 -translate-y-1/2 rounded-full bg-primary/20 blur-xl" />
 
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
             Project Details
@@ -64,14 +64,14 @@ export default function ProjectIntro({ project }) {
             {project.title}
           </h2>
 
-          <p className="mt-4 text-sm uppercase tracking-[0.3em] text-[#C9973E]">
+          <p className="mt-4 text-sm uppercase tracking-[0.3em] text-primary">
             {project.category}
           </p>
         </div>
 
         {/* Bottom Line */}
 
-        <div className="mx-auto mt-10 h-1 w-28 bg-[#C9973E]" />
+        <div className="mx-auto mt-10 h-1 w-28 bg-primary" />
       </div>
     </section>
   );
