@@ -1,4 +1,3 @@
-// HeroCards.tsx
 import { hero } from "./data/hero";
 
 export default function HeroCards() {
@@ -14,7 +13,7 @@ export default function HeroCards() {
         return (
           <article
             key={stat.id}
-            className="home-stat-card group relative overflow-hidden rounded-2xl border border-white/10 bg-navy/80 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:bg-navy/90 sm:p-6"
+            className="group relative overflow-hidden border border-white/5 bg-navy/80 p-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:bg-navy/90 sm:p-6"
             role="listitem"
             style={{ animationDelay: `${index * 60}ms` }}
           >
@@ -24,9 +23,10 @@ export default function HeroCards() {
               aria-hidden="true"
             />
 
-            <div className="relative flex h-full flex-col">
-              {/* Icon */}
-              <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-gold/10 sm:h-12 sm:w-12">
+            {/* Centered Content */}
+            <div className="relative flex h-full flex-col items-center text-center">
+              {/* Icon - removed rounded-lg to match straight aesthetic */}
+              <div className="mb-3 flex h-11 w-11 items-center justify-center bg-gold/10 sm:h-12 sm:w-12">
                 <Icon
                   size={20}
                   strokeWidth={1.5}
@@ -48,12 +48,12 @@ export default function HeroCards() {
                 {stat.label}
               </p>
 
-              {/* Bottom line */}
+              {/* Bottom line - adjusted to center nicely */}
               <div
-                className="mt-auto pt-4"
+                className="mt-auto pt-4 w-full"
                 aria-hidden="true"
               >
-                <div className="h-px w-full bg-gradient-to-r from-gold/20 to-transparent" />
+                <div className="mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
               </div>
             </div>
           </article>

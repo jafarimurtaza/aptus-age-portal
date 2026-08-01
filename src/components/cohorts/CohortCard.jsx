@@ -1,4 +1,4 @@
-// CohortCard.tsx
+// CohortCard.jsx
 import Image from "next/image";
 import { CalendarDays, ArrowRight, Users } from "lucide-react";
 
@@ -12,29 +12,30 @@ export default function CohortCard({ cohort }) {
   const isCompleted = cohort.graduates === "completed";
 
   return (
-    <article className="cohort-card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(11,15,25,0.14)]">
+    <article className="cohort-card group flex h-full flex-col overflow-hidden border border-sand/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(11,15,25,0.12)]">
+      
       {/* Header */}
-      <header className="cohort-card-header p-5 sm:p-6">
-        <div className="flex items-start justify-between gap-3">
+      <header className="cohort-card-header border-b border-sand/60 p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <h2 className="text-xl font-bold text-navy sm:text-2xl">
+            <h2 className="text-xl font-bold tracking-tight text-navy sm:text-2xl">
               {cohort.title}
             </h2>
-            <div className="mt-2.5 flex items-center gap-2 text-dark/50">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gold/10">
+            <div className="mt-3 flex items-center gap-2 text-navy/70">
+              <div className="flex h-6 w-6 items-center justify-center bg-gold/10">
                 <CalendarDays size={13} className="text-gold" aria-hidden="true" />
               </div>
-              <span className="text-sm">
+              <span className="text-sm font-medium">
                 {cohort.startDate} — {cohort.endDate}
               </span>
             </div>
           </div>
 
           <span
-            className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-200 group-hover:scale-105 ${
+            className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap px-3 py-1.5 text-xs font-semibold transition-all duration-200 group-hover:scale-105 ${
               isCompleted
-                ? "bg-gold/15 text-gold ring-1 ring-gold/20"
-                : "bg-navy/10 text-navy ring-1 ring-navy/15"
+                ? "bg-gold/15 text-gold ring-1 ring-gold/30"
+                : "bg-navy/10 text-navy ring-1 ring-navy/20"
             }`}
           >
             <Users size={12} aria-hidden="true" />
@@ -44,18 +45,21 @@ export default function CohortCard({ cohort }) {
       </header>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col p-5 sm:p-6 pt-0 sm:pt-0">
-        <p className="text-sm leading-relaxed text-dark/55">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <p className="text-sm leading-relaxed text-dark/70">
           {cohort.description}
         </p>
 
-        {/* Students */}
-        <div className="cohort-card-graduates mt-5 p-4">
-          <div className="scrollbar-hide flex items-center gap-2.5 overflow-x-auto pb-1">
+        {/* Students & Action Section */}
+        <div className="cohort-card-graduates mt-6 border border-sand/60 p-4">
+          {/* Single line, no scroll bar, no wrapping */}
+          <div className="flex flex-nowrap items-center gap-2.5 overflow-hidden">
             {students.map((student) => (
               <div
                 key={student.name}
-                className="group/student flex shrink-0 cursor-pointer items-center gap-2 rounded-full border border-sand bg-white px-3 py-1.5 text-sm font-medium text-dark shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-md"
+                role="button"
+                tabIndex={0}
+                className="group/student flex shrink-0 cursor-pointer items-center gap-2 border border-sand bg-white px-3 py-1.5 text-sm font-medium text-dark shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2"
               >
                 <Image
                   src={student.image}
@@ -63,9 +67,9 @@ export default function CohortCard({ cohort }) {
                   width={24}
                   height={24}
                   unoptimized
-                  className="h-6 w-6 shrink-0 rounded-full object-cover ring-2 ring-gold/15 transition-all duration-200 group-hover/student:ring-gold/40"
+                  className="h-6 w-6 shrink-0 object-cover ring-2 ring-gold/15 transition-all duration-200 group-hover/student:ring-gold/40"
                 />
-                <span className="transition-colors duration-200 group-hover/student:text-gold">
+                <span className="whitespace-nowrap transition-colors duration-200 group-hover/student:text-gold">
                   {student.name}
                 </span>
               </div>
@@ -76,14 +80,14 @@ export default function CohortCard({ cohort }) {
           <button
             type="button"
             aria-label="View Graduates"
-            className="group/btn mt-4 flex w-full cursor-pointer items-center justify-between rounded-xl bg-navy px-4 py-3 transition-all duration-200 hover:bg-navy/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
+            className="group/btn mt-4 flex w-full cursor-pointer items-center justify-between bg-navy px-4 py-3.5 transition-all duration-200 hover:bg-navy/90 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2"
           >
             <span className="flex items-center gap-2 text-sm font-semibold text-cream transition-colors duration-200 group-hover/btn:text-gold-light">
               <Users size={14} className="text-cream/60 transition-colors duration-200 group-hover/btn:text-gold" />
               View Graduates
             </span>
             <ArrowRight
-              size={14}
+              size={16}
               className="text-cream/60 transition-all duration-200 group-hover/btn:translate-x-1 group-hover/btn:text-gold"
               aria-hidden="true"
             />
