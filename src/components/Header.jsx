@@ -18,7 +18,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-primary text-white sticky top-0 z-50">
+    <header className="bg-base-300 atext-white sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
 
         {/* Logo with GraduationCap + Education */}
