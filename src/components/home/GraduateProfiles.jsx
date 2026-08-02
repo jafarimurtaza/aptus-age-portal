@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { graduateProfiles } from "./HomeIntro";
 
 export function GraduateProfiles() {
@@ -10,9 +11,14 @@ export function GraduateProfiles() {
                         key={graduate.name}
                         style={{ "--card-index": index }}
                     >
-                        <div
-                            className={`relative flex h-48 items-end justify-center bg-gradient-to-br sm:h-60 xl:h-72 ${graduate.photoClass}`}
-                        >
+                        <div className="relative flex h-48 items-end justify-center overflow-hidden bg-slate-100 sm:h-60 xl:h-72">
+                            <Image
+                                alt={`${graduate.name} profile preview`}
+                                className="object-cover"
+                                fill
+                                sizes="(max-width: 768px) 280px, 360px"
+                                src={graduate.imageSrc}
+                            />
                             <div className="absolute bottom-0 left-0 h-24 w-24 -translate-x-8 translate-y-10 rotate-45 bg-white"></div>
                         </div>
 

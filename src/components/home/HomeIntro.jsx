@@ -7,21 +7,21 @@ export const graduateProfiles = [
     title: "Full Stack Developer",
     skill: "Web Development",
     company: "AFGHAN GEEKS",
-    photoClass: "from-sky-100 via-slate-100 to-blue-200",
+    imageSrc: "/Images/card1.jpg",
   },
   {
     name: "Sahar Karimi",
     title: "UI UX Designer",
     skill: "Product Design",
     company: "APTUS AGE",
-    photoClass: "from-emerald-100 via-stone-100 to-teal-200",
+    imageSrc: "/Images/card2.jpg",
   },
   {
     name: "Maryam Rasa",
     title: "Frontend Engineer",
     skill: "React Development",
     company: "TECH STUDIO",
-    photoClass: "from-indigo-100 via-slate-100 to-violet-200",
+    imageSrc: "/Images/card3.avif",
   },
 ];
 

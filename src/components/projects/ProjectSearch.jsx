@@ -1,38 +1,153 @@
-export default function ProjectSearch({ clearAll, searchText, setSearchText }) {
+export default function ProjectSearch({
+  clearAll,
+  searchText,
+  setSearchText,
+}) {
+
   function searchProjects(event) {
     event.preventDefault();
   }
 
+
   return (
+
     <form
-      className="flex flex-col gap-3 sm:flex-row sm:items-center"
+      className="
+        flex
+        flex-col
+        gap-3
+        sm:flex-row
+        sm:items-center
+      "
       onSubmit={searchProjects}
     >
-      <label className="input input-bordered flex h-12 w-full items-center gap-3 rounded-full border-slate-300 bg-white text-slate-900 sm:h-14 sm:flex-1">
-        <span className="relative h-5 w-5 rounded-full border-2 border-slate-700 after:absolute after:-bottom-1.5 after:-right-1 after:h-2 after:w-0.5 after:rotate-[-45deg] after:rounded-full after:bg-slate-700" />
+
+
+      {/* Search Input */}
+
+      <label
+        className="
+          flex
+          h-12
+          w-full
+          items-center
+          gap-3
+          rounded-full
+          border
+          border-[#243B63]
+          bg-[#101827]
+          px-5
+          text-[#F8F5EE]
+          shadow-lg
+          shadow-black/20
+          sm:h-14
+          sm:flex-1
+        "
+      >
+
+        {/* Search Icon */}
+
+        <span
+          className="
+            relative
+            h-5
+            w-5
+            rounded-full
+            border-2
+            border-[#D6A04A]
+            after:absolute
+            after:-bottom-1.5
+            after:-right-1
+            after:h-2
+            after:w-0.5
+            after:rotate-[-45deg]
+            after:rounded-full
+            after:bg-[#D6A04A]
+          "
+        />
+
+
         <input
-          className="min-w-0 grow text-sm font-semibold placeholder:text-slate-500"
-          onChange={(event) => setSearchText(event.target.value)}
+          className="
+            min-w-0
+            grow
+            bg-transparent
+            text-sm
+            font-semibold
+            text-[#F8F5EE]
+            outline-none
+            placeholder:text-[#A8B1C2]
+          "
+          onChange={(event)=>setSearchText(event.target.value)}
           placeholder="Search projects by title, technology, or graduate..."
           type="search"
           value={searchText}
         />
+
+
       </label>
 
+
+
+
+
+      {/* Search Button */}
+
       <button
-        className="btn h-12 w-full rounded-full border-0 bg-green-900 px-6 text-base font-black text-white shadow-md shadow-emerald-900/15 hover:bg-green-950 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
+        className="
+          h-12
+          w-full
+          rounded-full
+          border-0
+          bg-[#D6A04A]
+          px-8
+          text-base
+          font-black
+          text-[#080D1A]
+          shadow-lg
+          shadow-black/20
+          transition
+          hover:bg-[#e5b968]
+          sm:h-14
+          sm:w-auto
+        "
         type="submit"
       >
         Search
       </button>
 
+
+
+
+
+      {/* Clear Button */}
+
       <button
-        className="btn h-12 w-full rounded-full border border-emerald-700 bg-white px-6 text-sm font-black text-emerald-700 shadow-md shadow-emerald-900/10 hover:bg-emerald-50 sm:h-14 sm:w-auto"
+        className="
+          h-12
+          w-full
+          rounded-full
+          border
+          border-[#D6A04A]
+          bg-transparent
+          px-6
+          text-sm
+          font-black
+          text-[#D6A04A]
+          transition
+          hover:bg-[#D6A04A]
+          hover:text-[#080D1A]
+          sm:h-14
+          sm:w-auto
+        "
         onClick={clearAll}
         type="button"
       >
         Clear All
       </button>
+
+
     </form>
+
   );
 }

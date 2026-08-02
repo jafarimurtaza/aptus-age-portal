@@ -28,11 +28,11 @@ export default function EmptyState() {
         ))}
       </div>
 
-      <div className="absolute left-1/2 top-[44%] z-10 flex h-20.5 w-20.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#BDEED5]/80 shadow-[0_0_0_22px_rgba(57,184,112,0.08)]">
-        <div className="flex h-14.5 w-14.5 items-center justify-center rounded-full bg-[linear-gradient(145deg,#71DA9C,#2DAE67)] text-white shadow-[0_10px_24px_rgba(57,184,112,0.28)]">
+      <div className="absolute left-1/2 top-[44%] z-10 flex h-20.5 w-20.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#C8955A]/80 shadow-[0_0_0_22px_rgba(200,149,90,0.08)]">
+        <div className="flex h-14.5 w-14.5 items-center justify-center rounded-full bg-[linear-gradient(145deg,#183A6B,#C8955A)] text-[#FAF7F2] shadow-[0_10px_24px_rgba(200,149,90,0.28)]">
           <BotMessageSquare className="h-8 w-8" strokeWidth={2.2} />
         </div>
-        <Sparkles className="absolute -left-1 -top-2 h-5 w-5 text-aptus-green" strokeWidth={2.2} />
+        <Sparkles className="absolute -left-1 -top-2 h-5 w-5 text-[#183A6B]" strokeWidth={2.2} />
       </div>
     </motion.div>
   );
