@@ -2,15 +2,12 @@
 
 import { Handle, Position } from "reactflow";
 
-const DARK = "var(--color-dark)";
-const CREAM = "var(--color-cream)";
-
 export default function SkillNode({ data }) {
   return (
     <div
       className={`origin-left animate-[skillIn_260ms_ease-out] rounded-xl border ${data.mobile ? "w-56 px-4 py-3" : "w-45 px-3 py-2"}`}
       style={{
-        backgroundColor: CREAM,
+        backgroundColor: "var(--color-base-100)",
         borderColor: `${data.color}40`,
         animationDelay: `${data.delay ?? 0}ms`,
         animationFillMode: "backwards",
@@ -50,7 +47,7 @@ export default function SkillNode({ data }) {
   min-w-0 flex-1 truncate font-medium
   ${data.mobile ? "text-sm" : "text-[11px] sm:text-xs"}
 `}
-          style={{ color: DARK }}
+         style={{ color: "var(--color-base-content)" }}
         >
           {data.name}
         </span>
@@ -64,7 +61,7 @@ export default function SkillNode({ data }) {
       <div
         // className=" mt-2 w-full overflow-hidden rounded-full"
         className={` mt-2 w-full rounded-full ${data.mobile ? "h-1.5" : "h-1"}`}
-        style={{ backgroundColor: `${DARK}14` }}
+       style={{ backgroundColor: "var(--color-base-200)" }}
         role="progressbar"
         aria-valuenow={data.level}
         aria-valuemin={0}

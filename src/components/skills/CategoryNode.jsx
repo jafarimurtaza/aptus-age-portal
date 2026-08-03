@@ -9,9 +9,6 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-const DARK = "var(--color-dark)";
-const CREAM = "var(--color-cream)";
-
 const ICONS = {
   frontend: Code2,
   backend: ServerCog,
@@ -52,10 +49,10 @@ export default function CategoryNode({ data, selected }) {
  ${isOpen ? "-translate-y-0.5 scale-[1.02]" : "scale-100"}
 `}
       style={{
-        backgroundColor: CREAM,
+        backgroundColor: "var(--color-base-100)",
         borderColor: isOpen ? data.color : `${data.color}33`,
         "--tw-ring-color": data.color,
-        "--tw-ring-offset-color": CREAM,
+        "--tw-ring-offset-color": "var(--color-base-100)",
         boxShadow: isOpen
           ? `0 12px 32px -12px ${data.color}55, 0 0 0 1px ${data.color}22`
           : "0 2px 8px -4px rgba(11,15,25,0.12)",
@@ -95,7 +92,7 @@ ${data.mobile ? "h-11 w-11" : "h-8 w-8 sm:h-9 sm:w-9"}
           <div className="flex items-center justify-between gap-2">
             <h3
               className="truncate text-sm font-semibold sm:text-base"
-              style={{ color: DARK }}
+              style={{ color: "var(--color-base-content)" }}
             >
               {data.label}
             </h3>
@@ -103,12 +100,18 @@ ${data.mobile ? "h-11 w-11" : "h-8 w-8 sm:h-9 sm:w-9"}
               size={16}
               aria-hidden="true"
               className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-              style={{ color: isOpen ? data.color : `${DARK}55` }}
-            />
+              style={{
+                color: isOpen
+                  ? data.color
+                  : "color-mix(in srgb, var(--color-base-content) 35%, transparent)",
+              }}            />
           </div>
           <p
             className="mt-1 text-[11px] leading-snug line-clamp-2 sm:text-xs"
-            style={{ color: `${DARK}99` }}
+            style={{
+              color:
+                "color-mix(in srgb, var(--color-base-content) 60%, transparent)",
+            }}
           >
             {data.description}
           </p>
@@ -117,7 +120,11 @@ ${data.mobile ? "h-11 w-11" : "h-8 w-8 sm:h-9 sm:w-9"}
 
       <div
         className="mt-2.5 flex items-center justify-between border-t pt-2 text-[10px] sm:text-[11px]"
-        style={{ borderColor: `${data.color}55`, color: `${DARK}88` }}
+        style={{
+          borderColor: `${data.color}55`,
+          color:
+            "color-mix(in srgb, var(--color-base-content) 55%, transparent)",
+        }}
       >
         <span
           className="rounded-full px-2 py-0.5 font-medium"

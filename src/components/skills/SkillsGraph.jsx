@@ -92,9 +92,11 @@ function getRootNodeBase(root) {
     data: { label: "Skills" },
     className: "text-center",
     style: {
-      background: "linear-gradient(135deg, #1B3A6B, #0B0F19)",
-      color: "#FAF7F2",
-      border: "1px solid #C8955A66",
+      background:
+        "linear-gradient(135deg, var(--color-primary), var(--color-neutral))",
+      color: "var(--color-base-100)",
+      border:
+        "1px solid color-mix(in srgb, var(--color-secondary) 40%, transparent)",
       borderRadius: 16,
       fontWeight: 800,
       fontSize: root.fontSize,
@@ -103,12 +105,19 @@ function getRootNodeBase(root) {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      boxShadow: "0 0 28px #C8955A33, 0 8px 20px -6px #00000080",
+      boxShadow:
+        "0 0 28px color-mix(in srgb, var(--color-secondary) 25%, transparent), 0 8px 20px -6px rgb(0 0 0 / 50%)",
     },
   };
 }
 
-function buildStackedGraph(expanded, removedSkills, search, layout, viewportWidth) {
+function buildStackedGraph(
+  expanded,
+  removedSkills,
+  search,
+  layout,
+  viewportWidth,
+) {
   const {
     rootY,
     afterRootGap,
@@ -160,7 +169,7 @@ function buildStackedGraph(expanded, removedSkills, search, layout, viewportWidt
         target: cat.id,
         type: edgeType,
         style: {
-          stroke: cat.color,
+          stroke: "var(--color-primary)",
           strokeWidth: 1.5,
           strokeDasharray: "4 4",
           opacity: 0.7,
@@ -198,7 +207,7 @@ function buildStackedGraph(expanded, removedSkills, search, layout, viewportWidt
             type: edgeType,
             animated: skillEdgeAnimated,
             style: {
-              stroke: cat.color,
+             stroke: "var(--color-primary)",
               strokeWidth: 1,
               strokeDasharray: "2 4",
               opacity: 0.5,
@@ -223,7 +232,7 @@ function buildSpreadGraph(expanded, removedSkills, search, layout) {
     root,
     edgeType,
     skillEdgeAnimated,
-      viewportWidth,
+    viewportWidth,
   } = layout;
   const rootNodeBase = getRootNodeBase(root);
   const nodes = [];
@@ -276,7 +285,7 @@ function buildSpreadGraph(expanded, removedSkills, search, layout) {
         expanded: isOpen,
         hovered: false,
         // mobile: layout.mode === "stacked" && viewportWidth < 640,
-        mobile: viewportWidth < 640
+        mobile: viewportWidth < 640,
       },
     });
 
@@ -338,8 +347,20 @@ function buildSpreadGraph(expanded, removedSkills, search, layout) {
 function buildGraph(expanded, removedSkills, search, layout, viewportWidth) {
   const graph =
     layout.mode === "stacked"
-      ? buildStackedGraph(expanded, removedSkills, search, layout,viewportWidth)
-      : buildSpreadGraph(expanded, removedSkills, search, layout,viewportWidth);
+      ? buildStackedGraph(
+          expanded,
+          removedSkills,
+          search,
+          layout,
+          viewportWidth,
+        )
+      : buildSpreadGraph(
+          expanded,
+          removedSkills,
+          search,
+          layout,
+          viewportWidth,
+        );
 
   if (layout.hideEdges) {
     return {
@@ -372,7 +393,7 @@ function Graph() {
       removedSkills,
       search,
       layout,
-      viewportWidth
+      viewportWidth,
     );
     setNodes(builtNodes);
     setEdges(builtEdges);
@@ -535,7 +556,7 @@ function Graph() {
           variant={BackgroundVariant.Dots}
           gap={20}
           size={1}
-          color="#C8955A1f"
+          color="rgb(from var(--color-secondary) r g b / 0.12)"
         />
       </ReactFlow>
       )
