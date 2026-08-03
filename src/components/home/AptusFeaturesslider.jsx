@@ -53,7 +53,7 @@ const features = [
 
 function FeatureIcon({ children }) {
   return (
-    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-base-300">
       <svg
         aria-hidden="true"
         className="h-6 w-6"
@@ -72,22 +72,22 @@ function FeatureIcon({ children }) {
 
 export default function AptusFeaturesslider() {
   return (
-    <section className="w-full bg-white py-10 text-slate-950 sm:py-12 xl:py-14">
-      <div className="w-full border-y border-orange-100 bg-[#fff7ed] px-4 py-6 shadow-sm shadow-orange-100 sm:px-8 lg:px-16 lg:py-8 xl:px-20">
+    <section className="w-full bg-base-100 py-10 text-base-content sm:py-12 xl:py-14">
+      <div className="w-full border-y border-primary/20 bg-base-200 px-4 py-6 shadow-sm shadow-primary/10 sm:px-8 lg:px-16 lg:py-8 xl:px-20">
         <div className="grid items-center gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
           <div>
-            <p className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-700 shadow-sm shadow-emerald-100">
+          <p className="inline-flex rounded-full border border-primary/30 bg-base-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-base-300 shadow-sm shadow-primary/10">
               Aptus capabilities
             </p>
-            <h2 className="mt-5 max-w-md text-2xl font-semibold leading-tight text-slate-950 sm:text-3xl">
+            <h2 className="mt-5 max-w-md text-2xl font-semibold leading-tight text-neutral sm:text-3xl">
               Match talent in four simple steps
             </h2>
-            <p className="mt-3 max-w-lg text-sm leading-6 text-slate-600 sm:text-base">
+            <p className="mt-3 max-w-lg text-sm leading-6 text-base-content/70 sm:text-base">
               Aptus helps teams move from a simple request to a focused
               graduate shortlist.
             </p>
 
-            <div className="relative mt-6 h-56 overflow-hidden rounded-2xl bg-white shadow-sm sm:h-72 lg:h-80">
+            <div className="relative mt-6 h-56 overflow-hidden bg-base-100 shadow-sm sm:h-72 lg:h-80">
               <Image
                 alt="Aptus AI talent matching preview"
                 className="object-cover"
@@ -98,26 +98,26 @@ export default function AptusFeaturesslider() {
             </div>
           </div>
 
-          <div className="space-y-3">
+          <div className="w-full max-w-xl space-y-3 lg:justify-self-start">
             {features.slice(0, 4).map((feature, index) => (
               <article
-                className={`flex gap-4 rounded-2xl border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+                className={`flex gap-4 rounded-2xl border bg-base-100 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
                   index === 2
-                    ? "border-emerald-200 shadow-emerald-100"
-                    : "border-slate-200"
+                    ? "border-primary/50 shadow-primary/10"
+                    : "border-primary/20"
                 }`}
                 key={feature.title}
               >
                 <FeatureIcon>{feature.icon}</FeatureIcon>
 
                 <div>
-                  <p className="text-xs font-semibold text-emerald-700">
+                  <p className="text-xs font-semibold text-primary">
                     Step {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-1 text-base font-medium text-slate-800">
+                  <h3 className="mt-1 text-base font-medium text-base-content">
                     {feature.title}
                   </h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-500">
+                  <p className="mt-1 text-sm leading-6 text-base-content/60">
                     {feature.description}
                   </p>
                 </div>

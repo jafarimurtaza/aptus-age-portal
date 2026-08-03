@@ -5,7 +5,7 @@ export function LocationIcon() {
   return (
     <svg
       aria-hidden="true"
-      className="h-5 w-5 text-slate-400"
+      className="h-5 w-5 text-base-content/45"
       fill="currentColor"
       viewBox="0 0 20 20"
     >
@@ -127,19 +127,19 @@ export const graduates = [
 
 export default function FeaturedGraduates() {
   return (
-    <section className="w-full bg-white px-4 pb-12 pt-4 text-slate-950 sm:px-8 sm:pb-16 sm:pt-6 lg:px-16 xl:px-20">
+    <section className="w-full bg-base-100 px-4 pb-12 pt-4 text-base-content sm:px-8 sm:pb-16 sm:pt-6 lg:px-16 xl:px-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
         <div>
-          <h2 className="text-2xl font-bold leading-tight text-slate-950 sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-bold leading-tight text-base-content sm:text-3xl lg:text-4xl">
             Meet Our Graduates
           </h2>
-          <p className="mt-3 text-base text-slate-500 sm:mt-4 sm:text-lg lg:text-xl">
+          <p className="mt-3 text-base text-base-content/60 sm:mt-4 sm:text-lg lg:text-xl">
             Talented engineers and designers across three cohorts
           </p>
         </div>
 
         <Link
-          className="text-base font-bold text-emerald-800 transition hover:text-emerald-600 sm:mt-4 sm:text-lg"
+          className="text-base font-semibold text-base-300 transition hover:text-primary sm:mt-4 sm:text-lg"
           href="/graduates"
         >
           View All Graduates →
@@ -148,7 +148,7 @@ export default function FeaturedGraduates() {
       <GraduateCards />
       <div className="mt-8 flex justify-center sm:mt-10">
         <Link
-          className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-6 py-3 text-sm font-bold text-emerald-800 shadow-sm transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-900 sm:text-base"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-base-200 px-6 py-3 text-sm font-semibold text-base-300 shadow-sm transition hover:border-primary hover:bg-primary hover:text-neutral sm:text-base"
           href="/graduates"
         >
           <span>View Graduates</span>
