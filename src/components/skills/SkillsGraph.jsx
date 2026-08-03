@@ -50,24 +50,27 @@ function getLayout(width) {
       hideEdges: true,
     };
   }
+
+  // Tablet
   if (width < 1024) {
     return {
       mode: "stacked",
       rootY: 24,
       afterRootGap: 130,
-      categoryGap: 100,
-      skillGap: 80,
+      categoryGap: 150,
+      skillGap: 70,
       skillIndent: 32,
       categoryWidth: 224,
-      root: { width: 200, height: 70, fontSize: 20 },
+      root: { width: 300, height: 80, fontSize: 30 },
       fitViewPadding: 0.12,
       fitViewMinZoom: 0.35,
       fitViewMaxZoom: 1,
       edgeType: "smoothstep",
       skillEdgeAnimated: false,
-      hideEdges: false,
+      hideEdges: true,
     };
   }
+
   return {
     mode: "spread",
     rootDepth: 10,
@@ -84,7 +87,6 @@ function getLayout(width) {
     hideEdges: false,
   };
 }
-
 function getRootNodeBase(root) {
   return {
     id: "root",
@@ -93,20 +95,24 @@ function getRootNodeBase(root) {
     className: "text-center",
     style: {
       background:
-        "linear-gradient(135deg, var(--color-primary), var(--color-neutral))",
+        "linear-gradient(135deg, var(--color-primary) 0%, var(--color-base-300) 100%)",
       color: "var(--color-base-100)",
-      border:
-        "1px solid color-mix(in srgb, var(--color-secondary) 40%, transparent)",
-      borderRadius: 16,
-      fontWeight: 800,
+      border: "1px solid var(--color-primary)",
+      borderRadius: "18px",
+      fontWeight: 700,
       fontSize: root.fontSize,
+      letterSpacing: "0.5px",
       width: root.width,
       height: root.height,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      boxShadow:
-        "0 0 28px color-mix(in srgb, var(--color-secondary) 25%, transparent), 0 8px 20px -6px rgb(0 0 0 / 50%)",
+      boxShadow: `
+        0 10px 30px rgba(24, 58, 107, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08)
+      `,
+      transition: "all 0.25s ease",
     },
   };
 }

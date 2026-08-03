@@ -32,13 +32,6 @@ export default function CategoryNode({ data, selected }) {
           data.onToggle?.();
         }
       }}
-      // className={`group w-52 cursor-pointer rounded-2xl border px-3.5 py-3 shadow-[0_4px_14px_-6px_rgba(11,15,25,0.18)]
-      //   transition-all duration-300 ease-out
-      //   active:scale-[0.97]
-      //   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-      //   sm:w-56 sm:px-3.5 sm:py-3 md:w-64 md:px-4
-      //   ${selected ? "ring-2 ring-offset-2" : ""}
-      //   ${isOpen ? "-translate-y-0.5 scale-[1.02]" : "scale-100"}`}
       className={`
  group cursor-pointer rounded-2xl border shadow-[0_4px_14px_-6px_rgba(11,15,25,0.18)]
  transition-all duration-300 ease-out
@@ -103,8 +96,9 @@ ${data.mobile ? "h-11 w-11" : "h-8 w-8 sm:h-9 sm:w-9"}
               style={{
                 color: isOpen
                   ? data.color
-                  : "color-mix(in srgb, var(--color-base-content) 35%, transparent)",
-              }}            />
+                  : "color-mix(in srgb, var(--color-primary) 35%, transparent)",
+              }}
+            />
           </div>
           <p
             className="mt-1 text-[11px] leading-snug line-clamp-2 sm:text-xs"
@@ -122,8 +116,7 @@ ${data.mobile ? "h-11 w-11" : "h-8 w-8 sm:h-9 sm:w-9"}
         className="mt-2.5 flex items-center justify-between border-t pt-2 text-[10px] sm:text-[11px]"
         style={{
           borderColor: `${data.color}55`,
-          color:
-            "color-mix(in srgb, var(--color-base-content) 55%, transparent)",
+          color: "color-mix(in srgb, var(--color-base-300) 55%, transparent)",
         }}
       >
         <span
