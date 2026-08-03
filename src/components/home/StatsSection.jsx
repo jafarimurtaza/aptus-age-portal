@@ -35,7 +35,7 @@ export function StatsSection() {
           className="flex items-center gap-4 rounded-lg border border-primary/20 bg-base-100 px-5 py-5 shadow-sm shadow-primary/10 transition hover:-translate-y-0.5 hover:border-primary/50 hover:bg-base-200 hover:shadow-md"
           key={stat.label}
         >
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-base-300">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-neutral">
             <svg
               aria-hidden="true"
               className="h-6 w-6"

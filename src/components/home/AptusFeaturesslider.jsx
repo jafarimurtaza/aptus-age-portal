@@ -53,7 +53,7 @@ const features = [
 
 function FeatureIcon({ children }) {
   return (
-    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-base-300">
+    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-neutral">
       <svg
         aria-hidden="true"
         className="h-6 w-6"
@@ -76,7 +76,7 @@ export default function AptusFeaturesslider() {
       <div className="w-full border-y border-primary/20 bg-base-200 px-4 py-6 shadow-sm shadow-primary/10 sm:px-8 lg:px-16 lg:py-8 xl:px-20">
         <div className="grid items-center gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
           <div>
-          <p className="inline-flex rounded-full border border-primary/30 bg-base-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-base-300 shadow-sm shadow-primary/10">
+          <p className="inline-flex rounded-full border border-primary/30 bg-base-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-neutral shadow-sm shadow-primary/10">
               Aptus capabilities
             </p>
             <h2 className="mt-5 max-w-md text-2xl font-semibold leading-tight text-neutral sm:text-3xl">

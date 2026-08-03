@@ -139,7 +139,7 @@ export default function FeaturedGraduates() {
         </div>
 
         <Link
-          className="text-base font-semibold text-base-300 transition hover:text-primary sm:mt-4 sm:text-lg"
+          className="text-base font-semibold text-neutral transition hover:text-primary sm:mt-4 sm:text-lg"
           href="/graduates"
         >
           View All Graduates →
@@ -148,7 +148,7 @@ export default function FeaturedGraduates() {
       <GraduateCards />
       <div className="mt-8 flex justify-center sm:mt-10">
         <Link
-          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-base-200 px-6 py-3 text-sm font-semibold text-base-300 shadow-sm transition hover:border-primary hover:bg-primary hover:text-neutral sm:text-base"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-base-200 px-6 py-3 text-sm font-semibold text-neutral shadow-sm transition hover:border-primary hover:bg-primary hover:text-neutral sm:text-base"
           href="/graduates"
         >
           <span>View Graduates</span>

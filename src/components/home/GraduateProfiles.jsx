@@ -23,23 +23,23 @@ export function GraduateProfiles() {
                         </div>
 
                         <div className="relative bg-base-100 p-5 sm:p-6 xl:p-7">
-                            <h3 className="text-lg font-bold text-base-300 sm:text-xl xl:text-2xl">
+                            <h3 className="text-lg font-bold text-neutral sm:text-xl xl:text-2xl">
                                 {graduate.name}
                             </h3>
 
-                            <p className="mt-3 flex items-center gap-3 text-base font-semibold text-base-300 sm:text-lg xl:text-xl">
+                            <p className="mt-3 flex items-center gap-3 text-base font-semibold text-neutral sm:text-lg xl:text-xl">
                                 <span className="flex h-6 w-6 items-center justify-center rounded bg-primary text-sm text-neutral">
                                     ✓
                                 </span>
                                 Verified Graduate
                             </p>
 
-                            <p className="ml-9 mt-1 text-sm text-base-300 sm:text-base xl:text-lg">
+                            <p className="ml-9 mt-1 text-sm text-base-content/70 sm:text-base xl:text-lg">
                                 in {graduate.skill}
                             </p>
 
                             <p className="mt-4 flex items-center gap-3 text-base text-base-content/70 sm:mt-5 sm:text-lg xl:text-xl">
-                                <span className="flex h-6 w-6 items-center justify-center border border-primary/40 text-sm text-base-300">
+                                <span className="flex h-6 w-6 items-center justify-center border border-primary/40 text-sm text-neutral">
                                     ✓
                                 </span>
                                 {graduate.title}

@@ -64,7 +64,7 @@ export default function GraduateCards() {
                         </p>
 
                         <div className="mx-auto mt-2 inline-flex items-center gap-2 rounded-lg bg-base-200 px-3 py-1.5 text-xs font-semibold text-base-content/75 sm:text-sm">
-                            <span className="flex h-5 w-5 items-center justify-center rounded-full border border-primary/30 text-xs text-base-300">
+                            <span className="flex h-5 w-5 items-center justify-center rounded-full border border-primary/30 text-xs text-neutral">
                                 ✓
                             </span>
                             {graduate.verified}
@@ -74,7 +74,7 @@ export default function GraduateCards() {
                             {graduate.bio}
                         </p>
 
-                        <span className="btn mt-4 min-h-0 min-w-44 rounded-full border-primary/30 bg-base-200 px-6 py-2 text-sm font-semibold text-base-300 hover:border-primary hover:bg-primary hover:text-neutral sm:min-w-52 sm:text-base">
+                        <span className="btn mt-4 min-h-0 min-w-44 rounded-full border-primary/30 bg-base-200 px-6 py-2 text-sm font-semibold text-neutral hover:border-primary hover:bg-primary hover:text-neutral sm:min-w-52 sm:text-base">
                             View Profile
                         </span>
                     </div>

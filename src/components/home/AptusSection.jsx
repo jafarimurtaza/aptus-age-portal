@@ -3,7 +3,7 @@ export default function AptusSection() {
     <section className="w-full bg-base-100 py-8 text-base-content sm:py-10 xl:py-12">
       <div className="grid w-full items-center gap-7 border-y border-primary/15 bg-base-200 px-4 py-8 shadow-sm shadow-primary/10 sm:px-8 lg:grid-cols-[0.95fr_1fr] lg:gap-10 lg:px-16 xl:px-20">
         <div className="mx-auto max-w-md text-center lg:mx-0 lg:text-left">
-          <p className="inline-flex rounded-full border border-primary/30 bg-base-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-base-300 shadow-sm shadow-primary/10">
+          <p className="inline-flex rounded-full border border-primary/30 bg-base-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-neutral shadow-sm shadow-primary/10">
             Aptus AI
           </p>
 
@@ -16,7 +16,7 @@ export default function AptusSection() {
             right skills, projects, and role fit.
           </p>
 
-          <button className="btn mt-5 min-h-0 rounded-full border-primary/40 bg-base-100 px-6 py-2.5 text-sm font-semibold text-base-300 shadow-sm hover:border-primary hover:bg-primary hover:text-neutral">
+          <button className="btn mt-5 min-h-0 rounded-full border-0 bg-primary px-6 py-2.5 text-sm font-semibold text-neutral shadow-sm shadow-primary/20 hover:bg-primary/85">
             Try Aptus AI
           </button>
         </div>

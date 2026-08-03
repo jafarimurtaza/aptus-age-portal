@@ -1,9 +1,24 @@
 @import "tailwindcss";
 
-@plugin "daisyui" {
-  themes:
-    light --default,
-    night;
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "my-theme";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-primary: #C8955A;
+  --color-neutral: #0B0F19;
+  --color-base-100: #FAF7F2;
+  --color-base-200: #F5F0E8;
+  --color-base-300: #1B3A6B;
+  --color-base-content: #0B0F19;
+
+  --color-info: #3B82F6;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
 }
 
 .typing-loop {
