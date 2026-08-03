@@ -32,10 +32,10 @@ export function StatsSection() {
     <div className="relative z-0 mx-auto mt-8 grid max-w-7xl gap-3 sm:grid-cols-2 sm:gap-4 lg:mt-12 lg:grid-cols-4">
       {stats.map((stat, index) => (
         <div
-          className="flex items-center gap-4 rounded-lg border border-slate-200 bg-white px-5 py-5 shadow-sm shadow-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md"
+          className="flex items-center gap-4 rounded-lg border border-primary/20 bg-base-100 px-5 py-5 shadow-sm shadow-primary/10 transition hover:-translate-y-0.5 hover:border-primary/50 hover:bg-base-200 hover:shadow-md"
           key={stat.label}
         >
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-neutral">
             <svg
               aria-hidden="true"
               className="h-6 w-6"
@@ -51,10 +51,10 @@ export function StatsSection() {
           </div>
 
           <div>
-            <h2 className="text-base font-semibold text-slate-800">
+            <h2 className="text-base font-semibold text-base-content">
               {stat.label}
             </h2>
-            <p className="mt-1 text-xs font-medium text-slate-400">
+            <p className="mt-1 text-xs font-medium text-base-content/50">
               {stat.value} {statDetails[index].helper}
             </p>
           </div>
