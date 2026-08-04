@@ -85,7 +85,7 @@ export default function ProjectGalleryCard({ project }) {
 
         {/* Footer */}
 
-        <div className="flex items-center justify-between border-t border-base-200 pt-6">
+        <div className="flex items-center justify-between border-t border-base-content/20 pt-6">
           <Link
             href={`/projects/${project.slug}`}
             className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-base-300"

@@ -58,7 +58,7 @@ export default function ProjectInfo({ project }) {
                     {relatedProject.description}
                   </p>
 
-                  <div className="mt-8 flex items-center justify-between border-t border-base-200 pt-6">
+                  <div className="mt-8 flex items-center justify-between border-t border-base-content/20 pt-6">
                     <span className="text-sm font-medium text-base-300">
                       View Details
                     </span>
