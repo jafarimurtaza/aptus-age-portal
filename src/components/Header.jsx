@@ -37,7 +37,7 @@ export default function Header() {
         <ul className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm xl:text-base font-medium">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href} className="text-white/80 hover:text-[#C8955A] transition-colors duration-200">
+              <Link href={link.href} className="text-base-100 hover:text-[#C8955A] transition-colors duration-200">
                 {link.name}
               </Link>
             </li>
