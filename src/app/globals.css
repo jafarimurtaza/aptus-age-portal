@@ -2,61 +2,24 @@
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
-  name: "light";
+  name: "my-theme";
   default: true;
   prefersdark: false;
   color-scheme: light;
 
   /* Brand */
-  --color-primary: #1B3A6B;      /* Navy */
-  --color-secondary: #C8955A;    /* Gold */
-  --color-accent: #C8955A;
-
-  /* Neutral */
-  --color-neutral: #0B0F19;
-
-  /* Backgrounds */
+  --color-primary: #C8955A;      /* gold */
+  --color-neutral: #0B0F19;      /* dark */
   --color-base-100: #FAF7F2;     /* Cream */
   --color-base-200: #F5F0E8;     /* Sand */
-
-  /* Text */
+  --color-base-300: #1B3A6B;     /* navy */
   --color-base-content: #0B0F19;
 
-  /* States */
   --color-info: #3B82F6;
   --color-success: #22C55E;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
 }
-
-@plugin "daisyui/theme" {
-  name: "dark";
-  default: false;
-  prefersdark: true;
-  color-scheme: dark;
-
-  /* Brand */
-  --color-primary: #C8955A;      /* Gold becomes primary */
-  --color-secondary: #183A6B;    /* Navy */
-  --color-accent: #D7A96D;
-
-  /* Neutral */
-  --color-neutral: #0B0F19;
-
-  /* Backgrounds */
-  --color-base-100: #0B0F19;
-  --color-base-200: #111827;
-
-  /* Text */
-  --color-base-content: #FAF7F2;
-
-  /* States */
-  --color-info: #60A5FA;
-  --color-success: #4ADE80;
-  --color-warning: #FBBF24;
-  --color-error: #F87171;
-}
-
 
 /* @theme {
   --color-aptus-ink: #17222b;
@@ -400,13 +363,7 @@ input:focus-visible {
   from { opacity: 0; transform: translateX(-8px) scale(0.9); }
   to   { opacity: 1; transform: translateX(0) scale(1); }
 }
-@theme {
-  --color-gold: #C8955A;
-  --color-navy: #1B3A6B;
-  --color-dark: #0B0F19;
-  --color-cream: #FAF7F2;
-  --color-sand: #F5F0E8;
-}
+
 .react-flow__controls {
   box-shadow: none;
   border-radius: 8px;

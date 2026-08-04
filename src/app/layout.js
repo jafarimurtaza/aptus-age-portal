@@ -10,9 +10,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html data-theme="light" lang="en">
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <Header/>
+    <html data-theme="my-theme" lang="en">
+      <body className="min-h-full flex flex-col">
+          <Header/>
         {children}
         <Footer/>
       </body>
