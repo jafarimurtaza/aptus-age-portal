@@ -16,7 +16,7 @@ export default function ProjectStory({ project }) {
 
         {/* Hero Image */}
 
-        <div className="mb-12 overflow-hidden border border-base-200 shadow-xl">
+        {/* <div className="mb-12 overflow-hidden border border-base-200 shadow-xl">
           <Image
             src={project.heroImage}
             alt={project.title}
@@ -25,7 +25,7 @@ export default function ProjectStory({ project }) {
             priority
             className="h-[260px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[360px] md:h-[480px] lg:h-[600px] xl:h-[700px]"
           />
-        </div>
+        </div> */}
 
         {/* First Paragraph */}
 
@@ -56,7 +56,7 @@ export default function ProjectStory({ project }) {
               alt={project.title}
               width={900}
               height={600}
-              className="h-[180px] w-full object-cover transition-transform duration-700 hover:scale-105 md:h-[220px] lg:h-[260px]"
+              className="h-[180px] w-full object-cover md:h-[220px] lg:h-[260px]"
             />
           </div>
         </div>
