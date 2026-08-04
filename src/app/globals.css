@@ -8,6 +8,14 @@
   color-scheme: light;
 
   /* Brand */
+  --color-primary: #1B3A6B;      /* Navy */
+  --color-secondary: #C8955A;    /* Gold */
+  --color-accent: #C8955A;
+
+  /* Neutral */
+  --color-neutral: #0B0F19;
+
+  /* Backgrounds */
   --color-primary: #C8955A;      /* gold */
   --color-neutral: #0B0F19;      /* dark */
   --color-base-100: #FAF7F2;     /* Cream */

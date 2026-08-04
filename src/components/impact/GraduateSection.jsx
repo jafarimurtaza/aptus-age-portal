@@ -62,7 +62,7 @@ function Card({ graduate }) {
       return (
       <div className="min-w-[200px] sm:min-w-[240px] lg:min-w-[260px] max-w-[260px] h-[180px] sm:h-[200px] lg:h-[220px] rounded-2xl bg-base-200 p-4 sm:p-5 cursor-pointer shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
       <div>
-        <div className="text-3xl sm:text-4xl text-[#C8955A] font-serif leading-none">
+        <div className="text-3xl sm:text-4xl text-[#C8955A] font-serif">
           “
         </div>
         <p className="mt-2 text-base-content text-xs sm:text-sm leading-5 line-clamp-3">
