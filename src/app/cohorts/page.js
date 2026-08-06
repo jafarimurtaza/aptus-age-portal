@@ -11,24 +11,26 @@ export default function CohortsMain() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-cream">
       <Hero />
 
-      <div className="container mx-auto px-6 lg:px-10">
-        <FilterButtons
-          selectedYear={selectedYear}
-          setSelectedYear={setSelectedYear}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10 pb-16 sm:pb-20 lg:pb-24">
+        <div className="pt-12 sm:pt-16 lg:pt-20">
+          <FilterButtons
+            selectedYear={selectedYear}
+            setSelectedYear={setSelectedYear}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        </div>
 
-        <div className="mt-8">
+        <div className="mt-8 sm:mt-10">
           <CohortCards
             selectedYear={selectedYear}
             selectedCategory={selectedCategory}
           />
         </div>
-      </div>
+      </section>
     </main>
   );
 }
