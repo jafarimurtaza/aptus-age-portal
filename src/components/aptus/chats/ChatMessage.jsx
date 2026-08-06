@@ -19,7 +19,7 @@ export default function ChatMessage({ message }) {
 
       <div className={cn("max-w-97.5", isUser && "flex flex-col items-end")}>
         <ChatBubble role={message.role} text={message.text} />
-        <time className="mt-2 block text-[10px] font-semibold text-[#8A949B] dark:text-[#94A39B]">
+        <time className="mt-2 block text-[10px] font-semibold text-[#8A949B]">
           {message.timestamp}
         </time>
       </div>
