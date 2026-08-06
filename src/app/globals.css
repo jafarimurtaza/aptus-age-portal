@@ -10,6 +10,8 @@
 
   /* Brand */
   --color-primary: #c8955a; /* gold */
+  --color-secondary: #c8955a; /* Gold */
+  --color-accent: #c8955a;
   --color-neutral: #0b0f19; /* dark */
   --color-base-100: #faf7f2; /* Cream */
   --color-base-200: #f5f0e8; /* Sand */
@@ -27,7 +29,7 @@
   --color-aptus-muted: #78828d;
   --color-aptus-line: #e8eee9;
   --color-aptus-green: #39b870;
-  --color-aptus-deep: #145b41;
+  --color-aptus-deep: #145b41; 
   --color-aptus-darker: #0d4a35;
   --color-aptus-mint: #e9f8f1;
   --color-gold: #C8955A;
@@ -56,9 +58,9 @@ body {
     radial-gradient(circle at 12% 100%, rgba(57, 184, 112, 0.18), transparent 25rem),
     radial-gradient(circle at 88% 8%, rgba(57, 184, 112, 0.1), transparent 20rem),
     linear-gradient(135deg, #07120f 0%, #101a17 48%, #08130f 100%);
-} */
-
-/* body {
+}  */
+/* 
+body {
   margin: 0;
   color: var(--color-dark);
   background:
