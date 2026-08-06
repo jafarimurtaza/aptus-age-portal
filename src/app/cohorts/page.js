@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import Hero from "@/components/cohorts/Hero";
+import Hero from "@/components/cohorts/GraduateHeroSection";
 import FilterButtons from "@/components/cohorts/FilterButtons";
-import CohortCards from "@/components/cohorts/CohortCards";
+import CohortCards from "@/components/cohorts/GreaduteCards";
 
 export default function CohortsMain() {
   const [selectedYear, setSelectedYear] = useState("all");
