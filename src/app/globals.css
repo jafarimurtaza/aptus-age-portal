@@ -43,6 +43,35 @@
   --font-sans: Inter, ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
 } */
 
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Brand */
+  --color-primary: #C8955A;      /* Gold becomes primary */
+  --color-secondary: #183A6B;    /* Navy */
+  --color-accent: #D7A96D;
+
+  /* Neutral */
+  --color-neutral: #0B0F19;
+
+  /* Backgrounds */
+  --color-base-100: #0B0F19;
+  --color-base-200: #111827;
+
+  /* Text */
+  --color-base-content: #FAF7F2;
+
+  /* States */
+  --color-info: #60A5FA;
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+  --color-error: #F87171;
+}
+
+
 * {
   box-sizing: border-box;
 }
