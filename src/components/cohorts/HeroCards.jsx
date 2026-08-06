@@ -2,45 +2,58 @@ import { hero } from "./data/hero";
 
 export default function HeroCards() {
   return (
-    <div className="mx-auto grid w-full max-w-7xl auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-4 lg:gap-5">
-      {hero.stats.map((stat) => {
+    <div
+      className="mx-auto grid w-full max-w-5xl grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4"
+      role="list"
+      aria-label="Key statistics"
+    >
+      {hero.stats.map((stat, index) => {
         const Icon = stat.icon;
 
         return (
           <article
             key={stat.id}
-            className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 ease-out will-change-transform hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl sm:p-5"
+            className="group relative overflow-hidden border border-white/5 bg-navy/80 p-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:bg-navy/90 sm:p-6"
+            role="listitem"
+            style={{ animationDelay: `${index * 60}ms` }}
           >
-            {/* Top Accent */}
-            <span className="absolute left-0 top-0 h-1 w-full origin-left scale-x-0 bg-gold transition-transform duration-300 group-hover:scale-x-100" />
+            {/* Subtle top gradient */}
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-gold/[0.06] to-transparent"
+              aria-hidden="true"
+            />
 
-            <div className="flex h-full flex-col">
-              {/* Header */}
-              <div className="mb-4 flex items-center justify-between sm:mb-5 lg:mb-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cream text-NAVY shadow-sm transition duration-300 ease-out group-hover:bg-NAVY group-hover:text-white sm:h-12 sm:w-12">
-                  <Icon
-                    size={22}
-                    strokeWidth={2}
-                    className="transition-transform duration-300 ease-out group-hover:scale-110"
-                  />
-                </div>
-
-                <div className="h-7 w-px bg-gray-200 transition-colors duration-300 group-hover:bg-gold/50 sm:h-8" />
+            {/* Centered Content */}
+            <div className="relative flex h-full flex-col items-center text-center">
+              {/* Icon - removed rounded-lg to match straight aesthetic */}
+              <div className="mb-3 flex h-11 w-11 items-center justify-center bg-gold/10 sm:h-12 sm:w-12">
+                <Icon
+                  size={20}
+                  strokeWidth={1.5}
+                  className="text-gold-light"
+                  aria-hidden="true"
+                />
               </div>
 
               {/* Value */}
-              <h3 className="text-3xl font-extrabold tracking-tight text-dark sm:text-4xl lg:text-[2.75rem]">
+              <h3 className="text-2xl font-bold tracking-tight text-cream sm:text-3xl lg:text-4xl">
                 {stat.value}
-                <span className="ml-1 text-gold">{stat.suffix}</span>
+                {stat.suffix && (
+                  <span className="ml-0.5 text-gold">{stat.suffix}</span>
+                )}
               </h3>
 
-              <p className="mt-3 max-w-full text-sm leading-relaxed text-dark/65 sm:text-base">
+              {/* Label */}
+              <p className="mt-1.5 text-xs font-medium text-cream/50 sm:text-sm">
                 {stat.label}
               </p>
 
-              {/* Bottom Divider */}
-              <div className="mt-auto pt-5 sm:pt-6 lg:pt-8">
-                <div className="h-px w-full bg-gray-200 transition-colors duration-300 group-hover:bg-gold/40" />
+              {/* Bottom line - adjusted to center nicely */}
+              <div
+                className="mt-auto pt-4 w-full"
+                aria-hidden="true"
+              >
+                <div className="mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
               </div>
             </div>
           </article>
