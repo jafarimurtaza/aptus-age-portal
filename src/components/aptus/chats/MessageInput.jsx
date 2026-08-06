@@ -11,7 +11,7 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
 
   return (
     <form className="flex items-center gap-2 sm:gap-4" onSubmit={handleSubmit}>
-      <div className="flex h-10 sm:h-15.5 min-w-0 flex-1 items-center rounded-full border border-[#E6ECE8] bg-white px-3 sm:px-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_8px_18px_rgba(31,50,44,0.055)] transition-colors duration-300">
+      <div className="flex h-10 sm:h-12 min-w-0 flex-1 items-center border border-[#E6ECE8] bg-white px-3 sm:px-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_8px_18px_rgba(31,50,44,0.055)] transition-colors duration-300">
         <input
           value={value}
           onChange={(event) => onChange(event.target.value)}
