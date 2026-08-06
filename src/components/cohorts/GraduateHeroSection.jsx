@@ -8,15 +8,25 @@ export default function Hero() {
       className="home-hero relative min-h-screen w-full overflow-hidden"
       aria-labelledby="hero-heading"
     >
+      {/* ── Blur + dark overlay directly on background image ── */}
+      <div
+        className="absolute inset-0 z-[1] backdrop-blur-sm bg-[linear-gradient(100deg,rgba(10,15,30,0.50)_0%,rgba(10,15,30,0.32)_40%,rgba(10,15,30,0.12)_70%,transparent_100%)]"
+        aria-hidden="true"
+      />
+
+      {/* ── Soft vignette top/bottom for cinematic feel ── */}
+      <div
+        className="absolute inset-x-0 top-0 z-[2] h-28 bg-gradient-to-b from-navy/30 to-transparent"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 z-[2] h-28 bg-gradient-to-t from-navy/40 to-transparent"
+        aria-hidden="true"
+      />
+
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-5 py-20 sm:px-8 lg:py-28">
         {/* ── Text Block ── */}
-        <div className="home-hero-content relative border border-white/10 bg-navy/40 px-6 py-10 text-center shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:px-10 sm:py-12 lg:px-16 lg:py-14">
-
-          {/* Subtle inner glow at top */}
-          <div
-            className="pointer-events-none absolute -top-px left-1/2 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-gold/40 to-transparent"
-            aria-hidden="true"
-          />
+        <div className="home-hero-content text-center">
 
           <div
             className="inline-flex items-center gap-2 border border-gold/30 bg-navy/40 px-5 py-2 text-sm font-medium text-cream backdrop-blur-md"
@@ -26,7 +36,7 @@ export default function Hero() {
             <span>{hero.badge}</span>
           </div>
 
-          {/* Heading */}
+          {/* Heading - Increased desktop sizes & added drop-shadow for image readability */}
           <h1
             id="hero-heading"
             className="mx-auto mt-8 max-w-4xl text-4xl font-black leading-[1.05] tracking-tight text-cream drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
@@ -38,12 +48,12 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Description */}
+          {/* Description - Increased desktop sizes & added drop-shadow */}
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-cream/90 drop-shadow-md sm:text-lg md:text-xl lg:text-2xl">
             {hero.description}
           </p>
 
-          {/* Decorative divider */}
+          {/* Decorative divider - Removed rounded-[2px] for sharp edges */}
           <div
             className="mx-auto mt-8 flex items-center justify-center gap-3"
             aria-hidden="true"
