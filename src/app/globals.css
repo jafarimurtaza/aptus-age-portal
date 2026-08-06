@@ -1,8 +1,8 @@
 @import "tailwindcss";
+
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
-  name: "my-theme";
   name: "my-theme";
   default: true;
   prefersdark: false;
