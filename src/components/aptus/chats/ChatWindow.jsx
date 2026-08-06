@@ -17,19 +17,19 @@ export default function ChatWindow() {
   return (
     <section
       aria-label="Chat with Aptus"
-      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-base-100 shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300 dark:border-white/10 sm:dark:shadow-[0_18px_42px_rgba(0,0,0,0.34)]"
+      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-aptus-line bg-base-100 shadow-none sm:shadow-[0_14px_35px_rgba(24,48,39,0.06)] transition-colors duration-300"
     >
-      <header className="flex h-14 sm:h-18 shrink-0 items-center justify-between border-b border-aptus-line px-4 sm:px-8 transition-colors duration-300 dark:border-white/10">
+      <header className="flex h-14 sm:h-18 shrink-0 items-center justify-between border-b border-aptus-line px-4 sm:px-8 transition-colors duration-300">
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-navy" strokeWidth={2.4} aria-hidden="true" />
-          <h2 className="text-[15px] sm:text-[17px] font-extrabold text-dark dark:text-[#F5FFF9]">
+          <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-base-300" strokeWidth={2.4} aria-hidden="true" />
+          <h2 className="text-[15px] sm:text-[17px] font-extrabold">
             Chat with Aptus
           </h2>
         </div>
 
         <div className="hidden sm:flex items-center">
-          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-gold px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-dark">
-            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-navy" aria-hidden="true" />
+          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-primary px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-neutral">
+            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-base-300" aria-hidden="true" />
             Online
           </span>
         </div>
@@ -51,7 +51,7 @@ export default function ChatWindow() {
         )}
       </div>
 
-      <div className="shrink-0 border-t border-aptus-line md:px-4 px-3 py-3.5 sm:px-7 sm:py-5 transition-colors duration-300 dark:border-white/10">
+      <div className="shrink-0 border-t border-aptus-line md:px-4 px-3 py-3.5 sm:px-7 sm:py-5 transition-colors duration-300">
         <MessageInput
           value={chat.draft}
           canSend={chat.canSend}
@@ -60,13 +60,13 @@ export default function ChatWindow() {
         />
       </div>
 
-      <footer className="flex min-h-10 sm:min-h-12 shrink-0 flex-col items-center justify-center gap-1 border-t border-aptus-line px-4 py-2.5 text-[9px] sm:flex-row sm:justify-between sm:gap-3 sm:px-8 sm:py-3 sm:text-[10px] font-semibold text-[#828C94] transition-colors duration-300 dark:border-white/10 dark:text-[#98A7A0]">
+      <footer className="flex min-h-10 sm:min-h-12 shrink-0 flex-col items-center justify-center gap-1 border-t border-aptus-line px-4 py-2.5 text-[9px] sm:flex-row sm:justify-between sm:gap-3 sm:px-8 sm:py-3 sm:text-[10px] font-semibold text-[#828C94] transition-colors duration-300">
         <p className="flex items-center gap-1.5 sm:gap-2">
-          <LockKeyhole className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#6F7B83] dark:text-[#98A7A0]" aria-hidden="true" />
+          <LockKeyhole className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#6F7B83]" aria-hidden="true" />
           {CHAT_NOTICE.secure}
         </p>
         <div className="flex lg:hidden items-center gap-1">
-          <p className="font-semibold text-[#77828A] dark:text-[#98A7A0]">
+          <p className="font-semibold text-[#77828A]">
             Powered by
           </p>
           <p className="font-bold text-navy">
