@@ -9,12 +9,13 @@
   color-scheme: light;
 
   /* Brand */
-  --color-primary: #c8955a; /* gold */
-  --color-neutral: #0b0f19; /* dark */
-  --color-base-100: #faf7f2; /* Cream */
-  --color-base-200: #f5f0e8; /* Sand */
-  --color-base-300: #1b3a6b; /* navy */
-  --color-base-content: #0b0f19;
+  --color-primary: #C8955A;      /* gold */
+  --color-neutral: #0B0F19;      /* dark */
+  --color-base-100: #FAF7F2;     /* Cream */
+  --color-base-200: #F5F0E8;     /* Sand */
+  --color-base-300: #1B3A6B;     /* navy */
+  --color-base-content: #0B0F19;
+  /* dark=content */
 
   --color-info: #3b82f6;
   --color-success: #22c55e;
