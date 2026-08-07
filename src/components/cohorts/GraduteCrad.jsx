@@ -1,4 +1,4 @@
-// CohortCard.jsx
+
 import Image from "next/image";
 import { CalendarDays, ArrowRight, Users } from "lucide-react";
 

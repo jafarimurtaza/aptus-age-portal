@@ -1,6 +1,6 @@
-// CohortCards.tsx
+
 import { cohorts } from "./data/cohorts";
-import CohortCard from "./CohortCard";
+import CohortCard from "./GraduteCrad";
 
 export default function CohortCards({
   selectedYear,
