@@ -5,7 +5,7 @@ import { ChevronRight, UsersRound } from "lucide-react";
 
 export default function ExploreCard() {
   return (
-    <article className="hidden md:block rounded-2xl border border-aptus-line bg-white md:px-5 px-2 py-5 shadow-aptus-card transition-colors duration-300">
+    <article className="hidden md:block rounded-2xl bg-white md:px-5 px-2 py-5 transition-colors duration-300">
       <h2 className="text-[13px] font-extrabold text-[#1D2730]">
         Explore Manually
       </h2>
