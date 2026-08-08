@@ -33,7 +33,6 @@ export default function Hero() {
             role="status"
           >
             <Route className="h-4 w-4 text-gold-light" aria-hidden="true" />
-            <span>{hero.badge}</span>
           </div>
 
           {/* Heading - Increased desktop sizes & added drop-shadow for image readability */}

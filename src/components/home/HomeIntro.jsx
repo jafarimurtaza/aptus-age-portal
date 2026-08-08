@@ -49,9 +49,6 @@ export default function HomeIntro() {
     <section className="w-full bg-base-100 px-4 pb-12 pt-12 text-base-content sm:px-8 sm:py-16 lg:px-16 xl:px-20 xl:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-10 xl:min-h-[560px] xl:grid-cols-[0.95fr_1.05fr] xl:gap-12">
         <div className="mx-auto max-w-xl text-center xl:mx-0 xl:text-left">
-          <h1 className="inline-flex rounded-full border border-primary/30 bg-base-200 px-4 py-2 text-sm font-semibold text-neutral shadow-sm shadow-primary/10 sm:px-5 sm:py-2.5 sm:text-base">
-            Afghan Geeks Graduate Portal
-          </h1>
 
           <h2 className="mt-6 text-2xl font-semibold leading-snug text-neutral sm:text-3xl lg:text-4xl xl:mt-8">
             Find skilled Afghan tech graduates
