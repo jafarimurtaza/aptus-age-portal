@@ -8,8 +8,8 @@ import { APTUS_BRAND } from "@/components/aptus/utils/constants";
 export default function AptusMain() {
   return (
     <main className="min-h-screen w-full text-aptus-ink transition-colors duration-300">
-      <section className="flex min-h-[calc(100vh-32px)] w-full overflow-hidden border border-white/80 bg-white/[0.82] shadow-aptus backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:shadow-[0_24px_70px_rgba(0,0,0,0.42)] max-lg:flex-col">
-        <aside className="flex w-full shrink-0 flex-col border-aptus-line bg-sand md:px-6 px-3 py-7 transition-colors duration-300 dark:border-white/10 lg:w-[296px] lg:border-r">
+      <section className="flex min-h-[calc(100vh-32px)] w-full overflow-hidden border border-white/80 bg-base-100 backdrop-blur-xl transition-colors duration-300 max-lg:flex-col">
+        <aside className="flex w-full shrink-0 flex-col border-aptus-line bg-sand md:px-6 px-3 py-7 transition-colors duration-300 lg:w-[296px] lg:border-r">
           <div className="mb-8 items-center gap-3 hidden md:flex">
             <div className="flex h-10 w-10 items-center justify-center text-navy">
               <GraduationCap
@@ -28,9 +28,9 @@ export default function AptusMain() {
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col gap-5">
+          <div className="flex flex-1 flex-col gap-0 md:gap-5">
             <HeroCard />
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-0 md:gap-2">
               <div className="order-2 md:order-1">
                 <ConversationProgress />
               </div>
