@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Paperclip, Send} from "lucide-react";
 
 export default function MessageInput({ value, canSend, onChange, onSend }) {
   function handleSubmit(event) {
@@ -19,17 +18,6 @@ export default function MessageInput({ value, canSend, onChange, onSend }) {
           aria-label="Type your message"
           className="min-w-0 flex-1 bg-transparent text-[12.5px] font-medium text-[#1E2A32] placeholder:text-[#8A949B] focus:outline-none"
         />
-
-        {/* <div className="ml-2 sm:ml-3 flex items-center gap-2 sm:gap-5 text-[#53636E] dark:text-[#AFC0B8]">
-          <button
-            type="button"
-            aria-label="Attach file"
-            className="cursor-pointer rounded-full p-1 transition hover:bg-[#F4F8F6] hover:text-aptus-deep dark:hover:bg-white/10 dark:hover:text-white"
-          >
-            <Paperclip className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.9} />
-          </button>
-         
-        </div> */}
       </div>
 
       <motion.button

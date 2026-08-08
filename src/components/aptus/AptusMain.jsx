@@ -9,9 +9,9 @@ export default function AptusMain() {
   return (
     <main className="min-h-screen w-full text-aptus-ink transition-colors duration-300">
       <section className="flex min-h-[calc(100vh-32px)] w-full overflow-hidden border border-white/80 bg-base-100 backdrop-blur-xl transition-colors duration-300 max-lg:flex-col">
-        <aside className="flex w-full shrink-0 flex-col border-aptus-line bg-sand md:px-6 px-3 py-7 transition-colors duration-300 lg:w-[296px] lg:border-r">
-          <div className="mb-8 items-center gap-3 hidden md:flex">
-            <div className="flex h-10 w-10 items-center justify-center text-navy">
+        <aside className="flex w-full shrink-0 flex-col border-aptus-line bg-sand md:px-6 px-3 py-2 md:py-7 transition-colors duration-300 lg:w-[296px] lg:border-r">
+          <div className="mb-0 md:mb-8 items-center gap-0 md:gap-3 hidden md:flex">
+            <div className="flex h-10 w-10 items-center justify-center text-base-300">
               <GraduationCap
                 strokeWidth={2.25}
                 className="h-10 w-10"
@@ -19,10 +19,10 @@ export default function AptusMain() {
               />
             </div>
             <div>
-              <h1 className="text-[25px] font-extrabold leading-none tracking-normal text-[#14212A] dark:text-[#F5FFF9]">
+              <h1 className="text-[25px] font-extrabold leading-none tracking-normal text-[#14212A]">
                 {APTUS_BRAND.name}
               </h1>
-              <p className="mt-1 text-[12px] font-medium text-[#5F6D75] dark:text-[#9BA9A2]">
+              <p className="mt-1 text-[12px] font-medium text-[#5F6D75]">
                 {APTUS_BRAND.subtitle}
               </p>
             </div>

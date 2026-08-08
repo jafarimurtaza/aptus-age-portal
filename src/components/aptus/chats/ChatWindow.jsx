@@ -17,12 +17,12 @@ export default function ChatWindow() {
   return (
     <section
       aria-label="Chat with Aptus"
-      className="flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-base-200 bg-base-100 shadow-none transition-colors duration-300"
+      className="mt-0 flex h-[100dvh] sm:h-auto sm:min-h-[760px] w-full flex-col overflow-hidden rounded-none sm:rounded-[22px] border border-base-200 bg-base-100 shadow-none transition-colors duration-300"
     >
-      <header className="flex h-14 sm:h-18 shrink-0 items-center justify-between border-b border-base-200 px-4 sm:px-8 transition-colors duration-300">
+      <header className="mt-0 flex h-14 sm:h-18 shrink-0 items-center justify-between border-b border-base-200 px-4 sm:px-8 transition-colors duration-300">
         <div className="flex items-center gap-2.5 sm:gap-3">
           <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-base-300" strokeWidth={2.4} aria-hidden="true" />
-          <h2 className="text-[15px] sm:text-[17px] font-extrabold">
+          <h2 className="hidden md:flex text-[15px] sm:text-[17px] font-extrabold">
             Chat with Aptus
           </h2>
         </div>
