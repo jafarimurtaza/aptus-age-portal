@@ -21,9 +21,9 @@ export default function PromptChip({ prompt, index, onSelect }) {
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.98 }}
       onClick={onSelect}
-      className="inline-flex h-10 items-center gap-2 bg-base-100 px-2 md:px-4 text-[4px] md:text-[11px] font-extrabold text-base-300 shadow-[0_5px_14px_rgba(24,58,107,0.045)] transition hover:border-primary/40 hover:bg-base-100"
+      className="inline-flex h-10 cursor-pointer items-center gap-2 bg-base-200 px-2 md:px-4 text-[4px] md:text-[11px] font-extrabold text-base-300 transition hover:border-primary hover:bg-primary hover:text-neutral"
     >
-      <Icon className="h-4 w-4 text-base-300" strokeWidth={2.1} aria-hidden="true" />
+      <Icon className="h-4 w-4" strokeWidth={2.1} aria-hidden="true" />
       {prompt.label}
     </motion.button>
   );
