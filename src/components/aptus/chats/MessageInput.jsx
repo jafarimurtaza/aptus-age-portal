@@ -22,16 +22,15 @@ export default function MessageInput({
       onSubmit={handleSubmit}
       className="
         flex
-        h-11
+        h-10
         sm:h-12
         w-full
         items-center
         border
-        border-[#E6ECE8]
-        bg-white
+        border-base-300/20
+        bg-base-100
         transition-colors
         duration-200
-        focus-within:border-[#C9D6D0]
       "
     >
       <input
@@ -44,13 +43,13 @@ export default function MessageInput({
           h-full
           flex-1
           bg-transparent
-          px-3.5
+          px-2.5
           sm:px-4
-          text-[13px]
+          text-xs
           sm:text-sm
           font-medium
-          text-[#1E2A32]
-          placeholder:text-[#8A949B]
+          text-base-content
+          placeholder:text-base-content/45
           outline-none
         "
       />
@@ -64,23 +63,22 @@ export default function MessageInput({
         className="cursor-pointer
           flex
           h-full
-          w-11
+          w-10
           sm:w-12
           shrink-0
           items-center
           justify-center
           border-l
-          border-[#E6ECE8]
+          border-base-300/20
           bg-primary
-          text-base-300
+          text-base-100
           transition-colors
           duration-200
           hover:bg-base-300
           hover:text-base-100
           disabled:cursor-not-allowed
-          disabled:opacity-70
           disabled:hover:bg-primary
-          disabled:hover:text-base-300
+          disabled:hover:text-base-100
         "
       >
         <ArrowUp
