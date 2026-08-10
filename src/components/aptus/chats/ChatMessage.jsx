@@ -13,16 +13,18 @@ export default function ChatMessage({ message }) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-      className={cn("flex gap-4", isUser && "justify-end")}
+      className={cn("flex gap-2 sm:gap-4", isUser && "justify-end")}
     >
       {!isUser && <ChatAvatar role={message.role} />}
 
       <div className={cn("max-w-97.5", isUser && "flex flex-col items-end")}>
         <ChatBubble role={message.role} text={message.text} />
-        <time className="mt-2 block text-[10px] font-semibold text-[#8A949B]">
+        <time className="mt-2 block text-[10px] font-semibold text-base-content/50">
           {message.timestamp}
         </time>
       </div>
+
+      {isUser && <ChatAvatar role={message.role} />}
     </motion.article>
   );
 }
