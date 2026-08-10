@@ -11,12 +11,6 @@ export default function ProjectHero() {
           {/* LEFT */}
 
           <div className="max-w-2xl">
-            <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2.5">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-                Showcasing Graduate Excellence
-              </span>
-            </div>
-
             <h1 className="mt-8 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
               Explore Innovative
               <br />

@@ -1,7 +1,6 @@
-// Hero.tsx
 import { Route } from "lucide-react";
 import { hero } from "./data/hero";
-import HeroCards from "./HeroCards";
+import HeroCards from "./HeroSectionCards";
 
 export default function Hero() {
   return (
@@ -9,17 +8,31 @@ export default function Hero() {
       className="home-hero relative min-h-screen w-full overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Content sits ABOVE the ::before overlay */}
+      {/* ── Blur + dark overlay directly on background image ── */}
+      <div
+        className="absolute inset-0 z-[1] backdrop-blur-sm bg-[linear-gradient(100deg,rgba(10,15,30,0.50)_0%,rgba(10,15,30,0.32)_40%,rgba(10,15,30,0.12)_70%,transparent_100%)]"
+        aria-hidden="true"
+      />
+
+      {/* ── Soft vignette top/bottom for cinematic feel ── */}
+      <div
+        className="absolute inset-x-0 top-0 z-[2] h-28 bg-gradient-to-b from-navy/30 to-transparent"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 z-[2] h-28 bg-gradient-to-t from-navy/40 to-transparent"
+        aria-hidden="true"
+      />
+
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-5 py-20 sm:px-8 lg:py-28">
         {/* ── Text Block ── */}
         <div className="home-hero-content text-center">
-          {/* Badge - Removed rounded-full for straight edges */}
+
           <div
             className="inline-flex items-center gap-2 border border-gold/30 bg-navy/40 px-5 py-2 text-sm font-medium text-cream backdrop-blur-md"
             role="status"
           >
             <Route className="h-4 w-4 text-gold-light" aria-hidden="true" />
-            <span>{hero.badge}</span>
           </div>
 
           {/* Heading - Increased desktop sizes & added drop-shadow for image readability */}

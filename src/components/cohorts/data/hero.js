@@ -6,8 +6,6 @@ import {
 } from "lucide-react";
 
 export const hero = {
-  badge: "Our Journey",
-
   title: {
     first: "Cohorts that",
     highlight: "create impact",
