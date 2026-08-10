@@ -28,7 +28,7 @@ export default function FilterButtons({
                 ${
                   isActive
                     ? "border border-navy bg-navy text-cream shadow-[0_12px_32px_rgba(11,15,25,0.15)]"
-                    : "border border-sand/80 bg-white text-navy/70 hover:border-gold/60 hover:bg-sand/40 hover:text-navy hover:shadow-sm"
+                    : "border border-navy/15 bg-base-100 text-navy/70 hover:border-gold/60 hover:bg-sand/40 hover:text-navy hover:shadow-sm"
                 }
               `}
             >
@@ -54,7 +54,7 @@ export default function FilterButtons({
                 ${
                   isActive
                     ? "border border-navy bg-navy text-cream shadow-[0_12px_32px_rgba(11,15,25,0.15)]"
-                    : "border border-sand/80 bg-white text-navy/70 hover:border-gold/60 hover:bg-sand/40 hover:text-navy hover:shadow-sm"
+                    : "border border-navy/15 bg-base-100 text-navy/70 hover:border-gold/60 hover:bg-sand/40 hover:text-navy hover:shadow-sm"
                 }
               `}
             >

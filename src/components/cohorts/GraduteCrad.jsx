@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import { CalendarDays, ArrowRight, Users } from "lucide-react";
 
 const students = [
@@ -12,7 +13,7 @@ export default function CohortCard({ cohort }) {
   const isCompleted = cohort.graduates === "completed";
 
   return (
-    <article className="cohort-card group flex h-full flex-col overflow-hidden border border-sand/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(11,15,25,0.12)]">
+    <article className="cohort-card group flex h-full flex-col overflow-hidden shadow-sm transition-all duration-300">
       
       {/* Header */}
       <header className="cohort-card-header border-b border-sand/60 p-5 sm:p-6">
@@ -77,8 +78,8 @@ export default function CohortCard({ cohort }) {
           </div>
 
           {/* Button */}
-          <button
-            type="button"
+          <Link
+            href="/graduates"
             aria-label="View Graduates"
             className="group/btn mt-4 flex w-full cursor-pointer items-center justify-between bg-navy px-4 py-3.5 transition-all duration-200 hover:bg-navy/90 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2"
           >
@@ -91,7 +92,7 @@ export default function CohortCard({ cohort }) {
               className="text-cream/60 transition-all duration-200 group-hover/btn:translate-x-1 group-hover/btn:text-gold"
               aria-hidden="true"
             />
-          </button>
+          </Link>
         </div>
       </div>
     </article>

@@ -11,11 +11,11 @@ export default function CohortsMain() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="min-h-screen bg-base-100 text-base-content">
       <Hero />
 
       <section className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10 pb-16 sm:pb-20 lg:pb-24">
-        <div className="pt-12 sm:pt-16 lg:pt-20">
+        <div className="border-b border-navy/10 pb-8 pt-12 sm:pt-16 lg:pt-20">
           <FilterButtons
             selectedYear={selectedYear}
             setSelectedYear={setSelectedYear}

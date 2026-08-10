@@ -20,6 +20,15 @@
   --color-error: #EF4444;
 }
 
+@theme {
+  --color-navy: #2f3b45;
+  --color-gold: #c98245;
+  --color-gold-light: #e8b277;
+  --color-cream: #fbfaf7;
+  --color-sand: #e8e3dc;
+  --color-dark: #27313a;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -44,7 +53,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: color-mix(in oklab, var(--color-navy) 35%, transparent);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -87,19 +96,20 @@ body {
 
 /* Cohort Cards */
 .cohort-card {
-  
-  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-sand) 100%);
-  border: 1px solid rgba(184, 134, 11, 0.15);
-  border-left: 4px solid var(--color-gold);
-  box-shadow: 0 4px 20px rgba(11, 15, 25, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(47, 59, 69, 0.24);
+  border-top: 3px solid var(--color-gold);
+  box-shadow: 0 8px 24px rgba(39, 49, 58, 0.12);
+  border-radius: 0.625rem;
   position: relative;
   overflow: hidden;
-  transition: all 300ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
 }
 
 .cohort-card:hover {
-  box-shadow: 0 8px 30px rgba(11, 15, 25, 0.12);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(39, 49, 58, 0.18);
+  transform: translateY(-3px);
+  border-color: rgba(201, 130, 69, 0.6);
 }
 
 .cohort-card::before {
@@ -109,14 +119,14 @@ body {
   right: 0;
   width: 40%;
   height: 30%;
-  background: linear-gradient(135deg, rgba(24, 58, 107, 0.08), rgba(184, 134, 11, 0.06));
+  background: linear-gradient(135deg, rgba(201, 130, 69, 0.14), rgba(47, 59, 69, 0.06));
   clip-path: polygon(100% 0, 100% 100%, 30% 100%, 0 50%, 30% 0);
   pointer-events: none;
 }
 
 .cohort-card-header {
-  background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(24, 58, 107, 0.05));
-  border-bottom: 1px solid rgba(24, 58, 107, 0.08);
+  background: rgba(232, 227, 220, 0.62);
+  border-bottom: 1px solid rgba(47, 59, 69, 0.18);
 }
 
 .cohort-card-body {
@@ -124,9 +134,9 @@ body {
 }
 
 .cohort-card-graduates {
-  background: rgba(250, 247, 242, 0.95);
-  border: 1px solid rgba(11, 15, 25, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(11, 15, 25, 0.02);
+  background: rgba(232, 227, 220, 0.7);
+  border: 1px solid rgba(47, 59, 69, 0.2);
+  box-shadow: 0 4px 12px rgba(39, 49, 58, 0.08);
 
 }
 
@@ -138,7 +148,7 @@ body {
 .cohort-card-badge-active {
   background-color: var(--color-navy);
   color: var(--color-cream);
-  border-radius: 9999px;
+  border-radius: 0.25rem;
 }
 
 .cohort-card-button {
@@ -154,16 +164,17 @@ body {
 /* Hero Stat Cards */
 .hero-stat-card {
   position: relative;
-  border: 1px solid rgba(24, 58, 107, 0.1);
-  background: white;
-  box-shadow: 0 2px 12px rgba(11, 15, 25, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(30, 29, 27, 0.92);
+  box-shadow: 0 10px 26px rgba(18, 18, 16, 0.18);
+  border-radius: 0.625rem;
   overflow: hidden;
   transition: all 300ms ease;
 }
 
 .hero-stat-card:hover {
-  box-shadow: 0 4px 20px rgba(11, 15, 25, 0.1);
-  border-color: rgba(184, 134, 11, 0.3);
+  box-shadow: 0 14px 30px rgba(18, 18, 16, 0.24);
+  border-color: rgba(232, 178, 119, 0.5);
 }
 
 .hero-stat-card::after {
@@ -173,7 +184,7 @@ body {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-navy) 100%);
+  background: var(--color-gold);
 }
 
 .hero-stat-glow {
@@ -189,15 +200,15 @@ body {
 }
 
 .hero-stat-icon {
-  border: 1px solid rgba(24, 58, 107, 0.1);
-  background: linear-gradient(135deg, rgba(184, 134, 11, 0.15), rgba(24, 58, 107, 0.08));
-  color: var(--color-navy);
+  border: 1px solid rgba(232, 178, 119, 0.45);
+  background: rgba(201, 130, 69, 0.24);
+  color: var(--color-gold-light);
 }
 
 .hero-stat-divider {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(184, 134, 11, 0.2) 15%, rgba(24, 58, 107, 0.15) 65%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(232, 178, 119, 0.28) 15%, rgba(255, 255, 255, 0.12) 65%, transparent 100%);
 }
 
 /* Typing Animation */
