@@ -42,19 +42,29 @@ body {
 
 /* Hero Section */
 .home-hero {
-  background-image: url("/imagess/hero.png");
-  background-position: center right;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: var(--color-neutral);
   position: relative;
 }
 
 .home-hero::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: transparent;
+  inset: -4px;
+  z-index: 0;
+  background-image: url("/imagess/hero.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(3px);
+  transform: scale(1.01);
   pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .home-hero::before {
+    background-position: 62% center;
+    filter: blur(2px);
+  }
 }
 
 /* Hero Animations */
@@ -96,10 +106,10 @@ body {
 
 /* Cohort Cards */
 .cohort-card {
-  background: #ffffff;
-  border: 1px solid rgba(47, 59, 69, 0.24);
-  border-top: 3px solid var(--color-gold);
-  box-shadow: 0 8px 24px rgba(39, 49, 58, 0.12);
+  background: var(--color-base-100);
+  border: 1px solid color-mix(in srgb, var(--color-base-300) 24%, transparent);
+  border-top: 3px solid var(--color-primary);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-base-content) 12%, transparent);
   border-radius: 0.625rem;
   position: relative;
   overflow: hidden;
@@ -107,9 +117,9 @@ body {
 }
 
 .cohort-card:hover {
-  box-shadow: 0 12px 30px rgba(39, 49, 58, 0.18);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--color-base-content) 18%, transparent);
   transform: translateY(-3px);
-  border-color: rgba(201, 130, 69, 0.6);
+  border-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
 }
 
 .cohort-card::before {
@@ -119,14 +129,14 @@ body {
   right: 0;
   width: 40%;
   height: 30%;
-  background: linear-gradient(135deg, rgba(201, 130, 69, 0.14), rgba(47, 59, 69, 0.06));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 14%, transparent), color-mix(in srgb, var(--color-base-content) 6%, transparent));
   clip-path: polygon(100% 0, 100% 100%, 30% 100%, 0 50%, 30% 0);
   pointer-events: none;
 }
 
 .cohort-card-header {
-  background: rgba(232, 227, 220, 0.62);
-  border-bottom: 1px solid rgba(47, 59, 69, 0.18);
+  background: color-mix(in srgb, var(--color-base-200) 62%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-base-300) 18%, transparent);
 }
 
 .cohort-card-body {
@@ -134,9 +144,9 @@ body {
 }
 
 .cohort-card-graduates {
-  background: rgba(232, 227, 220, 0.7);
-  border: 1px solid rgba(47, 59, 69, 0.2);
-  box-shadow: 0 4px 12px rgba(39, 49, 58, 0.08);
+  background: color-mix(in srgb, var(--color-base-200) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-base-300) 20%, transparent);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-base-content) 8%, transparent);
 
 }
 
@@ -164,17 +174,17 @@ body {
 /* Hero Stat Cards */
 .hero-stat-card {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(30, 29, 27, 0.92);
-  box-shadow: 0 10px 26px rgba(18, 18, 16, 0.18);
+  border: 1px solid color-mix(in srgb, var(--color-base-100) 28%, transparent);
+  background: color-mix(in srgb, var(--color-neutral) 92%, transparent);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--color-neutral) 18%, transparent);
   border-radius: 0.625rem;
   overflow: hidden;
   transition: all 300ms ease;
 }
 
 .hero-stat-card:hover {
-  box-shadow: 0 14px 30px rgba(18, 18, 16, 0.24);
-  border-color: rgba(232, 178, 119, 0.5);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--color-neutral) 24%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
 }
 
 .hero-stat-card::after {
@@ -184,7 +194,7 @@ body {
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--color-gold);
+  background: var(--color-primary);
 }
 
 .hero-stat-glow {
@@ -200,15 +210,15 @@ body {
 }
 
 .hero-stat-icon {
-  border: 1px solid rgba(232, 178, 119, 0.45);
-  background: rgba(201, 130, 69, 0.24);
-  color: var(--color-gold-light);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 45%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 24%, transparent);
+  color: var(--color-primary);
 }
 
 .hero-stat-divider {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(232, 178, 119, 0.28) 15%, rgba(255, 255, 255, 0.12) 65%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--color-primary) 28%, transparent) 15%, color-mix(in srgb, var(--color-base-100) 12%, transparent) 65%, transparent 100%);
 }
 
 /* Typing Animation */
