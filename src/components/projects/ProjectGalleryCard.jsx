@@ -5,248 +5,99 @@ import { useState } from "react";
 
 import ProjectImage from "./ProjectImage";
 
-
 export default function ProjectGalleryCard({ project }) {
-
   const [activeImage, setActiveImage] = useState(0);
 
-
   return (
-
-    <article
-      className="
-        group
-        overflow-hidden
-        rounded-3xl
-        border
-        border-[#243B63]
-        bg-[#101827]
-        shadow-lg
-        shadow-black/20
-        transition-all
-        duration-500
-        hover:-translate-y-2
-        hover:shadow-2xl
-      "
-    >
-
-
+    <article className="group overflow-hidden border border-base-200 bg-gradient-to-b from-base-100 to-base-200 shadow-lg shadow-base-300/10 transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:bg-base-100 hover:shadow-2xl hover:shadow-base-300/15">
       {/* Main Image */}
 
       <Link
-        className="
-          block
-          h-56
-          overflow-hidden
-          sm:h-60
-        "
         href={`/projects/${project.slug}?image=${activeImage}`}
+        className="block h-60 overflow-hidden"
       >
-
         <ProjectImage
           project={project}
           imageIndex={activeImage}
+          rounded="rounded-none"
         />
-
       </Link>
 
-
-
-      <div
-        className="
-          space-y-5
-          p-5
-        "
-      >
-
-
-
+      <div className="space-y-6 p-6">
         {/* Gallery */}
 
-        <div className="grid grid-cols-3 gap-2">
-
-          {project.images?.map((image, imageIndex)=>(
-
-            <button
-              key={image}
-              type="button"
-              onClick={()=>setActiveImage(imageIndex)}
-              className={`
-                h-16
-                overflow-hidden
-                rounded-xl
-                border-2
-                transition-all
-
-                ${
-                  activeImage === imageIndex
-                  ?
-                  "border-[#D6A04A] ring-2 ring-[#D6A04A]/20"
-                  :
-                  "border-[#243B63] hover:border-[#D6A04A]"
+        {project.images?.length > 0 && (
+          <div className="grid grid-cols-3 gap-2">
+            {project.images.map((image, index) => (
+              <button
+                key={`${project.slug}-${index}`}
+                type="button"
+                onClick={() => setActiveImage(index)}
+                className={
+                  activeImage === index
+                    ? "h-16 overflow-hidden rounded-xl border-2 border-primary"
+                    : "h-16 overflow-hidden rounded-xl border-2 border-base-200 hover:border-primary"
                 }
-              `}
-            >
-
-              <ProjectImage
-                project={project}
-                imageIndex={imageIndex}
-                rounded="rounded-lg"
-              />
-
-            </button>
-
-          ))}
-
-        </div>
-
-
-
+              >
+                <ProjectImage
+                  project={project}
+                  imageIndex={index}
+                  rounded="rounded-xl"
+                />
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Author */}
 
-        <p
-          className="
-            text-[11px]
-            font-bold
-            uppercase
-            tracking-[0.2em]
-            text-[#A8B1C2]
-          "
-        >
-          BY {project.graduate}
+        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-muted">
+          BY {project.graduate || project.author}
         </p>
-
-
-
-
 
         {/* Title */}
 
-        <h3
-          className="
-            text-xl
-            font-extrabold
-            text-[#F8F5EE]
-            transition
-            group-hover:text-[#D6A04A]
-          "
+        <Link
+          href={`/projects/${project.slug}`}
+          className="block text-[28px] font-bold leading-tight text-base-300 transition-colors duration-300 hover:text-primary"
         >
           {project.title}
-        </h3>
-
-
-
-
+        </Link>
 
         {/* Description */}
 
-        <p
-          className="
-            line-clamp-2
-            text-sm
-            leading-7
-            text-[#A8B1C2]
-          "
-        >
+        <p className="line-clamp-2 text-[15px] leading-7 text-base-content/60">
           {project.description}
         </p>
 
-
-
-
-
         {/* Tags */}
 
-        <div
-          className="
-            flex
-            flex-wrap
-            gap-2
-          "
-        >
-
-          {project.tags?.map((tag)=>(
-
+        <div className="flex flex-wrap gap-2">
+          {project.tags?.map((tag) => (
             <span
-              key={tag}
-              className="
-                rounded-full
-                border
-                border-[#243B63]
-                bg-[#080D1A]
-                px-3
-                py-1
-                text-xs
-                font-medium
-                text-[#F8F5EE]
-                transition
-                hover:border-[#D6A04A]
-                hover:text-[#D6A04A]
-              "
+              key={`${project.slug}-${tag}`}
+              className="cursor-pointer rounded-full border border-base-200 bg-white px-4 py-2 text-xs font-semibold text-base-300 transition hover:border-primary hover:text-primary"
             >
               {tag}
             </span>
-
           ))}
-
         </div>
-
-
-
-
 
         {/* Footer */}
 
-        <div
-          className="
-            flex
-            items-center
-            justify-between
-            border-t
-            border-[#243B63]
-            pt-5
-          "
-        >
-
-
+        <div className="flex items-center justify-between border-t border-base-content/20 pt-6">
           <Link
-            className="
-              rounded-xl
-              bg-[#D6A04A]
-              px-5
-              py-2.5
-              text-xs
-              font-bold
-              text-[#080D1A]
-              transition
-              hover:bg-[#e5b968]
-            "
             href={`/projects/${project.slug}`}
+            className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-base-300"
           >
-            Live Demo
+            Read More
           </Link>
 
-
-
-          <p
-            className="
-              text-xs
-              font-semibold
-              text-[#A8B1C2]
-            "
-          >
+          <p className="text-xs font-semibold text-muted-400">
             {project.views} views
           </p>
-
-
         </div>
-
-
       </div>
-
-
     </article>
-
   );
 }

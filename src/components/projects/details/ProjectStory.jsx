@@ -1,79 +1,73 @@
+import Image from "next/image";
+
 export default function ProjectStory({ project }) {
   const paragraphs = project.paragraphs || [];
 
   return (
-    <section className="bg-[#F8F4EE] py-20 text-black" dir="ltr">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-base-100 py-12" dir="ltr">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Project Title */}
+
+        <div className="mb-10 text-center">
+          <h2 className="text-4xl font-bold text-base-300 md:text-5xl">
+            {project.title}
+          </h2>
+        </div>
 
         {/* Hero Image */}
-        <img
-          src={project.heroImage}
-          alt={project.title}
-          className="
-            mb-10
-            h-[280px]
-            md:h-[380px]
-            lg:h-[500px]
-            w-full
-            rounded-2xl
-            border
-            border-[#E7E3DD]
-            object-cover
-            shadow-lg
-          "
-        />
 
-        {/* Title */}
-        <h2 className="text-5xl font-semibold text-[#17396C]">
-          {project.title}
-        </h2>
+        {/* <div className="mb-12 overflow-hidden border border-base-200 shadow-xl">
+          <Image
+            src={project.heroImage}
+            alt={project.title}
+            width={1400}
+            height={900}
+            priority
+            className="h-[260px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[360px] md:h-[480px] lg:h-[600px] xl:h-[700px]"
+          />
+        </div> */}
 
-        <p className="mt-10 text-lg leading-9 text-[#6C7280]">
+        {/* First Paragraph */}
+
+        <p className="text-lg leading-9 text-base-content/60">
           {paragraphs[0]}
         </p>
 
         {/* Two Columns */}
-        <div className="mt-20 grid gap-16 lg:grid-cols-2">
 
-          {/* Left */}
+        <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
+          {/* Left Content */}
+
           <div>
-            <h3 className="mb-8 text-5xl font-semibold leading-tight text-[#17396C]">
+            <h3 className="text-3xl font-bold leading-tight text-base-300 lg:text-4xl">
               Recruitment With AI For Startup Businesses
             </h3>
 
-            <p className="text-lg leading-9 text-[#6C7280]">
+            <p className="mt-6 text-lg leading-9 text-base-content/60">
               {paragraphs[1]}
             </p>
           </div>
 
           {/* Right Image */}
-          <div>
-            <img
+
+          <div className="overflow-hidden border border-base-200 shadow-lg">
+            <Image
               src={project.storyImage || project.heroImage}
               alt={project.title}
-              className="
-                h-[280px]
-                md:h-[380px]
-                lg:h-[500px]
-                w-full
-                rounded-2xl
-                border
-                border-[#E7E3DD]
-                object-cover
-                shadow-lg
-                transition-transform
-                duration-500
-                hover:scale-[1.02]
-              "
+              width={900}
+              height={600}
+              className="h-[180px] w-full object-cover md:h-[220px] lg:h-[260px]"
             />
           </div>
-
         </div>
 
-        <p className="mt-20 text-lg leading-9 text-[#6C7280]">
-          {paragraphs[2]}
-        </p>
+        {/* Last Paragraph */}
 
+        <div className="mt-8">
+          <p className="text-lg leading-9 text-base-content/60">
+            {paragraphs[2]}
+          </p>
+        </div>
       </div>
     </section>
   );
