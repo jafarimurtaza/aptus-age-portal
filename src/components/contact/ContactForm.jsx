@@ -63,10 +63,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-white/30 bg-white p-6 shadow-2xl sm:p-8">
-      {/* Blue top decoration */}
+    <div className="relative overflow-hidden rounded-2xl border border-base-300/20 bg-white p-6 shadow-2xl sm:p-8">
+      {/* Gold Top Decoration */}
 
-      <div className="absolute inset-x-0 top-0 h-2 bg-[#C8955A]" />
+      <div className="absolute inset-x-0 top-0 h-2 bg-primary" />
 
       <form onSubmit={handleSubmit} className="space-y-5 pt-2">
         {/* Name + Email */}
@@ -77,7 +77,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="name"
-              className="mb-2 block text-xs font-semibold text-[#17396C]"
+              className="mb-2 block text-xs font-semibold text-base-300"
             >
               Full Name
             </label>
@@ -90,23 +90,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your name"
               required
-              className="
-                w-full
-                rounded-lg
-                border
-                border-[#E3E7ED]
-                bg-white
-                px-3
-                py-3
-                text-xs
-                text-[#17396C]
-                outline-none
-                transition
-                placeholder:text-[#9CA3AF]
-                focus:border-[#C8955A]
-                focus:ring-2
-                focus:ring-[#C8955A]/15
-              "
+              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
 
@@ -115,7 +99,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="email"
-              className="mb-2 block text-xs font-semibold text-[#17396C]"
+              className="mb-2 block text-xs font-semibold text-base-300"
             >
               Email Address
             </label>
@@ -128,23 +112,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your email"
               required
-              className="
-                w-full
-                rounded-lg
-                border
-                border-[#E3E7ED]
-                bg-white
-                px-3
-                py-3
-                text-xs
-                text-[#17396C]
-                outline-none
-                transition
-                placeholder:text-[#9CA3AF]
-                focus:border-[#C8955A]
-                focus:ring-2
-                focus:ring-[#C8955A]/15
-              "
+              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
         </div>
@@ -157,7 +125,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="phone"
-              className="mb-2 block text-xs font-semibold text-[#17396C]"
+              className="mb-2 block text-xs font-semibold text-base-300"
             >
               Phone Number
             </label>
@@ -169,23 +137,7 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Enter phone number"
-              className="
-                w-full
-                rounded-lg
-                border
-                border-[#E3E7ED]
-                bg-white
-                px-3
-                py-3
-                text-xs
-                text-[#17396C]
-                outline-none
-                transition
-                placeholder:text-[#9CA3AF]
-                focus:border-[#C8955A]
-                focus:ring-2
-                focus:ring-[#C8955A]/15
-              "
+              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
 
@@ -194,7 +146,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="subject"
-              className="mb-2 block text-xs font-semibold text-[#17396C]"
+              className="mb-2 block text-xs font-semibold text-base-300"
             >
               Subject
             </label>
@@ -207,23 +159,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter subject"
               required
-              className="
-                w-full
-                rounded-lg
-                border
-                border-[#E3E7ED]
-                bg-white
-                px-3
-                py-3
-                text-xs
-                text-[#17396C]
-                outline-none
-                transition
-                placeholder:text-[#9CA3AF]
-                focus:border-[#C8955A]
-                focus:ring-2
-                focus:ring-[#C8955A]/15
-              "
+              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
         </div>
@@ -233,7 +169,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="mb-2 block text-xs font-semibold text-[#17396C]"
+            className="mb-2 block text-xs font-semibold text-base-300"
           >
             Message
           </label>
@@ -246,25 +182,7 @@ export default function ContactForm() {
             placeholder="Enter your message"
             rows={5}
             required
-            className="
-              w-full
-              resize-none
-              rounded-lg
-              border
-              border-[#E3E7ED]
-              bg-white
-              px-3
-              py-3
-              text-xs
-              leading-6
-              text-[#17396C]
-              outline-none
-              transition
-              placeholder:text-[#9CA3AF]
-              focus:border-[#C8955A]
-              focus:ring-2
-              focus:ring-[#C8955A]/15
-            "
+            className="w-full resize-none rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs leading-6 text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
           />
         </div>
 
@@ -289,24 +207,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="
-            w-full
-            rounded-xl
-            bg-[#C8955A]
-            px-6
-            py-3.5
-            text-xs
-            font-semibold
-            text-white
-            shadow-lg
-            shadow-[#C8955A]/20
-            transition-all
-            duration-300
-            hover:bg-[#17396C]
-            hover:shadow-xl
-            disabled:cursor-not-allowed
-            disabled:opacity-50
-          "
+          className="w-full rounded-xl bg-primary px-6 py-3.5 text-xs font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-base-300 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? "Sending..." : "Submit"}
         </button>

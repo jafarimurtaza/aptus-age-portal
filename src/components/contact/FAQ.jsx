@@ -23,14 +23,14 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="bg-base-200 py-20">
+    <section className="bg-[#F5F0E8] py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="mb-12 text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-secondary">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8955A]">
             FAQ
           </span>
 
-          <h2 className="mt-3 text-4xl font-extrabold text-primary">
+          <h2 className="mt-3 text-4xl font-extrabold text-[#1B3A6B]">
             Frequently Asked Questions
           </h2>
         </div>
@@ -39,19 +39,19 @@ export default function FAQ() {
           {faqs.map((faq) => (
             <details
               key={faq.question}
-              className="group border border-base-200 bg-base-100 p-6 shadow-sm"
+              className="group border border-[#E5DDD0] bg-[#FAF7F2] p-6 shadow-sm transition-all duration-300 hover:border-[#C8955A] hover:shadow-md"
             >
-              <summary className="cursor-pointer list-none font-bold text-primary">
+              <summary className="cursor-pointer list-none font-bold text-[#1B3A6B]">
                 <div className="flex items-center justify-between gap-5">
                   <span>{faq.question}</span>
 
-                  <span className="text-xl text-secondary transition group-open:rotate-45">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C8955A] text-xl font-normal text-white transition duration-300 group-open:rotate-45">
                     +
                   </span>
                 </div>
               </summary>
 
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-base-content/60">
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#6C7280]">
                 {faq.answer}
               </p>
             </details>
