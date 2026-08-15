@@ -147,6 +147,7 @@ export default function OurJourney() {
           </p>
         </div>
 
+
         <div>
           {journey.map((item, i) => (
             <JourneyItem
