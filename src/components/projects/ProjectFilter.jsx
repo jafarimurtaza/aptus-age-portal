@@ -38,7 +38,7 @@ export default function ProjectFilter({
   }
 
   return (
-    <section className="border border-base-100 bg-base-100 p-6 rounded-lg shadow-[0_0_25px_5px_rgba(0,0,0,0.12)]">
+    <section className="border border-base-100 bg-base-100 p-6 shadow-[0_0_25px_5px_rgba(0,0,0,0.12)]">
       <form
         onSubmit={submitSearch}
         className="flex flex-col gap-4 lg:flex-row lg:items-center"
