@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import { CalendarDays, ArrowRight, Users } from "lucide-react";
 
 const students = [
@@ -9,21 +10,21 @@ const students = [
 ];
 
 export default function CohortCard({ cohort }) {
-  const isCompleted = cohort.graduates === "completed";
+  const isCompleted = cohort.status === "completed";
 
   return (
-    <article className="cohort-card group flex h-full flex-col overflow-hidden border border-sand/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(11,15,25,0.12)]">
+    <article className="cohort-card group flex h-full flex-col overflow-hidden shadow-sm transition-all duration-200">
       
       {/* Header */}
-      <header className="cohort-card-header border-b border-sand/60 p-5 sm:p-6">
-        <div className="flex items-start justify-between gap-4">
+      <header className="cohort-card-header border-b border-base-300/30 p-5 sm:p-6">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-4">
           <div className="min-w-0">
-            <h2 className="text-xl font-bold tracking-tight text-navy sm:text-2xl">
+            <h2 className="text-xl font-bold tracking-tight text-base-content sm:text-2xl">
               {cohort.title}
             </h2>
-            <div className="mt-3 flex items-center gap-2 text-navy/70">
-              <div className="flex h-6 w-6 items-center justify-center bg-gold/10">
-                <CalendarDays size={13} className="text-gold" aria-hidden="true" />
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-base-content/70">
+              <div className="flex h-6 w-6 shrink-0 items-center justify-center bg-primary/10">
+                <CalendarDays size={13} className="text-primary" aria-hidden="true" />
               </div>
               <span className="text-sm font-medium">
                 {cohort.startDate} — {cohort.endDate}
@@ -34,8 +35,8 @@ export default function CohortCard({ cohort }) {
           <span
             className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap px-3 py-1.5 text-xs font-semibold transition-all duration-200 group-hover:scale-105 ${
               isCompleted
-                ? "bg-gold/15 text-gold ring-1 ring-gold/30"
-                : "bg-navy/10 text-navy ring-1 ring-navy/20"
+                ? "bg-primary/15 text-primary ring-1 ring-primary/30"
+                : "bg-neutral/10 text-base-content ring-1 ring-neutral/20"
             }`}
           >
             <Users size={12} aria-hidden="true" />
@@ -46,20 +47,17 @@ export default function CohortCard({ cohort }) {
 
       {/* Body */}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p className="text-sm leading-relaxed text-dark/70">
+        <p className="text-sm leading-relaxed text-base-content/70">
           {cohort.description}
         </p>
 
         {/* Students & Action Section */}
-        <div className="cohort-card-graduates mt-6 border border-sand/60 p-4">
-          {/* Single line, no scroll bar, no wrapping */}
-          <div className="flex flex-nowrap items-center gap-2.5 overflow-hidden">
+        <div className="cohort-card-graduates mt-6 border border-base-300/30 p-4">
+          <div className="grid grid-cols-1 gap-2 min-[420px]:grid-cols-3">
             {students.map((student) => (
               <div
                 key={student.name}
-                role="button"
-                tabIndex={0}
-                className="group/student flex shrink-0 cursor-pointer items-center gap-2 border border-sand bg-white px-3 py-1.5 text-sm font-medium text-dark shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2"
+                className="group/student flex min-w-0 items-center gap-2 border border-base-300/30 bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-sm"
               >
                 <Image
                   src={student.image}
@@ -67,9 +65,9 @@ export default function CohortCard({ cohort }) {
                   width={24}
                   height={24}
                   unoptimized
-                  className="h-6 w-6 shrink-0 object-cover ring-2 ring-gold/15 transition-all duration-200 group-hover/student:ring-gold/40"
+                  className="h-6 w-6 shrink-0 object-cover ring-2 ring-primary/15"
                 />
-                <span className="whitespace-nowrap transition-colors duration-200 group-hover/student:text-gold">
+                <span className="whitespace-nowrap">
                   {student.name}
                 </span>
               </div>
@@ -77,21 +75,21 @@ export default function CohortCard({ cohort }) {
           </div>
 
           {/* Button */}
-          <button
-            type="button"
+          <Link
+            href="/graduates"
             aria-label="View Graduates"
-            className="group/btn mt-4 flex w-full cursor-pointer items-center justify-between bg-navy px-4 py-3.5 transition-all duration-200 hover:bg-navy/90 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2"
+            className="group/btn mt-4 flex min-h-12 w-full items-center justify-between bg-neutral px-4 py-3.5 transition-colors duration-200 hover:bg-neutral/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
-            <span className="flex items-center gap-2 text-sm font-semibold text-cream transition-colors duration-200 group-hover/btn:text-gold-light">
-              <Users size={14} className="text-cream/60 transition-colors duration-200 group-hover/btn:text-gold" />
+            <span className="flex items-center gap-2 text-sm font-semibold text-base-100">
+              <Users size={14} className="text-base-100/60" />
               View Graduates
             </span>
             <ArrowRight
               size={16}
-              className="text-cream/60 transition-all duration-200 group-hover/btn:translate-x-1 group-hover/btn:text-gold"
+              className="text-base-100/60 transition-transform duration-200 group-hover/btn:translate-x-1"
               aria-hidden="true"
             />
-          </button>
+          </Link>
         </div>
       </div>
     </article>
