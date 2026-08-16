@@ -20,8 +20,7 @@ export const projects = [
       "NGO Directory Platform is a modern digital platform designed to connect non-governmental organizations, volunteers, donors, and communities in one organized environment. The platform helps users discover organizations, understand their missions, and create stronger connections with social initiatives.",
 
       "The system provides an easy way to explore NGO profiles, view organization details, and access important community information through a structured directory. By organizing data clearly, the platform improves accessibility and helps users find suitable organizations and opportunities faster.",
-
-      "This project focused on creating a clean user interface, designing reusable components, improving information organization, and developing a responsive platform that provides a simple and effective experience for users."
+ "This project focused on creating a clean user interface, designing reusable components, improving information organization, and developing a responsive platform that provides a simple and effective experience for users."
     ],
 
     outcome:
@@ -70,7 +69,7 @@ export const projects = [
     ],
 
     description:
-      "A workspace that helps remote teams manage projects, tasks, and meetings.",
+      "A workspace that helps remote teams manage projects, tasks.",
 
        paragraphs: [
       "Remote Workspace is a collaborative productivity platform created to help remote teams manage their projects, tasks, and daily activities in one centralized workspace. The platform provides a simple and organized environment where teams can communicate and track progress efficiently.",
@@ -125,7 +124,7 @@ export const projects = [
     ],
 
     description:
-      "A clinic system that organizes patient queues, appointments, and daily service flow.",
+      "A clinic system that organizes patient queues, appointments.",
     paragraphs: [
       "Clinic Queue System is a healthcare management solution designed to improve patient flow and simplify daily clinic operations. The platform helps medical staff organize appointments, manage waiting queues, and provide better service management.",
 

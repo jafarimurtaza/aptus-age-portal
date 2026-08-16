@@ -20,13 +20,13 @@ export default function GraduateSection() {
   const animatedRowTwo = [...rowTwo, ...rowTwo];
 
   return (
-    <section className="bg-[#1B3A6B] px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20">
+    <section className="bg-base-300 px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20">
       <div className="mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-base-100 font-bold text-3xl sm:text-3xl lg:text-4xl tracking-tight">
             Our Graduates
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-[#C8955A] leading-8 font-medium">
+          <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-primary leading-8 font-medium">
             In their own words
           </p>
         </div>
@@ -62,18 +62,18 @@ function Card({ graduate }) {
       return (
       <div className="min-w-[200px] sm:min-w-[240px] lg:min-w-[260px] max-w-[260px] h-[180px] sm:h-[200px] lg:h-[220px] rounded-2xl bg-base-200 p-4 sm:p-5 cursor-pointer shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
       <div>
-        <div className="text-3xl sm:text-4xl text-[#C8955A] font-serif">
+        <div className="text-3xl sm:text-4xl text-primary font-serif">
           “
         </div>
         <p className="mt-2 text-base-content text-xs sm:text-sm leading-5 line-clamp-3">
           {graduate.quote}
         </p>
       </div>
-        <div className="border-t border-[#C8955A]" />
+        <div className="border-t border-primary" />
         <div className="flex items-center gap-3">
-        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#C8955A] flex items-center justify-center font-bold text-lg"></div>
+        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-primary flex items-center justify-center font-bold text-lg"></div>
         <div>
-          <h4 className="text-sm font-semibold text-[#1B3A6B]">
+          <h4 className="text-sm font-semibold text-base-300">
             {graduate.name}
           </h4>
           <p className="text-xs text-base-content mt-1">

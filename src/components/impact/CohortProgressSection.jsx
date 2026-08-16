@@ -15,8 +15,8 @@ export default function CohortProgressSection() {
     <section className="bg-base-100 px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-[#1B3A6B] font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight">
-            Cohort <span className="text-[#C8955A]">Progress</span>
+          <h2 className="text-base-300 font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight">
+            Cohort <span className="text-primary">Progress</span>
           </h2>
           <p className="mt-4 text-base-content text-lg sm:text-xl font-medium leading-8">
             Graduate count by cohort

@@ -8,10 +8,10 @@
         <div className="flex items-center gap-4 sm:gap-8">
         <div className="w-14 h-14 sm:w-20 sm:h-20">
             <CircularProgressbar value={progress} text={`${progress}%`} styles={buildStyles({
-                pathColor: "#C8955A", trailColor: "#E8E1D6", textColor: "base-content", textSize: "20px", strokeLinecap: "round", })}/>
+                pathColor: "var(--color-primary)", trailColor: "#E8E1D6", textColor: "var(--color-base-300)", textSize: "20px", })}/>
             </div>
         <div className="text-left">
-            <h3 className="text-base sm:text-lg font-bold text-[#1B3A6B]">
+            <h3 className="text-base sm:text-lg font-bold text-base-300">
                 {name}
             </h3>
             <p className="text-xs sm:text-sm mt-1">Year: {year}</p>

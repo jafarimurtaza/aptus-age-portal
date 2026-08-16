@@ -11,8 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html data-theme="my-theme" lang="en">
-      <body className="min-h-full flex flex-col">
-          <Header/>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <Header/>
         {children}
         <Footer/>
       </body>

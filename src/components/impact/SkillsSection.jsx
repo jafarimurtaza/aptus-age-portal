@@ -13,11 +13,11 @@ const skills = [
 
 export default function SkillsPreview() {
   return (
-    <section className="bg-[#0F2551] py-4 md:py-20">
+    <section className="bg-base-300 py-4 md:py-20">
       <div className="max-w-5xl mx-auto px-6 md:px-8 lg:px-12">
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-base-100 pb-6">
-            Skills <span className="text-[#C8955A]">Breakdown</span>
+            Skills <span className="text-primary">Breakdown</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
@@ -30,7 +30,7 @@ export default function SkillsPreview() {
                   {skill.name}
                 </h3>
                 <div className="mt-3 w-full h-1.5 bg-base-100 rounded-full ">
-                  <div className="h-full bg-[#C8955A]" style={{ width: `${skill.percent}%` }}/>
+                  <div className="h-full bg-primary" style={{ width: `${skill.percent}%` }}/>
                 </div>
                 <span className="mt-1.5 text-xs font-mono text-base-100 ">
                   {skill.percent}<span className="ml-0.5">%</span>
@@ -41,13 +41,13 @@ export default function SkillsPreview() {
         </div>
 
         <div className="flex justify-center items-center gap-2 mt-8">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#C8955A]/40" />
-          <span className="h-2 w-2 rounded-full bg-[#C8955A]/70" />
-          <span className="h-1.5 w-1.5 rounded-full bg-[#C8955A]/40" />
+          <span className="h-1.5 w-1.5 rounded-full bg-primary/40" />
+          <span className="h-2 w-2 rounded-full bg-primary/70" />
+          <span className="h-1.5 w-1.5 rounded-full bg-primary/40" />
         </div>
 
         <div className="text-center pt-4">
-          <Link href="/skills" className="inline-flex items-center text-sm font-semibold text-[#C8955A] hover:text-white motion-safe:transition-colors">
+          <Link href="/skills" className="inline-flex items-center text-sm font-semibold text-primary hover:text-white motion-safe:transition-colors">
             View All →
           </Link>
         </div>
