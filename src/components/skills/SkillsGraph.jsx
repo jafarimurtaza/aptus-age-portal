@@ -12,7 +12,7 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 import { Search } from "lucide-react";
-import { CATEGORIES } from "../../app/skills/data/skills-data";
+import { CATEGORIES } from "../../lib/data/data.js";
 import CategoryNode from "./CategoryNode";
 import SkillNode from "./SkillNode";
 import ContextMenu from "./ContextMenu";
