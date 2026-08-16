@@ -3,15 +3,15 @@ import { cn } from "@/components/aptus/utils/helpers";
 
 export default function ConversationProgress() {
   return (
-    <article className="rounded-2xl border border-aptus-line bg-white px-3 py-5 shadow-aptus-card transition-colors duration-300 md:px-5">
-      <h2 className="text-[13px] font-extrabold text-[#1D2730]">
+    <article className="rounded-2xl bg-base-100 md:bg-base-100 px-3 py-0 md:py-5 transition-colors duration-300 md:px-5">
+      <h2 className="text-[13px] font-extrabold text-base-content">
         Conversation Progress
       </h2>
 
       <ol className="relative mt-7 flex flex-row justify-between gap-2 md:block md:gap-0">
         {/* Horizontal line for mobile (hidden on desktop) */}
         <span
-          className="absolute left-3 right-3 top-3 border-t border-dashed border-[#D7E2DD] md:hidden"
+          className="absolute left-3 right-3 top-3 border-t border-dashed border-base-300/20 md:hidden"
           aria-hidden="true"
         />
 
@@ -24,7 +24,7 @@ export default function ConversationProgress() {
               {/* Vertical line for desktop (hidden on mobile) */}
               {index !== conversationSteps.length - 1 && (
                 <span
-                  className="absolute left-2.75 top-7 hidden h-[calc(100%-26px)] border-l border-dashed border-[#D7E2DD] md:block"
+                  className="absolute left-2.75 top-7 hidden h-[calc(100%-26px)] border-l border-dashed border-base-300/20 md:block"
                   aria-hidden="true"
                 />
               )}
@@ -34,8 +34,8 @@ export default function ConversationProgress() {
                 className={cn(
                   "relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold",
                   step.active
-                    ? "bg-base-300 text-base-200 shadow-[0_7px_16px_rgba(57,184,112,0.32)]"
-                    : "bg-base-200 text-[#4B5962]"
+                    ? "bg-base-300 text-base-100"
+                    : "bg-base-200 text-base-content/65"
                 )}
               >
                 {step.id}
@@ -47,7 +47,7 @@ export default function ConversationProgress() {
                 <span
                   className={cn(
                     "block text-[12px] font-extrabold",
-                    step.active ? "text-gold" : "text-[#36403b]"
+                    step.active ? "text-primary" : "text-base-content"
                   )}
                 >
                   {step.title}
@@ -57,7 +57,7 @@ export default function ConversationProgress() {
                 <span
                   className={cn(
                     "mt-1 hidden text-[10.5px] font-medium leading-4 md:block",
-                    step.active ? "text-gold" : "text-[#73808A]"
+                    step.active ? "text-primary" : "text-base-content/55"
                   )}
                 >
                   {step.description}
