@@ -32,6 +32,7 @@ const values = [
   { name: "Openness", desc: "Knowledge is most powerful when freely shared." },
   { name: "Resilience", desc: "We turn obstacles into engineering problems." },
 ];
+
 const partners = [
   {
     mark: "AG",
@@ -48,11 +49,47 @@ const partners = [
     desc: "Aftelos is the technology consultancy that partnered with Afghan Geeks to design and build the graduate portal. Aftelos specialises in mission-driven digital products and provided mentorship, code review, and infrastructure support throughout the Cohort 3 capstone project.",
   },
 ];
+
+// --- Stat icons (each maps 1:1 to a stat below by index) ---
+function GraduatesIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className}>
+      <path d="M16 21v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="9" cy="7" r="3.5" />
+      <path d="M22 21v-1a4 4 0 0 0-3-3.87M15 3.7a3.5 3.5 0 0 1 0 6.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function LayersIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className}>
+      <path d="M12 2 2 7l10 5 10-5-10-5Z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function CalendarIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className}>
+      <rect x="3" y="4.5" width="18" height="16" rx="2" />
+      <path d="M8 2.5v4M16 2.5v4M3 9.5h18" strokeLinecap="round" />
+    </svg>
+  );
+}
+function GlobeIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9s1.3-6.3 3.8-9Z" />
+    </svg>
+  );
+}
+
 const stats = [
-  { value: "14", label: "Graduates" },
-  { value: "3", label: "Cohorts trained" },
-  { value: "2021", label: "Founded" },
-  { value: "100%", label: "Remote, worldwide faculty" },
+  { value: "14", label: "Graduates", Icon: GraduatesIcon },
+  { value: "3", label: "Cohorts trained", Icon: LayersIcon },
+  { value: "2021", label: "Founded", Icon: CalendarIcon },
+  { value: "100%", label: "Remote, worldwide faculty", Icon: GlobeIcon },
 ];
 
 function StarIcon({ className = "w-4 h-4" }) {
@@ -60,18 +97,6 @@ function StarIcon({ className = "w-4 h-4" }) {
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M12 0l2.6 7.2L22 9l-7.4 1.8L12 18l-2.6-7.2L2 9l7.4-1.8z" />
     </svg>
-  );
-}
-
-function StarDivider() {
-  return (
-    <div className="max-w-295 mx-auto px-6 md:px-12">
-      <div className="flex items-center gap-3.5 my-16 text-base-300">
-        <div className="flex-1 h-px bg-linear-to-r from-transparent via-current to-transparent opacity-20" />
-        <StarIcon className="w-4.5 h-4.5 text-primary shrink-0" />
-        <div className="flex-1 h-px bg-linear-to-r from-transparent via-current to-transparent opacity-20" />
-      </div>
-    </div>
   );
 }
 
@@ -109,6 +134,52 @@ function Reveal({ children }) {
   );
 }
 
+// Reusable stagger-fade for the stat cards
+function StatCard({ value, label, Icon, index }) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="group relative rounded-xl border border-base-100/10 bg-white/[0.04] backdrop-blur-sm px-5 py-5 transition-all duration-500 ease-out hover:border-primary/50 hover:bg-white/[0.07] hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(200,149,90,0.35)]"
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(16px)",
+        transitionDelay: `${index * 90}ms`,
+      }}
+    >
+      <div
+        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{
+          background: "radial-gradient(120px 80px at 20% 0%, rgba(200,149,90,0.15), transparent 70%)",
+        }}
+      />
+      <Icon className="w-5 h-5 text-primary/70 mb-3 group-hover:text-primary transition-colors duration-300" />
+      <b className="block font-serif text-3xl md:text-[2.5rem] leading-none font-medium text-base-100 group-hover:text-primary transition-colors duration-300">
+        {value}
+      </b>
+      <span className="text-xs text-slate-400 tracking-wide mt-2 block">{label}</span>
+    </div>
+  );
+}
+
 function initials(name) {
   return name.split(" ").map((w) => w[0]).slice(0, 2).join("");
 }
@@ -126,7 +197,6 @@ export default function AboutPage() {
 
   return (
     <main className={`${fraunces.variable} ${inter.variable} ${jbmono.variable} font-sans bg-base-100 text-base-content`}>
-
       <div
         id="top"
         className="relative overflow-hidden text-base-100 pt-22 pb-24"
@@ -155,12 +225,10 @@ export default function AboutPage() {
             non-negotiable — and technology is a tool no border or decree can
             take away.
           </p>
-          <div className="flex gap-9 flex-wrap mt-14 pt-7 border-t border-base-100/10">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <b className="block font-serif text-3xl font-medium text-base-100">{s.value}</b>
-                <span className="text-xs text-slate-400 tracking-wide">{s.label}</span>
-              </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 pt-7 border-t border-base-100/10">
+            {stats.map((s, i) => (
+              <StatCard key={s.label} value={s.value} label={s.label} Icon={s.Icon} index={i} />
             ))}
           </div>
         </div>
@@ -209,10 +277,7 @@ export default function AboutPage() {
         </section>
       </Reveal>
 
-      <StarDivider />
       <OurJourney />
-
-      <StarDivider />
 
       <Reveal>
         <section id="partners" className="max-w-295 mx-auto px-6 md:px-12 py-16 md:py-20">
@@ -237,7 +302,6 @@ export default function AboutPage() {
         </section>
       </Reveal>
 
-      <StarDivider />
       <Reveal>
         <section id="graduates" className="max-w-295 mx-auto px-6 md:px-12 py-16 md:py-20">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-9">
@@ -252,28 +316,11 @@ export default function AboutPage() {
                 Three cohorts. Fourteen changemakers. One unstoppable community.
               </p>
             </div>
-
-            <div className="flex gap-2 flex-wrap">
-              {["all", "1", "2", "3"].map((key) => (
-                <button
-                  key={key}
-                  onClick={() => setActiveCohort(key)}
-                  className={`text-sm font-semibold px-4 py-2 rounded-full border transition-colors ${
-                    activeCohort === key
-                      ? "bg-base-300 border-base-300 text-base-100"
-                      : "bg-transparent border-base-300/20 text-base-300 hover:border-primary hover:text-primary-dim"
-                  }`}
-                >
-                  {key === "all" ? "All" : `Cohort ${key}`}
-                </button>
-              ))}
-            </div>
           </div>
 
-        <GraduateCards />
+          <GraduateCards />
         </section>
       </Reveal>
-
     </main>
   );
 }
