@@ -23,14 +23,14 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="bg-[#F5F0E8] py-20">
+    <section className="bg-base-200 py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="mb-12 text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8955A]">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
             FAQ
           </span>
 
-          <h2 className="mt-3 text-4xl font-extrabold text-[#1B3A6B]">
+          <h2 className="mt-3 text-4xl font-extrabold text-base-300">
             Frequently Asked Questions
           </h2>
         </div>
@@ -39,19 +39,24 @@ export default function FAQ() {
           {faqs.map((faq) => (
             <details
               key={faq.question}
-              className="group border border-[#E5DDD0] bg-[#FAF7F2] p-6 shadow-sm transition-all duration-300 hover:border-[#C8955A] hover:shadow-md"
+              className="group border border-base-300/15 bg-base-100 p-6 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-md"
             >
-              <summary className="cursor-pointer list-none font-bold text-[#1B3A6B]">
+              <summary className="cursor-pointer list-none font-bold text-base-300">
                 <div className="flex items-center justify-between gap-5">
-                  <span>{faq.question}</span>
+                  <span className="min-w-0 flex-1">{faq.question}</span>
 
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C8955A] text-xl font-normal text-white transition duration-300 group-open:rotate-45">
-                    +
+                  {/* Plus / Close Icon */}
+                  <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-base-100">
+                    {/* Vertical line */}
+                    <span className="absolute h-4 w-0.5 rounded-full bg-base-100 transition-transform duration-300 group-open:rotate-90" />
+
+                    {/* Horizontal line */}
+                    <span className="absolute h-0.5 w-4 rounded-full bg-base-100" />
                   </span>
                 </div>
               </summary>
 
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#6C7280]">
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-base-content/60">
                 {faq.answer}
               </p>
             </details>

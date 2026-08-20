@@ -63,7 +63,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-base-300/20 bg-white p-6 shadow-2xl sm:p-8">
+    <div className="relative overflow-hidden rounded-2xl border border-base-300/20 bg-base-100 p-6 shadow-2xl sm:p-8">
       {/* Gold Top Decoration */}
 
       <div className="absolute inset-x-0 top-0 h-2 bg-primary" />
@@ -90,7 +90,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your name"
               required
-              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
+              className="w-full rounded-lg border border-base-300/15 bg-base-100 px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
 
@@ -112,7 +112,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your email"
               required
-              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
+              className="w-full rounded-lg border border-base-300/15 bg-base-100 px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Enter phone number"
-              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
+              className="w-full rounded-lg border border-base-300/15 bg-base-100 px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
 
@@ -159,7 +159,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter subject"
               required
-              className="w-full rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
+              className="w-full rounded-lg border border-base-300/15 bg-base-100 px-3 py-3 text-xs text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </div>
         </div>
@@ -182,14 +182,14 @@ export default function ContactForm() {
             placeholder="Enter your message"
             rows={5}
             required
-            className="w-full resize-none rounded-lg border border-base-300/15 bg-white px-3 py-3 text-xs leading-6 text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
+            className="w-full resize-none rounded-lg border border-base-300/15 bg-base-100 px-3 py-3 text-xs leading-6 text-base-content outline-none transition placeholder:text-base-content/40 focus:border-primary focus:ring-2 focus:ring-primary/15"
           />
         </div>
 
         {/* Success */}
 
         {success && (
-          <div className="rounded-lg bg-green-50 p-3 text-xs font-medium text-green-700">
+          <div className="rounded-lg bg-success/10 p-3 text-xs font-medium text-success">
             {success}
           </div>
         )}
@@ -197,7 +197,7 @@ export default function ContactForm() {
         {/* Error */}
 
         {error && (
-          <div className="rounded-lg bg-red-50 p-3 text-xs font-medium text-red-700">
+          <div className="rounded-lg bg-error/10 p-3 text-xs font-medium text-error">
             {error}
           </div>
         )}
@@ -207,7 +207,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-xl bg-primary px-6 py-3.5 text-xs font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-base-300 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
+          className="w-full rounded-xl bg-primary px-6 py-3.5 text-xs font-semibold text-base-100 shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-base-300 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? "Sending..." : "Submit"}
         </button>

@@ -14,18 +14,18 @@ export default function ContactCTA() {
               Let&apos;s Connect
             </span>
 
-            <h2 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-extrabold text-base-100 sm:text-4xl">
               Have Something to Share?
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/70">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-base-100/70">
               We are always interested in hearing new ideas, opportunities, and
               ways to make a positive impact.
             </p>
 
             <Link
               href="#"
-              className="mt-8 inline-flex rounded-xl bg-primary px-7 py-3.5 text-sm font-bold text-white transition hover:bg-primary/90"
+              className="mt-8 inline-flex rounded-xl bg-primary px-7 py-3.5 text-sm font-bold text-base-100 transition hover:bg-primary/90"
             >
               Contact Us
             </Link>

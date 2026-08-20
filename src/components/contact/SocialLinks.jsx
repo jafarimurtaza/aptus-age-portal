@@ -44,7 +44,7 @@ const socials = [
 
 export default function SocialLinks() {
   return (
-    <section className="w-full border-y border-[#E5DDD0] bg-[#FAF7F2]">
+    <section className="w-full border-y border-base-300/15 bg-base-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {socials.map((social, index) => {
@@ -53,23 +53,23 @@ export default function SocialLinks() {
             return (
               <div
                 key={social.name}
-                className={`group flex min-h-[270px] flex-col items-center justify-center border-[#E5DDD0] px-6 py-12 text-center transition-all duration-300 hover:bg-white ${index !== 0 ? "border-t md:border-t-0 md:border-l" : ""}`}
+                className={`group flex min-h-[270px] flex-col items-center justify-center border-base-300/15 px-6 py-12 text-center transition-all duration-300 hover:bg-base-100 ${index !== 0 ? "border-t md:border-t-0 md:border-l" : ""}`}
               >
                 {/* Icon */}
 
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1B3A6B] text-[#C8955A] transition-all duration-300 group-hover:bg-[#C8955A] group-hover:text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-base-300 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-base-100">
                   <Icon className="h-7 w-7" />
                 </div>
 
                 {/* Title */}
 
-                <h3 className="mt-5 text-lg font-bold text-[#1B3A6B]">
+                <h3 className="mt-5 text-lg font-bold text-base-300">
                   {social.title}
                 </h3>
 
                 {/* Description */}
 
-                <p className="mt-3 max-w-[220px] text-sm leading-6 text-[#6C7280]">
+                <p className="mt-3 max-w-[220px] text-sm leading-6 text-base-content/60">
                   {social.description}
                 </p>
 
@@ -79,7 +79,7 @@ export default function SocialLinks() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex min-w-[150px] items-center justify-center rounded-full border border-[#E1DDD6] bg-white px-5 py-2.5 text-xs font-semibold text-[#1B3A6B] shadow-sm transition-all duration-300 hover:border-[#C8955A] hover:bg-[#C8955A] hover:text-white hover:shadow-md"
+                  className="mt-6 inline-flex min-w-[150px] items-center justify-center rounded-full border border-base-300/15 bg-base-100 px-5 py-2.5 text-xs font-semibold text-base-300 shadow-sm transition-all duration-300 hover:border-primary hover:bg-primary hover:text-base-100 hover:shadow-md"
                 >
                   {social.button}
                 </a>

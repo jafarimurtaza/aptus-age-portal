@@ -36,7 +36,7 @@ export default function ContactHero() {
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {/* Head Office */}
 
-              <div className="rounded-xl border border-base-300/15 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div className="rounded-xl border border-base-300/15 bg-base-100 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <span>⌂</span>
@@ -54,7 +54,7 @@ export default function ContactHero() {
 
               {/* Call Center */}
 
-              <div className="rounded-xl border border-base-300/15 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div className="rounded-xl border border-base-300/15 bg-base-100 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     ☎
@@ -72,7 +72,7 @@ export default function ContactHero() {
 
               {/* Email */}
 
-              <div className="rounded-xl border border-base-300/15 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div className="rounded-xl border border-base-300/15 bg-base-100 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     ✉
@@ -88,7 +88,7 @@ export default function ContactHero() {
 
               {/* Working Hours */}
 
-              <div className="rounded-xl border border-base-300/15 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div className="rounded-xl border border-base-300/15 bg-base-100 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     ◷
