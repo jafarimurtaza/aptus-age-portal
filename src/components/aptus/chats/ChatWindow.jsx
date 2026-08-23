@@ -28,8 +28,8 @@ export default function ChatWindow() {
         </div>
 
         <div className="hidden sm:flex items-center">
-          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-base-300 px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-base-100 transition hover:bg-primary hover:text-neutral">
-            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-primary" aria-hidden="true" />
+          <span className="inline-flex h-7 sm:h-8 items-center gap-1.5 sm:gap-2 rounded-full bg-base-300 px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-base-100 transition hover:bg-primary hover:text-base-300">
+            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-success hover:bg-white" aria-hidden="true" />
             Online
           </span>
         </div>
