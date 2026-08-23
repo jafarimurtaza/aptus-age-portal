@@ -21,6 +21,7 @@
   --color-error: #EF4444;
 }
 
+
 /* @theme {
   --color-aptus-ink: #17222b;
   --color-aptus-muted: #78828d;
@@ -67,7 +68,6 @@
   --color-warning: #FBBF24;
   --color-error: #F87171;
 }
-
 
 * {
   box-sizing: border-box;
