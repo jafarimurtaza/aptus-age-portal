@@ -42,7 +42,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
-      <Link href="/login" className="hidden lg:block px-4 xl:px-5 py-2 rounded-lg bg-primary text-[#1B3A6B] font-semibold hover:bg-[#d9a56b] transition">
+      <Link href="/contact" className="hidden lg:block px-4 xl:px-5 py-2 rounded-lg bg-primary text-[#1B3A6B] font-semibold hover:bg-[#d9a56b] transition">
           Get Started
         </Link>
         <button className="lg:hidden text-base-100" onClick={() => setOpen(true)} aria-label="Open menu">
