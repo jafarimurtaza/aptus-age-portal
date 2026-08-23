@@ -10,7 +10,7 @@ export default function ImpactHeroSection() {
   ];
 
   return (
-    <section className="hero px-6 md:px-8 lg:px-12 py-6 md:py-8 lg:py-12">
+    <section className="bg-gradient-to-b from-base-300 to-base-100  px-6 md:px-8 lg:px-12 py-6 md:py-8 lg:py-12">
       <div className="mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h1 className="text-3xl font-bold text-center text-base-100 pb-4">
