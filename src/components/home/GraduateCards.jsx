@@ -63,8 +63,8 @@ export default function GraduateCards() {
                             {graduate.location}
                         </p>
 
-                        <div className="mx-auto mt-2 inline-flex items-center gap-2 rounded-lg bg-base-200 px-3 py-1.5 text-xs font-semibold text-base-content/75 sm:text-sm">
-                            <span className="flex h-5 w-5 items-center justify-center rounded-full border border-primary/30 text-xs text-neutral">
+                        <div className="mx-auto mt-2 inline-flex items-center gap-2 rounded-lg border border-success/20 bg-success/10 px-3 py-1.5 text-xs font-semibold text-success sm:text-sm">
+                            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-success text-xs text-base-100">
                                 ✓
                             </span>
                             {graduate.verified}

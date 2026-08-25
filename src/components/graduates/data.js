@@ -18,6 +18,10 @@ const profileImages = [
   "/Images/card3.avif",
 ];
 
+function createSlug(name) {
+  return name.toLowerCase().replaceAll(" ", "-");
+}
+
 export const graduates = [
   {
     name: "Azadeh Ahmadi",
@@ -147,8 +151,48 @@ export const graduates = [
   },
 ].map((graduate, index) => ({
   ...graduate,
+  slug: createSlug(graduate.name),
   projectImage: projectImages[index % projectImages.length],
   profileImage: profileImages[index % profileImages.length],
+  experience:
+    index % 3 === 0
+      ? "Frontend interfaces, responsive layouts, and team collaboration"
+      : index % 3 === 1
+        ? "Product thinking, visual systems, and practical project delivery"
+        : "Problem solving, clean implementation, and modern development tools",
+  summary:
+    `${graduate.name} is a trained Afghan Geeks graduate focused on ${graduate.role.toLowerCase()} work. ` +
+    "Their profile highlights practical learning, project experience, and readiness to contribute to real teams.",
+  strengths: [
+    "Works with clear project goals and steady communication.",
+    "Builds practical solutions using tools learned during cohort training.",
+    "Comfortable improving work through feedback, iteration, and teamwork.",
+  ],
+  stats: [
+    { label: "Projects", value: index % 2 === 0 ? 3 : 2 },
+    { label: "Skills", value: graduate.skills.length },
+    { label: "Cohort", value: graduate.cohort.replace("Cohort ", "") },
+  ],
+  socials: {
+    github: `https://github.com/${graduate.slug}`,
+    linkedin: `https://www.linkedin.com/in/${graduate.slug}`,
+  },
+  projects: [
+    {
+      title: `${graduate.role} Portfolio`,
+      image: projectImages[index % projectImages.length],
+      description:
+        "A polished portfolio experience showing profile information, selected work, and a clean responsive layout.",
+      tools: graduate.skills.slice(0, 3),
+    },
+    {
+      title: "Team Project Dashboard",
+      image: projectImages[(index + 2) % projectImages.length],
+      description:
+        "A practical project built during cohort work to organize information and present user-focused features.",
+      tools: [graduate.skills[0], graduate.skills[1] || "Git", "Tailwind"],
+    },
+  ],
 }));
 
 export const skillFilters = [
@@ -159,13 +203,6 @@ export const skillFilters = [
   "Figma",
   "Node.js",
   "APIs",
-];
-
-export const cohortFilters = [
-  "All Cohorts",
-  "Cohort 1",
-  "Cohort 2",
-  "Cohort 3",
 ];
 
 export const availabilityFilters = [

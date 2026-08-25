@@ -1,47 +1,43 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import GraduateCard from "./GraduateCard";
 import GraduatesFilter from "./GraduatesFilter";
 import { graduates } from "./data";
 
+function normalizeText(value) {
+  return value.toLowerCase().trim();
+}
+
 export default function GraduatesMain() {
   const [searchText, setSearchText] = useState("");
   const [activeSkill, setActiveSkill] = useState("All Skills");
-  const [activeCohort, setActiveCohort] = useState("All Cohorts");
   const [activeAvailability, setActiveAvailability] =
     useState("All Availability");
 
-  const filteredGraduates = useMemo(() => {
-    const search = searchText.trim().toLowerCase();
+  const search = normalizeText(searchText);
+  const selectedSkill = normalizeText(activeSkill);
+  const selectedAvailability = normalizeText(activeAvailability);
 
-    return graduates.filter((graduate) => {
-      const matchesSearch =
-        search === "" ||
-        graduate.name.toLowerCase().includes(search) ||
-        graduate.role.toLowerCase().includes(search) ||
-        graduate.location.toLowerCase().includes(search) ||
-        graduate.cohort.toLowerCase().includes(search) ||
-        graduate.availability.toLowerCase().includes(search) ||
-        graduate.bio.toLowerCase().includes(search) ||
-        graduate.skills.some((skill) => skill.toLowerCase().includes(search));
+  const filteredGraduates = graduates.filter((graduate) => {
+    const graduateSkills = graduate.skills.map((skill) => normalizeText(skill));
+    const searchableText = normalizeText(
+      [graduate.name, graduate.availability, ...graduate.skills].join(" "),
+    );
 
-      const matchesSkill =
-        activeSkill === "All Skills" || graduate.skills.includes(activeSkill);
-      const matchesCohort =
-        activeCohort === "All Cohorts" || graduate.cohort === activeCohort;
-      const matchesAvailability =
-        activeAvailability === "All Availability" ||
-        graduate.availability === activeAvailability;
+    const matchesSearch = search === "" || searchableText.includes(search);
+    const matchesSkill =
+      activeSkill === "All Skills" || graduateSkills.includes(selectedSkill);
+    const matchesAvailability =
+      activeAvailability === "All Availability" ||
+      normalizeText(graduate.availability) === selectedAvailability;
 
-      return (
-        matchesSearch &&
-        matchesSkill &&
-        matchesCohort &&
-        matchesAvailability
-      );
-    });
-  }, [activeAvailability, activeCohort, activeSkill, searchText]);
+    return matchesSearch && matchesSkill && matchesAvailability;
+  });
+  const hasActiveFilters =
+    searchText.trim() !== "" ||
+    activeSkill !== "All Skills" ||
+    activeAvailability !== "All Availability";
 
   return (
     <main className="min-h-screen bg-base-100 text-base-content">
@@ -53,17 +49,18 @@ export default function GraduatesMain() {
             </h1>
             <p className="mt-4 text-lg text-base-content/55 sm:text-xl">
               {filteredGraduates.length} of {graduates.length} graduates
+              {hasActiveFilters && (
+                <span className="ml-2 text-primary">matched</span>
+              )}
             </p>
           </header>
 
           <div className="mt-12">
             <GraduatesFilter
               activeAvailability={activeAvailability}
-              activeCohort={activeCohort}
               activeSkill={activeSkill}
               searchText={searchText}
               setActiveAvailability={setActiveAvailability}
-              setActiveCohort={setActiveCohort}
               setActiveSkill={setActiveSkill}
               setSearchText={setSearchText}
             />
@@ -81,7 +78,7 @@ export default function GraduatesMain() {
                 No graduates found
               </h2>
               <p className="mt-2 text-base text-base-content/60">
-                Try another name, skill, cohort, or availability filter.
+                Try another name, skill, or availability filter.
               </p>
             </div>
           )}
