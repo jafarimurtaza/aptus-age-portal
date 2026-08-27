@@ -1,11 +1,25 @@
 
-import { cohorts } from "./data/cohorts";
+"use client";
+
+import useCohorts from "./useCohorts";
 import CohortCard from "./GraduteCrad";
 
 export default function CohortCards({
   selectedYear,
   selectedCategory,
 }) {
+  const { cohorts, isLoading, error } = useCohorts();
+
+  if (isLoading) {
+    return (
+      <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" aria-busy="true">
+        {[0, 1, 2].map((i) => (
+          <div key={i} className="h-80 animate-pulse bg-base-200/50" />
+        ))}
+      </section>
+    );
+  }
+
   const filteredCohorts = cohorts.filter((cohort) => {
     const yearMatch =
       selectedYear === "all" ||
@@ -40,6 +54,11 @@ export default function CohortCards({
   // Grid State
   return (
     <>
+      {error && (
+        <p role="alert" className="mb-4 text-center text-sm text-error">
+          Live data unavailable — showing saved data
+        </p>
+      )}
       <p className="sr-only" aria-live="polite">
         {filteredCohorts.length} {filteredCohorts.length === 1 ? "cohort" : "cohorts"} shown
       </p>
