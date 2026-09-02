@@ -35,15 +35,18 @@ function getMonths(startIso, endIso) {
 
 function transformCohort(item, index) {
   const category = "web"; // API has no category field yet
+  const startDateValue = item.startDate ?? item.start_date ?? item.start ?? "";
+  const endDateValue = item.endDate ?? item.end_date ?? item.end ?? "";
+
   return {
     id: item.code ?? `cohort-${index + 1}`,
     title: item.name?.trim() || `Cohort ${index + 1}`,
     status: statusMap[item.status] ?? "completed",
-    startDate: formatDate(item.startDate),
-    endDate: formatDate(item.endDate),
+    startDate: formatDate(startDateValue),
+    endDate: formatDate(endDateValue),
     description: item.goal ?? "",
-    months: getMonths(item.startDate, item.endDate),
-    year: getYear(item.startDate),
+    months: getMonths(startDateValue, endDateValue),
+    year: getYear(startDateValue),
     category,
     icon: iconsByCategory[category],
     button: "View Cohort",
