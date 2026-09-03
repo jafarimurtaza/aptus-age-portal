@@ -1,10 +1,9 @@
-
 "use client";
 
 import useCohorts from "./useCohorts";
-import CohortCard from "./GraduteCrad";
+import GraduateCard from "./GraduateCard";
 
-export default function CohortCards({
+export default function GraduateCards({
   selectedYear,
   selectedCategory,
 }) {
@@ -64,7 +63,7 @@ export default function CohortCards({
       </p>
       <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" aria-label="Cohorts">
       {filteredCohorts.map((cohort) => (
-        <CohortCard
+        <GraduateCard
           key={cohort.id}
           cohort={cohort}
         />
