@@ -3,17 +3,24 @@
 import { useState } from "react";
 import GraduateCard from "./GraduateCard";
 import GraduatesFilter from "./GraduatesFilter";
-import { graduates } from "./data";
 
 function normalizeText(value) {
   return value.toLowerCase().trim();
 }
 
-export default function GraduatesMain() {
+export default function GraduatesMain({ graduates }) {
   const [searchText, setSearchText] = useState("");
   const [activeSkill, setActiveSkill] = useState("All Skills");
   const [activeAvailability, setActiveAvailability] =
     useState("All Availability");
+  const skillOptions = [
+    "All Skills",
+    ...new Set(graduates.flatMap((graduate) => graduate.skills)),
+  ];
+  const availabilityOptions = [
+    "All Availability",
+    ...new Set(graduates.map((graduate) => graduate.availability)),
+  ];
 
   const search = normalizeText(searchText);
   const selectedSkill = normalizeText(activeSkill);
@@ -59,10 +66,12 @@ export default function GraduatesMain() {
             <GraduatesFilter
               activeAvailability={activeAvailability}
               activeSkill={activeSkill}
+              availabilityOptions={availabilityOptions}
               searchText={searchText}
               setActiveAvailability={setActiveAvailability}
               setActiveSkill={setActiveSkill}
               setSearchText={setSearchText}
+              skillOptions={skillOptions}
             />
           </div>
 

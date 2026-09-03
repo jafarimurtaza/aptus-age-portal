@@ -19,6 +19,10 @@ const profileImages = [
     "/Images/profile3.jpeg",
 ];
 
+function createGraduateSlug(name) {
+    return name.toLowerCase().replaceAll(" ", "-");
+}
+
 export default function GraduateCards() {
     return (
         <div className="mx-auto mt-8 grid max-w-[1700px] gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
@@ -26,7 +30,7 @@ export default function GraduateCards() {
                 <Link
                     aria-label={`View ${graduate.name} profile`}
                     className="mx-auto block w-full max-w-[430px] overflow-hidden rounded-lg border border-primary/20 bg-base-100 text-inherit shadow-sm transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 md:max-w-none"
-                    href="/graduates"
+                    href={`/graduates/${createGraduateSlug(graduate.name)}`}
                     key={graduate.name}   >
                     <div className="p-2">
                         <div className="relative h-32 overflow-hidden rounded bg-base-200 sm:h-36 xl:h-32">
