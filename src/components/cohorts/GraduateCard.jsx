@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Users } from "lucide-react";
 
-const students = [
+const featuredGraduates = [
 	{ name: "Nadia", image: "https://i.pravatar.cc/100?img=32" },
 	{ name: "Roya", image: "https://i.pravatar.cc/100?img=47" },
 	{ name: "Parisa", image: "https://i.pravatar.cc/100?img=25" },
@@ -50,8 +50,16 @@ export default function GraduateCard({ cohort }) {
 					{cohort.description}
 				</p>
 				<div className="cohort-card-graduates mt-6 border border-base-300/30 p-4">
+					<div className="mb-3 flex items-center justify-between gap-3">
+						<p className="text-xs font-semibold uppercase tracking-[0.12em] text-base-content/60">
+							Featured graduates
+						</p>
+						<span className="text-xs text-base-content/50">
+							{featuredGraduates.length}
+						</span>
+					</div>
 					<div className="grid grid-cols-1 gap-2 min-[420px]:grid-cols-3">
-						{students.map((student) => (
+						{featuredGraduates.map((student) => (
 							<div
 								key={student.name}
 								className="flex min-w-0 items-center gap-2 border border-base-300/30 bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-sm"
@@ -75,7 +83,7 @@ export default function GraduateCard({ cohort }) {
 					>
 						<span className="flex items-center gap-2 text-sm font-semibold text-base-100">
 							<Users size={14} className="text-base-100/60" />
-							View Graduates
+							Explore Graduates
 						</span>
 						<ArrowRight
 							size={16}

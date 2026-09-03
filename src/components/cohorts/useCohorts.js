@@ -8,6 +8,13 @@ const API_URL = "/api/cohorts";
 const statusMap = { Active: "ongoing", Completed: "completed" };
 const iconsByCategory = { web: GraduationCap, ai: Rocket, data: Star };
 
+function resolveCohortCategory(item) {
+  const rawCategory = item?.category ?? item?.type ?? item?.programType ?? "web";
+  const category = String(rawCategory).trim().toLowerCase();
+
+  return ["web", "ai", "data", "devops"].includes(category) ? category : "web";
+}
+
 function normalizeCohortsResponse(json) {
   if (Array.isArray(json)) return json;
   if (json && Array.isArray(json.data)) return json.data;
@@ -40,7 +47,7 @@ function getMonths(startIso, endIso) {
 }
 
 function transformCohort(item, index) {
-  const category = "web"; // API has no category field yet
+  const category = resolveCohortCategory(item);
   const startDateValue = item.startDate ?? item.start_date ?? item.start ?? "";
   const endDateValue = item.endDate ?? item.end_date ?? item.end ?? "";
 
@@ -72,7 +79,7 @@ export default function useCohorts() {
 
     fetch(API_URL)
       .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch cohorts");
+        if (!response.ok) throw new Error("Unable to load cohorts right now.");
         return response.json();
       })
       .then((json) => {
