@@ -2,11 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { GraduationCap, Rocket, Star } from "lucide-react";
+
 const API_URL = "/api/cohorts";
 
 const statusMap = { Active: "ongoing", Completed: "completed" };
-
 const iconsByCategory = { web: GraduationCap, ai: Rocket, data: Star };
+
+function normalizeCohortsResponse(json) {
+  if (Array.isArray(json)) return json;
+  if (json && Array.isArray(json.data)) return json.data;
+  return [];
+}
 
 // "2026-07-18" → "Jul 2026"
 function formatDate(iso) {
@@ -62,22 +68,35 @@ export default function useCohorts() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
+
     fetch(API_URL)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch cohorts");
-        return res.json();
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch cohorts");
+        return response.json();
       })
       .then((json) => {
-        const list = Array.isArray(json) ? json : json.data;
-        if (!Array.isArray(list)) throw new Error("Invalid cohorts response");
+        const list = normalizeCohortsResponse(json);
+        if (!Array.isArray(list)) {
+          throw new Error("Invalid cohorts response");
+        }
+
+        if (!isMounted) return;
         setCohorts(list.map(transformCohort));
         setError(null);
       })
       .catch((err) => {
+        if (!isMounted) return;
         setCohorts([]);
-        setError(err.message);
+        setError(err?.message || "Unable to load cohorts");
       })
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        if (isMounted) setIsLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return { cohorts, isLoading, error };
