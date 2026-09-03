@@ -50,14 +50,6 @@ export default function GraduateCard({ cohort }) {
 					{cohort.description}
 				</p>
 				<div className="cohort-card-graduates mt-6 border border-base-300/30 p-4">
-					<div className="mb-3 flex items-center justify-between gap-3">
-						<p className="text-xs font-semibold uppercase tracking-[0.12em] text-base-content/60">
-							Featured graduates
-						</p>
-						<span className="text-xs text-base-content/50">
-							{featuredGraduates.length}
-						</span>
-					</div>
 					<div className="grid grid-cols-1 gap-2 min-[420px]:grid-cols-3">
 						{featuredGraduates.map((student) => (
 							<div
