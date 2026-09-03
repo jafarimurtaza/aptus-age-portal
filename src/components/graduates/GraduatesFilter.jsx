@@ -1,15 +1,12 @@
-import {
-  availabilityFilters,
-  skillFilters,
-} from "./data";
-
 export default function GraduatesFilter({
   activeAvailability,
   activeSkill,
+  availabilityOptions,
   searchText,
   setActiveAvailability,
   setActiveSkill,
   setSearchText,
+  skillOptions,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -40,7 +37,7 @@ export default function GraduatesFilter({
           onChange={(event) => setActiveSkill(event.target.value)}
           value={activeSkill}
         >
-          {skillFilters.map((skill) => (
+          {skillOptions.map((skill) => (
             <option key={skill} value={skill}>
               {skill}
             </option>
@@ -52,7 +49,7 @@ export default function GraduatesFilter({
           onChange={(event) => setActiveAvailability(event.target.value)}
           value={activeAvailability}
         >
-          {availabilityFilters.map((availability) => (
+          {availabilityOptions.map((availability) => (
             <option key={availability} value={availability}>
               {availability}
             </option>

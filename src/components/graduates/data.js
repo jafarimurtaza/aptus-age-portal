@@ -1,3 +1,8 @@
+export const GRADUATES_API_URL =
+  "https://admin.afghangeeksedu.org/api/graduate-profiles/public/featured";
+export const GRADUATE_PROFILE_API_BASE_URL =
+  "https://admin.afghangeeksedu.org/api/graduate-profiles/public";
+
 const projectImages = [
   "/Images/2.jpg",
   "/Images/3.png",
@@ -22,7 +27,40 @@ function createSlug(name) {
   return name.toLowerCase().replaceAll(" ", "-");
 }
 
-export const graduates = [
+function inferRole(headline) {
+  if (!headline) {
+    return "Afghan Geeks Graduate";
+  }
+
+  if (headline.toLowerCase().includes("full-stack")) {
+    return "Full Stack Developer";
+  }
+
+  if (headline.toLowerCase().includes("front")) {
+    return "Frontend Developer";
+  }
+
+  return "Software Developer";
+}
+
+function inferSkills(headline) {
+  const text = headline?.toLowerCase() || "";
+  const skills = [];
+
+  if (text.includes("react")) skills.push("React");
+  if (text.includes("next")) skills.push("Next.js");
+  if (text.includes("full-stack")) skills.push("Node.js");
+  if (text.includes("front")) skills.push("JavaScript");
+  if (text.includes("accessible")) skills.push("Accessibility");
+
+  return skills.length > 0 ? skills : ["Web Development", "Teamwork", "Git"];
+}
+
+function getSafeImage(photo, fallback) {
+  return photo?.startsWith("/") ? photo : fallback;
+}
+
+export const fallbackGraduates = [
   {
     name: "Azadeh Ahmadi",
     role: "Frontend Developer",
@@ -194,6 +232,82 @@ export const graduates = [
     },
   ],
 }));
+
+export function normalizeGraduateProfiles(profiles = []) {
+  const sourceProfiles = profiles.length > 0 ? profiles : fallbackGraduates;
+
+  return sourceProfiles.map((profile, index) => {
+    const name = profile.name || "Afghan Geeks Graduate";
+    const slug = profile.slug || createSlug(name);
+    const role = profile.role || inferRole(profile.headline);
+    const skills = profile.skills || inferSkills(profile.headline);
+    const location = profile.location || profile.city || "Afghanistan";
+    const bio =
+      profile.bio ||
+      profile.headline ||
+      "A verified Afghan Geeks graduate with practical training, project experience, and readiness to contribute to modern teams.";
+
+    return {
+      name,
+      slug,
+      role,
+      location,
+      cohort: profile.cohort || "Afghan Geeks",
+      availability: profile.availability || "Available",
+      skills,
+      bio,
+      projectImage: profile.projectImage || projectImages[index % projectImages.length],
+      profileImage: getSafeImage(
+        profile.photo || profile.profileImage,
+        profile.profileImage || profileImages[index % profileImages.length],
+      ),
+      experience:
+        profile.experience ||
+        "Practical project delivery, modern web tools, and team collaboration",
+      summary:
+        profile.summary ||
+        `${name} is a verified Afghan Geeks graduate focused on ${role.toLowerCase()} work. Their profile highlights practical learning, project experience, and readiness to contribute to real teams.`,
+      strengths: profile.strengths || [
+        "Works with clear project goals and steady communication.",
+        "Builds practical solutions using skills developed during Afghan Geeks training.",
+        "Comfortable improving work through feedback, iteration, and teamwork.",
+      ],
+      stats: profile.stats || [
+        { label: "Projects", value: 2 },
+        { label: "Skills", value: skills.length },
+        { label: "Status", value: "Ready" },
+      ],
+      socials: profile.socials || {
+        github: `https://github.com/${slug}`,
+        linkedin: `https://www.linkedin.com/in/${slug}`,
+      },
+      projects: profile.projects || [
+        {
+          title: `${role} Portfolio`,
+          image: projectImages[index % projectImages.length],
+          description:
+            "A polished portfolio experience showing profile information, selected work, and a clean responsive layout.",
+          tools: skills.slice(0, 3),
+        },
+        {
+          title: "Cohort Project",
+          image: projectImages[(index + 2) % projectImages.length],
+          description:
+            "A practical Afghan Geeks project built to demonstrate problem solving, implementation, and presentation skills.",
+          tools: [skills[0], skills[1] || "Git", skills[2] || "Teamwork"],
+        },
+      ],
+    };
+  });
+}
+
+export const graduates = normalizeGraduateProfiles(fallbackGraduates);
+
+export function normalizeGraduateProfile(profile) {
+  const profileData = Array.isArray(profile) ? profile[0] : profile;
+
+  return normalizeGraduateProfiles(profileData ? [profileData] : [])[0];
+}
 
 export const skillFilters = [
   "All Skills",
