@@ -1,8 +1,9 @@
 import { Route } from "lucide-react";
+
 import { hero } from "./data/hero";
 import HeroCards from "./HeroSectionCards";
 
-export default function Hero() {
+export default function GraduateHeroSection() {
   return (
     <section
       className="home-hero relative min-h-screen w-full overflow-hidden"
