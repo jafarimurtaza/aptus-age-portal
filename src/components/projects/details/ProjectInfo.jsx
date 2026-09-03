@@ -59,9 +59,9 @@ export default function ProjectInfo({ project }) {
                   </p>
 
                   <div className="mt-8 flex items-center justify-between border-t border-base-content/20 pt-6">
-                    <span className="text-sm font-medium text-base-300">
+                    {/* <span className="text-sm font-medium text-base-300">
                       View Details
-                    </span>
+                    </span> */}
 
                     <Link
                       href={`/projects/${relatedProject.slug}`}
