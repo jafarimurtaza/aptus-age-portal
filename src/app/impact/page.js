@@ -6,6 +6,12 @@ export const metadata = {
     "Afghan Geeks trains the next generation of tech talent through hands-on education, mentorship, and real-world project experience.",
 };
 
-export default function Impact() {
-  return <ImpactMain />;
+async function getImpactData() {
+  const res = await fetch(process.env.IMPACT_API_URL, { cache: "no-store" });
+  return res.json();
+}
+
+export default async function Impact() {
+  const data = await getImpactData();
+  return <ImpactMain data={data} />;
 }
