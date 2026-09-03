@@ -1,6 +1,34 @@
 import { notFound } from "next/navigation";
 import GraduateDetail from "@/components/graduates/GraduateDetail";
-import { graduates } from "@/components/graduates/data";
+import {
+  fallbackGraduates,
+  GRADUATE_PROFILE_API_BASE_URL,
+  graduates,
+  normalizeGraduateProfile,
+  normalizeGraduateProfiles,
+} from "@/components/graduates/data";
+
+async function getGraduateProfile(slug) {
+  try {
+    const response = await fetch(`${GRADUATE_PROFILE_API_BASE_URL}/${slug}`, {
+      next: { revalidate: 300 },
+    });
+
+    if (!response.ok) {
+      return normalizeGraduateProfiles(fallbackGraduates).find(
+        (graduate) => graduate.slug === slug,
+      );
+    }
+
+    const result = await response.json();
+
+    return normalizeGraduateProfile(result.data);
+  } catch {
+    return normalizeGraduateProfiles(fallbackGraduates).find(
+      (graduate) => graduate.slug === slug,
+    );
+  }
+}
 
 export async function generateStaticParams() {
   return graduates.map((graduate) => ({
@@ -10,7 +38,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const graduate = graduates.find((item) => item.slug === slug);
+  const graduate = await getGraduateProfile(slug);
 
   if (!graduate) {
     return {
@@ -38,7 +66,7 @@ export async function generateMetadata({ params }) {
 
 export default async function GraduateDetailPage({ params }) {
   const { slug } = await params;
-  const graduate = graduates.find((item) => item.slug === slug);
+  const graduate = await getGraduateProfile(slug);
 
   if (!graduate) {
     notFound();

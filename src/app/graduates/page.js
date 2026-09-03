@@ -1,4 +1,9 @@
 import GraduatesMain from "@/components/graduates/GraduatesMain";
+import {
+  fallbackGraduates,
+  GRADUATES_API_URL,
+  normalizeGraduateProfiles,
+} from "@/components/graduates/data";
 
 export const metadata = {
   title: "Graduates",
@@ -19,6 +24,26 @@ export const metadata = {
   },
 };
 
-export default function GraduatesPage() {
-  return <GraduatesMain />;
+async function getGraduateProfiles() {
+  try {
+    const response = await fetch(GRADUATES_API_URL, {
+      next: { revalidate: 300 },
+    });
+
+    if (!response.ok) {
+      return normalizeGraduateProfiles(fallbackGraduates);
+    }
+
+    const result = await response.json();
+
+    return normalizeGraduateProfiles(result.data);
+  } catch {
+    return normalizeGraduateProfiles(fallbackGraduates);
+  }
+}
+
+export default async function GraduatesPage() {
+  const graduates = await getGraduateProfiles();
+
+  return <GraduatesMain graduates={graduates} />;
 }
